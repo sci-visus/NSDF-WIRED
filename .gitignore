@@ -1,0 +1,14 @@
+# ignore files containing interim metadata, cache dirs and checkpoints
+*.bin
+*.nc
+*.netcdf
+*.npy
+*.idx
+*.idx2
+*.out
+*.pkl
+*.txt
+**/.ipynb_checkpoints
+**/__pycache__
+**/.DS_Store
+**/.vscode

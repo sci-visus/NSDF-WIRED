@@ -6,7 +6,7 @@ Welcome to NSDF's WIRED Global Center GitHub repository. NSDF and Wired Global a
 
 - [Overview](#overview)
 - [Project Structure](#project-structure)
-- [Additional Notes](#additional-notes)
+- [Implementation/System Notes](#implementation/system_notes)
 - [Contributing](#contributing)
 - [Related Works](#related-works)
 

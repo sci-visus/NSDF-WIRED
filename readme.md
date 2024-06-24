@@ -6,7 +6,7 @@ Welcome to NSDF's WIRED Global Center GitHub repository. NSDF and Wired Global a
 
 - [Overview](#overview)
 - [Project Structure](#project-structure)
-- [Implementation/System Notes](##implementationsystem-notes)
+- [Implementation Notes](#implementation-notes)
 - [Contributing](#contributing)
 - [Related Works](#related-works)
 
@@ -61,7 +61,7 @@ Check the `readme.md` of each directory to see further details about each step.
     └── readme.md
 ```
 
-## Implementation/System Notes
+## Implementation Notes
 
 - This work was done in Python 3.9.18.
 - Data curation has been run using SCI Institute resources, in particular, files are downloaded to those systems and processed there due to the large volume of data.

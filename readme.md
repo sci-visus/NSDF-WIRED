@@ -40,12 +40,14 @@ Check the `readme.md` of each directory to see further details about each step.
 │   ├── firesmoke_to_idx_v1.ipynb
 │   ├── firesmoke_to_idx_v2.ipynb
 │   ├── firesmoke_to_idx_v3.ipynb
+│   ├── firesmoke_to_idx_v4.ipynb
 │   └── readme.md
 ├── data
 │   ├── firesmoke_metadata_recent.nc
 │   └── readme.md
 ├── data_download
-│   ├── get_data.py
+│   ├── get_data_v0.py
+│   ├── get_data_v1.py
 │   └── readme.md
 ├── data_quality
 │   ├── data_quality

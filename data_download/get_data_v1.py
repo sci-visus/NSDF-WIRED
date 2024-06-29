@@ -9,6 +9,7 @@ start_dates = ["20210304", "20210304", "20210304", "20210303"]
 end_dates = ["20231016", "20240210", "20231016", "20231015"]
 # ref: https://www.freecodecamp.org/news/python-datetime-now-how-to-get-todays-date-and-time/
 # ref: https://www.programiz.com/python-programming/datetime/strftime
+# got data for up to 06-26-2024
 today = datetime.now().strftime('%Y%m%d')
 
 init_times = ["02", "08", "14", "20"]
@@ -31,16 +32,17 @@ for i in zip(end_dates, ids, init_times):
         url = "https://firesmoke.ca/forecasts/" + forecast_id + "/" + date + init_time + "/dispersion.nc"
         directory = "/usr/sci/scratch_nvme/arleth/basura_total/" + forecast_id + "/dispersion_" + date + ".nc"
         
-        # request from download URL
-        response = requests.get(url, stream=True)
-        # get response header
-        header = response.headers
-        # download file if we see 'save as' content type
-        # ref: https://stackoverflow.com/questions/20508788/do-i-need-content-type-application-octet-stream-for-file-download
-        if 'Content-Type' in header and header['Content-Type'] == 'application/octet-stream':
-            with open(directory, mode="wb") as file:
-                file.write(response.content)
-                print(f"Downloaded file {directory}")
-        else: #otherwise inspect header's Content-Type
-            print(header['Content-Type'])
+        # # request from download URL
+        # response = requests.get(url, stream=True)
+        # # get response header
+        # header = response.headers
+        # # download file if we see 'save as' content type
+        # # ref: https://stackoverflow.com/questions/20508788/do-i-need-content-type-application-octet-stream-for-file-download
+        # if 'Content-Type' in header and header['Content-Type'] == 'application/octet-stream':
+        #     with open(directory, mode="wb") as file:
+        #         file.write(response.content)
+        #         print(f"Downloaded file {directory}")
+        # else: #otherwise inspect header's Content-Type
+        #     print(header['Content-Type'])
+        print(url)
         print('------')

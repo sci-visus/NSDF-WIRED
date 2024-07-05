@@ -18,6 +18,10 @@ firesmoke_to_idx_v3:
 ---
 Instead of using just BSC00CA12-01 we use all available datasets, BSC06CA12-01,BSC12CA12-01, and BSC18CA12-01. These forecasts are the same model but with new starting parameters, each dataset corresponds to the initialization time. Further details can be found at [firesmoke.ca/forecasts](https://firesmoke.ca/forecasts/).
 
+firesmoke_to_idx_v4:
+---
+Similarly to v3, we use all available datasets. But now we use dates 3/3/2024 - 6/27/2024. And, the sequencing produced from v3 did not correctly sample from all available datasets which lead to missing hours in our IDX conversion. The reason for this was, for each timestep we only searched the dispersion files that were on the YYYYMMDD of the timestamp and yesterday. However, we could search the previous 4 days of files as well if the timestamp was not found in those files. The sequencing script was thus fixed accordingly in v4. Additionally we modularized and rewrote the script for clarity and correctness. 
+
 firesmoke_to_idx2:
 ---
 Not complete yet, but it is for later use to convert the firesmoke data to the IDX2 data format.

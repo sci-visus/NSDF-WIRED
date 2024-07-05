@@ -1,6 +1,6 @@
 # WIRED Global 
 
-Welcome to NSDF's WIRED Global Center GitHub repository. NSDF and Wired Global aim to connect climate, weather, power grid, and social data with essential software tools and computing resources. We will empower researchers with advanced tools for data acquisition, storage, management, integration, mining, and visualization.
+Welcome to NSDF's WIRED Global Center GitHub repository. NSDF and WIRED Global aim to connect climate, weather, power grid, and social data with essential software tools and computing resources. We will empower researchers with advanced tools for data acquisition, storage, management, integration, mining, and visualization.
 
 ## Table of Contents
 
@@ -36,6 +36,7 @@ Check the `readme.md` of each directory to see further details about each step.
 ```
 .
 ├── conversion
+│   ├── conversion_sequence_debug.ipynb
 │   ├── firesmoke_to_idx2.ipynb
 │   ├── firesmoke_to_idx_v1.ipynb
 │   ├── firesmoke_to_idx_v2.ipynb
@@ -58,8 +59,8 @@ Check the `readme.md` of each directory to see further details about each step.
 └── visualizations
     ├── demos
     ├── firesmoke-dashboard.ipynb
-    ├── firesmoke-viz.ipynb
     ├── firesmoke_idx-viz.ipynb
+    ├── firesmoke-viz.ipynb
     └── readme.md
 ```
 

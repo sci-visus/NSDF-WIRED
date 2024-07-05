@@ -17,7 +17,7 @@ Here you will find current progress on the transformation of climate data from v
 Our current goal is the data curation of [Smoke Forecasts](https://firesmoke.ca/) from The Weather Forecast Research Team at the University of British Columbia.
 
 ### Current Tasks
-- Determine what hours are missing and compile into spreadsheet. Share with UBC and obtain any additional hours and incorporate accordingly.
+- Paralellization of and extension of conversion script to be robust to incorporating new timestamps.
 
 ## Project Structure
 

@@ -1,6 +1,6 @@
 # WIRED Global 
 
-Welcome to NSDF's WIRED Global Center GitHub repository. NSDF and Wired Global aim to connect climate, weather, power grid, and social data with essential software tools and computing resources. We will empower researchers with advanced tools for data acquisition, storage, management, integration, mining, and visualization.
+Welcome to NSDF's WIRED Global Center GitHub repository. NSDF and WIRED Global aim to connect climate, weather, power grid, and social data with essential software tools and computing resources. We will empower researchers with advanced tools for data acquisition, storage, management, integration, mining, and visualization.
 
 ## Table of Contents
 
@@ -17,7 +17,8 @@ Here you will find current progress on the transformation of climate data from v
 Our current goal is the data curation of [Smoke Forecasts](https://firesmoke.ca/) from The Weather Forecast Research Team at the University of British Columbia.
 
 ### Current Tasks
-- Determine what hours are missing and compile into spreadsheet. Share with UBC and obtain any additional hours and incorporate accordingly.
+- Providing metadata about timestamps' last forecast update and resampling truth value.
+- Paralellization of and extension of conversion script to be robust to incorporating new timestamps.
 
 ## Project Structure
 
@@ -36,16 +37,19 @@ Check the `readme.md` of each directory to see further details about each step.
 ```
 .
 ├── conversion
+│   ├── conversion_sequence_debug.ipynb
 │   ├── firesmoke_to_idx2.ipynb
 │   ├── firesmoke_to_idx_v1.ipynb
 │   ├── firesmoke_to_idx_v2.ipynb
 │   ├── firesmoke_to_idx_v3.ipynb
+│   ├── firesmoke_to_idx_v4.ipynb
 │   └── readme.md
 ├── data
 │   ├── firesmoke_metadata_recent.nc
 │   └── readme.md
 ├── data_download
-│   ├── get_data.py
+│   ├── get_data_v0.py
+│   ├── get_data_v1.py
 │   └── readme.md
 ├── data_quality
 │   ├── data_quality
@@ -56,8 +60,8 @@ Check the `readme.md` of each directory to see further details about each step.
 └── visualizations
     ├── demos
     ├── firesmoke-dashboard.ipynb
-    ├── firesmoke-viz.ipynb
     ├── firesmoke_idx-viz.ipynb
+    ├── firesmoke-viz.ipynb
     └── readme.md
 ```
 

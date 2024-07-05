@@ -1,5 +1,6 @@
 # ignore files containing interim metadata, cache dirs and checkpoints
 *.bin
+*.csv
 *.nc
 *.netcdf
 *.npy

@@ -1,0 +1,6 @@
+# References {.unnumbered}
+
+::: {#refs}
+<a href="https://firesmoke.ca" title="Data supplied by BlueSky Canada">firesmoke.ca</a>
+
+:::

@@ -9,6 +9,7 @@
 *.out
 *.pkl
 *.txt
+*.code-workspace
 **/.ipynb_checkpoints
 **/__pycache__
 **/.DS_Store

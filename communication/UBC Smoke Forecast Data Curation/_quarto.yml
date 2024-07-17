@@ -1,0 +1,26 @@
+project:
+  type: book
+
+book:
+  title: "UBC Smoke Forecast Data Curation"
+  author: "NSDF"
+  date: "7/12/2024"
+  # repo-url: https://github.com/sci-visus/NSDF-WIRED
+  # repo-branch: main
+  # repo-actions: [source, issue]
+  chapters:
+    - index.qmd
+    - intro.qmd
+    - sys_specs.qmd
+    - data_source.qmd
+    - data_loading.qmd
+bibliography: references.bib
+
+format:
+  html:
+    theme: cosmo
+  pdf:
+    documentclass: scrreprt
+
+
+

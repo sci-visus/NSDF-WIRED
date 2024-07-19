@@ -1,6 +1,6 @@
 ## Here you find the workflow used to produce `firesmoke_metadata.nc`.
 
-### The purpose of this file is to package:
+### The purpose of this workflow is to package:
 - The cloud link to the IDX conversion of the firesmoke forecasts.
 - The metadata describing each individual timestep found in the netCDF files themselves.
 - The metadata describing the timesteps as a compiled database/relative to one another. For example, which timesteps' data are resampled from 1041x381 grid to 1081x381 grids, how far the are from the last forecast update time, what time range is represented by _all_ time steps, etc.

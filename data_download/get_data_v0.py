@@ -5,6 +5,7 @@ import pandas as pd
 # get metadata of datasets, had to be obtained manually
 ids = ["BSC18CA12-01", "BSC00CA12-01", "BSC06CA12-01", "BSC12CA12-01"]
 start_dates = ["20210304", "20210304", "20210304", "20210303"]
+end_dates = ["20240627", "20240627", "20240627", "20240627"]
 end_dates = ["20231016", "20240210", "20231016", "20231015"]
 
 init_times = ["02", "08", "14", "20"]

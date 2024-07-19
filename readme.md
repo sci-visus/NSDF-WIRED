@@ -30,12 +30,14 @@ Each step is described by it's directory name, see below what each directory con
 - `visualizations`: Quick and dirty visualizations to inspect our data under different contexts. Subdirectory `demos` has versions of self-contained demos using the data in IDX format.
 - `data_quality`: Scripts toward identifying gaps and issues like silent corruption.
 - `data`: netCDF file for final use, non-interim.
+- `scribbles.ipynb` is a notebook that serves as a scratch pad, code here may or may not be incoporated into the workflows above.
 
 Check the `readme.md` of each directory to see further details about each step.
 
-### Directory Tree
+### Directory Tree, 2 Levels Down
 ```
 .
+├── conda_environment.yml
 ├── conversion
 │   ├── conversion_sequence_debug.ipynb
 │   ├── firesmoke_to_idx2.ipynb
@@ -45,7 +47,7 @@ Check the `readme.md` of each directory to see further details about each step.
 │   ├── firesmoke_to_idx_v4.ipynb
 │   └── readme.md
 ├── data
-│   ├── firesmoke_metadata_recent.nc
+│   ├── firesmoke_metadata_current.nc
 │   └── readme.md
 ├── data_download
 │   ├── get_data_v0.py
@@ -60,14 +62,15 @@ Check the `readme.md` of each directory to see further details about each step.
 └── visualizations
     ├── demos
     ├── firesmoke-dashboard.ipynb
-    ├── firesmoke_idx-viz.ipynb
     ├── firesmoke-viz.ipynb
+    ├── firesmoke_idx-viz.ipynb
+    ├── make_videos
     └── readme.md
 ```
 
 ## Implementation Notes
 
-- This work was done in Python 3.9.18.
+- This work was done in Python 3.9.18., `conda_environment.yml` is the conda environment we have used during the development of this project.
 - Data curation has been run using SCI Institute resources, in particular, files are downloaded to those systems and processed there due to the large volume of data.
 - Running the workflow described above may be difficult on a consumer-grade machine. Consider using small batches of data to test and via University of Utah and/or University of British Columbia nodes, full data processing can be run.
 - Ensure you change directory names within notebooks to fit your work environment accordingly.

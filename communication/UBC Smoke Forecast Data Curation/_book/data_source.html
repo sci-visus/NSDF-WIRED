@@ -57,7 +57,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -102,9 +102,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
-
-<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
 </head>
@@ -207,7 +204,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="sec-data-source" class="quarto-section-identifier"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The Data Source</span></span></h1>
+<div class="quarto-title-block"><div><h1 class="title"><span id="sec-data-source" class="quarto-section-identifier"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The Data Source</span></span></h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li><li><hr class="dropdown-divider"></li><li><a id="quarto-view-source" class="dropdown-item" href="javascript:void(0)" role="button">View Source</a></li></ul></div></div>
 </div>
 
 
@@ -225,11 +222,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <p>It is important to understand exactly what data is available and how to obtain that data.</p>
+<p>We encourage you to explore the dataset on <a href="https://firesmoke.ca/forecasts/">UBC’s website</a> to further understand the dataset’s use as described by UBC.</p>
 <p>Here we establish:</p>
 <ul>
 <li>What systems are available to obtain the smoke forecast data from UBC?</li>
 <li>What are in the files that UBC provides?</li>
-<li>What metadata is associated with the files we obtain, both from within the file and the files as a whole?</li>
+<li>What metadata is associated with the files we obtain, both from within the file and about the files as a whole?</li>
 </ul>
 <p>This information <strong>was not</strong> determined the first time we explored this dataset.</p>
 <p>As seen in the later chapters, we operated under misinformed assumptions and encountered issues only resolvable by operating on the data “blindly”. The purpose of this chapter is to establish the final set of information we learned about our data source after extensive exploration and manipulation.</p>
@@ -237,24 +235,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 data-number="3.1" class="anchored" data-anchor-id="downloading-ubc-smoke-forecast-files"><span class="header-section-number">3.1</span> Downloading UBC Smoke Forecast Files</h2>
 <section id="available-time-range" class="level3" data-number="3.1.1">
 <h3 data-number="3.1.1" class="anchored" data-anchor-id="available-time-range"><span class="header-section-number">3.1.1</span> Available Time Range</h3>
-<p>The time ranges of available data for each forecast ID is shown in <a href="#tbl-time" class="quarto-xref">Table&nbsp;<span>3.1</span></a>. Please note, there are occassional <strong>failed forecasts or otherwise unavailable files</strong> within the date ranges specified <a href="#tbl-time" class="quarto-xref">Table&nbsp;<span>3.1</span></a>.</p>
+<p><strong>TODO CREDIT UBC</strong> The time ranges of available data for each forecast ID is shown in <a href="#tbl-time" class="quarto-xref">Table&nbsp;<span>3.1</span></a>. Please note, there are occassional <strong>failed forecasts or otherwise unavailable files</strong> within the date ranges specified <a href="#tbl-time" class="quarto-xref">Table&nbsp;<span>3.1</span></a>.</p>
 <div id="tbl-time" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-time-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;3.1: Dates for which all Forecast ID Datasets are Publicly Available
+Table&nbsp;3.1: Dates for which all Forecast ID Datasets are Publicly Available. All times are in UTC and the grid size is 12 km.
 </figcaption>
 <div aria-describedby="tbl-time-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
 <colgroup>
-<col style="width: 11%">
-<col style="width: 70%">
-<col style="width: 8%">
-<col style="width: 8%">
+<col style="width: 13%">
+<col style="width: 30%">
+<col style="width: 30%">
+<col style="width: 12%">
+<col style="width: 12%">
 </colgroup>
 <thead>
 <tr class="header">
 <th>Forecast ID</th>
-<th>Description</th>
+<th>Meteorology Forecast Initialization (UTC)</th>
+<th>Smoke Forecast Initialization (UTC)</th>
 <th>Start Date</th>
 <th>End Date</th>
 </tr>
@@ -262,25 +262,29 @@ Table&nbsp;3.1: Dates for which all Forecast ID Datasets are Publicly Available
 <tbody>
 <tr class="odd">
 <td>BSC00CA12-01</td>
-<td>BlueSky Canada smoke forecast, 00Z met (12km grid), 08Z fires, North America domain</td>
+<td>00Z</td>
+<td>08Z</td>
 <td>March 4, 2021</td>
 <td>Present Day</td>
 </tr>
 <tr class="even">
 <td>BSC06CA12-01</td>
-<td>BlueSky Canada smoke forecast, 06Z met (12km grid), 14Z fires, North America domain</td>
+<td>06Z</td>
+<td>14Z</td>
 <td>March 4, 2021</td>
 <td>Present Day</td>
 </tr>
 <tr class="odd">
 <td>BSC12CA12-01</td>
-<td>BlueSky Canada smoke forecast, 12Z met (12km grid), 20Z fires, North America domain</td>
+<td>12Z</td>
+<td>20Z</td>
 <td>March 3, 2021</td>
 <td>Present Day</td>
 </tr>
 <tr class="even">
 <td>BSC18CA12-01</td>
-<td>BlueSky Canada smoke forecast, 18Z met (12km grid), 02Z fires, North America domain</td>
+<td>18Z</td>
+<td>02Z</td>
 <td>March 4, 2021</td>
 <td>Present Day</td>
 </tr>
@@ -289,6 +293,7 @@ Table&nbsp;3.1: Dates for which all Forecast ID Datasets are Publicly Available
 </div>
 </figure>
 </div>
+<p><strong>TODO what do grid sizes mean, i.e.&nbsp;Meteorology: 00 UTC, nested 12 km + 36 km grids Smoke: 08 UTC</strong></p>
 <p>The smoke forecasts are updated daily, including the present day, so there is no fixed end date. Therefore, the latest data must be downloaded on a regular basis. We have not implemented this process yet, so the latest forecast files we use are up to June 27, 2024.</p>
 <p>There is no official source stating the earliest available date for each forecast. So, knowing the project began in 2021, we inferenced that the earliest available date would be in 2021. Via trial and error we found the earliest available dates.</p>
 </section>
@@ -297,47 +302,42 @@ Table&nbsp;3.1: Dates for which all Forecast ID Datasets are Publicly Available
 <p>To download the 2-day forecast for the forecast initialization date of one’s choice, one follows the instructions below. The downloaded file can be a NetCDF or KMZ file. We use NetCDF files. Later in <a href="data_loading.html" class="quarto-xref"><span>Chapter 4</span></a> we detail our automation of the download process described below.</p>
 <hr>
 <p><strong>TODO CREDIT UBC</strong></p>
-<p>Go to this URL: <code>https://firesmoke.ca/forecasts/{ForecastID}/{YYYYMMDD}{InitTime}/{File Type}</code></p>
-<p>Replace <code>YYYYMMDD</code> with the date of choice. Replace <code>ForecastID</code> and <code>InitTime</code> with the appropriate values as described in <a href="#tbl-access" class="quarto-xref">Table&nbsp;<span>3.2</span></a>:</p>
+<p>Go to the URL: <code>https://firesmoke.ca/forecasts/{Forecast ID}/{YYYYMMDD}{InitTime}/{File Type}</code></p>
+<p>Where:</p>
+<ul>
+<li><code>YYYYMMDD</code> is the date of choice.</li>
+<li><code>ForecastID</code> and <code>InitTime</code> are the chosen values as described in <a href="#tbl-access" class="quarto-xref">Table&nbsp;<span>3.2</span></a>.</li>
+<li><code>File Type</code> is either <code>dispersion.nc</code> or <code>dispersion.kmz</code> for either the NetCDF file or KMZ file, respectively.</li>
+</ul>
 <div id="tbl-access" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-access-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;3.2: UBC Smoke Forecast Data Download Parameters
+Table&nbsp;3.2: UBC Smoke Forecast Data Download Parameters. All times are in UTC and the grid size is 12 km.
 </figcaption>
 <div aria-describedby="tbl-access-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
-<colgroup>
-<col style="width: 16%">
-<col style="width: 59%">
-<col style="width: 24%">
-</colgroup>
 <thead>
 <tr class="header">
 <th>Forecast ID</th>
-<th>Description</th>
-<th>Initialization Time</th>
+<th>Smoke Forecast Initialization (UTC)</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>BSC00CA12-01</td>
-<td>BlueSky Canada smoke forecast, 00Z met (12km grid), 08Z fires, North America domain</td>
-<td>08</td>
+<td>08Z</td>
 </tr>
 <tr class="even">
 <td>BSC06CA12-01</td>
-<td>BlueSky Canada smoke forecast, 06Z met (12km grid), 14Z fires, North America domain</td>
-<td>14</td>
+<td>14Z</td>
 </tr>
 <tr class="odd">
 <td>BSC12CA12-01</td>
-<td>BlueSky Canada smoke forecast, 12Z met (12km grid), 20Z fires, North America domain</td>
-<td>20</td>
+<td>20Z</td>
 </tr>
 <tr class="even">
 <td>BSC18CA12-01</td>
-<td>BlueSky Canada smoke forecast, 18Z met (12km grid), 02Z fires, North America domain</td>
-<td>02</td>
+<td>02Z</td>
 </tr>
 </tbody>
 </table>
@@ -346,8 +346,10 @@ Table&nbsp;3.2: UBC Smoke Forecast Data Download Parameters
 </div>
 <section id="download-example" class="level4" data-number="3.1.2.1">
 <h4 data-number="3.1.2.1" class="anchored" data-anchor-id="download-example"><span class="header-section-number">3.1.2.1</span> Download Example</h4>
-<p>Let’s try downloading the forecast for January 1, 2024 where the forecast is initiated at 00:00:00 UTC by navigating to the corresponding URL.</p>
-<div id="c6c6ca4f" class="cell" data-execution_count="1">
+<p>Let’s try downloading the forecast for January 1, 2024 where the weather forecast is initiated at 00:00:00 UTC and the smoke forecast is initialized at 08:00:00 UTC by navigating to the corresponding URL.</p>
+<div id="127ef55d" class="cell" data-execution_count="1">
+<details open="" class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>forecast_id <span class="op">=</span> <span class="st">"BSC00CA12-01"</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>yyyymmdd <span class="op">=</span> <span class="st">"20210304"</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>init_time <span class="op">=</span> <span class="st">"08"</span></span>
@@ -357,9 +359,7 @@ Table&nbsp;3.2: UBC Smoke Forecast Data Download Parameters
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Navigate to this URL in your browser: </span><span class="sc">{</span>url<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Navigate to this URL in your browser: https://firesmoke.ca/forecasts/BSC00CA12-01/2021030408/dispersion.nc</code></pre>
-</div>
+</details>
 </div>
 </section>
 </section>
@@ -374,397 +374,15 @@ Table&nbsp;3.2: UBC Smoke Forecast Data Download Parameters
 **TODO**
 The file downloaded at the specified URL download the 2-day forecast for [DATE] and [TIME] one could download the following files.
 [GET 2 DAY FORECAST DESCRIPTION FROM scribbles.ipynb]. -->
-<p>We load <code>dispersion.nc</code> using <code>xarray</code>.</p>
-<div id="804845ec" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> xarray <span class="im">as</span> xr</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>ds <span class="op">=</span> xr.open_dataset(<span class="st">"data/data_source/dispersion.nc"</span>)</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>ds</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="2">
-<div><svg style="position: absolute; width: 0; height: 0; overflow: hidden">
-<defs>
-<symbol id="icon-database" viewbox="0 0 32 32">
-<path d="M16 0c-8.837 0-16 2.239-16 5v4c0 2.761 7.163 5 16 5s16-2.239 16-5v-4c0-2.761-7.163-5-16-5z"></path>
-<path d="M16 17c-8.837 0-16-2.239-16-5v6c0 2.761 7.163 5 16 5s16-2.239 16-5v-6c0 2.761-7.163 5-16 5z"></path>
-<path d="M16 26c-8.837 0-16-2.239-16-5v6c0 2.761 7.163 5 16 5s16-2.239 16-5v-6c0 2.761-7.163 5-16 5z"></path>
-</symbol>
-<symbol id="icon-file-text2" viewbox="0 0 32 32">
-<path d="M28.681 7.159c-0.694-0.947-1.662-2.053-2.724-3.116s-2.169-2.030-3.116-2.724c-1.612-1.182-2.393-1.319-2.841-1.319h-15.5c-1.378 0-2.5 1.121-2.5 2.5v27c0 1.378 1.122 2.5 2.5 2.5h23c1.378 0 2.5-1.122 2.5-2.5v-19.5c0-0.448-0.137-1.23-1.319-2.841zM24.543 5.457c0.959 0.959 1.712 1.825 2.268 2.543h-4.811v-4.811c0.718 0.556 1.584 1.309 2.543 2.268zM28 29.5c0 0.271-0.229 0.5-0.5 0.5h-23c-0.271 0-0.5-0.229-0.5-0.5v-27c0-0.271 0.229-0.5 0.5-0.5 0 0 15.499-0 15.5 0v7c0 0.552 0.448 1 1 1h7v19.5z"></path>
-<path d="M23 26h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
-<path d="M23 22h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
-<path d="M23 18h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
-</symbol>
-</defs>
-</svg>
-<style>/* CSS stylesheet for displaying xarray objects in jupyterlab.
- *
- */
-
-:root {
-  --xr-font-color0: var(--jp-content-font-color0, rgba(0, 0, 0, 1));
-  --xr-font-color2: var(--jp-content-font-color2, rgba(0, 0, 0, 0.54));
-  --xr-font-color3: var(--jp-content-font-color3, rgba(0, 0, 0, 0.38));
-  --xr-border-color: var(--jp-border-color2, #e0e0e0);
-  --xr-disabled-color: var(--jp-layout-color3, #bdbdbd);
-  --xr-background-color: var(--jp-layout-color0, white);
-  --xr-background-color-row-even: var(--jp-layout-color1, white);
-  --xr-background-color-row-odd: var(--jp-layout-color2, #eeeeee);
-}
-
-html[theme=dark],
-body[data-theme=dark],
-body.vscode-dark {
-  --xr-font-color0: rgba(255, 255, 255, 1);
-  --xr-font-color2: rgba(255, 255, 255, 0.54);
-  --xr-font-color3: rgba(255, 255, 255, 0.38);
-  --xr-border-color: #1F1F1F;
-  --xr-disabled-color: #515151;
-  --xr-background-color: #111111;
-  --xr-background-color-row-even: #111111;
-  --xr-background-color-row-odd: #313131;
-}
-
-.xr-wrap {
-  display: block !important;
-  min-width: 300px;
-  max-width: 700px;
-}
-
-.xr-text-repr-fallback {
-  /* fallback to plain text repr when CSS is not injected (untrusted notebook) */
-  display: none;
-}
-
-.xr-header {
-  padding-top: 6px;
-  padding-bottom: 6px;
-  margin-bottom: 4px;
-  border-bottom: solid 1px var(--xr-border-color);
-}
-
-.xr-header > div,
-.xr-header > ul {
-  display: inline;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.xr-obj-type,
-.xr-array-name {
-  margin-left: 2px;
-  margin-right: 10px;
-}
-
-.xr-obj-type {
-  color: var(--xr-font-color2);
-}
-
-.xr-sections {
-  padding-left: 0 !important;
-  display: grid;
-  grid-template-columns: 150px auto auto 1fr 20px 20px;
-}
-
-.xr-section-item {
-  display: contents;
-}
-
-.xr-section-item input {
-  display: none;
-}
-
-.xr-section-item input + label {
-  color: var(--xr-disabled-color);
-}
-
-.xr-section-item input:enabled + label {
-  cursor: pointer;
-  color: var(--xr-font-color2);
-}
-
-.xr-section-item input:enabled + label:hover {
-  color: var(--xr-font-color0);
-}
-
-.xr-section-summary {
-  grid-column: 1;
-  color: var(--xr-font-color2);
-  font-weight: 500;
-}
-
-.xr-section-summary > span {
-  display: inline-block;
-  padding-left: 0.5em;
-}
-
-.xr-section-summary-in:disabled + label {
-  color: var(--xr-font-color2);
-}
-
-.xr-section-summary-in + label:before {
-  display: inline-block;
-  content: '►';
-  font-size: 11px;
-  width: 15px;
-  text-align: center;
-}
-
-.xr-section-summary-in:disabled + label:before {
-  color: var(--xr-disabled-color);
-}
-
-.xr-section-summary-in:checked + label:before {
-  content: '▼';
-}
-
-.xr-section-summary-in:checked + label > span {
-  display: none;
-}
-
-.xr-section-summary,
-.xr-section-inline-details {
-  padding-top: 4px;
-  padding-bottom: 4px;
-}
-
-.xr-section-inline-details {
-  grid-column: 2 / -1;
-}
-
-.xr-section-details {
-  display: none;
-  grid-column: 1 / -1;
-  margin-bottom: 5px;
-}
-
-.xr-section-summary-in:checked ~ .xr-section-details {
-  display: contents;
-}
-
-.xr-array-wrap {
-  grid-column: 1 / -1;
-  display: grid;
-  grid-template-columns: 20px auto;
-}
-
-.xr-array-wrap > label {
-  grid-column: 1;
-  vertical-align: top;
-}
-
-.xr-preview {
-  color: var(--xr-font-color3);
-}
-
-.xr-array-preview,
-.xr-array-data {
-  padding: 0 5px !important;
-  grid-column: 2;
-}
-
-.xr-array-data,
-.xr-array-in:checked ~ .xr-array-preview {
-  display: none;
-}
-
-.xr-array-in:checked ~ .xr-array-data,
-.xr-array-preview {
-  display: inline-block;
-}
-
-.xr-dim-list {
-  display: inline-block !important;
-  list-style: none;
-  padding: 0 !important;
-  margin: 0;
-}
-
-.xr-dim-list li {
-  display: inline-block;
-  padding: 0;
-  margin: 0;
-}
-
-.xr-dim-list:before {
-  content: '(';
-}
-
-.xr-dim-list:after {
-  content: ')';
-}
-
-.xr-dim-list li:not(:last-child):after {
-  content: ',';
-  padding-right: 5px;
-}
-
-.xr-has-index {
-  font-weight: bold;
-}
-
-.xr-var-list,
-.xr-var-item {
-  display: contents;
-}
-
-.xr-var-item > div,
-.xr-var-item label,
-.xr-var-item > .xr-var-name span {
-  background-color: var(--xr-background-color-row-even);
-  margin-bottom: 0;
-}
-
-.xr-var-item > .xr-var-name:hover span {
-  padding-right: 5px;
-}
-
-.xr-var-list > li:nth-child(odd) > div,
-.xr-var-list > li:nth-child(odd) > label,
-.xr-var-list > li:nth-child(odd) > .xr-var-name span {
-  background-color: var(--xr-background-color-row-odd);
-}
-
-.xr-var-name {
-  grid-column: 1;
-}
-
-.xr-var-dims {
-  grid-column: 2;
-}
-
-.xr-var-dtype {
-  grid-column: 3;
-  text-align: right;
-  color: var(--xr-font-color2);
-}
-
-.xr-var-preview {
-  grid-column: 4;
-}
-
-.xr-index-preview {
-  grid-column: 2 / 5;
-  color: var(--xr-font-color2);
-}
-
-.xr-var-name,
-.xr-var-dims,
-.xr-var-dtype,
-.xr-preview,
-.xr-attrs dt {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  padding-right: 10px;
-}
-
-.xr-var-name:hover,
-.xr-var-dims:hover,
-.xr-var-dtype:hover,
-.xr-attrs dt:hover {
-  overflow: visible;
-  width: auto;
-  z-index: 1;
-}
-
-.xr-var-attrs,
-.xr-var-data,
-.xr-index-data {
-  display: none;
-  background-color: var(--xr-background-color) !important;
-  padding-bottom: 5px !important;
-}
-
-.xr-var-attrs-in:checked ~ .xr-var-attrs,
-.xr-var-data-in:checked ~ .xr-var-data,
-.xr-index-data-in:checked ~ .xr-index-data {
-  display: block;
-}
-
-.xr-var-data > table {
-  float: right;
-}
-
-.xr-var-name span,
-.xr-var-data,
-.xr-index-name div,
-.xr-index-data,
-.xr-attrs {
-  padding-left: 25px !important;
-}
-
-.xr-attrs,
-.xr-var-attrs,
-.xr-var-data,
-.xr-index-data {
-  grid-column: 1 / -1;
-}
-
-dl.xr-attrs {
-  padding: 0;
-  margin: 0;
-  display: grid;
-  grid-template-columns: 125px auto;
-}
-
-.xr-attrs dt,
-.xr-attrs dd {
-  padding: 0;
-  margin: 0;
-  float: left;
-  padding-right: 10px;
-  width: auto;
-}
-
-.xr-attrs dt {
-  font-weight: normal;
-  grid-column: 1;
-}
-
-.xr-attrs dt:hover span {
-  display: inline-block;
-  background: var(--xr-background-color);
-  padding-right: 10px;
-}
-
-.xr-attrs dd {
-  grid-column: 2;
-  white-space: pre-wrap;
-  word-break: break-all;
-}
-
-.xr-icon-database,
-.xr-icon-file-text2,
-.xr-no-icon {
-  display: inline-block;
-  vertical-align: middle;
-  width: 1em;
-  height: 1.5em !important;
-  stroke-width: 0;
-  stroke: currentColor;
-  fill: currentColor;
-}
-</style><pre class="xr-text-repr-fallback">&lt;xarray.Dataset&gt;
-Dimensions:  (TSTEP: 51, VAR: 1, DATE-TIME: 2, LAY: 1, ROW: 381, COL: 1041)
-Dimensions without coordinates: TSTEP, VAR, DATE-TIME, LAY, ROW, COL
-Data variables:
-    TFLAG    (TSTEP, VAR, DATE-TIME) int32 ...
-    PM25     (TSTEP, LAY, ROW, COL) float32 ...
-Attributes: (12/33)
-    IOAPI_VERSION:  $Id: @(#) ioapi library version 3.0 $                    ...
-    EXEC_ID:        ????????????????                                         ...
-    FTYPE:          1
-    CDATE:          2021063
-    CTIME:          101914
-    WDATE:          2021063
-    ...             ...
-    VGLVLS:         [10.  0.]
-    GDNAM:          HYSPLIT CONC    
-    UPNAM:          hysplit2netCDF  
-    VAR-LIST:       PM25            
-    FILEDESC:       Hysplit Concentration Model Output                       ...
-    HISTORY:        </pre><div class="xr-wrap" style="display:none"><div class="xr-header"><div class="xr-obj-type">xarray.Dataset</div></div><ul class="xr-sections"><li class="xr-section-item"><input id="section-d458e8b6-71b5-4f80-88fc-ebc448e20526" class="xr-section-summary-in" type="checkbox" disabled=""><label for="section-d458e8b6-71b5-4f80-88fc-ebc448e20526" class="xr-section-summary" title="Expand/collapse section">Dimensions:</label><div class="xr-section-inline-details"><ul class="xr-dim-list"><li><span>TSTEP</span>: 51</li><li><span>VAR</span>: 1</li><li><span>DATE-TIME</span>: 2</li><li><span>LAY</span>: 1</li><li><span>ROW</span>: 381</li><li><span>COL</span>: 1041</li></ul></div><div class="xr-section-details"></div></li><li class="xr-section-item"><input id="section-d89021f1-14a2-43e0-85f2-14d494c6e953" class="xr-section-summary-in" type="checkbox" disabled=""><label for="section-d89021f1-14a2-43e0-85f2-14d494c6e953" class="xr-section-summary" title="Expand/collapse section">Coordinates: <span>(0)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><ul class="xr-var-list"></ul></div></li><li class="xr-section-item"><input id="section-6083c75c-64d9-4841-ba34-3010aab198a3" class="xr-section-summary-in" type="checkbox" checked=""><label for="section-6083c75c-64d9-4841-ba34-3010aab198a3" class="xr-section-summary">Data variables: <span>(2)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><ul class="xr-var-list"><li class="xr-var-item"><div class="xr-var-name"><span>TFLAG</span></div><div class="xr-var-dims">(TSTEP, VAR, DATE-TIME)</div><div class="xr-var-dtype">int32</div><div class="xr-var-preview xr-preview">...</div><input id="attrs-e7d7fb7a-548e-42f9-93d2-3f51218aec7f" class="xr-var-attrs-in" type="checkbox"><label for="attrs-e7d7fb7a-548e-42f9-93d2-3f51218aec7f" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-058edc64-cb12-4386-ae7b-d79b0d7539c1" class="xr-var-data-in" type="checkbox"><label for="data-058edc64-cb12-4386-ae7b-d79b0d7539c1" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"><dt><span>units :</span></dt><dd>&lt;YYYYDDD,HHMMSS&gt;</dd><dt><span>long_name :</span></dt><dd>TFLAG           </dd><dt><span>var_desc :</span></dt><dd>Timestep-valid flags:  (1) YYYYDDD or (2) HHMMSS                                </dd></dl></div><div class="xr-var-data"><pre>[102 values with dtype=int32]</pre></div></li><li class="xr-var-item"><div class="xr-var-name"><span>PM25</span></div><div class="xr-var-dims">(TSTEP, LAY, ROW, COL)</div><div class="xr-var-dtype">float32</div><div class="xr-var-preview xr-preview">...</div><input id="attrs-3a87934b-6957-4246-a8db-8cfafdf90adb" class="xr-var-attrs-in" type="checkbox"><label for="attrs-3a87934b-6957-4246-a8db-8cfafdf90adb" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-b9300ccb-b1d8-4457-a0b3-f8bace694436" class="xr-var-data-in" type="checkbox"><label for="data-b9300ccb-b1d8-4457-a0b3-f8bace694436" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"><dt><span>long_name :</span></dt><dd>PM25            </dd><dt><span>units :</span></dt><dd>ug/m^3          </dd><dt><span>var_desc :</span></dt><dd>PM25                                                                            </dd></dl></div><div class="xr-var-data"><pre>[20227671 values with dtype=float32]</pre></div></li></ul></div></li><li class="xr-section-item"><input id="section-540e5c35-d217-4684-8ac3-5964b17909ff" class="xr-section-summary-in" type="checkbox" disabled=""><label for="section-540e5c35-d217-4684-8ac3-5964b17909ff" class="xr-section-summary" title="Expand/collapse section">Indexes: <span>(0)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><ul class="xr-var-list"></ul></div></li><li class="xr-section-item"><input id="section-fbbb245d-3dbb-4955-87b9-c85677cf2ce2" class="xr-section-summary-in" type="checkbox"><label for="section-fbbb245d-3dbb-4955-87b9-c85677cf2ce2" class="xr-section-summary">Attributes: <span>(33)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><dl class="xr-attrs"><dt><span>IOAPI_VERSION :</span></dt><dd>$Id: @(#) ioapi library version 3.0 $                                           </dd><dt><span>EXEC_ID :</span></dt><dd>????????????????                                                                </dd><dt><span>FTYPE :</span></dt><dd>1</dd><dt><span>CDATE :</span></dt><dd>2021063</dd><dt><span>CTIME :</span></dt><dd>101914</dd><dt><span>WDATE :</span></dt><dd>2021063</dd><dt><span>WTIME :</span></dt><dd>101914</dd><dt><span>SDATE :</span></dt><dd>2021063</dd><dt><span>STIME :</span></dt><dd>90000</dd><dt><span>TSTEP :</span></dt><dd>10000</dd><dt><span>NTHIK :</span></dt><dd>1</dd><dt><span>NCOLS :</span></dt><dd>1041</dd><dt><span>NROWS :</span></dt><dd>381</dd><dt><span>NLAYS :</span></dt><dd>1</dd><dt><span>NVARS :</span></dt><dd>1</dd><dt><span>GDTYP :</span></dt><dd>1</dd><dt><span>P_ALP :</span></dt><dd>0.0</dd><dt><span>P_BET :</span></dt><dd>0.0</dd><dt><span>P_GAM :</span></dt><dd>0.0</dd><dt><span>XCENT :</span></dt><dd>-104.0</dd><dt><span>YCENT :</span></dt><dd>51.0</dd><dt><span>XORIG :</span></dt><dd>-156.0</dd><dt><span>YORIG :</span></dt><dd>32.0</dd><dt><span>XCELL :</span></dt><dd>0.10000000149011612</dd><dt><span>YCELL :</span></dt><dd>0.10000000149011612</dd><dt><span>VGTYP :</span></dt><dd>5</dd><dt><span>VGTOP :</span></dt><dd>-9999.0</dd><dt><span>VGLVLS :</span></dt><dd>[10.  0.]</dd><dt><span>GDNAM :</span></dt><dd>HYSPLIT CONC    </dd><dt><span>UPNAM :</span></dt><dd>hysplit2netCDF  </dd><dt><span>VAR-LIST :</span></dt><dd>PM25            </dd><dt><span>FILEDESC :</span></dt><dd>Hysplit Concentration Model Output                                              lat-lon coordinate system                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       </dd><dt><span>HISTORY :</span></dt><dd></dd></dl></div></li></ul></div></div>
-</div>
+<p>We load <code>dispersion.nc</code> using <code>xarray</code>, which provides a handy preview of the file.</p>
+<div id="0e0e7052" class="cell" data-execution_count="2">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> xarray <span class="im">as</span> xr</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>ds <span class="op">=</span> xr.open_dataset(<span class="st">"data/data_source/dispersion.nc"</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>ds</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 </section>
 <section id="attr" class="level3" data-number="3.2.2">
@@ -841,13 +459,13 @@ Attributes: (12/33)
 <tbody>
 <tr class="odd">
 <td>TFLAG</td>
-<td>(TSTEP, VAR, DATE-TIME)</td>
+<td>TSTEP, VAR, DATE-TIME</td>
 <td>int32</td>
 <td>This variable stores the date and time of each time step.</td>
 </tr>
 <tr class="even">
 <td>PM25</td>
-<td>(TSTEP, LAY, ROW, COL)</td>
+<td>TSTEP, LAY, ROW, COL</td>
 <td>float32</td>
 <td>This variable contains the concentration of particulate matter (PM2.5) for each time step, layer, row, and column in the spatial grid.</td>
 </tr>
@@ -933,12 +551,13 @@ Attributes: (12/33)
 </tr>
 </tbody>
 </table>
+<p>Now that we understand what exactly is within one NetCDF file, let’s establish the information we have when we download all available NetCDF files.</p>
 </section>
 </section>
 </section>
 <section id="metadata-of-collected-netcdf-files" class="level2" data-number="3.3">
 <h2 data-number="3.3" class="anchored" data-anchor-id="metadata-of-collected-netcdf-files"><span class="header-section-number">3.3</span> Metadata of Collected NetCDF Files</h2>
-<p>Our goal is to use all the available NetCDF files to create single dataset. Here we describe metadata about the collection of NetCDF files we downloaded.</p>
+<p>Here we describe metadata about the collection of NetCDF files we downloaded.</p>
 <section id="disk-size" class="level3" data-number="3.3.1">
 <h3 data-number="3.3.1" class="anchored" data-anchor-id="disk-size"><span class="header-section-number">3.3.1</span> Disk Size</h3>
 <p>For the time ranges we cover, the following table shows how large the set of files per forecast ID are.</p>
@@ -999,12 +618,15 @@ Attributes: (12/33)
 <li>Some files have either <code>NCOLS = 1041</code> or <code>NCOLS = 1081</code>.</li>
 <li><code>{C,W,S}_DATE</code> and <code>{C,W,S}_TIME</code> values are unique to each file.</li>
 </ol>
+<p>Now that we know what data is available and how it can be obtained, we describe next how to extract data from these files to form one dataset.</p>
 </section>
 </section>
 <section id="references" class="level1" data-number="4">
 <h1 data-number="4"><span class="header-section-number">4</span> References</h1>
 <p>firesmoke.ca website https://docs.xarray.dev/en/stable/internals/how-to-add-new-backend.html</p>
 
+
+<!-- -->
 
 </section>
 
@@ -1098,6 +720,57 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       container: window.document.getElementById('quarto-embedded-source-code-modal')
     });
     clipboardModal.on('success', onCopySuccess);
+  }
+  const viewSource = window.document.getElementById('quarto-view-source') ||
+                     window.document.getElementById('quarto-code-tools-source');
+  if (viewSource) {
+    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+    viewSource.addEventListener("click", function(e) {
+      if (sourceUrl) {
+        // rstudio viewer pane
+        if (/\bcapabilities=\b/.test(window.location)) {
+          window.open(sourceUrl);
+        } else {
+          window.location.href = sourceUrl;
+        }
+      } else {
+        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+        modal.show();
+      }
+      return false;
+    });
+  }
+  function toggleCodeHandler(show) {
+    return function(e) {
+      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+      for (let i=0; i<detailsSrc.length; i++) {
+        const details = detailsSrc[i].parentElement;
+        if (show) {
+          details.open = true;
+        } else {
+          details.removeAttribute("open");
+        }
+      }
+      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+      const fromCls = show ? "hidden" : "unhidden";
+      const toCls = show ? "unhidden" : "hidden";
+      for (let i=0; i<cellCodeDivs.length; i++) {
+        const codeDiv = cellCodeDivs[i];
+        if (codeDiv.classList.contains(fromCls)) {
+          codeDiv.classList.remove(fromCls);
+          codeDiv.classList.add(toCls);
+        } 
+      }
+      return false;
+    }
+  }
+  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+  if (hideAllCode) {
+    hideAllCode.addEventListener("click", toggleCodeHandler(false));
+  }
+  const showAllCode = window.document.getElementById("quarto-show-all-code");
+  if (showAllCode) {
+    showAllCode.addEventListener("click", toggleCodeHandler(true));
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
@@ -1440,7 +1113,181 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Data Loading</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
-</nav>
+</nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="sourceCode" id="cb3" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co">    code-tools: true</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="fu"># The Data Source {#sec-data-source}</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>It is important to understand exactly what data is available and how to obtain that data. </span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>We encourage you to explore the dataset on <span class="co">[</span><span class="ot">UBC's website</span><span class="co">](https://firesmoke.ca/forecasts/)</span> to further understand the dataset's use as described by UBC.</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>Here we establish:</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>What systems are available to obtain the smoke forecast data from UBC?</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>What are in the files that UBC provides?</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>What metadata is associated with the files we obtain, both from within the file and about the files as a whole?</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>This information **was not** determined the first time we explored this dataset. </span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>As seen in the later chapters, we operated under misinformed assumptions and encountered issues only resolvable by operating on the data "blindly". The purpose of this chapter is to establish the final set of information we learned about our data source after extensive exploration and manipulation.</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a><span class="fu">## Downloading UBC Smoke Forecast Files</span></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a><span class="fu">### Available Time Range</span></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>**TODO CREDIT UBC**</span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>The time ranges of available data for each forecast ID is shown in @tbl-time. Please note, there are occassional **failed forecasts or otherwise unavailable files** within the date ranges specified @tbl-time.</span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>| Forecast ID   | Meteorology Forecast Initialization (UTC) | Smoke Forecast Initialization (UTC) | Start Date   | End Date     |</span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>|---------------|---------------------------------|----------------------------------|--------------|--------------|</span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>| BSC00CA12-01  | 00Z                             | 08Z                              | March 4, 2021 | Present Day  |</span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>| BSC06CA12-01  | 06Z                             | 14Z                              | March 4, 2021 | Present Day  |</span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>| BSC12CA12-01  | 12Z                             | 20Z                              | March 3, 2021 | Present Day  |</span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>| BSC18CA12-01  | 18Z                             | 02Z                              | March 4, 2021 | Present Day  |</span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>: Dates for which all Forecast ID Datasets are Publicly Available. All times are in UTC and the grid size is 12 km. {#tbl-time}</span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>**TODO what do grid sizes mean, i.e. Meteorology: 00 UTC, nested 12 km + 36 km grids Smoke: 08 UTC**</span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a>The smoke forecasts are updated daily, including the present day, so there is no fixed end date. Therefore, the latest data must be downloaded on a regular basis. We have not implemented this process yet, so the latest forecast files we use are up to June 27, 2024.</span>
+<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a>There is no official source stating the earliest available date for each forecast. So, knowing the project began in 2021, we inferenced that the earliest available date would be in 2021. Via trial and error we found the earliest available dates.</span>
+<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a><span class="fu">### Download Instructions</span></span>
+<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a>To download the 2-day forecast for the forecast initialization date of one's choice, one follows the instructions below. The downloaded file can be a NetCDF or KMZ file. We use NetCDF files. Later in @sec-data-loading we detail our automation of the download process described below.</span>
+<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a>**TODO CREDIT UBC**</span>
+<span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a>Go to the URL:</span>
+<span id="cb3-49"><a href="#cb3-49" aria-hidden="true" tabindex="-1"></a><span class="in">`https://firesmoke.ca/forecasts/{Forecast ID}/{YYYYMMDD}{InitTime}/{File Type}`</span></span>
+<span id="cb3-50"><a href="#cb3-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-51"><a href="#cb3-51" aria-hidden="true" tabindex="-1"></a>Where:</span>
+<span id="cb3-52"><a href="#cb3-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-53"><a href="#cb3-53" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`YYYYMMDD`</span> is the date of choice. </span>
+<span id="cb3-54"><a href="#cb3-54" aria-hidden="true" tabindex="-1"></a><span class="ss">-  </span><span class="in">`ForecastID`</span> and <span class="in">`InitTime`</span> are the chosen values as described in @tbl-access.</span>
+<span id="cb3-55"><a href="#cb3-55" aria-hidden="true" tabindex="-1"></a><span class="ss">-  </span><span class="in">`File Type`</span> is either <span class="in">`dispersion.nc`</span> or <span class="in">`dispersion.kmz`</span> for either the NetCDF file or KMZ file, respectively.</span>
+<span id="cb3-56"><a href="#cb3-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-57"><a href="#cb3-57" aria-hidden="true" tabindex="-1"></a>| Forecast ID   | Smoke Forecast Initialization (UTC) |</span>
+<span id="cb3-58"><a href="#cb3-58" aria-hidden="true" tabindex="-1"></a>|---------------|-------------------------------------|</span>
+<span id="cb3-59"><a href="#cb3-59" aria-hidden="true" tabindex="-1"></a>| BSC00CA12-01  | 08Z                                 |</span>
+<span id="cb3-60"><a href="#cb3-60" aria-hidden="true" tabindex="-1"></a>| BSC06CA12-01  | 14Z                                 |</span>
+<span id="cb3-61"><a href="#cb3-61" aria-hidden="true" tabindex="-1"></a>| BSC12CA12-01  | 20Z                                 |</span>
+<span id="cb3-62"><a href="#cb3-62" aria-hidden="true" tabindex="-1"></a>| BSC18CA12-01  | 02Z                                 |</span>
+<span id="cb3-63"><a href="#cb3-63" aria-hidden="true" tabindex="-1"></a>: UBC Smoke Forecast Data Download Parameters. All times are in UTC and the grid size is 12 km. {#tbl-access}</span>
+<span id="cb3-64"><a href="#cb3-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-65"><a href="#cb3-65" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Download Example</span></span>
+<span id="cb3-66"><a href="#cb3-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-67"><a href="#cb3-67" aria-hidden="true" tabindex="-1"></a>Let's try downloading the forecast for January 1, 2024 where the weather forecast is initiated at 00:00:00 UTC and the smoke forecast is initialized at 08:00:00 UTC by navigating to the corresponding URL.</span>
+<span id="cb3-68"><a href="#cb3-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-71"><a href="#cb3-71" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb3-72"><a href="#cb3-72" aria-hidden="true" tabindex="-1"></a>forecast_id <span class="op">=</span> <span class="st">"BSC00CA12-01"</span></span>
+<span id="cb3-73"><a href="#cb3-73" aria-hidden="true" tabindex="-1"></a>yyyymmdd <span class="op">=</span> <span class="st">"20210304"</span></span>
+<span id="cb3-74"><a href="#cb3-74" aria-hidden="true" tabindex="-1"></a>init_time <span class="op">=</span> <span class="st">"08"</span></span>
+<span id="cb3-75"><a href="#cb3-75" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-76"><a href="#cb3-76" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> (</span>
+<span id="cb3-77"><a href="#cb3-77" aria-hidden="true" tabindex="-1"></a>    <span class="ss">f"https://firesmoke.ca/forecasts/</span><span class="sc">{</span>forecast_id<span class="sc">}</span><span class="ss">/</span><span class="sc">{</span>yyyymmdd<span class="sc">}{</span>init_time<span class="sc">}</span><span class="ss">/dispersion.nc"</span></span>
+<span id="cb3-78"><a href="#cb3-78" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb3-79"><a href="#cb3-79" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-80"><a href="#cb3-80" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Navigate to this URL in your browser: </span><span class="sc">{</span>url<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb3-81"><a href="#cb3-81" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb3-82"><a href="#cb3-82" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-83"><a href="#cb3-83" aria-hidden="true" tabindex="-1"></a><span class="fu">## The NetCDF File</span></span>
+<span id="cb3-84"><a href="#cb3-84" aria-hidden="true" tabindex="-1"></a>Next, let's look at what is within the NetCDF file located at the URL in our previous example.</span>
+<span id="cb3-85"><a href="#cb3-85" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-86"><a href="#cb3-86" aria-hidden="true" tabindex="-1"></a><span class="fu">### File Preview</span></span>
+<span id="cb3-87"><a href="#cb3-87" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- **</span><span class="al">TODO</span><span class="co">, MOVE TO ANOTHER SPOT**: To view and manipulate NetCDF files, we have selected the `xarray` Python library and created a [custom built backend](https://github.com/sci-visus/openvisuspy/blob/a2570ab485802375c075b6dbc0e3c79ebca02d02/src/openvisuspy/xarray_backend.py#L2) that connects `xarray` to the `OpenVisus` framework.</span></span>
+<span id="cb3-88"><a href="#cb3-88" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-89"><a href="#cb3-89" aria-hidden="true" tabindex="-1"></a><span class="co">**</span><span class="al">TODO</span><span class="co">**</span></span>
+<span id="cb3-90"><a href="#cb3-90" aria-hidden="true" tabindex="-1"></a><span class="co">The file downloaded at the specified URL download the 2-day forecast for [DATE] and [TIME] one could download the following files.</span></span>
+<span id="cb3-91"><a href="#cb3-91" aria-hidden="true" tabindex="-1"></a><span class="co">[GET 2 DAY FORECAST DESCRIPTION FROM scribbles.ipynb]. --&gt;</span></span>
+<span id="cb3-92"><a href="#cb3-92" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-93"><a href="#cb3-93" aria-hidden="true" tabindex="-1"></a>We load <span class="in">`dispersion.nc`</span> using <span class="in">`xarray`</span>, which provides a handy preview of the file.</span>
+<span id="cb3-94"><a href="#cb3-94" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-97"><a href="#cb3-97" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb3-98"><a href="#cb3-98" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> xarray <span class="im">as</span> xr</span>
+<span id="cb3-99"><a href="#cb3-99" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-100"><a href="#cb3-100" aria-hidden="true" tabindex="-1"></a>ds <span class="op">=</span> xr.open_dataset(<span class="st">"data/data_source/dispersion.nc"</span>)</span>
+<span id="cb3-101"><a href="#cb3-101" aria-hidden="true" tabindex="-1"></a>ds</span>
+<span id="cb3-102"><a href="#cb3-102" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb3-103"><a href="#cb3-103" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-104"><a href="#cb3-104" aria-hidden="true" tabindex="-1"></a><span class="fu">### File Attributes {#attr}</span></span>
+<span id="cb3-105"><a href="#cb3-105" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-106"><a href="#cb3-106" aria-hidden="true" tabindex="-1"></a><span class="in">`dispersion.nc`</span> contains the following attributes. Note that for all files across forecast IDs, they have the same dimension and variable names:</span>
+<span id="cb3-107"><a href="#cb3-107" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-108"><a href="#cb3-108" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Dimensions:</span></span>
+<span id="cb3-109"><a href="#cb3-109" aria-hidden="true" tabindex="-1"></a>These dimensions determine on which indicies we may index our variables.</span>
+<span id="cb3-110"><a href="#cb3-110" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-111"><a href="#cb3-111" aria-hidden="true" tabindex="-1"></a>| Dimension  | Size | Description                                                                                       |</span>
+<span id="cb3-112"><a href="#cb3-112" aria-hidden="true" tabindex="-1"></a>|------------|------|---------------------------------------------------------------------------------------------------|</span>
+<span id="cb3-113"><a href="#cb3-113" aria-hidden="true" tabindex="-1"></a>| TSTEP      | 51   | This dimension represents the number of time steps in the file. Each file has 51 hours represented.                                   |</span>
+<span id="cb3-114"><a href="#cb3-114" aria-hidden="true" tabindex="-1"></a>| VAR        | 1    | This dimension is a placeholder for the variables in the file.     |</span>
+<span id="cb3-115"><a href="#cb3-115" aria-hidden="true" tabindex="-1"></a>| DATE-TIME  | 2    | This dimension stores the date and time information for each time step.                           |</span>
+<span id="cb3-116"><a href="#cb3-116" aria-hidden="true" tabindex="-1"></a>| LAY        | 1    | This dimension represents the number of layers in the file, which is 1 in this case.              |</span>
+<span id="cb3-117"><a href="#cb3-117" aria-hidden="true" tabindex="-1"></a>| ROW        | 381  | This dimension represents the number of rows in the spatial grid.                                 |</span>
+<span id="cb3-118"><a href="#cb3-118" aria-hidden="true" tabindex="-1"></a>| COL        | 1041 | This dimension represents the number of columns in the spatial grid.                              |</span>
+<span id="cb3-119"><a href="#cb3-119" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-120"><a href="#cb3-120" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Variables:</span></span>
+<span id="cb3-121"><a href="#cb3-121" aria-hidden="true" tabindex="-1"></a>These variables contain the data in question that we would like to extract.</span>
+<span id="cb3-122"><a href="#cb3-122" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-123"><a href="#cb3-123" aria-hidden="true" tabindex="-1"></a>| Variable | Dimensions            | Data Type | Description                                                                            |</span>
+<span id="cb3-124"><a href="#cb3-124" aria-hidden="true" tabindex="-1"></a>|----------|-----------------------|-----------|----------------------------------------------------------------------------------------|</span>
+<span id="cb3-125"><a href="#cb3-125" aria-hidden="true" tabindex="-1"></a>| TFLAG    | TSTEP, VAR, DATE-TIME | int32     | This variable stores the date and time of each time step.                               |</span>
+<span id="cb3-126"><a href="#cb3-126" aria-hidden="true" tabindex="-1"></a>| PM25     | TSTEP, LAY, ROW, COL | float32   | This variable contains the concentration of particulate matter (PM2.5) for each time step, layer, row, and column in the spatial grid. |</span>
+<span id="cb3-127"><a href="#cb3-127" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-128"><a href="#cb3-128" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Attributes</span></span>
+<span id="cb3-129"><a href="#cb3-129" aria-hidden="true" tabindex="-1"></a>Of the 33 available attributes we use the following:</span>
+<span id="cb3-130"><a href="#cb3-130" aria-hidden="true" tabindex="-1"></a>**TODO NEED TO CONFIRM WITH UBC IF THIS IS RIGHT**</span>
+<span id="cb3-131"><a href="#cb3-131" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-132"><a href="#cb3-132" aria-hidden="true" tabindex="-1"></a>| Attribute | Value               | Description                                                                                              |</span>
+<span id="cb3-133"><a href="#cb3-133" aria-hidden="true" tabindex="-1"></a>|-----------|---------------------|----------------------------------------------------------------------------------------------------------|</span>
+<span id="cb3-134"><a href="#cb3-134" aria-hidden="true" tabindex="-1"></a>| CDATE     | 2021063             | The creation date of the dataset, in YYYYDDD format.                                        |</span>
+<span id="cb3-135"><a href="#cb3-135" aria-hidden="true" tabindex="-1"></a>| CTIME     | 101914              | The creation time of the dataset, in HHMMSS format.                                        |</span>
+<span id="cb3-136"><a href="#cb3-136" aria-hidden="true" tabindex="-1"></a>| WDATE     | 2021063             | The date for which the weather forecast is initiated, in YYYYDDD format.                       |</span>
+<span id="cb3-137"><a href="#cb3-137" aria-hidden="true" tabindex="-1"></a>| WTIME     | 101914              | The time for which the weather forecast is initiated, in HHMMSS format.                       |</span>
+<span id="cb3-138"><a href="#cb3-138" aria-hidden="true" tabindex="-1"></a>| SDATE     | 2021063             | The date for which the smoke forecast is initiated,in YYYYDDD format.                            |</span>
+<span id="cb3-139"><a href="#cb3-139" aria-hidden="true" tabindex="-1"></a>| STIME     | 90000               | The time for which the weather forecast is initiated, in HHMMSS format.                            |</span>
+<span id="cb3-140"><a href="#cb3-140" aria-hidden="true" tabindex="-1"></a>| NCOLS     | 1041                | The number of columns in the spatial grid.                                                               |</span>
+<span id="cb3-141"><a href="#cb3-141" aria-hidden="true" tabindex="-1"></a>| NROWS     | 381                 | The number of rows in the spatial grid.                                                                  |</span>
+<span id="cb3-142"><a href="#cb3-142" aria-hidden="true" tabindex="-1"></a>| XORIG     | -156.0              | The origin (starting point) of the grid in the x-direction.                                              |</span>
+<span id="cb3-143"><a href="#cb3-143" aria-hidden="true" tabindex="-1"></a>| YORIG     | 32.0                | The origin (starting point) of the grid in the y-direction.                                              |</span>
+<span id="cb3-144"><a href="#cb3-144" aria-hidden="true" tabindex="-1"></a>| XCELL     | 0.10000000149011612 | The cell size in the x-direction.|</span>
+<span id="cb3-145"><a href="#cb3-145" aria-hidden="true" tabindex="-1"></a>| YCELL     | 0.10000000149011612 | The cell size in the y-direction.|</span>
+<span id="cb3-146"><a href="#cb3-146" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-147"><a href="#cb3-147" aria-hidden="true" tabindex="-1"></a>Now that we understand what exactly is within one NetCDF file, let's establish the information we have when we download all available NetCDF files.</span>
+<span id="cb3-148"><a href="#cb3-148" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-149"><a href="#cb3-149" aria-hidden="true" tabindex="-1"></a><span class="fu">## Metadata of Collected NetCDF Files</span></span>
+<span id="cb3-150"><a href="#cb3-150" aria-hidden="true" tabindex="-1"></a>Here we describe metadata about the collection of NetCDF files we downloaded.</span>
+<span id="cb3-151"><a href="#cb3-151" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-152"><a href="#cb3-152" aria-hidden="true" tabindex="-1"></a><span class="fu">### Disk Size</span></span>
+<span id="cb3-153"><a href="#cb3-153" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-154"><a href="#cb3-154" aria-hidden="true" tabindex="-1"></a>For the time ranges we cover, the following table shows how large the set of files per forecast ID are.</span>
+<span id="cb3-155"><a href="#cb3-155" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-156"><a href="#cb3-156" aria-hidden="true" tabindex="-1"></a>| Forecast ID    | Date Range                          | Size  | File Count |</span>
+<span id="cb3-157"><a href="#cb3-157" aria-hidden="true" tabindex="-1"></a>|----------------|-------------------------------------|-------|------------|</span>
+<span id="cb3-158"><a href="#cb3-158" aria-hidden="true" tabindex="-1"></a>| BSC00CA12-01   | March 4, 2021 - June 27, 2024          | 84G   | 1077       |</span>
+<span id="cb3-159"><a href="#cb3-159" aria-hidden="true" tabindex="-1"></a>| BSC06CA12-01   | March 4, 2021 - June 27, 2024          | 78G   | 1022       |</span>
+<span id="cb3-160"><a href="#cb3-160" aria-hidden="true" tabindex="-1"></a>| BSC12CA12-01   | March 3, 2021 - June 27, 2024          | 79G   | 1022       |</span>
+<span id="cb3-161"><a href="#cb3-161" aria-hidden="true" tabindex="-1"></a>| BSC18CA12-01   | March 4, 2021 - June 27, 2024          | 79G   | 1023       |</span>
+<span id="cb3-162"><a href="#cb3-162" aria-hidden="true" tabindex="-1"></a>| **Total**      |                                     | **320G** | **4144**   |</span>
+<span id="cb3-163"><a href="#cb3-163" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-164"><a href="#cb3-164" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-165"><a href="#cb3-165" aria-hidden="true" tabindex="-1"></a><span class="fu">### Data Uniformity</span></span>
+<span id="cb3-166"><a href="#cb3-166" aria-hidden="true" tabindex="-1"></a>To create our dataset, we used the following understanding about the attributes across all files:</span>
+<span id="cb3-167"><a href="#cb3-167" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-168"><a href="#cb3-168" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>All files across all four forecast IDs have the same <span class="in">`NROWS`</span>, <span class="in">`XORIG`</span>, <span class="in">`YORIG`</span>, <span class="in">`XCELL`</span>, <span class="in">`YCELL`</span> values.</span>
+<span id="cb3-169"><a href="#cb3-169" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Some files have either <span class="in">`NCOLS = 1041`</span> or <span class="in">`NCOLS = 1081`</span>.</span>
+<span id="cb3-170"><a href="#cb3-170" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span><span class="in">`{C,W,S}_DATE`</span> and <span class="in">`{C,W,S}_TIME`</span> values are unique to each file.</span>
+<span id="cb3-171"><a href="#cb3-171" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-172"><a href="#cb3-172" aria-hidden="true" tabindex="-1"></a>Now that we know what data is available and how it can be obtained, we describe next how to extract data from these files to form one dataset.</span>
+<span id="cb3-173"><a href="#cb3-173" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-174"><a href="#cb3-174" aria-hidden="true" tabindex="-1"></a><span class="fu"># References</span></span>
+<span id="cb3-175"><a href="#cb3-175" aria-hidden="true" tabindex="-1"></a>firesmoke.ca website</span>
+<span id="cb3-176"><a href="#cb3-176" aria-hidden="true" tabindex="-1"></a>https://docs.xarray.dev/en/stable/internals/how-to-add-new-backend.html</span>
+</code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+</div></div></div></div></div>
 </div> <!-- /content -->
 
 

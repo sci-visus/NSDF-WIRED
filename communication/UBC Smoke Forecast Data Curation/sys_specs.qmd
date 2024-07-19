@@ -4,7 +4,7 @@ format:
     code-links:
       - text: Conda YML File
         icon: file-code
-        href: TODO
+        href: https://github.com/sci-visus/NSDF-WIRED/blob/main/conda_environment.yml
 ---
 # System and Environment {#sec-sys-specs}
 
@@ -29,6 +29,6 @@ The data we curate is over 300 gigabytes large. Therefore we used the SCI instit
 
 We aim to work in an environment that can be most easily reproduced and documented. Therefore we used Python 3.9.19 via conda. We did all our work within the Project Jupyter environment.
 
-To find our the `yml` file containing our exported conda environment please see [here]**TODO**.
+To find our the `yml` file containing our exported conda environment please see the sidebar.
 
 In the proceeding chapters we will specify which tools and libraries were used and why.

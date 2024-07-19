@@ -1,11 +1,19 @@
+---
+format:
+  html:
+    code-tools: true
+---
+
 # The Data Source {#sec-data-source}
 It is important to understand exactly what data is available and how to obtain that data. 
+
+We encourage you to explore the dataset on [UBC's website](https://firesmoke.ca/forecasts/) to further understand the dataset's use as described by UBC.
 
 Here we establish:
 
 - What systems are available to obtain the smoke forecast data from UBC?
 - What are in the files that UBC provides?
-- What metadata is associated with the files we obtain, both from within the file and the files as a whole?
+- What metadata is associated with the files we obtain, both from within the file and about the files as a whole?
 
 This information **was not** determined the first time we explored this dataset. 
 
@@ -14,16 +22,18 @@ As seen in the later chapters, we operated under misinformed assumptions and enc
 ## Downloading UBC Smoke Forecast Files
 
 ### Available Time Range
-
+**TODO CREDIT UBC**
 The time ranges of available data for each forecast ID is shown in @tbl-time. Please note, there are occassional **failed forecasts or otherwise unavailable files** within the date ranges specified @tbl-time.
 
-| Forecast ID             | Description                                                                                     | Start Date | End Date   |
-|----------------|-------------------------------------------------------------------------------------------------|------------|------------|
-| BSC00CA12-01   | BlueSky Canada smoke forecast, 00Z met (12km grid), 08Z fires, North America domain              | March 4, 2021   | Present Day   |
-| BSC06CA12-01   | BlueSky Canada smoke forecast, 06Z met (12km grid), 14Z fires, North America domain              | March 4, 2021   | Present Day   |
-| BSC12CA12-01   | BlueSky Canada smoke forecast, 12Z met (12km grid), 20Z fires, North America domain              | March 3, 2021   | Present Day   |
-| BSC18CA12-01   | BlueSky Canada smoke forecast, 18Z met (12km grid), 02Z fires, North America domain              | March 4, 2021   | Present Day   |
-: Dates for which all Forecast ID Datasets are Publicly Available {#tbl-time}
+| Forecast ID   | Meteorology Forecast Initialization (UTC) | Smoke Forecast Initialization (UTC) | Start Date   | End Date     |
+|---------------|---------------------------------|----------------------------------|--------------|--------------|
+| BSC00CA12-01  | 00Z                             | 08Z                              | March 4, 2021 | Present Day  |
+| BSC06CA12-01  | 06Z                             | 14Z                              | March 4, 2021 | Present Day  |
+| BSC12CA12-01  | 12Z                             | 20Z                              | March 3, 2021 | Present Day  |
+| BSC18CA12-01  | 18Z                             | 02Z                              | March 4, 2021 | Present Day  |
+: Dates for which all Forecast ID Datasets are Publicly Available. All times are in UTC and the grid size is 12 km. {#tbl-time}
+
+**TODO what do grid sizes mean, i.e. Meteorology: 00 UTC, nested 12 km + 36 km grids Smoke: 08 UTC**
 
 The smoke forecasts are updated daily, including the present day, so there is no fixed end date. Therefore, the latest data must be downloaded on a regular basis. We have not implemented this process yet, so the latest forecast files we use are up to June 27, 2024.
 
@@ -35,21 +45,26 @@ To download the 2-day forecast for the forecast initialization date of one's cho
 ---
 **TODO CREDIT UBC**
 
-Go to this URL: `https://firesmoke.ca/forecasts/{ForecastID}/{YYYYMMDD}{InitTime}/{File Type}`
+Go to the URL:
+`https://firesmoke.ca/forecasts/{Forecast ID}/{YYYYMMDD}{InitTime}/{File Type}`
 
-Replace `YYYYMMDD` with the date of choice. Replace `ForecastID` and `InitTime` with the appropriate values as described in @tbl-access:
+Where:
 
-| Forecast ID  | Description                                       | Initialization Time |
-|--------------|---------------------------------------------------|---------------------|
-| BSC00CA12-01 | BlueSky Canada smoke forecast, 00Z met (12km grid), 08Z fires, North America domain | 08                  |
-| BSC06CA12-01 | BlueSky Canada smoke forecast, 06Z met (12km grid), 14Z fires, North America domain | 14                  |
-| BSC12CA12-01 | BlueSky Canada smoke forecast, 12Z met (12km grid), 20Z fires, North America domain | 20                  |
-| BSC18CA12-01 | BlueSky Canada smoke forecast, 18Z met (12km grid), 02Z fires, North America domain | 02                  |
-: UBC Smoke Forecast Data Download Parameters {#tbl-access}
+- `YYYYMMDD` is the date of choice. 
+-  `ForecastID` and `InitTime` are the chosen values as described in @tbl-access.
+-  `File Type` is either `dispersion.nc` or `dispersion.kmz` for either the NetCDF file or KMZ file, respectively.
+
+| Forecast ID   | Smoke Forecast Initialization (UTC) |
+|---------------|-------------------------------------|
+| BSC00CA12-01  | 08Z                                 |
+| BSC06CA12-01  | 14Z                                 |
+| BSC12CA12-01  | 20Z                                 |
+| BSC18CA12-01  | 02Z                                 |
+: UBC Smoke Forecast Data Download Parameters. All times are in UTC and the grid size is 12 km. {#tbl-access}
 
 #### Download Example
 
-Let's try downloading the forecast for January 1, 2024 where the forecast is initiated at 00:00:00 UTC by navigating to the corresponding URL.
+Let's try downloading the forecast for January 1, 2024 where the weather forecast is initiated at 00:00:00 UTC and the smoke forecast is initialized at 08:00:00 UTC by navigating to the corresponding URL.
 
 ```{python}
 forecast_id = "BSC00CA12-01"
@@ -73,7 +88,7 @@ Next, let's look at what is within the NetCDF file located at the URL in our pre
 The file downloaded at the specified URL download the 2-day forecast for [DATE] and [TIME] one could download the following files.
 [GET 2 DAY FORECAST DESCRIPTION FROM scribbles.ipynb]. -->
 
-We load `dispersion.nc` using `xarray`.
+We load `dispersion.nc` using `xarray`, which provides a handy preview of the file.
 
 ```{python}
 import xarray as xr
@@ -103,8 +118,8 @@ These variables contain the data in question that we would like to extract.
 
 | Variable | Dimensions            | Data Type | Description                                                                            |
 |----------|-----------------------|-----------|----------------------------------------------------------------------------------------|
-| TFLAG    | (TSTEP, VAR, DATE-TIME) | int32     | This variable stores the date and time of each time step.                               |
-| PM25     | (TSTEP, LAY, ROW, COL) | float32   | This variable contains the concentration of particulate matter (PM2.5) for each time step, layer, row, and column in the spatial grid. |
+| TFLAG    | TSTEP, VAR, DATE-TIME | int32     | This variable stores the date and time of each time step.                               |
+| PM25     | TSTEP, LAY, ROW, COL | float32   | This variable contains the concentration of particulate matter (PM2.5) for each time step, layer, row, and column in the spatial grid. |
 
 #### Attributes
 Of the 33 available attributes we use the following:
@@ -125,8 +140,10 @@ Of the 33 available attributes we use the following:
 | XCELL     | 0.10000000149011612 | The cell size in the x-direction.|
 | YCELL     | 0.10000000149011612 | The cell size in the y-direction.|
 
+Now that we understand what exactly is within one NetCDF file, let's establish the information we have when we download all available NetCDF files.
+
 ## Metadata of Collected NetCDF Files
-Our goal is to use all the available NetCDF files to create single dataset. Here we describe metadata about the collection of NetCDF files we downloaded.
+Here we describe metadata about the collection of NetCDF files we downloaded.
 
 ### Disk Size
 
@@ -147,6 +164,8 @@ To create our dataset, we used the following understanding about the attributes 
 1. All files across all four forecast IDs have the same `NROWS`, `XORIG`, `YORIG`, `XCELL`, `YCELL` values.
 2. Some files have either `NCOLS = 1041` or `NCOLS = 1081`.
 3. `{C,W,S}_DATE` and `{C,W,S}_TIME` values are unique to each file.
+
+Now that we know what data is available and how it can be obtained, we describe next how to extract data from these files to form one dataset.
 
 # References
 firesmoke.ca website

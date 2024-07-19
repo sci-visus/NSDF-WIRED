@@ -1,24 +1,28 @@
+---
+format:
+  html:
+    code-links:
+      - text: First Approach
+        icon: file-code
+        href: https://github.com/sci-visus/NSDF-WIRED/blob/main/data_download/get_data_v0.py
+    code-tools: true
+---
+
 # Data Loading {#sec-data-loading}
 
 Knowing what data is available and how to obtain the data, we can proceed with loading the data onto our staging system.
 
 ## Download Scripts
 
-We decided to download all the available files from the data source onto our data staging machine to process from there. The following shows our approaches to doing this and discusses how our approach evolved.
-
-To create our dataset, we operated under the following assumptions about the NetCDF files:
-1. All files across all four forecast IDs have the same `NROWS`, `XORIG`, `YORIG`, `XCELL`, `YCELL` values.
-2. Some files have either `NCOLS = 1041` or `NCOLS = 1081`.
-3. `{C,W,S}_DATE` and `{C,W,S}_TIME` values are unique to each file.
+We decided to download all the available files from the [data source](data_source.qmd) onto our [data staging machine](sys_specs.qmd) to process from there. The following shows our approaches to doing this and discusses how our approach evolved.
 
 ### First Approach
 
 #### Overview
-We delineate our first approach by detailing our download script. The full script is available [here](https://github.com/sci-visus/NSDF-WIRED/blob/main/data_download/get_data_v0.py).
+We delineate our first approach by detailing our download script, which is available in it's entirety in the side bar.
 ---
 We define the arguments necessary for building the URL to download a 2-day forecast for a specified forecast ID and date into the following arrays.
-```{python}
-# | eval: false
+```{.python filename="matplotlib.py"}
 ids = ["BSC18CA12-01", "BSC00CA12-01", "BSC06CA12-01", "BSC12CA12-01"]
 start_dates = ["20210304", "20210304", "20210304", "20210303"]
 end_dates = ["20231016", "20240210", "20231016", "20231015"]
@@ -27,7 +31,6 @@ init_times = ["02", "08", "14", "20"]
 
 We use a for loop to step through these parameter arrays. Within the for loop, we use `pandas` to create a list of every date from the start date and end date of the current iteration.
 ```{python}
-# | eval: false
 for i in zip(start_dates, end_dates, ids, init_times):
     start_date = i[0]
     end_date = i[1]
@@ -41,7 +44,6 @@ for i in zip(start_dates, end_dates, ids, init_times):
 
 We begin another for loop over `dates`. For each `date` in the list, we build the `url` to download the file for the ID specified in the outer for loop at the date of the current iteration.
 ```{python}
-# | eval: false
 for date in dates:
     url = (
         "https://firesmoke.ca/forecasts/"
@@ -55,7 +57,59 @@ for date in dates:
 
 Finally, we use `wget` to download the contents at `url`to `directory`. We append `date` to the file name so they are identifiable by date.
 ```{python}
-# | eval: false
+directory = "/Users/arleth/Mount/firesmoke/" + forecast_id + "/dispersion_" + date + ".nc"
+wget.download(url, out=directory)
+```
+
+#### Results
+
+We downloaded a file for each URL created above. We assumed that for all URLs, there was an available NetCDF file for download 
+
+However, we soon realized that although a file was downloaded for every URL queried, we downloaded either a NetCDF file *or an HTML webpage*.
+
+We realized that, not every URL provided a NetCDF file. Rather, some URLs downloaded an HTML webpage.
+
+### Second Approach
+
+#### Overview
+We delineate our first approach by detailing our download script, which is available in it's entirety in the side bar.
+---
+We define the arguments necessary for building the URL to download a 2-day forecast for a specified forecast ID and date into the following arrays.
+```{.python filename="matplotlib.py"}
+ids = ["BSC18CA12-01", "BSC00CA12-01", "BSC06CA12-01", "BSC12CA12-01"]
+start_dates = ["20210304", "20210304", "20210304", "20210303"]
+end_dates = ["20231016", "20240210", "20231016", "20231015"]
+init_times = ["02", "08", "14", "20"]
+```
+
+We use a for loop to step through these parameter arrays. Within the for loop, we use `pandas` to create a list of every date from the start date and end date of the current iteration.
+```{python}
+for i in zip(start_dates, end_dates, ids, init_times):
+    start_date = i[0]
+    end_date = i[1]
+    forecast_id = i[2]
+    init_time = i[3]
+
+    dates = pd.date_range(start=start_date, end=end_date)
+    dates = dates.strftime("%Y%m%d").tolist()
+    ...
+```
+
+We begin another for loop over `dates`. For each `date` in the list, we build the `url` to download the file for the ID specified in the outer for loop at the date of the current iteration.
+```{python}
+for date in dates:
+    url = (
+        "https://firesmoke.ca/forecasts/"
+        + forecast_id
+        + "/"
+        + date
+        + init_time
+        + "/dispersion.nc"
+    )
+```
+
+Finally, we use `wget` to download the contents at `url`to `directory`. We append `date` to the file name so they are identifiable by date.
+```{python}
 directory = "/Users/arleth/Mount/firesmoke/" + forecast_id + "/dispersion_" + date + ".nc"
 wget.download(url, out=directory)
 ```

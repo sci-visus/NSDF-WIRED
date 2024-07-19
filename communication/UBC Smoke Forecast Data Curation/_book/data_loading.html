@@ -184,14 +184,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#first-approach" id="toc-first-approach" class="nav-link" data-scroll-target="#first-approach"><span class="header-section-number">4.1.1</span> First Approach</a></li>
   </ul></li>
   </ul>
-</nav>
+<div class="quarto-code-links"><h2>Code Links</h2><ul><li><a href="https://github.com/sci-visus/NSDF-WIRED/blob/main/data_download/get_data_v0.py"><i class="bi bi-file-code"></i>First Approach</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="sec-data-loading" class="quarto-section-identifier"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Data Loading</span></span></h1>
+<div class="quarto-title-block"><div><h1 class="title"><span id="sec-data-loading" class="quarto-section-identifier"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Data Loading</span></span></h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li><li><hr class="dropdown-divider"></li><li><a id="quarto-view-source" class="dropdown-item" href="javascript:void(0)" role="button">View Source</a></li></ul></div></div>
 </div>
 
 
@@ -211,23 +211,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Knowing what data is available and how to obtain the data, we can proceed with loading the data onto our staging system.</p>
 <section id="download-scripts" class="level2" data-number="4.1">
 <h2 data-number="4.1" class="anchored" data-anchor-id="download-scripts"><span class="header-section-number">4.1</span> Download Scripts</h2>
-<p>We decided to download all the available files from the data source onto our data staging machine to process from there. The following shows our approaches to doing this and discusses how our approach evolved.</p>
-<p>To create our dataset, we operated under the following assumptions about the NetCDF files: 1. All files across all four forecast IDs have the same <code>NROWS</code>, <code>XORIG</code>, <code>YORIG</code>, <code>XCELL</code>, <code>YCELL</code> values. 2. Some files have either <code>NCOLS = 1041</code> or <code>NCOLS = 1081</code>. 3. <code>{C,W,S}_DATE</code> and <code>{C,W,S}_TIME</code> values are unique to each file.</p>
+<p>We decided to download all the available files from the <a href="./data_source.html">data source</a> onto our <a href="./sys_specs.html">data staging machine</a> to process from there. The following shows our approaches to doing this and discusses how our approach evolved.</p>
 <section id="first-approach" class="level3" data-number="4.1.1">
 <h3 data-number="4.1.1" class="anchored" data-anchor-id="first-approach"><span class="header-section-number">4.1.1</span> First Approach</h3>
 <section id="overview" class="level4" data-number="4.1.1.1">
 <h4 data-number="4.1.1.1" class="anchored" data-anchor-id="overview"><span class="header-section-number">4.1.1.1</span> Overview</h4>
-<p>We delineate our first approach by detailing our download script. The full script is available <a href="https://github.com/sci-visus/NSDF-WIRED/blob/main/data_download/get_data_v0.py">here</a>.</p>
+<p>We delineate our first approach by detailing our download script, which is available in it’s entirety in the side bar.</p>
 <hr>
 <p>We define the arguments necessary for building the URL to download a 2-day forecast for a specified forecast ID and date into the following arrays.</p>
-<div id="8324727d" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>ids <span class="op">=</span> [<span class="st">"BSC18CA12-01"</span>, <span class="st">"BSC00CA12-01"</span>, <span class="st">"BSC06CA12-01"</span>, <span class="st">"BSC12CA12-01"</span>]</span>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>matplotlib.py</strong></pre>
+</div>
+<div class="sourceCode" id="cb1" data-filename="matplotlib.py"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>ids <span class="op">=</span> [<span class="st">"BSC18CA12-01"</span>, <span class="st">"BSC00CA12-01"</span>, <span class="st">"BSC06CA12-01"</span>, <span class="st">"BSC12CA12-01"</span>]</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>start_dates <span class="op">=</span> [<span class="st">"20210304"</span>, <span class="st">"20210304"</span>, <span class="st">"20210304"</span>, <span class="st">"20210303"</span>]</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>end_dates <span class="op">=</span> [<span class="st">"20231016"</span>, <span class="st">"20240210"</span>, <span class="st">"20231016"</span>, <span class="st">"20231015"</span>]</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>init_times <span class="op">=</span> [<span class="st">"02"</span>, <span class="st">"08"</span>, <span class="st">"14"</span>, <span class="st">"20"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>We use a for loop to step through these parameter arrays. Within the for loop, we use <code>pandas</code> to create a list of every date from the start date and end date of the current iteration.</p>
-<div id="b0a935f8" class="cell" data-execution_count="2">
+<div id="22f58832" class="cell" data-execution_count="1">
+<details open="" class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">zip</span>(start_dates, end_dates, ids, init_times):</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    start_date <span class="op">=</span> i[<span class="dv">0</span>]</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    end_date <span class="op">=</span> i[<span class="dv">1</span>]</span>
@@ -237,9 +241,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    dates <span class="op">=</span> pd.date_range(start<span class="op">=</span>start_date, end<span class="op">=</span>end_date)</span>
 <span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    dates <span class="op">=</span> dates.strftime(<span class="st">"%Y%m</span><span class="sc">%d</span><span class="st">"</span>).tolist()</span>
 <span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    ...</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <p>We begin another for loop over <code>dates</code>. For each <code>date</code> in the list, we build the <code>url</code> to download the file for the ID specified in the outer for loop at the date of the current iteration.</p>
-<div id="52cc471e" class="cell" data-execution_count="3">
+<div id="ec54c63e" class="cell" data-execution_count="2">
+<details open="" class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> date <span class="kw">in</span> dates:</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    url <span class="op">=</span> (</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>        <span class="st">"https://firesmoke.ca/forecasts/"</span></span>
@@ -249,16 +256,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>        <span class="op">+</span> init_time</span>
 <span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>        <span class="op">+</span> <span class="st">"/dispersion.nc"</span></span>
 <span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <p>Finally, we use <code>wget</code> to download the contents at <code>url</code>to <code>directory</code>. We append <code>date</code> to the file name so they are identifiable by date.</p>
-<div id="5b4e1b91" class="cell" data-execution_count="4">
+<div id="586bf4bc" class="cell" data-execution_count="3">
+<details open="" class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>directory <span class="op">=</span> <span class="st">"/Users/arleth/Mount/firesmoke/"</span> <span class="op">+</span> forecast_id <span class="op">+</span> <span class="st">"/dispersion_"</span> <span class="op">+</span> date <span class="op">+</span> <span class="st">".nc"</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>wget.download(url, out<span class="op">=</span>directory)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 </section>
 <section id="results" class="level4" data-number="4.1.1.2">
 <h4 data-number="4.1.1.2" class="anchored" data-anchor-id="results"><span class="header-section-number">4.1.1.2</span> Results</h4>
 
+
+<!-- -->
 
 </section>
 </section>
@@ -354,6 +367,57 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       container: window.document.getElementById('quarto-embedded-source-code-modal')
     });
     clipboardModal.on('success', onCopySuccess);
+  }
+  const viewSource = window.document.getElementById('quarto-view-source') ||
+                     window.document.getElementById('quarto-code-tools-source');
+  if (viewSource) {
+    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+    viewSource.addEventListener("click", function(e) {
+      if (sourceUrl) {
+        // rstudio viewer pane
+        if (/\bcapabilities=\b/.test(window.location)) {
+          window.open(sourceUrl);
+        } else {
+          window.location.href = sourceUrl;
+        }
+      } else {
+        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+        modal.show();
+      }
+      return false;
+    });
+  }
+  function toggleCodeHandler(show) {
+    return function(e) {
+      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+      for (let i=0; i<detailsSrc.length; i++) {
+        const details = detailsSrc[i].parentElement;
+        if (show) {
+          details.open = true;
+        } else {
+          details.removeAttribute("open");
+        }
+      }
+      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+      const fromCls = show ? "hidden" : "unhidden";
+      const toCls = show ? "unhidden" : "hidden";
+      for (let i=0; i<cellCodeDivs.length; i++) {
+        const codeDiv = cellCodeDivs[i];
+        if (codeDiv.classList.contains(fromCls)) {
+          codeDiv.classList.remove(fromCls);
+          codeDiv.classList.add(toCls);
+        } 
+      }
+      return false;
+    }
+  }
+  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+  if (hideAllCode) {
+    hideAllCode.addEventListener("click", toggleCodeHandler(false));
+  }
+  const showAllCode = window.document.getElementById("quarto-show-all-code");
+  if (showAllCode) {
+    showAllCode.addEventListener("click", toggleCodeHandler(true));
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
@@ -693,7 +757,73 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
   <div class="nav-page nav-page-next">
   </div>
-</nav>
+</nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="sourceCode" id="cb5" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co">    code-links:</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co">      - text: First Approach</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="co">        icon: file-code</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co">        href: https://github.com/sci-visus/NSDF-WIRED/blob/main/data_download/get_data_v0.py</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="co">    code-tools: true</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="fu"># Data Loading {#sec-data-loading}</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>Knowing what data is available and how to obtain the data, we can proceed with loading the data onto our staging system.</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="fu">## Download Scripts</span></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>We decided to download all the available files from the <span class="co">[</span><span class="ot">data source</span><span class="co">](data_source.qmd)</span> onto our <span class="co">[</span><span class="ot">data staging machine</span><span class="co">](sys_specs.qmd)</span> to process from there. The following shows our approaches to doing this and discusses how our approach evolved.</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a><span class="fu">### First Approach</span></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Overview</span></span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>We delineate our first approach by detailing our download script, which is available in it's entirety in the side bar.</span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>We define the arguments necessary for building the URL to download a 2-day forecast for a specified forecast ID and date into the following arrays.</span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a><span class="in">```{.python filename="matplotlib.py"}</span></span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a><span class="in">ids = ["BSC18CA12-01", "BSC00CA12-01", "BSC06CA12-01", "BSC12CA12-01"]</span></span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a><span class="in">start_dates = ["20210304", "20210304", "20210304", "20210303"]</span></span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a><span class="in">end_dates = ["20231016", "20240210", "20231016", "20231015"]</span></span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a><span class="in">init_times = ["02", "08", "14", "20"]</span></span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a>We use a for loop to step through these parameter arrays. Within the for loop, we use <span class="in">`pandas`</span> to create a list of every date from the start date and end date of the current iteration.</span>
+<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">zip</span>(start_dates, end_dates, ids, init_times):</span>
+<span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a>    start_date <span class="op">=</span> i[<span class="dv">0</span>]</span>
+<span id="cb5-38"><a href="#cb5-38" aria-hidden="true" tabindex="-1"></a>    end_date <span class="op">=</span> i[<span class="dv">1</span>]</span>
+<span id="cb5-39"><a href="#cb5-39" aria-hidden="true" tabindex="-1"></a>    forecast_id <span class="op">=</span> i[<span class="dv">2</span>]</span>
+<span id="cb5-40"><a href="#cb5-40" aria-hidden="true" tabindex="-1"></a>    init_time <span class="op">=</span> i[<span class="dv">3</span>]</span>
+<span id="cb5-41"><a href="#cb5-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-42"><a href="#cb5-42" aria-hidden="true" tabindex="-1"></a>    dates <span class="op">=</span> pd.date_range(start<span class="op">=</span>start_date, end<span class="op">=</span>end_date)</span>
+<span id="cb5-43"><a href="#cb5-43" aria-hidden="true" tabindex="-1"></a>    dates <span class="op">=</span> dates.strftime(<span class="st">"%Y%m</span><span class="sc">%d</span><span class="st">"</span>).tolist()</span>
+<span id="cb5-44"><a href="#cb5-44" aria-hidden="true" tabindex="-1"></a>    ...</span>
+<span id="cb5-45"><a href="#cb5-45" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb5-46"><a href="#cb5-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-47"><a href="#cb5-47" aria-hidden="true" tabindex="-1"></a>We begin another for loop over <span class="in">`dates`</span>. For each <span class="in">`date`</span> in the list, we build the <span class="in">`url`</span> to download the file for the ID specified in the outer for loop at the date of the current iteration.</span>
+<span id="cb5-50"><a href="#cb5-50" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb5-51"><a href="#cb5-51" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> date <span class="kw">in</span> dates:</span>
+<span id="cb5-52"><a href="#cb5-52" aria-hidden="true" tabindex="-1"></a>    url <span class="op">=</span> (</span>
+<span id="cb5-53"><a href="#cb5-53" aria-hidden="true" tabindex="-1"></a>        <span class="st">"https://firesmoke.ca/forecasts/"</span></span>
+<span id="cb5-54"><a href="#cb5-54" aria-hidden="true" tabindex="-1"></a>        <span class="op">+</span> forecast_id</span>
+<span id="cb5-55"><a href="#cb5-55" aria-hidden="true" tabindex="-1"></a>        <span class="op">+</span> <span class="st">"/"</span></span>
+<span id="cb5-56"><a href="#cb5-56" aria-hidden="true" tabindex="-1"></a>        <span class="op">+</span> date</span>
+<span id="cb5-57"><a href="#cb5-57" aria-hidden="true" tabindex="-1"></a>        <span class="op">+</span> init_time</span>
+<span id="cb5-58"><a href="#cb5-58" aria-hidden="true" tabindex="-1"></a>        <span class="op">+</span> <span class="st">"/dispersion.nc"</span></span>
+<span id="cb5-59"><a href="#cb5-59" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb5-60"><a href="#cb5-60" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb5-61"><a href="#cb5-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-62"><a href="#cb5-62" aria-hidden="true" tabindex="-1"></a>Finally, we use <span class="in">`wget`</span> to download the contents at <span class="in">`url`</span>to <span class="in">`directory`</span>. We append <span class="in">`date`</span> to the file name so they are identifiable by date.</span>
+<span id="cb5-65"><a href="#cb5-65" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb5-66"><a href="#cb5-66" aria-hidden="true" tabindex="-1"></a>directory <span class="op">=</span> <span class="st">"/Users/arleth/Mount/firesmoke/"</span> <span class="op">+</span> forecast_id <span class="op">+</span> <span class="st">"/dispersion_"</span> <span class="op">+</span> date <span class="op">+</span> <span class="st">".nc"</span></span>
+<span id="cb5-67"><a href="#cb5-67" aria-hidden="true" tabindex="-1"></a>wget.download(url, out<span class="op">=</span>directory)</span>
+<span id="cb5-68"><a href="#cb5-68" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb5-69"><a href="#cb5-69" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-70"><a href="#cb5-70" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Results</span></span>
+</code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+</div></div></div></div></div>
 </div> <!-- /content -->
 
 

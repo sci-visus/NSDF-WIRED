@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "UBC Smoke Forecast Data Curation",
     "section": "",
-    "text": "Preface\nWelcome to NSDF’s UBC Firesmoke Data Curation website. Here we describe the data curation process of UBC’s Smoke Forecast datasets. We inform readers of the challenges and solutions we found when repurposing these short term datasets into a long term dataset.\nIt is important to note that although we will present the data curation process in a linear fashion here, it was not a linear process, nor could it be. Rather, the process was cyclical, and at each iteration we introduced new improvements.",
+    "text": "Preface\nWelcome to NSDF’s UBC Firesmoke Data Curation website. Here we describe the data curation process of UBC’s Smoke Forecast datasets. We inform readers of the challenges and solutions we found when repurposing these short term datasets into a long term dataset.\nIt is important to note that although we will present the data curation process in a linear fashion here, it was not a linear process. Rather, the process was cyclical, and at each iteration we introduced new improvements.",
     "crumbs": [
       "Preface"
     ]

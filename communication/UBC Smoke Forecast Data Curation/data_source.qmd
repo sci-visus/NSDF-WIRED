@@ -91,6 +91,7 @@ The file downloaded at the specified URL download the 2-day forecast for [DATE] 
 We load `dispersion.nc` using `xarray`, which provides a handy preview of the file.
 
 ```{python}
+#| eval: true
 import xarray as xr
 
 ds = xr.open_dataset("data/data_source/dispersion.nc")

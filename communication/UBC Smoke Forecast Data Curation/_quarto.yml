@@ -11,6 +11,8 @@ book:
     - sys_specs.qmd
     - data_source.qmd
     - data_loading.qmd
+    - data_conversion.qmd
+    - data_validation.qmd
 bibliography: references.bib
 
 format:
@@ -18,6 +20,7 @@ format:
     code-overflow: wrap
     eval: false
     code-fold: show
+    code-annotations: hover
   pdf:
     documentclass: scrreprt
     

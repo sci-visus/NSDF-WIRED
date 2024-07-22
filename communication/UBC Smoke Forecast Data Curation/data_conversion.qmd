@@ -1,0 +1,46 @@
+---
+format:
+  html:
+    code-links:
+      - text: v1
+        icon: file-code
+        href: https://github.com/sci-visus/NSDF-WIRED/blob/main/conversion/firesmoke_to_idx_v1.ipynb
+      - text: v2
+        icon: file-code
+        href: https://github.com/sci-visus/NSDF-WIRED/blob/main/conversion/firesmoke_to_idx_v2.ipynb
+      - text: v3
+        icon: file-code
+        href: https://github.com/sci-visus/NSDF-WIRED/blob/main/conversion/firesmoke_to_idx_v3.ipynb
+      - text: v4
+        icon: file-code
+        href: https://github.com/sci-visus/NSDF-WIRED/blob/main/conversion/firesmoke_to_idx_v4.ipynb
+    code-tools: true
+---
+
+# Data Conversion {#sec-data-conversion}
+
+So far, we have established how to access the data from UBC and have it available on our local machine.
+
+Here we describe the steps for compiling the data now on our machine into an IDX file using the [OpenViSUS libary](https://github.com/sci-visus/OpenVisus/tree/master) and its access to the [PIDX library](https://github.com/sci-visus/PIDX?tab=readme-ov-file).
+
+## Overview
+
+For all our conversion attempts, the same general process is followed:
+
+1. Check which NetCDF files were successfully downloaded from the data source by attempting to open each downloaded file with `xarray`.
+2. Step though all files in a chronological sequence, hour by hour, and save data at each hour to an `IDX` file using the [OpenVisus](https://github.com/sci-visus/OpenVisus/tree/master) framework.
+
+In the next sections we will delineate the exact approaches taken, obstacles encountered, and modifications made.
+
+### First Approach
+The full script for our first approach is available in the side bar as v1.
+
+Initially, we used just the BSC00CA12-01 forecast ID dataset as this ran to the latest available date.
+
+### Second Approach
+
+
+### Third Approach
+
+
+### Fourth Approach

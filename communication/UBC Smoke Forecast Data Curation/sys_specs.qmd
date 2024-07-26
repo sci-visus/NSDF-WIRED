@@ -6,6 +6,7 @@ format:
         icon: file-code
         href: https://github.com/sci-visus/NSDF-WIRED/blob/main/conda_environment.yml
 ---
+
 # System and Environment {#sec-sys-specs}
 
 ## Machine Specification
@@ -30,5 +31,7 @@ The data we curate is over 300 gigabytes large. Therefore we used the SCI instit
 We aim to work in an environment that can be most easily reproduced and documented. Therefore we used Python 3.9.19 via conda. We did all our work within the Project Jupyter environment.
 
 To find our the `yml` file containing our exported conda environment please see the sidebar.
+
+To work on the 'atlantis' machine, we used SSH to connect to the machine.
 
 In the proceeding chapters we will specify which tools and libraries were used and why.

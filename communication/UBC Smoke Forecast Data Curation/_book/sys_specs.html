@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>2&nbsp; System and Environment – UBC Smoke Forecast Data Curation</title>
+<title>3&nbsp; System and Environment – UBC Smoke Forecast Data Curation</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -81,7 +81,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./sys_specs.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">System and Environment</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./sys_specs.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">System and Environment</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -114,32 +114,44 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./demo.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">demo.html</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./sys_specs.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">System and Environment</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">System and Environment</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./data_source.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The Data Source</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">The Data Source</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./data_loading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Data Loading</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Data Loading</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data_conversion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Data Conversion</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./data_validation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Data Validation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Data Validation</span></span></a>
   </div>
 </li>
     </ul>
@@ -152,8 +164,8 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#machine-specification" id="toc-machine-specification" class="nav-link active" data-scroll-target="#machine-specification"><span class="header-section-number">2.1</span> Machine Specification</a></li>
-  <li><a href="#environment" id="toc-environment" class="nav-link" data-scroll-target="#environment"><span class="header-section-number">2.2</span> Environment</a></li>
+  <li><a href="#machine-specification" id="toc-machine-specification" class="nav-link active" data-scroll-target="#machine-specification"><span class="header-section-number">3.1</span> Machine Specification</a></li>
+  <li><a href="#environment" id="toc-environment" class="nav-link" data-scroll-target="#environment"><span class="header-section-number">3.2</span> Environment</a></li>
   </ul>
 <div class="quarto-code-links"><h2>Code Links</h2><ul><li><a href="https://github.com/sci-visus/NSDF-WIRED/blob/main/conda_environment.yml"><i class="bi bi-file-code"></i>Conda YML File</a></li></ul></div></nav>
     </div>
@@ -162,7 +174,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="sec-sys-specs" class="quarto-section-identifier"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">System and Environment</span></span></h1>
+<h1 class="title"><span id="sec-sys-specs" class="quarto-section-identifier"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">System and Environment</span></span></h1>
 </div>
 
 
@@ -179,13 +191,13 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="machine-specification" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="machine-specification"><span class="header-section-number">2.1</span> Machine Specification</h2>
-<p>The data we curate is over 300 gigabytes large. Therefore we used the SCI institute’s in-house machine ‘atlantis’ for data staging and processing. See <a href="#tbl-specs" class="quarto-xref">Table&nbsp;<span>2.1</span></a>.</p>
+<section id="machine-specification" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="machine-specification"><span class="header-section-number">3.1</span> Machine Specification</h2>
+<p>The data we curate is over 300 gigabytes large. Therefore we used the SCI institute’s in-house machine ‘atlantis’ for data staging and processing. See <a href="#tbl-specs" class="quarto-xref">Table&nbsp;<span>3.1</span></a>.</p>
 <div id="tbl-specs" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-specs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;2.1: ‘atlantis’ System Specifications
+Table&nbsp;3.1: ‘atlantis’ System Specifications
 </figcaption>
 <div aria-describedby="tbl-specs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
@@ -238,10 +250,11 @@ Table&nbsp;2.1: ‘atlantis’ System Specifications
 </figure>
 </div>
 </section>
-<section id="environment" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="environment"><span class="header-section-number">2.2</span> Environment</h2>
+<section id="environment" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="environment"><span class="header-section-number">3.2</span> Environment</h2>
 <p>We aim to work in an environment that can be most easily reproduced and documented. Therefore we used Python 3.9.19 via conda. We did all our work within the Project Jupyter environment.</p>
 <p>To find our the <code>yml</code> file containing our exported conda environment please see the sidebar.</p>
+<p>To work on the ‘atlantis’ machine, we used SSH to connect to the machine.</p>
 <p>In the proceeding chapters we will specify which tools and libraries were used and why.</p>
 
 
@@ -710,12 +723,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./intro.html" class="pagination-link" aria-label="Introduction">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introduction</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./data_source.html" class="pagination-link" aria-label="The Data Source">
-        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The Data Source</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">The Data Source</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

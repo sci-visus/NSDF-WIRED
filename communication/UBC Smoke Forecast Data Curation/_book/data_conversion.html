@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>5&nbsp; Data Conversion – UBC Smoke Forecast Data Curation</title>
+<title>6&nbsp; Data Conversion – UBC Smoke Forecast Data Curation</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -115,7 +115,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./data_conversion.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Data Conversion</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./data_conversion.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Data Conversion</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -148,38 +148,44 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./demo.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">demo.html</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./sys_specs.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">System and Environment</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">System and Environment</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./data_source.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The Data Source</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">The Data Source</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./data_loading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Data Loading</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Data Loading</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./data_conversion.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Data Conversion</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Data Conversion</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./data_validation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Data Validation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Data Validation</span></span></a>
   </div>
 </li>
     </ul>
@@ -192,12 +198,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview"><span class="header-section-number">5.1</span> Overview</a>
+  <li><a href="#on-data-validation" id="toc-on-data-validation" class="nav-link active" data-scroll-target="#on-data-validation"><span class="header-section-number">6.1</span> On Data Validation</a></li>
+  <li><a href="#overview" id="toc-overview" class="nav-link" data-scroll-target="#overview"><span class="header-section-number">6.2</span> Overview</a></li>
+  <li><a href="#setting-system-directories" id="toc-setting-system-directories" class="nav-link" data-scroll-target="#setting-system-directories"><span class="header-section-number">6.3</span> Setting System Directories</a>
   <ul class="collapse">
-  <li><a href="#first-approach" id="toc-first-approach" class="nav-link" data-scroll-target="#first-approach"><span class="header-section-number">5.1.1</span> First Approach</a></li>
-  <li><a href="#second-approach" id="toc-second-approach" class="nav-link" data-scroll-target="#second-approach"><span class="header-section-number">5.1.2</span> Second Approach</a></li>
-  <li><a href="#third-approach" id="toc-third-approach" class="nav-link" data-scroll-target="#third-approach"><span class="header-section-number">5.1.3</span> Third Approach</a></li>
-  <li><a href="#fourth-approach" id="toc-fourth-approach" class="nav-link" data-scroll-target="#fourth-approach"><span class="header-section-number">5.1.4</span> Fourth Approach</a></li>
+  <li><a href="#rationale-and-future-improvements" id="toc-rationale-and-future-improvements" class="nav-link" data-scroll-target="#rationale-and-future-improvements"><span class="header-section-number">6.3.1</span> Rationale and Future Improvements</a></li>
+  </ul></li>
+  <li><a href="#checking-the-netcdf-files" id="toc-checking-the-netcdf-files" class="nav-link" data-scroll-target="#checking-the-netcdf-files"><span class="header-section-number">6.4</span> Checking the NetCDF Files</a>
+  <ul class="collapse">
+  <li><a href="#rationale-and-future-improvements-1" id="toc-rationale-and-future-improvements-1" class="nav-link" data-scroll-target="#rationale-and-future-improvements-1"><span class="header-section-number">6.4.1</span> Rationale and Future Improvements</a></li>
+  </ul></li>
+  <li><a href="#preparing-resampling-grids" id="toc-preparing-resampling-grids" class="nav-link" data-scroll-target="#preparing-resampling-grids"><span class="header-section-number">6.5</span> Preparing Resampling Grids</a>
+  <ul class="collapse">
+  <li><a href="#generate-grids-of-latitude-and-longitude-points" id="toc-generate-grids-of-latitude-and-longitude-points" class="nav-link" data-scroll-target="#generate-grids-of-latitude-and-longitude-points"><span class="header-section-number">6.5.1</span> Generate Grids of Latitude and Longitude Points</a></li>
+  <li><a href="#experimenting-with-griddata" id="toc-experimenting-with-griddata" class="nav-link" data-scroll-target="#experimenting-with-griddata"><span class="header-section-number">6.5.2</span> Experimenting with <code>griddata</code></a></li>
+  <li><a href="#rationale-and-previous-revelations" id="toc-rationale-and-previous-revelations" class="nav-link" data-scroll-target="#rationale-and-previous-revelations"><span class="header-section-number">6.5.3</span> Rationale and Previous Revelations</a></li>
   </ul></li>
   </ul>
 <div class="quarto-code-links"><h2>Code Links</h2><ul><li><a href="https://github.com/sci-visus/NSDF-WIRED/blob/main/conversion/firesmoke_to_idx_v1.ipynb"><i class="bi bi-file-code"></i>v1</a></li><li><a href="https://github.com/sci-visus/NSDF-WIRED/blob/main/conversion/firesmoke_to_idx_v2.ipynb"><i class="bi bi-file-code"></i>v2</a></li><li><a href="https://github.com/sci-visus/NSDF-WIRED/blob/main/conversion/firesmoke_to_idx_v3.ipynb"><i class="bi bi-file-code"></i>v3</a></li><li><a href="https://github.com/sci-visus/NSDF-WIRED/blob/main/conversion/firesmoke_to_idx_v4.ipynb"><i class="bi bi-file-code"></i>v4</a></li></ul></div></nav>
@@ -207,7 +222,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title"><span id="sec-data-conversion" class="quarto-section-identifier"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Data Conversion</span></span></h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+<div class="quarto-title-block"><div><h1 class="title"><span id="sec-data-conversion" class="quarto-section-identifier"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Data Conversion</span></span></h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li><li><hr class="dropdown-divider"></li><li><a id="quarto-view-source" class="dropdown-item" href="javascript:void(0)" role="button">View Source</a></li></ul></div></div>
 </div>
 
 
@@ -224,28 +239,345 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>So far, we have established how to access the data from UBC and have it available on our local machine.</p>
-<p>Here we describe the steps for compiling the data now on our machine into an IDX file using the <a href="https://github.com/sci-visus/OpenVisus/tree/master">OpenViSUS libary</a> and its access to the <a href="https://github.com/sci-visus/PIDX?tab=readme-ov-file">PIDX library</a>.</p>
-<section id="overview" class="level2" data-number="5.1">
-<h2 data-number="5.1" class="anchored" data-anchor-id="overview"><span class="header-section-number">5.1</span> Overview</h2>
+<p>So far, we have established what the data from UBC is and how to download it to our machine. Now we describe how to compile the data on our machine into an IDX file using the <a href="https://github.com/sci-visus/OpenVisus/tree/master">OpenViSUS libary</a> and its access to the <a href="https://github.com/sci-visus/PIDX?tab=readme-ov-file">PIDX library</a>.</p>
+<section id="on-data-validation" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="on-data-validation"><span class="header-section-number">6.1</span> On Data Validation</h2>
+<p>We decided to perform data validation <em>after</em> conversion to the IDX file format. However, we realized that performing data validation <em>both before and after</em> conversion would be best. This is explored further in <a href="data_validation.html" class="quarto-xref"><span>Chapter 7</span></a>.</p>
+<p>For now, the reader should understand that data validation of the NetCDF files is different from data validation of the IDX file. In this chapter, we use the assumption that the NetCDF files we can open have complete and uncorrupted data for conversion to IDX.</p>
+</section>
+<section id="overview" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="overview"><span class="header-section-number">6.2</span> Overview</h2>
 <p>For all our conversion attempts, the same general process is followed:</p>
 <ol type="1">
 <li>Check which NetCDF files were successfully downloaded from the data source by attempting to open each downloaded file with <code>xarray</code>.</li>
 <li>Step though all files in a chronological sequence, hour by hour, and save data at each hour to an <code>IDX</code> file using the <a href="https://github.com/sci-visus/OpenVisus/tree/master">OpenVisus</a> framework.</li>
 </ol>
-<p>In the next sections we will delineate the exact approaches taken, obstacles encountered, and modifications made.</p>
-<section id="first-approach" class="level3" data-number="5.1.1">
-<h3 data-number="5.1.1" class="anchored" data-anchor-id="first-approach"><span class="header-section-number">5.1.1</span> First Approach</h3>
-<p>The full script for our first approach is available in the side bar as v1. Initially, we used just the BSC00CA12-01 forecast ID dataset as this ran to the latest available date.</p>
+<p>We will describe the latest version of our conversion, <strong>version 4</strong>. Throughout, we will explain how previous attempts differed. To see previous attemps in their entirety, refer to the side bar. Please note that the previous scripts were working scripts, therefore they may be incomplete.</p>
 </section>
-<section id="second-approach" class="level3" data-number="5.1.2">
-<h3 data-number="5.1.2" class="anchored" data-anchor-id="second-approach"><span class="header-section-number">5.1.2</span> Second Approach</h3>
+<section id="setting-system-directories" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="setting-system-directories"><span class="header-section-number">6.3</span> Setting System Directories</h2>
+<p>First we set the directory paths we want to use during the conversion process, which is to our 4 directories of NetCDF files for each forecast ID.</p>
+<div id="950f8fa3" class="cell" data-execution_count="1">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="annotated-cell-1"><pre class="sourceCode python code-annotation-code code-with-copy code-annotated"><code class="sourceCode python"><button class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="1">1</button><span id="annotated-cell-1-1" class="code-annotation-target"><a href="#annotated-cell-1-1" aria-hidden="true" tabindex="-1"></a>firesmoke_dir <span class="op">=</span> <span class="st">"/usr/sci/cedmav/data/firesmoke"</span></span>
+<span id="annotated-cell-1-2"><a href="#annotated-cell-1-2" aria-hidden="true" tabindex="-1"></a>idx_dir <span class="op">=</span> <span class="st">"/usr/sci/scratch_nvme/arleth/idx/firesmoke"</span></span>
+<span id="annotated-cell-1-3"><a href="#annotated-cell-1-3" aria-hidden="true" tabindex="-1"></a></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="2">2</button><span id="annotated-cell-1-4" class="code-annotation-target"><a href="#annotated-cell-1-4" aria-hidden="true" tabindex="-1"></a>ids <span class="op">=</span> [<span class="st">"BSC18CA12-01"</span>, <span class="st">"BSC00CA12-01"</span>, <span class="st">"BSC06CA12-01"</span>, <span class="st">"BSC12CA12-01"</span>]</span>
+<span id="annotated-cell-1-5"><a href="#annotated-cell-1-5" aria-hidden="true" tabindex="-1"></a>start_dates <span class="op">=</span> [<span class="st">"20210304"</span>, <span class="st">"20210304"</span>, <span class="st">"20210304"</span>, <span class="st">"20210303"</span>]</span>
+<span id="annotated-cell-1-6"><a href="#annotated-cell-1-6" aria-hidden="true" tabindex="-1"></a>end_dates <span class="op">=</span> [<span class="st">"20240627"</span>, <span class="st">"20240627"</span>, <span class="st">"20240627"</span>, <span class="st">"20240627"</span>]</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-annotation">
+<dl class="code-annotation-container-hidden code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-1" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-cell="annotated-cell-1" data-code-lines="1,2" data-code-annotation="1">Establish the directory where all forecast ID NetCDFs are stored and where to save our IDX file on the ‘atlantis’ machine.</span>
+</dd>
+<dt data-target-cell="annotated-cell-1" data-target-annotation="2">2</dt>
+<dd>
+<span data-code-cell="annotated-cell-1" data-code-lines="4,5,6" data-code-annotation="2">Define the forecast IDs and dates we will loop over.</span>
+</dd>
+</dl>
+</div>
+</div>
+<section id="rationale-and-future-improvements" class="level3" data-number="6.3.1">
+<h3 data-number="6.3.1" class="anchored" data-anchor-id="rationale-and-future-improvements"><span class="header-section-number">6.3.1</span> Rationale and Future Improvements</h3>
+<p>In versions 1 and 2 of our conversion attempt, we did not use all four sets of forecast ID files. We only used BSC12CA12-01 files to compile a single data set. We learned that by not using all four sets of data, the data set we created was less accurate. See <a href="data_validation.html" class="quarto-xref"><span>Chapter 7</span></a> for further details.</p>
+<p>Therefore we decide to use all four datasets. We elect to use dates up to June 26, 2024 as this was the last time we ran our scripts. We have yet to address the issue of how to keep the IDX file constantly up to date with data available up to the present day.</p>
 </section>
-<section id="third-approach" class="level3" data-number="5.1.3">
-<h3 data-number="5.1.3" class="anchored" data-anchor-id="third-approach"><span class="header-section-number">5.1.3</span> Third Approach</h3>
 </section>
-<section id="fourth-approach" class="level3" data-number="5.1.4">
-<h3 data-number="5.1.4" class="anchored" data-anchor-id="fourth-approach"><span class="header-section-number">5.1.4</span> Fourth Approach</h3>
+<section id="checking-the-netcdf-files" class="level2" data-number="6.4">
+<h2 data-number="6.4" class="anchored" data-anchor-id="checking-the-netcdf-files"><span class="header-section-number">6.4</span> Checking the NetCDF Files</h2>
+<p>Recall we downloaded all NetCDF files available from UBC onto our machine in their respective directories as follows:</p>
+<pre><code>/usr/sci/cedmav/data/firesmoke
+├── BSC00CA12-01
+├── BSC06CA12-01
+├── BSC12CA12-01
+├── BSC18CA12-01</code></pre>
+<p>Here, we identify which NetCDF files for each forecast ID successfully open with <code>xarray</code> and store them in a dictionary.</p>
+<p>We also confirm the following conditions we established in <a href="data_source.html" class="quarto-xref"><span>Chapter 4</span></a> by using dictionaries to track the max values and unique values of these attributes across all files:</p>
+<ol type="1">
+<li>All files across all four forecast IDs have the same <code>NROWS</code>, <code>XORIG</code>, <code>YORIG</code>, <code>XCELL</code>, <code>YCELL</code> values.</li>
+<li>Some files have either <code>NCOLS = 1041</code> or <code>NCOLS = 1081</code>, but always <code>NROWS = 381</code>.</li>
+</ol>
+<div id="e48b6b05" class="cell" data-execution_count="2">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="annotated-cell-3"><pre class="sourceCode python code-annotation-code code-with-copy code-annotated"><code class="sourceCode python"><span id="annotated-cell-3-1"><a href="#annotated-cell-3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
+<span id="annotated-cell-3-2"><a href="#annotated-cell-3-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> xarray <span class="im">as</span> xr</span>
+<span id="annotated-cell-3-3"><a href="#annotated-cell-3-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="annotated-cell-3-4"><a href="#annotated-cell-3-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> tqdm</span>
+<span id="annotated-cell-3-5"><a href="#annotated-cell-3-5" aria-hidden="true" tabindex="-1"></a></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-3" data-target-annotation="1">1</button><span id="annotated-cell-3-6" class="code-annotation-target"><a href="#annotated-cell-3-6" aria-hidden="true" tabindex="-1"></a>successful_files <span class="op">=</span> {id_: [] <span class="cf">for</span> id_ <span class="kw">in</span> ids}</span>
+<span id="annotated-cell-3-7"><a href="#annotated-cell-3-7" aria-hidden="true" tabindex="-1"></a></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-3" data-target-annotation="2">2</button><span id="annotated-cell-3-8" class="code-annotation-target"><a href="#annotated-cell-3-8" aria-hidden="true" tabindex="-1"></a>max_ncols <span class="op">=</span> {id_: <span class="dv">0</span> <span class="cf">for</span> id_ <span class="kw">in</span> ids}</span>
+<span id="annotated-cell-3-9"><a href="#annotated-cell-3-9" aria-hidden="true" tabindex="-1"></a>max_nrows <span class="op">=</span> {id_: <span class="dv">0</span> <span class="cf">for</span> id_ <span class="kw">in</span> ids}</span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-3" data-target-annotation="3">3</button><span id="annotated-cell-3-10" class="code-annotation-target"><a href="#annotated-cell-3-10" aria-hidden="true" tabindex="-1"></a>ncols <span class="op">=</span> {id_: <span class="bu">set</span>() <span class="cf">for</span> id_ <span class="kw">in</span> ids}</span>
+<span id="annotated-cell-3-11"><a href="#annotated-cell-3-11" aria-hidden="true" tabindex="-1"></a>nrows <span class="op">=</span> {id_: <span class="bu">set</span>() <span class="cf">for</span> id_ <span class="kw">in</span> ids}</span>
+<span id="annotated-cell-3-12"><a href="#annotated-cell-3-12" aria-hidden="true" tabindex="-1"></a></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-3" data-target-annotation="4">4</button><span id="annotated-cell-3-13" class="code-annotation-target"><a href="#annotated-cell-3-13" aria-hidden="true" tabindex="-1"></a>max_grid_x <span class="op">=</span> {id_: {<span class="st">"xorig"</span>: <span class="fl">0.0</span>, <span class="st">"xcell"</span>: <span class="fl">0.0</span>} <span class="cf">for</span> id_ <span class="kw">in</span> ids}</span>
+<span id="annotated-cell-3-14"><a href="#annotated-cell-3-14" aria-hidden="true" tabindex="-1"></a>max_grid_y <span class="op">=</span> {id_: {<span class="st">"yorig"</span>: <span class="fl">0.0</span>, <span class="st">"ycell"</span>: <span class="fl">0.0</span>} <span class="cf">for</span> id_ <span class="kw">in</span> ids}</span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-3" data-target-annotation="5">5</button><span id="annotated-cell-3-15" class="code-annotation-target"><a href="#annotated-cell-3-15" aria-hidden="true" tabindex="-1"></a>xorigs <span class="op">=</span> {id_: <span class="bu">set</span>() <span class="cf">for</span> id_ <span class="kw">in</span> ids}</span>
+<span id="annotated-cell-3-16"><a href="#annotated-cell-3-16" aria-hidden="true" tabindex="-1"></a>xcells <span class="op">=</span> {id_: <span class="bu">set</span>() <span class="cf">for</span> id_ <span class="kw">in</span> ids}</span>
+<span id="annotated-cell-3-17"><a href="#annotated-cell-3-17" aria-hidden="true" tabindex="-1"></a>yorigs <span class="op">=</span> {id_: <span class="bu">set</span>() <span class="cf">for</span> id_ <span class="kw">in</span> ids}</span>
+<span id="annotated-cell-3-18"><a href="#annotated-cell-3-18" aria-hidden="true" tabindex="-1"></a>ycells <span class="op">=</span> {id_: <span class="bu">set</span>() <span class="cf">for</span> id_ <span class="kw">in</span> ids}</span>
+<span id="annotated-cell-3-19"><a href="#annotated-cell-3-19" aria-hidden="true" tabindex="-1"></a></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-3" data-target-annotation="6">6</button><span id="annotated-cell-3-20" class="code-annotation-target"><a href="#annotated-cell-3-20" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> id_ <span class="kw">in</span> ids:</span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-3" data-target-annotation="7">7</button><span id="annotated-cell-3-21" class="code-annotation-target"><a href="#annotated-cell-3-21" aria-hidden="true" tabindex="-1"></a>    file_names <span class="op">=</span> os.listdir(<span class="ss">f"</span><span class="sc">{</span>firesmoke_dir<span class="sc">}</span><span class="ss">/</span><span class="sc">{</span>id_<span class="sc">}</span><span class="ss">/"</span>)</span>
+<span id="annotated-cell-3-22"><a href="#annotated-cell-3-22" aria-hidden="true" tabindex="-1"></a></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-3" data-target-annotation="8">8</button><span id="annotated-cell-3-23" class="code-annotation-target"><a href="#annotated-cell-3-23" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> <span class="bu">file</span> <span class="kw">in</span> tqdm(file_names):</span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-3" data-target-annotation="9">9</button><span id="annotated-cell-3-24" class="code-annotation-target"><a href="#annotated-cell-3-24" aria-hidden="true" tabindex="-1"></a>        path <span class="op">=</span> <span class="ss">f"</span><span class="sc">{</span>firesmoke_dir<span class="sc">}</span><span class="ss">/</span><span class="sc">{</span>id_<span class="sc">}</span><span class="ss">/</span><span class="sc">{</span><span class="bu">file</span><span class="sc">}</span><span class="ss">"</span></span>
+<span id="annotated-cell-3-25"><a href="#annotated-cell-3-25" aria-hidden="true" tabindex="-1"></a></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-3" data-target-annotation="10">10</button><span id="annotated-cell-3-26" class="code-annotation-target"><a href="#annotated-cell-3-26" aria-hidden="true" tabindex="-1"></a>        <span class="cf">try</span>:</span>
+<span id="annotated-cell-3-27"><a href="#annotated-cell-3-27" aria-hidden="true" tabindex="-1"></a>            ds <span class="op">=</span> xr.open_dataset(path)</span>
+<span id="annotated-cell-3-28"><a href="#annotated-cell-3-28" aria-hidden="true" tabindex="-1"></a></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-3" data-target-annotation="11">11</button><span id="annotated-cell-3-29" class="code-annotation-target"><a href="#annotated-cell-3-29" aria-hidden="true" tabindex="-1"></a>            successful_files[id_].append(<span class="bu">file</span>)</span>
+<span id="annotated-cell-3-30"><a href="#annotated-cell-3-30" aria-hidden="true" tabindex="-1"></a></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-3" data-target-annotation="12">12</button><span id="annotated-cell-3-31" class="code-annotation-target"><a href="#annotated-cell-3-31" aria-hidden="true" tabindex="-1"></a>            max_ncols[id_] <span class="op">=</span> <span class="bu">max</span>(max_ncols[id_], ds.NCOLS)</span>
+<span id="annotated-cell-3-32"><a href="#annotated-cell-3-32" aria-hidden="true" tabindex="-1"></a>            max_nrows[id_] <span class="op">=</span> <span class="bu">max</span>(max_nrows[id_], ds.NROWS)</span>
+<span id="annotated-cell-3-33"><a href="#annotated-cell-3-33" aria-hidden="true" tabindex="-1"></a>            max_grid_x[id_][<span class="st">"xorig"</span>] <span class="op">=</span> <span class="bu">max</span>(max_grid_x[id_][<span class="st">"xorig"</span>], ds.XORIG, key<span class="op">=</span><span class="bu">abs</span>)</span>
+<span id="annotated-cell-3-34"><a href="#annotated-cell-3-34" aria-hidden="true" tabindex="-1"></a>            max_grid_y[id_][<span class="st">"yorig"</span>] <span class="op">=</span> <span class="bu">max</span>(max_grid_y[id_][<span class="st">"yorig"</span>], ds.YORIG, key<span class="op">=</span><span class="bu">abs</span>)</span>
+<span id="annotated-cell-3-35"><a href="#annotated-cell-3-35" aria-hidden="true" tabindex="-1"></a>            max_grid_x[id_][<span class="st">"xcell"</span>] <span class="op">=</span> <span class="bu">max</span>(max_grid_x[id_][<span class="st">"xcell"</span>], ds.XCELL, key<span class="op">=</span><span class="bu">abs</span>)</span>
+<span id="annotated-cell-3-36"><a href="#annotated-cell-3-36" aria-hidden="true" tabindex="-1"></a>            max_grid_y[id_][<span class="st">"ycell"</span>] <span class="op">=</span> <span class="bu">max</span>(</span>
+<span id="annotated-cell-3-37"><a href="#annotated-cell-3-37" aria-hidden="true" tabindex="-1"></a>                max_grid_y[id_][<span class="st">"ycell"</span>], ds.YCELL, key<span class="op">=</span><span class="bu">abs</span></span>
+<span id="annotated-cell-3-38"><a href="#annotated-cell-3-38" aria-hidden="true" tabindex="-1"></a>            )</span>
+<span id="annotated-cell-3-39"><a href="#annotated-cell-3-39" aria-hidden="true" tabindex="-1"></a></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-3" data-target-annotation="13">13</button><span id="annotated-cell-3-40" class="code-annotation-target"><a href="#annotated-cell-3-40" aria-hidden="true" tabindex="-1"></a>            ncols[id_].add(ds.NCOLS)</span>
+<span id="annotated-cell-3-41"><a href="#annotated-cell-3-41" aria-hidden="true" tabindex="-1"></a>            nrows[id_].add(ds.NROWS)</span>
+<span id="annotated-cell-3-42"><a href="#annotated-cell-3-42" aria-hidden="true" tabindex="-1"></a>            xorigs[id_].add(ds.XORIG)</span>
+<span id="annotated-cell-3-43"><a href="#annotated-cell-3-43" aria-hidden="true" tabindex="-1"></a>            yorigs[id_].add(ds.YORIG)</span>
+<span id="annotated-cell-3-44"><a href="#annotated-cell-3-44" aria-hidden="true" tabindex="-1"></a>            xcells[id_].add(ds.XCELL)</span>
+<span id="annotated-cell-3-45"><a href="#annotated-cell-3-45" aria-hidden="true" tabindex="-1"></a>            ycells[id_].add(ds.YCELL)</span>
+<span id="annotated-cell-3-46"><a href="#annotated-cell-3-46" aria-hidden="true" tabindex="-1"></a></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-3" data-target-annotation="14">14</button><span id="annotated-cell-3-47" class="code-annotation-target"><a href="#annotated-cell-3-47" aria-hidden="true" tabindex="-1"></a>        <span class="cf">except</span>:</span>
+<span id="annotated-cell-3-48"><a href="#annotated-cell-3-48" aria-hidden="true" tabindex="-1"></a>            <span class="cf">continue</span></span>
+<span id="annotated-cell-3-49"><a href="#annotated-cell-3-49" aria-hidden="true" tabindex="-1"></a></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-3" data-target-annotation="15">15</button><span id="annotated-cell-3-50" class="code-annotation-target"><a href="#annotated-cell-3-50" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> id_ <span class="kw">in</span> successful_files:</span>
+<span id="annotated-cell-3-51"><a href="#annotated-cell-3-51" aria-hidden="true" tabindex="-1"></a>    successful_files[id_] <span class="op">=</span> np.sort(successful_files[id_]).tolist()</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-annotation">
+<dl class="code-annotation-container-hidden code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-3" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-cell="annotated-cell-3" data-code-lines="6" data-code-annotation="1">Initialize a dictionary to hold an empty list for each forecast ID. We update it with the file names that successfully open under the forecast ID directory.</span>
+</dd>
+<dt data-target-cell="annotated-cell-3" data-target-annotation="2">2</dt>
+<dd>
+<span data-code-cell="annotated-cell-3" data-code-lines="8,9" data-code-annotation="2">Initialize dictionaries to hold an integer for each forecast ID. We update it to hold the maximum <code>NCOLS</code>/<code>NROWS</code> value available within forecast ID’s set of NetCDF files.</span>
+</dd>
+<dt data-target-cell="annotated-cell-3" data-target-annotation="3">3</dt>
+<dd>
+<span data-code-cell="annotated-cell-3" data-code-lines="10,11" data-code-annotation="3">Initialize dictionaries to hold a set for each forecast ID. We update the set to hold all the unique <code>NCOLS</code>/<code>NROWS</code> values available within the forecast ID’s set of NetCDF files.</span>
+</dd>
+<dt data-target-cell="annotated-cell-3" data-target-annotation="4">4</dt>
+<dd>
+<span data-code-cell="annotated-cell-3" data-code-lines="13,14" data-code-annotation="4">Initialize dictionaries to hold a dictionary of <code>xorig</code>/<code>yorig</code> and <code>xcell</code>/<code>ycell</code> values for each forecast ID. We update it to hold the maximum <code>xorig</code>/<code>yorig</code> and <code>xcell</code>/<code>ycell</code> pairs available within the forecast ID’s set of NetCDF files.</span>
+</dd>
+<dt data-target-cell="annotated-cell-3" data-target-annotation="5">5</dt>
+<dd>
+<span data-code-cell="annotated-cell-3" data-code-lines="15,18" data-code-annotation="5">Initialize dictionaries to track unique <code>xorig</code>/<code>yorig</code> and <code>xcell</code>/<code>ycell</code> values.</span>
+</dd>
+<dt data-target-cell="annotated-cell-3" data-target-annotation="6">6</dt>
+<dd>
+<span data-code-cell="annotated-cell-3" data-code-lines="20" data-code-annotation="6">For each forecast ID, we populate the dictionaries above.</span>
+</dd>
+<dt data-target-cell="annotated-cell-3" data-target-annotation="7">7</dt>
+<dd>
+<span data-code-cell="annotated-cell-3" data-code-lines="21" data-code-annotation="7">Obtain a list of file names under the directory for <code>id_</code>. We loop through each file next.</span>
+</dd>
+<dt data-target-cell="annotated-cell-3" data-target-annotation="8">8</dt>
+<dd>
+<span data-code-cell="annotated-cell-3" data-code-lines="23" data-code-annotation="8">Begin loop over each file. Note <code>tqdm</code> is just an accessory for generating a visible status bar in our Jupyter Notebook.</span>
+</dd>
+<dt data-target-cell="annotated-cell-3" data-target-annotation="9">9</dt>
+<dd>
+<span data-code-cell="annotated-cell-3" data-code-lines="24" data-code-annotation="9">Obtain absolute path name to current file.</span>
+</dd>
+<dt data-target-cell="annotated-cell-3" data-target-annotation="10">10</dt>
+<dd>
+<span data-code-cell="annotated-cell-3" data-code-lines="26,27" data-code-annotation="10">Here we use a <code>try</code> statement since opening the file with <code>xarray</code> may lead to an error. <code>except</code> allows us to catch the exception accordingly and continue trying to open each file.</span>
+</dd>
+<dt data-target-cell="annotated-cell-3" data-target-annotation="11">11</dt>
+<dd>
+<span data-code-cell="annotated-cell-3" data-code-lines="29" data-code-annotation="11">At this line, the file opened without issue in <code>xarray</code>, so append this file name to the <code>id_</code> list in the <code>successful_files</code> dictionary.</span>
+</dd>
+<dt data-target-cell="annotated-cell-3" data-target-annotation="12">12</dt>
+<dd>
+<span data-code-cell="annotated-cell-3" data-code-lines="31,38" data-code-annotation="12">Use <code>max</code> to save the largest values in our dictionaries accordingly.</span>
+</dd>
+<dt data-target-cell="annotated-cell-3" data-target-annotation="13">13</dt>
+<dd>
+<span data-code-cell="annotated-cell-3" data-code-lines="40,45" data-code-annotation="13">Update the dictionaries of sets with the file’s attributes, to ensure we catch all unique values.</span>
+</dd>
+<dt data-target-cell="annotated-cell-3" data-target-annotation="14">14</dt>
+<dd>
+<span data-code-cell="annotated-cell-3" data-code-lines="47" data-code-annotation="14">If the file did not open during the <code>try</code> continue to the next file.</span>
+</dd>
+<dt data-target-cell="annotated-cell-3" data-target-annotation="15">15</dt>
+<dd>
+<span data-code-cell="annotated-cell-3" data-code-lines="50,51" data-code-annotation="15">Sort the lists of successfully opened files by name, so they are in chronological order.</span>
+</dd>
+</dl>
+</div>
+</div>
+<p>The following shows the information gathered:</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">BSC18CA12-01</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">BSC00CA12-01</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">BSC06CA12-01</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-4" role="tab" aria-controls="tabset-1-4" aria-selected="false">BSC12CA12-01</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<pre><code>dataset: BSC18CA12-01
+Number of successful files: 1010
+Max cell sizes: max_ncols = 1081 and max_nrows = 381
+Max xorig &amp; xcell: {'xorig': -160.0, 'xcell': 0.10000000149011612}
+Max yorig &amp; ycell: {'yorig': 32.0, 'ycell': 0.10000000149011612}
+ncols: {1081, 1041}
+nrows: {381}
+xorigs: {-160.0, -156.0}
+yorigs: {32.0}
+xcells: {0.10000000149011612}
+ycells: {0.10000000149011612}</code></pre>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<pre><code>dataset: BSC00CA12-01
+Number of successful files: 1067
+Max cell sizes: max_ncols = 1081 and max_nrows = 381
+Max xorig &amp; xcell: {'xorig': -160.0, 'xcell': 0.10000000149011612}
+Max yorig &amp; ycell: {'yorig': 32.0, 'ycell': 0.10000000149011612}
+ncols: {1081, 1041}
+nrows: {381}
+xorigs: {-160.0, -156.0}
+yorigs: {32.0}
+xcells: {0.10000000149011612}
+ycells: {0.10000000149011612}</code></pre>
+</div>
+<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
+<pre><code>dataset: BSC06CA12-01
+Number of successful files: 997
+Max cell sizes: max_ncols = 1081 and max_nrows = 381
+Max xorig &amp; xcell: {'xorig': -160.0, 'xcell': 0.10000000149011612}
+Max yorig &amp; ycell: {'yorig': 32.0, 'ycell': 0.10000000149011612}
+ncols: {1081, 1041}
+nrows: {381}
+xorigs: {-160.0, -156.0}
+yorigs: {32.0}
+xcells: {0.10000000149011612}
+ycells: {0.10000000149011612}</code></pre>
+</div>
+<div id="tabset-1-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-4-tab">
+<pre><code>dataset: BSC12CA12-01
+Number of successful files: 1003
+Max cell sizes: max_ncols = 1081 and max_nrows = 381
+Max xorig &amp; xcell: {'xorig': -160.0, 'xcell': 0.10000000149011612}
+Max yorig &amp; ycell: {'yorig': 32.0, 'ycell': 0.10000000149011612}
+ncols: {1081, 1041}
+nrows: {381}
+xorigs: {-160.0, -156.0}
+yorigs: {32.0}
+xcells: {0.10000000149011612}
+ycells: {0.10000000149011612}</code></pre>
+</div>
+</div>
+</div>
+<section id="rationale-and-future-improvements-1" class="level3" data-number="6.4.1">
+<h3 data-number="6.4.1" class="anchored" data-anchor-id="rationale-and-future-improvements-1"><span class="header-section-number">6.4.1</span> Rationale and Future Improvements</h3>
+<p>We have used the <code>successful_files</code> dictionary to test which files are usable by testing whether they open with <code>xarray</code> or not.</p>
+<p>In version 2 of our conversion, we discovered that some files had differing values for <code>NCOLS</code>. The IDX file format expects all arrays across all time steps to have the same number of rows and columns. We realized that our assumption that all attributes were the same across all files was unfounded. Therefore, we collected information about the values for all attributes in the NetCDF files as shown above so that we could resample arrays to use <code>1081</code> columns.</p>
+<p>One improvement to this step is to stop tracking maxes and unique values seperately. Instead, we could just track unique values then get maxes from there.</p>
+</section>
+</section>
+<section id="preparing-resampling-grids" class="level2" data-number="6.5">
+<h2 data-number="6.5" class="anchored" data-anchor-id="preparing-resampling-grids"><span class="header-section-number">6.5</span> Preparing Resampling Grids</h2>
+<p>To resample arrays of shape 1041x381 to 1081x381, we use the SciPy <code>griddata</code> function from the <code>interpolate</code> package. This function gives interpolated values on set of points <code>xi</code> from a set of <code>points</code> with corresponding <code>values</code>. We refer the reader to SciPy’s <a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.interpolate.griddata.html">documentation</a> for details.</p>
+<p>Recall we can generate a set of latitude and longitude coordinates on the 1041x381 and 1081x381 grid by using the attributes given in each NetCDF file, see <a href="data_source.html" class="quarto-xref"><span>Chapter 4</span></a> for an example. We can thus sample a set of corresponding <code>PM25</code> values on a 1081x381 grid by using using a 1041x381 array of latitude and longitudes as <code>points</code> and 1041x381 array of PM25 values as <code>values</code> with the <code>griddata</code> function. We willgenerate these grids of lat/lon points using the attribute information we collected in the previous step.</p>
+<section id="generate-grids-of-latitude-and-longitude-points" class="level3" data-number="6.5.1">
+<h3 data-number="6.5.1" class="anchored" data-anchor-id="generate-grids-of-latitude-and-longitude-points"><span class="header-section-number">6.5.1</span> Generate Grids of Latitude and Longitude Points</h3>
+<div class="sourceCode" id="annotated-cell-4"><pre class="sourceCode python code-annotation-code code-with-copy code-annotated"><code class="sourceCode python"><button class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="1">1</button><span id="annotated-cell-4-1" class="code-annotation-target"><a href="#annotated-cell-4-1" aria-hidden="true" tabindex="-1"></a>max_xorig <span class="op">=</span> max_grid_x[ids[<span class="dv">0</span>]][<span class="st">'xorig'</span>]</span>
+<span id="annotated-cell-4-2"><a href="#annotated-cell-4-2" aria-hidden="true" tabindex="-1"></a>max_xcell <span class="op">=</span> max_grid_x[ids[<span class="dv">0</span>]][<span class="st">'xcell'</span>]</span>
+<span id="annotated-cell-4-3"><a href="#annotated-cell-4-3" aria-hidden="true" tabindex="-1"></a>max_yorig <span class="op">=</span> max_grid_y[ids[<span class="dv">0</span>]][<span class="st">'yorig'</span>]</span>
+<span id="annotated-cell-4-4"><a href="#annotated-cell-4-4" aria-hidden="true" tabindex="-1"></a>max_ycell <span class="op">=</span> max_grid_y[ids[<span class="dv">0</span>]][<span class="st">'ycell'</span>]</span>
+<span id="annotated-cell-4-5"><a href="#annotated-cell-4-5" aria-hidden="true" tabindex="-1"></a></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="2">2</button><span id="annotated-cell-4-6" class="code-annotation-target"><a href="#annotated-cell-4-6" aria-hidden="true" tabindex="-1"></a>big_lon <span class="op">=</span> np.linspace(max_xorig, max_xorig <span class="op">+</span> max_xcell <span class="op">*</span> (max_ncols[ids[<span class="dv">0</span>]] <span class="op">-</span> <span class="dv">1</span>), max_ncols[ids[<span class="dv">0</span>]])</span>
+<span id="annotated-cell-4-7"><a href="#annotated-cell-4-7" aria-hidden="true" tabindex="-1"></a>big_lat <span class="op">=</span> np.linspace(max_yorig, max_yorig <span class="op">+</span> max_ycell <span class="op">*</span> (max_nrows[ids[<span class="dv">0</span>]] <span class="op">-</span> <span class="dv">1</span>), max_nrows[ids[<span class="dv">0</span>]])</span>
+<span id="annotated-cell-4-8"><a href="#annotated-cell-4-8" aria-hidden="true" tabindex="-1"></a></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="3">3</button><span id="annotated-cell-4-9" class="code-annotation-target"><a href="#annotated-cell-4-9" aria-hidden="true" tabindex="-1"></a>big_lon_pts, big_lat_pts <span class="op">=</span> np.meshgrid(big_lon, big_lat)</span>
+<span id="annotated-cell-4-10"><a href="#annotated-cell-4-10" aria-hidden="true" tabindex="-1"></a>big_tups <span class="op">=</span> np.array([tup <span class="cf">for</span> tup <span class="kw">in</span> <span class="bu">zip</span>(big_lon_pts.flatten(), big_lat_pts.flatten())])</span>
+<span id="annotated-cell-4-11"><a href="#annotated-cell-4-11" aria-hidden="true" tabindex="-1"></a></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="4">4</button><span id="annotated-cell-4-12" class="code-annotation-target"><a href="#annotated-cell-4-12" aria-hidden="true" tabindex="-1"></a>sml_ds <span class="op">=</span> xr.open_dataset(firesmoke_dir <span class="op">+</span> <span class="st">"/BSC00CA12-01/dispersion_20210304.nc"</span>)</span>
+<span id="annotated-cell-4-13"><a href="#annotated-cell-4-13" aria-hidden="true" tabindex="-1"></a>sml_lon <span class="op">=</span> np.linspace(sml_ds.XORIG, sml_ds.XORIG <span class="op">+</span> sml_ds.XCELL <span class="op">*</span> (sml_ds.NCOLS <span class="op">-</span> <span class="dv">1</span>), sml_ds.NCOLS)</span>
+<span id="annotated-cell-4-14"><a href="#annotated-cell-4-14" aria-hidden="true" tabindex="-1"></a>sml_lat <span class="op">=</span> np.linspace(sml_ds.YORIG, sml_ds.YORIG <span class="op">+</span> sml_ds.YCELL <span class="op">*</span> (sml_ds.NROWS <span class="op">-</span> <span class="dv">1</span>), sml_ds.NROWS)</span>
+<span id="annotated-cell-4-15"><a href="#annotated-cell-4-15" aria-hidden="true" tabindex="-1"></a></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="5">5</button><span id="annotated-cell-4-16" class="code-annotation-target"><a href="#annotated-cell-4-16" aria-hidden="true" tabindex="-1"></a>sml_lon_pts, sml_lat_pts <span class="op">=</span> np.meshgrid(sml_lon, sml_lat)</span>
+<span id="annotated-cell-4-17"><a href="#annotated-cell-4-17" aria-hidden="true" tabindex="-1"></a>sml_tups <span class="op">=</span> np.array([tup <span class="cf">for</span> tup <span class="kw">in</span> <span class="bu">zip</span>(sml_lon_pts.flatten(), sml_lat_pts.flatten())])</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<dl class="code-annotation-container-hidden code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-4" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-cell="annotated-cell-4" data-code-lines="1,4" data-code-annotation="1">Get the x/y origin and cell size parameters for the big 1081x381 grid.</span>
+</dd>
+<dt data-target-cell="annotated-cell-4" data-target-annotation="2">2</dt>
+<dd>
+<span data-code-cell="annotated-cell-4" data-code-lines="6,7" data-code-annotation="2">Generate one two lists, defining a grid of latitudes and longitudes.</span>
+</dd>
+<dt data-target-cell="annotated-cell-4" data-target-annotation="3">3</dt>
+<dd>
+<span data-code-cell="annotated-cell-4" data-code-lines="9,10" data-code-annotation="3">Using <code>big_lon</code> and <code>big_lat</code>, use meshgrid to generate our 1081x381 set of longitudes and latitudes.</span>
+</dd>
+<dt data-target-cell="annotated-cell-4" data-target-annotation="4">4</dt>
+<dd>
+<span data-code-cell="annotated-cell-4" data-code-lines="12,14" data-code-annotation="4">Open a file that uses the small 1041x381 grid. Then, use the attributes in that file to generate two lists defining a grid of latitudes and longitudes.</span>
+</dd>
+<dt data-target-cell="annotated-cell-4" data-target-annotation="5">5</dt>
+<dd>
+<span data-code-cell="annotated-cell-4" data-code-lines="16,17" data-code-annotation="5">Using <code>sml_lon</code> and <code>sml_lat</code>, use meshgrid to generate our 1041x381 set of longitudes and latitudes.</span>
+</dd>
+</dl>
+</section>
+<section id="experimenting-with-griddata" class="level3" data-number="6.5.2">
+<h3 data-number="6.5.2" class="anchored" data-anchor-id="experimenting-with-griddata"><span class="header-section-number">6.5.2</span> Experimenting with <code>griddata</code></h3>
+<p>Now that we have the two sets of latitude and longitude points, we show an example of how these are used to resample an array of data from a 1041x381 grid to a 1081x381 grid.</p>
+</section>
+<section id="rationale-and-previous-revelations" class="level3" data-number="6.5.3">
+<h3 data-number="6.5.3" class="anchored" data-anchor-id="rationale-and-previous-revelations"><span class="header-section-number">6.5.3</span> Rationale and Previous Revelations</h3>
+<p>IDX expects all arrays at each time step to be the same dimensionality. However, as noted above the data has either <code>NCOLS = 1041</code> or <code>NCOLS = 1081</code>.</p>
+<p>We considered various approaches to the question of: How do we normalize variance in data dimensionality?</p>
+<div id="tbl-sizes" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-sizes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;6.1: The Weaknesses of Approaches to Handling Varying Array Sizes
+</figcaption>
+<div aria-describedby="tbl-sizes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 39%">
+<col style="width: 60%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Approach</th>
+<th>Weakness</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Exclude arrays with 1041 columns.</td>
+<td>Throwing away those data points would discard all the information they hold.</td>
+</tr>
+<tr class="even">
+<td>Force data with 1041 columns into an array with 1081 columns without resampling.</td>
+<td>This results in unused columns within the 1081-column array, leading to discontinuities and potential artifacts in the data representation.</td>
+</tr>
+<tr class="odd">
+<td>Crop arrays on 1081 columns to 1041 columns</td>
+<td>Cropping the data would result in loss of information.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p>The approach we chose was to <strong>resample the data with 1041 columns to arrays with 1081 columns</strong>. This produced the most visually appealing result and preserved the most information possible.</p>
+<ol start="2" type="1">
+<li>create lat/lon points for small grid using dictionaries, not by opening an arbitrary file</li>
+</ol>
 
 
 <!-- -->
@@ -767,60 +1099,283 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./data_loading.html" class="pagination-link" aria-label="Data Loading">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Data Loading</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Data Loading</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./data_validation.html" class="pagination-link" aria-label="Data Validation">
-        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Data Validation</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Data Validation</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">    code-links:</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">      - text: v1</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">        icon: file-code</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">        href: https://github.com/sci-visus/NSDF-WIRED/blob/main/conversion/firesmoke_to_idx_v1.ipynb</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co">      - text: v2</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co">        icon: file-code</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co">        href: https://github.com/sci-visus/NSDF-WIRED/blob/main/conversion/firesmoke_to_idx_v2.ipynb</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co">      - text: v3</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co">        icon: file-code</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co">        href: https://github.com/sci-visus/NSDF-WIRED/blob/main/conversion/firesmoke_to_idx_v3.ipynb</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co">      - text: v4</span></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="co">        icon: file-code</span></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="co">        href: https://github.com/sci-visus/NSDF-WIRED/blob/main/conversion/firesmoke_to_idx_v4.ipynb</span></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="co">    code-tools: true</span></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="fu"># Data Conversion {#sec-data-conversion}</span></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>So far, we have established how to access the data from UBC and have it available on our local machine.</span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>Here we describe the steps for compiling the data now on our machine into an IDX file using the <span class="co">[</span><span class="ot">OpenViSUS libary</span><span class="co">](https://github.com/sci-visus/OpenVisus/tree/master)</span> and its access to the <span class="co">[</span><span class="ot">PIDX library</span><span class="co">](https://github.com/sci-visus/PIDX?tab=readme-ov-file)</span>.</span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="fu">## Overview</span></span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>For all our conversion attempts, the same general process is followed:</span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Check which NetCDF files were successfully downloaded from the data source by attempting to open each downloaded file with <span class="in">`xarray`</span>.</span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Step though all files in a chronological sequence, hour by hour, and save data at each hour to an <span class="in">`IDX`</span> file using the <span class="co">[</span><span class="ot">OpenVisus</span><span class="co">](https://github.com/sci-visus/OpenVisus/tree/master)</span> framework.</span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>In the next sections we will delineate the exact approaches taken, obstacles encountered, and modifications made.</span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="fu">### First Approach</span></span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>The full script for our first approach is available in the side bar as v1.</span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>Initially, we used just the BSC00CA12-01 forecast ID dataset as this ran to the latest available date.</span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a><span class="fu">### Second Approach</span></span>
-<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a><span class="fu">### Third Approach</span></span>
-<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a><span class="fu">### Fourth Approach</span></span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co">    code-links:</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co">      - text: v1</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co">        icon: file-code</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="co">        href: https://github.com/sci-visus/NSDF-WIRED/blob/main/conversion/firesmoke_to_idx_v1.ipynb</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="co">      - text: v2</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="co">        icon: file-code</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="co">        href: https://github.com/sci-visus/NSDF-WIRED/blob/main/conversion/firesmoke_to_idx_v2.ipynb</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="co">      - text: v3</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="co">        icon: file-code</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="co">        href: https://github.com/sci-visus/NSDF-WIRED/blob/main/conversion/firesmoke_to_idx_v3.ipynb</span></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="co">      - text: v4</span></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a><span class="co">        icon: file-code</span></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a><span class="co">        href: https://github.com/sci-visus/NSDF-WIRED/blob/main/conversion/firesmoke_to_idx_v4.ipynb</span></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a><span class="co">    code-tools: true</span></span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a><span class="fu"># Data Conversion {#sec-data-conversion}</span></span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>So far, we have established what the data from UBC is and how to download it to our machine. Now we describe how to compile the data on our machine into an IDX file using the <span class="co">[</span><span class="ot">OpenViSUS libary</span><span class="co">](https://github.com/sci-visus/OpenVisus/tree/master)</span> and its access to the <span class="co">[</span><span class="ot">PIDX library</span><span class="co">](https://github.com/sci-visus/PIDX?tab=readme-ov-file)</span>.</span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a><span class="fu">## On Data Validation</span></span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>We decided to perform data validation *after* conversion to the IDX file format. However, we realized that performing data validation *both before and after* conversion would be best. This is explored further in @sec-data-validation. </span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a>For now, the reader should understand that data validation of the NetCDF files is different from data validation of the IDX file. In this chapter, we use the assumption that the NetCDF files we can open have complete and uncorrupted data for conversion to IDX.</span>
+<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a><span class="fu">## Overview</span></span>
+<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a>For all our conversion attempts, the same general process is followed:</span>
+<span id="cb6-33"><a href="#cb6-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-34"><a href="#cb6-34" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Check which NetCDF files were successfully downloaded from the data source by attempting to open each downloaded file with <span class="in">`xarray`</span>.</span>
+<span id="cb6-35"><a href="#cb6-35" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Step though all files in a chronological sequence, hour by hour, and save data at each hour to an <span class="in">`IDX`</span> file using the <span class="co">[</span><span class="ot">OpenVisus</span><span class="co">](https://github.com/sci-visus/OpenVisus/tree/master)</span> framework.</span>
+<span id="cb6-36"><a href="#cb6-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-37"><a href="#cb6-37" aria-hidden="true" tabindex="-1"></a>We will describe the latest version of our conversion, **version 4**. Throughout, we will explain how previous attempts differed. To see previous attemps in their entirety, refer to the side bar. Please note that the previous scripts were working scripts, therefore they may be incomplete.</span>
+<span id="cb6-38"><a href="#cb6-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-39"><a href="#cb6-39" aria-hidden="true" tabindex="-1"></a><span class="fu">## Setting System Directories</span></span>
+<span id="cb6-40"><a href="#cb6-40" aria-hidden="true" tabindex="-1"></a>First we set the directory paths we want to use during the conversion process, which is to our 4 directories of NetCDF files for each forecast ID.</span>
+<span id="cb6-41"><a href="#cb6-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-44"><a href="#cb6-44" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb6-45"><a href="#cb6-45" aria-hidden="true" tabindex="-1"></a><span class="co"># | eval: false</span></span>
+<span id="cb6-46"><a href="#cb6-46" aria-hidden="true" tabindex="-1"></a>firesmoke_dir <span class="op">=</span> <span class="st">"/usr/sci/cedmav/data/firesmoke"</span>  <span class="co"># &lt;1&gt;</span></span>
+<span id="cb6-47"><a href="#cb6-47" aria-hidden="true" tabindex="-1"></a>idx_dir <span class="op">=</span> <span class="st">"/usr/sci/scratch_nvme/arleth/idx/firesmoke"</span>  <span class="co"># &lt;1&gt;</span></span>
+<span id="cb6-48"><a href="#cb6-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-49"><a href="#cb6-49" aria-hidden="true" tabindex="-1"></a>ids <span class="op">=</span> [<span class="st">"BSC18CA12-01"</span>, <span class="st">"BSC00CA12-01"</span>, <span class="st">"BSC06CA12-01"</span>, <span class="st">"BSC12CA12-01"</span>]  <span class="co"># &lt;2&gt;</span></span>
+<span id="cb6-50"><a href="#cb6-50" aria-hidden="true" tabindex="-1"></a>start_dates <span class="op">=</span> [<span class="st">"20210304"</span>, <span class="st">"20210304"</span>, <span class="st">"20210304"</span>, <span class="st">"20210303"</span>]  <span class="co"># &lt;2&gt;</span></span>
+<span id="cb6-51"><a href="#cb6-51" aria-hidden="true" tabindex="-1"></a>end_dates <span class="op">=</span> [<span class="st">"20240627"</span>, <span class="st">"20240627"</span>, <span class="st">"20240627"</span>, <span class="st">"20240627"</span>]  <span class="co"># &lt;2&gt;</span></span>
+<span id="cb6-52"><a href="#cb6-52" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb6-53"><a href="#cb6-53" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Establish the directory where all forecast ID NetCDFs are stored and where to save our IDX file on the 'atlantis' machine.</span>
+<span id="cb6-54"><a href="#cb6-54" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Define the forecast IDs and dates we will loop over.</span>
+<span id="cb6-55"><a href="#cb6-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-56"><a href="#cb6-56" aria-hidden="true" tabindex="-1"></a><span class="fu">### Rationale and Future Improvements</span></span>
+<span id="cb6-57"><a href="#cb6-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-58"><a href="#cb6-58" aria-hidden="true" tabindex="-1"></a>In versions 1 and 2 of our conversion attempt, we did not use all four sets of forecast ID files. We only used BSC12CA12-01 files to compile a single data set. We learned that by not using all four sets of data, the data set we created was less accurate. See @sec-data-validation for further details.</span>
+<span id="cb6-59"><a href="#cb6-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-60"><a href="#cb6-60" aria-hidden="true" tabindex="-1"></a>Therefore we decide to use all four datasets. We elect to use dates up to June 26, 2024 as this was the last time we ran our scripts. We have yet to address the issue of how to keep the IDX file constantly up to date with data available up to the present day.</span>
+<span id="cb6-61"><a href="#cb6-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-62"><a href="#cb6-62" aria-hidden="true" tabindex="-1"></a><span class="fu">## Checking the NetCDF Files</span></span>
+<span id="cb6-63"><a href="#cb6-63" aria-hidden="true" tabindex="-1"></a>Recall we downloaded all NetCDF files available from UBC onto our machine in their respective directories as follows:</span>
+<span id="cb6-64"><a href="#cb6-64" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb6-65"><a href="#cb6-65" aria-hidden="true" tabindex="-1"></a><span class="in">/usr/sci/cedmav/data/firesmoke</span></span>
+<span id="cb6-66"><a href="#cb6-66" aria-hidden="true" tabindex="-1"></a><span class="in">├── BSC00CA12-01</span></span>
+<span id="cb6-67"><a href="#cb6-67" aria-hidden="true" tabindex="-1"></a><span class="in">├── BSC06CA12-01</span></span>
+<span id="cb6-68"><a href="#cb6-68" aria-hidden="true" tabindex="-1"></a><span class="in">├── BSC12CA12-01</span></span>
+<span id="cb6-69"><a href="#cb6-69" aria-hidden="true" tabindex="-1"></a><span class="in">├── BSC18CA12-01</span></span>
+<span id="cb6-70"><a href="#cb6-70" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb6-71"><a href="#cb6-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-72"><a href="#cb6-72" aria-hidden="true" tabindex="-1"></a>Here, we identify which NetCDF files for each forecast ID successfully open with <span class="in">`xarray`</span> and store them in a dictionary.</span>
+<span id="cb6-73"><a href="#cb6-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-74"><a href="#cb6-74" aria-hidden="true" tabindex="-1"></a>We also confirm the following conditions we established in @sec-data-source by using dictionaries to track the max values and unique values of these attributes across all files:</span>
+<span id="cb6-75"><a href="#cb6-75" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-76"><a href="#cb6-76" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>All files across all four forecast IDs have the same <span class="in">`NROWS`</span>, <span class="in">`XORIG`</span>, <span class="in">`YORIG`</span>, <span class="in">`XCELL`</span>, <span class="in">`YCELL`</span> values.</span>
+<span id="cb6-77"><a href="#cb6-77" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Some files have either <span class="in">`NCOLS = 1041`</span> or <span class="in">`NCOLS = 1081`</span>, but always <span class="in">`NROWS = 381`</span>.</span>
+<span id="cb6-78"><a href="#cb6-78" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-81"><a href="#cb6-81" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb6-82"><a href="#cb6-82" aria-hidden="true" tabindex="-1"></a><span class="co"># | eval: false</span></span>
+<span id="cb6-83"><a href="#cb6-83" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
+<span id="cb6-84"><a href="#cb6-84" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> xarray <span class="im">as</span> xr</span>
+<span id="cb6-85"><a href="#cb6-85" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb6-86"><a href="#cb6-86" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> tqdm</span>
+<span id="cb6-87"><a href="#cb6-87" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-88"><a href="#cb6-88" aria-hidden="true" tabindex="-1"></a>successful_files <span class="op">=</span> {id_: [] <span class="cf">for</span> id_ <span class="kw">in</span> ids}  <span class="co"># &lt;1&gt;</span></span>
+<span id="cb6-89"><a href="#cb6-89" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-90"><a href="#cb6-90" aria-hidden="true" tabindex="-1"></a>max_ncols <span class="op">=</span> {id_: <span class="dv">0</span> <span class="cf">for</span> id_ <span class="kw">in</span> ids}  <span class="co"># &lt;2&gt;</span></span>
+<span id="cb6-91"><a href="#cb6-91" aria-hidden="true" tabindex="-1"></a>max_nrows <span class="op">=</span> {id_: <span class="dv">0</span> <span class="cf">for</span> id_ <span class="kw">in</span> ids}  <span class="co"># &lt;2&gt;</span></span>
+<span id="cb6-92"><a href="#cb6-92" aria-hidden="true" tabindex="-1"></a>ncols <span class="op">=</span> {id_: <span class="bu">set</span>() <span class="cf">for</span> id_ <span class="kw">in</span> ids}  <span class="co"># &lt;3&gt;</span></span>
+<span id="cb6-93"><a href="#cb6-93" aria-hidden="true" tabindex="-1"></a>nrows <span class="op">=</span> {id_: <span class="bu">set</span>() <span class="cf">for</span> id_ <span class="kw">in</span> ids}  <span class="co"># &lt;3&gt;</span></span>
+<span id="cb6-94"><a href="#cb6-94" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-95"><a href="#cb6-95" aria-hidden="true" tabindex="-1"></a>max_grid_x <span class="op">=</span> {id_: {<span class="st">"xorig"</span>: <span class="fl">0.0</span>, <span class="st">"xcell"</span>: <span class="fl">0.0</span>} <span class="cf">for</span> id_ <span class="kw">in</span> ids}  <span class="co"># &lt;4&gt;</span></span>
+<span id="cb6-96"><a href="#cb6-96" aria-hidden="true" tabindex="-1"></a>max_grid_y <span class="op">=</span> {id_: {<span class="st">"yorig"</span>: <span class="fl">0.0</span>, <span class="st">"ycell"</span>: <span class="fl">0.0</span>} <span class="cf">for</span> id_ <span class="kw">in</span> ids}  <span class="co"># &lt;4&gt;</span></span>
+<span id="cb6-97"><a href="#cb6-97" aria-hidden="true" tabindex="-1"></a>xorigs <span class="op">=</span> {id_: <span class="bu">set</span>() <span class="cf">for</span> id_ <span class="kw">in</span> ids}  <span class="co"># &lt;5&gt;</span></span>
+<span id="cb6-98"><a href="#cb6-98" aria-hidden="true" tabindex="-1"></a>xcells <span class="op">=</span> {id_: <span class="bu">set</span>() <span class="cf">for</span> id_ <span class="kw">in</span> ids}</span>
+<span id="cb6-99"><a href="#cb6-99" aria-hidden="true" tabindex="-1"></a>yorigs <span class="op">=</span> {id_: <span class="bu">set</span>() <span class="cf">for</span> id_ <span class="kw">in</span> ids}</span>
+<span id="cb6-100"><a href="#cb6-100" aria-hidden="true" tabindex="-1"></a>ycells <span class="op">=</span> {id_: <span class="bu">set</span>() <span class="cf">for</span> id_ <span class="kw">in</span> ids}  <span class="co"># &lt;5&gt;</span></span>
+<span id="cb6-101"><a href="#cb6-101" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-102"><a href="#cb6-102" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> id_ <span class="kw">in</span> ids:  <span class="co"># &lt;6&gt;</span></span>
+<span id="cb6-103"><a href="#cb6-103" aria-hidden="true" tabindex="-1"></a>    file_names <span class="op">=</span> os.listdir(<span class="ss">f"</span><span class="sc">{</span>firesmoke_dir<span class="sc">}</span><span class="ss">/</span><span class="sc">{</span>id_<span class="sc">}</span><span class="ss">/"</span>)  <span class="co"># &lt;7&gt;</span></span>
+<span id="cb6-104"><a href="#cb6-104" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-105"><a href="#cb6-105" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> <span class="bu">file</span> <span class="kw">in</span> tqdm(file_names):  <span class="co"># &lt;8&gt;</span></span>
+<span id="cb6-106"><a href="#cb6-106" aria-hidden="true" tabindex="-1"></a>        path <span class="op">=</span> <span class="ss">f"</span><span class="sc">{</span>firesmoke_dir<span class="sc">}</span><span class="ss">/</span><span class="sc">{</span>id_<span class="sc">}</span><span class="ss">/</span><span class="sc">{</span><span class="bu">file</span><span class="sc">}</span><span class="ss">"</span>  <span class="co"># &lt;9&gt;</span></span>
+<span id="cb6-107"><a href="#cb6-107" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-108"><a href="#cb6-108" aria-hidden="true" tabindex="-1"></a>        <span class="cf">try</span>:  <span class="co"># &lt;10&gt;</span></span>
+<span id="cb6-109"><a href="#cb6-109" aria-hidden="true" tabindex="-1"></a>            ds <span class="op">=</span> xr.open_dataset(path)  <span class="co"># &lt;10&gt;</span></span>
+<span id="cb6-110"><a href="#cb6-110" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-111"><a href="#cb6-111" aria-hidden="true" tabindex="-1"></a>            successful_files[id_].append(<span class="bu">file</span>)  <span class="co"># &lt;11&gt;</span></span>
+<span id="cb6-112"><a href="#cb6-112" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-113"><a href="#cb6-113" aria-hidden="true" tabindex="-1"></a>            max_ncols[id_] <span class="op">=</span> <span class="bu">max</span>(max_ncols[id_], ds.NCOLS)  <span class="co"># &lt;12&gt;</span></span>
+<span id="cb6-114"><a href="#cb6-114" aria-hidden="true" tabindex="-1"></a>            max_nrows[id_] <span class="op">=</span> <span class="bu">max</span>(max_nrows[id_], ds.NROWS)</span>
+<span id="cb6-115"><a href="#cb6-115" aria-hidden="true" tabindex="-1"></a>            max_grid_x[id_][<span class="st">"xorig"</span>] <span class="op">=</span> <span class="bu">max</span>(max_grid_x[id_][<span class="st">"xorig"</span>], ds.XORIG, key<span class="op">=</span><span class="bu">abs</span>)</span>
+<span id="cb6-116"><a href="#cb6-116" aria-hidden="true" tabindex="-1"></a>            max_grid_y[id_][<span class="st">"yorig"</span>] <span class="op">=</span> <span class="bu">max</span>(max_grid_y[id_][<span class="st">"yorig"</span>], ds.YORIG, key<span class="op">=</span><span class="bu">abs</span>)</span>
+<span id="cb6-117"><a href="#cb6-117" aria-hidden="true" tabindex="-1"></a>            max_grid_x[id_][<span class="st">"xcell"</span>] <span class="op">=</span> <span class="bu">max</span>(max_grid_x[id_][<span class="st">"xcell"</span>], ds.XCELL, key<span class="op">=</span><span class="bu">abs</span>)</span>
+<span id="cb6-118"><a href="#cb6-118" aria-hidden="true" tabindex="-1"></a>            max_grid_y[id_][<span class="st">"ycell"</span>] <span class="op">=</span> <span class="bu">max</span>(</span>
+<span id="cb6-119"><a href="#cb6-119" aria-hidden="true" tabindex="-1"></a>                max_grid_y[id_][<span class="st">"ycell"</span>], ds.YCELL, key<span class="op">=</span><span class="bu">abs</span></span>
+<span id="cb6-120"><a href="#cb6-120" aria-hidden="true" tabindex="-1"></a>            )  <span class="co"># &lt;12&gt;</span></span>
+<span id="cb6-121"><a href="#cb6-121" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-122"><a href="#cb6-122" aria-hidden="true" tabindex="-1"></a>            ncols[id_].add(ds.NCOLS)  <span class="co"># &lt;13&gt;</span></span>
+<span id="cb6-123"><a href="#cb6-123" aria-hidden="true" tabindex="-1"></a>            nrows[id_].add(ds.NROWS)</span>
+<span id="cb6-124"><a href="#cb6-124" aria-hidden="true" tabindex="-1"></a>            xorigs[id_].add(ds.XORIG)</span>
+<span id="cb6-125"><a href="#cb6-125" aria-hidden="true" tabindex="-1"></a>            yorigs[id_].add(ds.YORIG)</span>
+<span id="cb6-126"><a href="#cb6-126" aria-hidden="true" tabindex="-1"></a>            xcells[id_].add(ds.XCELL)</span>
+<span id="cb6-127"><a href="#cb6-127" aria-hidden="true" tabindex="-1"></a>            ycells[id_].add(ds.YCELL)  <span class="co"># &lt;13&gt;</span></span>
+<span id="cb6-128"><a href="#cb6-128" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-129"><a href="#cb6-129" aria-hidden="true" tabindex="-1"></a>        <span class="cf">except</span>:  <span class="co"># &lt;14&gt;</span></span>
+<span id="cb6-130"><a href="#cb6-130" aria-hidden="true" tabindex="-1"></a>            <span class="cf">continue</span></span>
+<span id="cb6-131"><a href="#cb6-131" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-132"><a href="#cb6-132" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> id_ <span class="kw">in</span> successful_files:  <span class="co"># &lt;15&gt;</span></span>
+<span id="cb6-133"><a href="#cb6-133" aria-hidden="true" tabindex="-1"></a>    successful_files[id_] <span class="op">=</span> np.sort(successful_files[id_]).tolist()  <span class="co"># &lt;15&gt;</span></span>
+<span id="cb6-134"><a href="#cb6-134" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb6-135"><a href="#cb6-135" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Initialize a dictionary to hold an empty list for each forecast ID. We update it with the file names that successfully open under the forecast ID directory.</span>
+<span id="cb6-136"><a href="#cb6-136" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Initialize dictionaries to hold an integer for each forecast ID. We update it to hold the maximum <span class="in">`NCOLS`</span>/<span class="in">`NROWS`</span> value available within forecast ID's set of NetCDF files.</span>
+<span id="cb6-137"><a href="#cb6-137" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Initialize dictionaries to hold a set for each forecast ID. We update the set to hold all the unique <span class="in">`NCOLS`</span>/<span class="in">`NROWS`</span> values available within the forecast ID's set of NetCDF files.</span>
+<span id="cb6-138"><a href="#cb6-138" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>Initialize dictionaries to hold a dictionary of <span class="in">`xorig`</span>/<span class="in">`yorig`</span> and <span class="in">`xcell`</span>/<span class="in">`ycell`</span> values for each forecast ID. We update it to hold the maximum <span class="in">`xorig`</span>/<span class="in">`yorig`</span> and <span class="in">`xcell`</span>/<span class="in">`ycell`</span> pairs available within the forecast ID's set of NetCDF files.</span>
+<span id="cb6-139"><a href="#cb6-139" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>Initialize dictionaries to track unique <span class="in">`xorig`</span>/<span class="in">`yorig`</span> and <span class="in">`xcell`</span>/<span class="in">`ycell`</span> values.</span>
+<span id="cb6-140"><a href="#cb6-140" aria-hidden="true" tabindex="-1"></a><span class="ss">6. </span>For each forecast ID, we populate the dictionaries above.</span>
+<span id="cb6-141"><a href="#cb6-141" aria-hidden="true" tabindex="-1"></a><span class="ss">7. </span>Obtain a list of file names under the directory for <span class="in">`id_`</span>. We loop through each file next.</span>
+<span id="cb6-142"><a href="#cb6-142" aria-hidden="true" tabindex="-1"></a><span class="ss">8. </span>Begin loop over each file. Note <span class="in">`tqdm`</span> is just an accessory for generating a visible status bar in our Jupyter Notebook.</span>
+<span id="cb6-143"><a href="#cb6-143" aria-hidden="true" tabindex="-1"></a><span class="ss">9. </span>Obtain absolute path name to current file.</span>
+<span id="cb6-144"><a href="#cb6-144" aria-hidden="true" tabindex="-1"></a><span class="ss">10. </span>Here we use a <span class="in">`try`</span> statement since opening the file with <span class="in">`xarray`</span> may lead to an error. <span class="in">`except`</span> allows us to catch the exception accordingly and continue trying to open each file.</span>
+<span id="cb6-145"><a href="#cb6-145" aria-hidden="true" tabindex="-1"></a><span class="ss">11. </span>At this line, the file opened without issue in <span class="in">`xarray`</span>, so append this file name to the <span class="in">`id_`</span> list in the <span class="in">`successful_files`</span> dictionary.</span>
+<span id="cb6-146"><a href="#cb6-146" aria-hidden="true" tabindex="-1"></a><span class="ss">12. </span>Use <span class="in">`max`</span> to save the largest values in our dictionaries accordingly.</span>
+<span id="cb6-147"><a href="#cb6-147" aria-hidden="true" tabindex="-1"></a><span class="ss">13. </span>Update the dictionaries of sets with the file's attributes, to ensure we catch all unique values.</span>
+<span id="cb6-148"><a href="#cb6-148" aria-hidden="true" tabindex="-1"></a><span class="ss">14. </span>If the file did not open during the <span class="in">`try`</span> continue to the next file.</span>
+<span id="cb6-149"><a href="#cb6-149" aria-hidden="true" tabindex="-1"></a><span class="ss">15. </span>Sort the lists of successfully opened files by name, so they are in chronological order.</span>
+<span id="cb6-150"><a href="#cb6-150" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-151"><a href="#cb6-151" aria-hidden="true" tabindex="-1"></a>The following shows the information gathered:</span>
+<span id="cb6-152"><a href="#cb6-152" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-153"><a href="#cb6-153" aria-hidden="true" tabindex="-1"></a>::: {.panel-tabset}</span>
+<span id="cb6-154"><a href="#cb6-154" aria-hidden="true" tabindex="-1"></a><span class="fu">## BSC18CA12-01</span></span>
+<span id="cb6-155"><a href="#cb6-155" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb6-156"><a href="#cb6-156" aria-hidden="true" tabindex="-1"></a><span class="in">dataset: BSC18CA12-01</span></span>
+<span id="cb6-157"><a href="#cb6-157" aria-hidden="true" tabindex="-1"></a><span class="in">Number of successful files: 1010</span></span>
+<span id="cb6-158"><a href="#cb6-158" aria-hidden="true" tabindex="-1"></a><span class="in">Max cell sizes: max_ncols = 1081 and max_nrows = 381</span></span>
+<span id="cb6-159"><a href="#cb6-159" aria-hidden="true" tabindex="-1"></a><span class="in">Max xorig &amp; xcell: {'xorig': -160.0, 'xcell': 0.10000000149011612}</span></span>
+<span id="cb6-160"><a href="#cb6-160" aria-hidden="true" tabindex="-1"></a><span class="in">Max yorig &amp; ycell: {'yorig': 32.0, 'ycell': 0.10000000149011612}</span></span>
+<span id="cb6-161"><a href="#cb6-161" aria-hidden="true" tabindex="-1"></a><span class="in">ncols: {1081, 1041}</span></span>
+<span id="cb6-162"><a href="#cb6-162" aria-hidden="true" tabindex="-1"></a><span class="in">nrows: {381}</span></span>
+<span id="cb6-163"><a href="#cb6-163" aria-hidden="true" tabindex="-1"></a><span class="in">xorigs: {-160.0, -156.0}</span></span>
+<span id="cb6-164"><a href="#cb6-164" aria-hidden="true" tabindex="-1"></a><span class="in">yorigs: {32.0}</span></span>
+<span id="cb6-165"><a href="#cb6-165" aria-hidden="true" tabindex="-1"></a><span class="in">xcells: {0.10000000149011612}</span></span>
+<span id="cb6-166"><a href="#cb6-166" aria-hidden="true" tabindex="-1"></a><span class="in">ycells: {0.10000000149011612}</span></span>
+<span id="cb6-167"><a href="#cb6-167" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb6-168"><a href="#cb6-168" aria-hidden="true" tabindex="-1"></a><span class="fu">## BSC00CA12-01</span></span>
+<span id="cb6-169"><a href="#cb6-169" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb6-170"><a href="#cb6-170" aria-hidden="true" tabindex="-1"></a><span class="in">dataset: BSC00CA12-01</span></span>
+<span id="cb6-171"><a href="#cb6-171" aria-hidden="true" tabindex="-1"></a><span class="in">Number of successful files: 1067</span></span>
+<span id="cb6-172"><a href="#cb6-172" aria-hidden="true" tabindex="-1"></a><span class="in">Max cell sizes: max_ncols = 1081 and max_nrows = 381</span></span>
+<span id="cb6-173"><a href="#cb6-173" aria-hidden="true" tabindex="-1"></a><span class="in">Max xorig &amp; xcell: {'xorig': -160.0, 'xcell': 0.10000000149011612}</span></span>
+<span id="cb6-174"><a href="#cb6-174" aria-hidden="true" tabindex="-1"></a><span class="in">Max yorig &amp; ycell: {'yorig': 32.0, 'ycell': 0.10000000149011612}</span></span>
+<span id="cb6-175"><a href="#cb6-175" aria-hidden="true" tabindex="-1"></a><span class="in">ncols: {1081, 1041}</span></span>
+<span id="cb6-176"><a href="#cb6-176" aria-hidden="true" tabindex="-1"></a><span class="in">nrows: {381}</span></span>
+<span id="cb6-177"><a href="#cb6-177" aria-hidden="true" tabindex="-1"></a><span class="in">xorigs: {-160.0, -156.0}</span></span>
+<span id="cb6-178"><a href="#cb6-178" aria-hidden="true" tabindex="-1"></a><span class="in">yorigs: {32.0}</span></span>
+<span id="cb6-179"><a href="#cb6-179" aria-hidden="true" tabindex="-1"></a><span class="in">xcells: {0.10000000149011612}</span></span>
+<span id="cb6-180"><a href="#cb6-180" aria-hidden="true" tabindex="-1"></a><span class="in">ycells: {0.10000000149011612}</span></span>
+<span id="cb6-181"><a href="#cb6-181" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb6-182"><a href="#cb6-182" aria-hidden="true" tabindex="-1"></a><span class="fu">## BSC06CA12-01</span></span>
+<span id="cb6-183"><a href="#cb6-183" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb6-184"><a href="#cb6-184" aria-hidden="true" tabindex="-1"></a><span class="in">dataset: BSC06CA12-01</span></span>
+<span id="cb6-185"><a href="#cb6-185" aria-hidden="true" tabindex="-1"></a><span class="in">Number of successful files: 997</span></span>
+<span id="cb6-186"><a href="#cb6-186" aria-hidden="true" tabindex="-1"></a><span class="in">Max cell sizes: max_ncols = 1081 and max_nrows = 381</span></span>
+<span id="cb6-187"><a href="#cb6-187" aria-hidden="true" tabindex="-1"></a><span class="in">Max xorig &amp; xcell: {'xorig': -160.0, 'xcell': 0.10000000149011612}</span></span>
+<span id="cb6-188"><a href="#cb6-188" aria-hidden="true" tabindex="-1"></a><span class="in">Max yorig &amp; ycell: {'yorig': 32.0, 'ycell': 0.10000000149011612}</span></span>
+<span id="cb6-189"><a href="#cb6-189" aria-hidden="true" tabindex="-1"></a><span class="in">ncols: {1081, 1041}</span></span>
+<span id="cb6-190"><a href="#cb6-190" aria-hidden="true" tabindex="-1"></a><span class="in">nrows: {381}</span></span>
+<span id="cb6-191"><a href="#cb6-191" aria-hidden="true" tabindex="-1"></a><span class="in">xorigs: {-160.0, -156.0}</span></span>
+<span id="cb6-192"><a href="#cb6-192" aria-hidden="true" tabindex="-1"></a><span class="in">yorigs: {32.0}</span></span>
+<span id="cb6-193"><a href="#cb6-193" aria-hidden="true" tabindex="-1"></a><span class="in">xcells: {0.10000000149011612}</span></span>
+<span id="cb6-194"><a href="#cb6-194" aria-hidden="true" tabindex="-1"></a><span class="in">ycells: {0.10000000149011612}</span></span>
+<span id="cb6-195"><a href="#cb6-195" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb6-196"><a href="#cb6-196" aria-hidden="true" tabindex="-1"></a><span class="fu">## BSC12CA12-01</span></span>
+<span id="cb6-197"><a href="#cb6-197" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb6-198"><a href="#cb6-198" aria-hidden="true" tabindex="-1"></a><span class="in">dataset: BSC12CA12-01</span></span>
+<span id="cb6-199"><a href="#cb6-199" aria-hidden="true" tabindex="-1"></a><span class="in">Number of successful files: 1003</span></span>
+<span id="cb6-200"><a href="#cb6-200" aria-hidden="true" tabindex="-1"></a><span class="in">Max cell sizes: max_ncols = 1081 and max_nrows = 381</span></span>
+<span id="cb6-201"><a href="#cb6-201" aria-hidden="true" tabindex="-1"></a><span class="in">Max xorig &amp; xcell: {'xorig': -160.0, 'xcell': 0.10000000149011612}</span></span>
+<span id="cb6-202"><a href="#cb6-202" aria-hidden="true" tabindex="-1"></a><span class="in">Max yorig &amp; ycell: {'yorig': 32.0, 'ycell': 0.10000000149011612}</span></span>
+<span id="cb6-203"><a href="#cb6-203" aria-hidden="true" tabindex="-1"></a><span class="in">ncols: {1081, 1041}</span></span>
+<span id="cb6-204"><a href="#cb6-204" aria-hidden="true" tabindex="-1"></a><span class="in">nrows: {381}</span></span>
+<span id="cb6-205"><a href="#cb6-205" aria-hidden="true" tabindex="-1"></a><span class="in">xorigs: {-160.0, -156.0}</span></span>
+<span id="cb6-206"><a href="#cb6-206" aria-hidden="true" tabindex="-1"></a><span class="in">yorigs: {32.0}</span></span>
+<span id="cb6-207"><a href="#cb6-207" aria-hidden="true" tabindex="-1"></a><span class="in">xcells: {0.10000000149011612}</span></span>
+<span id="cb6-208"><a href="#cb6-208" aria-hidden="true" tabindex="-1"></a><span class="in">ycells: {0.10000000149011612}</span></span>
+<span id="cb6-209"><a href="#cb6-209" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb6-210"><a href="#cb6-210" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb6-211"><a href="#cb6-211" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-212"><a href="#cb6-212" aria-hidden="true" tabindex="-1"></a><span class="fu">### Rationale and Future Improvements</span></span>
+<span id="cb6-213"><a href="#cb6-213" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-214"><a href="#cb6-214" aria-hidden="true" tabindex="-1"></a>We have used the <span class="in">`successful_files`</span> dictionary to test which files are usable by testing whether they open with <span class="in">`xarray`</span> or not.</span>
+<span id="cb6-215"><a href="#cb6-215" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-216"><a href="#cb6-216" aria-hidden="true" tabindex="-1"></a>In version 2 of our conversion, we discovered that some files had differing values for <span class="in">`NCOLS`</span>. The IDX file format expects all arrays across all time steps to have the same number of rows and columns. We realized that our assumption that all attributes were the same across all files was unfounded.  Therefore, we collected information about the values for all attributes in the NetCDF files as shown above so that we could resample arrays to use <span class="in">`1081`</span> columns.</span>
+<span id="cb6-217"><a href="#cb6-217" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-218"><a href="#cb6-218" aria-hidden="true" tabindex="-1"></a>One improvement to this step is to stop tracking maxes and unique values seperately. Instead, we could just track unique values then get maxes from there.</span>
+<span id="cb6-219"><a href="#cb6-219" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-220"><a href="#cb6-220" aria-hidden="true" tabindex="-1"></a><span class="fu">## Preparing Resampling Grids</span></span>
+<span id="cb6-221"><a href="#cb6-221" aria-hidden="true" tabindex="-1"></a>To resample arrays of shape 1041x381 to 1081x381, we use the SciPy <span class="in">`griddata`</span> function from the <span class="in">`interpolate`</span> package. This function gives interpolated values on set of points <span class="in">`xi`</span> from a set of <span class="in">`points`</span> with corresponding <span class="in">`values`</span>. We refer the reader to SciPy's <span class="co">[</span><span class="ot">documentation</span><span class="co">](https://docs.scipy.org/doc/scipy/reference/generated/scipy.interpolate.griddata.html)</span> for details.</span>
+<span id="cb6-222"><a href="#cb6-222" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-223"><a href="#cb6-223" aria-hidden="true" tabindex="-1"></a>Recall we can generate a set of latitude and longitude coordinates on the 1041x381 and 1081x381 grid by using the attributes given in each NetCDF file, see @sec-data-source for an example. We can thus sample a set of corresponding <span class="in">`PM25`</span> values on a 1081x381 grid by using using a 1041x381 array of latitude and longitudes as <span class="in">`points`</span> and 1041x381 array of PM25 values as <span class="in">`values`</span> with the <span class="in">`griddata`</span> function. We willgenerate these grids of lat/lon points using the attribute information we collected in the previous step.</span>
+<span id="cb6-224"><a href="#cb6-224" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-225"><a href="#cb6-225" aria-hidden="true" tabindex="-1"></a><span class="fu">### Generate Grids of Latitude and Longitude Points</span></span>
+<span id="cb6-226"><a href="#cb6-226" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
+<span id="cb6-227"><a href="#cb6-227" aria-hidden="true" tabindex="-1"></a>max_xorig <span class="op">=</span> max_grid_x[ids[<span class="dv">0</span>]][<span class="st">'xorig'</span>] <span class="co"># &lt;1&gt;</span></span>
+<span id="cb6-228"><a href="#cb6-228" aria-hidden="true" tabindex="-1"></a>max_xcell <span class="op">=</span> max_grid_x[ids[<span class="dv">0</span>]][<span class="st">'xcell'</span>]</span>
+<span id="cb6-229"><a href="#cb6-229" aria-hidden="true" tabindex="-1"></a>max_yorig <span class="op">=</span> max_grid_y[ids[<span class="dv">0</span>]][<span class="st">'yorig'</span>]</span>
+<span id="cb6-230"><a href="#cb6-230" aria-hidden="true" tabindex="-1"></a>max_ycell <span class="op">=</span> max_grid_y[ids[<span class="dv">0</span>]][<span class="st">'ycell'</span>] <span class="co"># &lt;1&gt;</span></span>
+<span id="cb6-231"><a href="#cb6-231" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-232"><a href="#cb6-232" aria-hidden="true" tabindex="-1"></a>big_lon <span class="op">=</span> np.linspace(max_xorig, max_xorig <span class="op">+</span> max_xcell <span class="op">*</span> (max_ncols[ids[<span class="dv">0</span>]] <span class="op">-</span> <span class="dv">1</span>), max_ncols[ids[<span class="dv">0</span>]]) <span class="co"># &lt;2&gt;</span></span>
+<span id="cb6-233"><a href="#cb6-233" aria-hidden="true" tabindex="-1"></a>big_lat <span class="op">=</span> np.linspace(max_yorig, max_yorig <span class="op">+</span> max_ycell <span class="op">*</span> (max_nrows[ids[<span class="dv">0</span>]] <span class="op">-</span> <span class="dv">1</span>), max_nrows[ids[<span class="dv">0</span>]]) <span class="co"># &lt;2&gt;</span></span>
+<span id="cb6-234"><a href="#cb6-234" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-235"><a href="#cb6-235" aria-hidden="true" tabindex="-1"></a>big_lon_pts, big_lat_pts <span class="op">=</span> np.meshgrid(big_lon, big_lat) <span class="co"># &lt;3&gt;</span></span>
+<span id="cb6-236"><a href="#cb6-236" aria-hidden="true" tabindex="-1"></a>big_tups <span class="op">=</span> np.array([tup <span class="cf">for</span> tup <span class="kw">in</span> <span class="bu">zip</span>(big_lon_pts.flatten(), big_lat_pts.flatten())]) <span class="co"># &lt;3&gt;</span></span>
+<span id="cb6-237"><a href="#cb6-237" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-238"><a href="#cb6-238" aria-hidden="true" tabindex="-1"></a>sml_ds <span class="op">=</span> xr.open_dataset(firesmoke_dir <span class="op">+</span> <span class="st">"/BSC00CA12-01/dispersion_20210304.nc"</span>) <span class="co"># &lt;4&gt;</span></span>
+<span id="cb6-239"><a href="#cb6-239" aria-hidden="true" tabindex="-1"></a>sml_lon <span class="op">=</span> np.linspace(sml_ds.XORIG, sml_ds.XORIG <span class="op">+</span> sml_ds.XCELL <span class="op">*</span> (sml_ds.NCOLS <span class="op">-</span> <span class="dv">1</span>), sml_ds.NCOLS)</span>
+<span id="cb6-240"><a href="#cb6-240" aria-hidden="true" tabindex="-1"></a>sml_lat <span class="op">=</span> np.linspace(sml_ds.YORIG, sml_ds.YORIG <span class="op">+</span> sml_ds.YCELL <span class="op">*</span> (sml_ds.NROWS <span class="op">-</span> <span class="dv">1</span>), sml_ds.NROWS) <span class="co"># &lt;4&gt;</span></span>
+<span id="cb6-241"><a href="#cb6-241" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-242"><a href="#cb6-242" aria-hidden="true" tabindex="-1"></a>sml_lon_pts, sml_lat_pts <span class="op">=</span> np.meshgrid(sml_lon, sml_lat) <span class="co"># &lt;5&gt;</span></span>
+<span id="cb6-243"><a href="#cb6-243" aria-hidden="true" tabindex="-1"></a>sml_tups <span class="op">=</span> np.array([tup <span class="cf">for</span> tup <span class="kw">in</span> <span class="bu">zip</span>(sml_lon_pts.flatten(), sml_lat_pts.flatten())]) <span class="co"># &lt;5&gt;</span></span>
+<span id="cb6-244"><a href="#cb6-244" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb6-245"><a href="#cb6-245" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Get the x/y origin and cell size parameters for the big 1081x381 grid.</span>
+<span id="cb6-246"><a href="#cb6-246" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Generate one two lists, defining a grid of latitudes and longitudes.</span>
+<span id="cb6-247"><a href="#cb6-247" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Using <span class="in">`big_lon`</span> and <span class="in">`big_lat`</span>, use meshgrid to generate our 1081x381 set of longitudes and latitudes.</span>
+<span id="cb6-248"><a href="#cb6-248" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>Open a file that uses the small 1041x381 grid. Then, use the attributes in that file to generate two lists defining a grid of latitudes and longitudes.</span>
+<span id="cb6-249"><a href="#cb6-249" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>Using <span class="in">`sml_lon`</span> and <span class="in">`sml_lat`</span>, use meshgrid to generate our 1041x381 set of longitudes and latitudes.</span>
+<span id="cb6-250"><a href="#cb6-250" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-251"><a href="#cb6-251" aria-hidden="true" tabindex="-1"></a><span class="fu">### Experimenting with `griddata`</span></span>
+<span id="cb6-252"><a href="#cb6-252" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-253"><a href="#cb6-253" aria-hidden="true" tabindex="-1"></a>Now that we have the two sets of latitude and longitude points, we show an example of how these are used to resample an array of data from a 1041x381 grid to a 1081x381 grid.</span>
+<span id="cb6-254"><a href="#cb6-254" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-255"><a href="#cb6-255" aria-hidden="true" tabindex="-1"></a><span class="fu">### Rationale and Previous Revelations</span></span>
+<span id="cb6-256"><a href="#cb6-256" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-257"><a href="#cb6-257" aria-hidden="true" tabindex="-1"></a>IDX expects all arrays at each time step to be the same dimensionality. However, as noted above the data has either <span class="in">`NCOLS = 1041`</span> or <span class="in">`NCOLS = 1081`</span>.</span>
+<span id="cb6-258"><a href="#cb6-258" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-259"><a href="#cb6-259" aria-hidden="true" tabindex="-1"></a>We considered various approaches to the question of: How do we normalize variance in data dimensionality? </span>
+<span id="cb6-260"><a href="#cb6-260" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-261"><a href="#cb6-261" aria-hidden="true" tabindex="-1"></a>| Approach                                                                                     | Weakness                                                                                                                           |</span>
+<span id="cb6-262"><a href="#cb6-262" aria-hidden="true" tabindex="-1"></a>|----------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------|</span>
+<span id="cb6-263"><a href="#cb6-263" aria-hidden="true" tabindex="-1"></a>| Exclude arrays with 1041 columns.                                                               | Throwing away those data points would discard all the information they hold.                                                     |</span>
+<span id="cb6-264"><a href="#cb6-264" aria-hidden="true" tabindex="-1"></a>| Force data with 1041 columns into an array with 1081 columns without resampling.              | This results in unused columns within the 1081-column array, leading to discontinuities and potential artifacts in the data representation. |</span>
+<span id="cb6-265"><a href="#cb6-265" aria-hidden="true" tabindex="-1"></a>| Crop arrays on  1081 columns to 1041 columns                                              | Cropping the data would result in loss of information.                                                                           |</span>
+<span id="cb6-266"><a href="#cb6-266" aria-hidden="true" tabindex="-1"></a>: The Weaknesses of Approaches to Handling Varying Array Sizes {#tbl-sizes}</span>
+<span id="cb6-267"><a href="#cb6-267" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-268"><a href="#cb6-268" aria-hidden="true" tabindex="-1"></a>The approach we chose was to **resample the data with 1041 columns to arrays with 1081 columns**. This produced the most visually appealing result and preserved the most information possible.</span>
+<span id="cb6-269"><a href="#cb6-269" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-270"><a href="#cb6-270" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-271"><a href="#cb6-271" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>create lat/lon points for small grid using dictionaries, not by opening an arbitrary file</span>
+</code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 

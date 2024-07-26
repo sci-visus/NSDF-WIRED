@@ -19,9 +19,9 @@ Knowing what data is available and how to obtain the data, we can proceed with l
 
 We decided to download all the available files from the [data source](data_source.qmd) onto our [data staging machine](sys_specs.qmd) to process from there. 
 
-We created 4 directories for each forecast ID that UBC provides:
+We created 4 directories for each forecast ID that UBC provides at the following directory on our machine:
 ```
-.
+/usr/sci/cedmav/data/firesmoke
 ├── BSC00CA12-01
 ├── BSC06CA12-01
 ├── BSC12CA12-01
@@ -35,6 +35,7 @@ The following shows our approaches to doing this and discusses how our approach 
 We delineate our first approach by detailing our download script, which is available in it's entirety in the side bar.
 ---
 ```{python}
+#| eval: false
 import wget
 import pandas as pd
 
@@ -80,6 +81,7 @@ This issue was not identified until *after* we visualized each hour of the data,
 Our second approach is similar to the first, except we use [`requests`](https://requests.readthedocs.io/en/latest/), an HTTP client library that allows us to see the headers returned from the URL we query. The script is available in the side bar.
 ---
 ```{python}
+# | eval: false
 import requests
 import pandas as pd
 from datetime import datetime
@@ -106,13 +108,13 @@ for i in zip(start_dates, ids, init_times):  # <2>
             + init_time
             + "/dispersion.nc"
         )  # <3>
-        directory = ( # <4>
+        directory = (  # <4>
             "/usr/sci/scratch_nvme/arleth/basura_total/"
             + forecast_id
             + "/dispersion_"
             + date
             + ".nc"
-        ) # <4>
+        )  # <4>
 
         response = requests.get(url, stream=True)  # <5>
         header = response.headers
@@ -129,8 +131,8 @@ for i in zip(start_dates, ids, init_times):  # <2>
 1. First, create 3 lists containing forecast IDs, the start dates we wish to index on, and the smoke forecast initiation times . Notice we define a variable `today`, this allows us to run this script and query all URLs up to today's date. Note we ran up to June 27, 2024 for now. We will loop through these sets of parameters.
 2. In a for loop, we use `pandas` to create a list of every date from the start date and end date of the current iteration. We will loop through these dates next.
 3. For each `date` in the list, we create the `url` to download the file.
-4. Set the file name and directory to download the files. Each file is stored in a directory that corresponds to the forecast ID name.
+4. Define `directory`, the directory and file name to save the file to.
 5. We use `requests` to get the HTTP header at `url`. We inspect the `Content-Type` and if it is `application/octet-stream`, we download the file. We confirmed that a URL with a NetCDF file had this content type header. 
 6. We write the content to `directory`, else we print the content header out to check what it is.
 
-This approach yielded the results we expected, all files downloaded were NetCDF files. Having all the files on our machine, we proceed to compiling the single data set.
+This approach yielded the results we expected, we downloaded only NetCDF files. We had failed downloads which appeared during conversion as described in @sec-data-conversion. We assumed those files were unavailable from UBC which we later confirmed as described in @sec-data-validation.

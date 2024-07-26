@@ -91,10 +91,10 @@ The file downloaded at the specified URL download the 2-day forecast for [DATE] 
 We load `dispersion.nc` using `xarray`, which provides a handy preview of the file.
 
 ```{python}
-#| eval: true
+# | eval: true
 import xarray as xr
 
-ds = xr.open_dataset("data/data_source/dispersion.nc")
+ds = xr.open_dataset("data_notebooks/data_source/dispersion.nc")
 ds
 ```
 
@@ -103,7 +103,7 @@ ds
 `dispersion.nc` contains the following attributes. Note that for all files across forecast IDs, they have the same dimension and variable names:
 
 #### Dimensions:
-These dimensions determine on which indicies we may index our variables.
+The dimensions described in @tbl-dims determine on which indicies we may index our variables.
 
 | Dimension  | Size | Description                                                                                       |
 |------------|------|---------------------------------------------------------------------------------------------------|
@@ -113,18 +113,20 @@ These dimensions determine on which indicies we may index our variables.
 | LAY        | 1    | This dimension represents the number of layers in the file, which is 1 in this case.              |
 | ROW        | 381  | This dimension represents the number of rows in the spatial grid.                                 |
 | COL        | 1041 | This dimension represents the number of columns in the spatial grid.                              |
+: Description of Dimensions for Indexing Data in NetCDF Files {#tbl-dims}
 
 #### Variables:
-These variables contain the data in question that we would like to extract.
+The variables described in @tbl-vars contain the data in question that we would like to extract.
 
 | Variable | Dimensions            | Data Type | Description                                                                            |
 |----------|-----------------------|-----------|----------------------------------------------------------------------------------------|
 | TFLAG    | TSTEP, VAR, DATE-TIME | int32     | This variable stores the date and time of each time step.                               |
 | PM25     | TSTEP, LAY, ROW, COL | float32   | This variable contains the concentration of particulate matter (PM2.5) for each time step, layer, row, and column in the spatial grid. |
+: Description of Variables in NetCDF Files {#tbl-vars}
 
 #### Attributes
-Of the 33 available attributes we use the following:
-**TODO NEED TO CONFIRM WITH UBC IF THIS IS RIGHT**
+Of the 33 available attributes we use the ones shown in @tbl-attrs:
+**TODO NEED TO CONFIRM IF THIS IS RIGHT**
 
 | Attribute | Value               | Description                                                                                              |
 |-----------|---------------------|----------------------------------------------------------------------------------------------------------|
@@ -140,15 +142,29 @@ Of the 33 available attributes we use the following:
 | YORIG     | 32.0                | The origin (starting point) of the grid in the y-direction.                                              |
 | XCELL     | 0.10000000149011612 | The cell size in the x-direction.|
 | YCELL     | 0.10000000149011612 | The cell size in the y-direction.|
+: Description of Attributes in NetCDF Files {#tbl-attrs}
 
 Now that we understand what exactly is within one NetCDF file, let's establish the information we have when we download all available NetCDF files.
+
+### Using the Data
+
+We demonstrate a simple example of querying data at a certain timestep within this file and visualizing that data.
+
+**TODO USE netcdf_demo.ipynb**
+
+```{python}
+import xarray as xr
+
+ds = xr.open_dataset("data_notebooks/data_source/dispersion.nc") # <1>
+```
+1. Open the NetCDF file.
 
 ## Metadata of Collected NetCDF Files
 Here we describe metadata about the collection of NetCDF files we downloaded.
 
 ### Disk Size
 
-For the time ranges we cover, the following table shows how large the set of files per forecast ID are.
+For the time ranges we cover, @tbl-sizes shows how large the set of files per forecast ID are.
 
 | Forecast ID    | Date Range                          | Size  | File Count |
 |----------------|-------------------------------------|-------|------------|
@@ -157,7 +173,7 @@ For the time ranges we cover, the following table shows how large the set of fil
 | BSC12CA12-01   | March 3, 2021 - June 27, 2024          | 79G   | 1022       |
 | BSC18CA12-01   | March 4, 2021 - June 27, 2024          | 79G   | 1023       |
 | **Total**      |                                     | **320G** | **4144**   |
-
+: File Sizes and Counts for Each Forecast ID within the Specified Date Range {#tbl-sizes}
 
 ### Data Uniformity
 To create our dataset, we used the following understanding about the attributes across all files:
@@ -166,7 +182,7 @@ To create our dataset, we used the following understanding about the attributes 
 2. Some files have either `NCOLS = 1041` or `NCOLS = 1081`.
 3. `{C,W,S}_DATE` and `{C,W,S}_TIME` values are unique to each file.
 
-Now that we know what data is available and how it can be obtained, we describe next how to extract data from these files to form one dataset.
+Now we know what data is available, how to download it, and how to extract information from the data to visualize it on a plot. We describe next how to extract data from these files to form one dataset.
 
 # References
 firesmoke.ca website

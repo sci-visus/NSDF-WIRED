@@ -19,28 +19,286 @@ format:
 
 # Data Conversion {#sec-data-conversion}
 
-So far, we have established how to access the data from UBC and have it available on our local machine.
+So far, we have established what the data from UBC is and how to download it to our machine. Now we describe how to compile the data on our machine into an IDX file using the [OpenViSUS libary](https://github.com/sci-visus/OpenVisus/tree/master) and its access to the [PIDX library](https://github.com/sci-visus/PIDX?tab=readme-ov-file).
 
-Here we describe the steps for compiling the data now on our machine into an IDX file using the [OpenViSUS libary](https://github.com/sci-visus/OpenVisus/tree/master) and its access to the [PIDX library](https://github.com/sci-visus/PIDX?tab=readme-ov-file).
+## On Data Validation
+
+We decided to perform data validation *after* conversion to the IDX file format. However, we realized that performing data validation *both before and after* conversion would be best. This is explored further in @sec-data-validation. 
+
+For now, the reader should understand that data validation of the NetCDF files is different from data validation of the IDX file. In this chapter, we use the assumption that the NetCDF files we can open have complete and uncorrupted data for conversion to IDX.
 
 ## Overview
 
 For all our conversion attempts, the same general process is followed:
 
 1. Check which NetCDF files were successfully downloaded from the data source by attempting to open each downloaded file with `xarray`.
-2. Step though all files in a chronological sequence, hour by hour, and save data at each hour to an `IDX` file using the [OpenVisus](https://github.com/sci-visus/OpenVisus/tree/master) framework.
+2. Obtain a subset of data from the files to create a dataset of chronological, hour by hour, data. Save this time series data to an `IDX` file using the [OpenVisus](https://github.com/sci-visus/OpenVisus/tree/master) framework.
 
-In the next sections we will delineate the exact approaches taken, obstacles encountered, and modifications made.
+We will describe the latest version of our conversion, **version 4**. Throughout, we will explain how previous attempts differed. To see previous attemps in their entirety, refer to the side bar. Please note that the previous scripts were working scripts, therefore they may be incomplete.
 
-### First Approach
-The full script for our first approach is available in the side bar as v1.
+## Setting System Directories
+First we set the directory paths we want to use during the conversion process, which is to our 4 directories of NetCDF files for each forecast ID.
 
-Initially, we used just the BSC00CA12-01 forecast ID dataset as this ran to the latest available date.
+```{python}
+# | eval: false
+firesmoke_dir = "/usr/sci/cedmav/data/firesmoke"  # <1>
+idx_dir = "/usr/sci/scratch_nvme/arleth/idx/firesmoke"  # <1>
 
-### Second Approach
+ids = ["BSC18CA12-01", "BSC00CA12-01", "BSC06CA12-01", "BSC12CA12-01"]  # <2>
+start_dates = ["20210304", "20210304", "20210304", "20210303"]  # <2>
+end_dates = ["20240627", "20240627", "20240627", "20240627"]  # <2>
+```
+1. Establish the directory where all forecast ID NetCDFs are stored and where to save our IDX file on the 'atlantis' machine.
+2. Define the forecast IDs and dates we will loop over.
 
+### Rationale and Future Improvements
 
-### Third Approach
+In versions 1 and 2 of our conversion attempt, we did not use all four sets of forecast ID files. We only used BSC12CA12-01 files to compile a single data set. We learned that by not using all four sets of data, the data set we created was less accurate. See @sec-data-validation for further details.
 
+Therefore we decide to use all four datasets. We elect to use dates up to June 26, 2024 as this was the last time we ran our scripts. We have yet to address the issue of how to keep the IDX file constantly up to date with data available up to the present day.
 
-### Fourth Approach
+## Checking the NetCDF Files
+Recall we downloaded all NetCDF files available from UBC onto our machine in their respective directories as follows:
+```
+/usr/sci/cedmav/data/firesmoke
+├── BSC00CA12-01
+├── BSC06CA12-01
+├── BSC12CA12-01
+├── BSC18CA12-01
+```
+
+Here, we identify which NetCDF files for each forecast ID successfully open with `xarray` and store them in a dictionary.
+
+We also confirm the following conditions we established in @sec-data-source by using dictionaries to track the max values and unique values of these attributes across all files:
+
+1. All files across all four forecast IDs have the same `NROWS`, `XORIG`, `YORIG`, `XCELL`, `YCELL` values.
+2. Some files have either `NCOLS = 1041` or `NCOLS = 1081`, but always `NROWS = 381`.
+
+```{python}
+# | eval: false
+import os
+import xarray as xr
+import numpy as np
+import tqdm
+
+successful_files = {id_: [] for id_ in ids}  # <1>
+
+max_ncols = {id_: 0 for id_ in ids}  # <2>
+max_nrows = {id_: 0 for id_ in ids}  # <2>
+ncols = {id_: set() for id_ in ids}  # <3>
+nrows = {id_: set() for id_ in ids}  # <3>
+
+max_grid_x = {id_: {"xorig": 0.0, "xcell": 0.0} for id_ in ids}  # <4>
+max_grid_y = {id_: {"yorig": 0.0, "ycell": 0.0} for id_ in ids}  # <4>
+xorigs = {id_: set() for id_ in ids}  # <5>
+xcells = {id_: set() for id_ in ids}
+yorigs = {id_: set() for id_ in ids}
+ycells = {id_: set() for id_ in ids}  # <5>
+
+for id_ in ids:  # <6>
+    file_names = os.listdir(f"{firesmoke_dir}/{id_}/")  # <7>
+
+    for file in tqdm(file_names):  # <8>
+        path = f"{firesmoke_dir}/{id_}/{file}"  # <9>
+
+        try:  # <10>
+            ds = xr.open_dataset(path)  # <10>
+
+            successful_files[id_].append(file)  # <11>
+
+            max_ncols[id_] = max(max_ncols[id_], ds.NCOLS)  # <12>
+            max_nrows[id_] = max(max_nrows[id_], ds.NROWS)
+            max_grid_x[id_]["xorig"] = max(max_grid_x[id_]["xorig"], ds.XORIG, key=abs)
+            max_grid_y[id_]["yorig"] = max(max_grid_y[id_]["yorig"], ds.YORIG, key=abs)
+            max_grid_x[id_]["xcell"] = max(max_grid_x[id_]["xcell"], ds.XCELL, key=abs)
+            max_grid_y[id_]["ycell"] = max(
+                max_grid_y[id_]["ycell"], ds.YCELL, key=abs
+            )  # <12>
+
+            ncols[id_].add(ds.NCOLS)  # <13>
+            nrows[id_].add(ds.NROWS)
+            xorigs[id_].add(ds.XORIG)
+            yorigs[id_].add(ds.YORIG)
+            xcells[id_].add(ds.XCELL)
+            ycells[id_].add(ds.YCELL)  # <13>
+
+        except:  # <14>
+            continue
+
+for id_ in successful_files:  # <15>
+    successful_files[id_] = np.sort(successful_files[id_]).tolist()  # <15>
+```
+1. Initialize a dictionary to hold an empty list for each forecast ID. We update it with the file names that successfully open under the forecast ID directory.
+2. Initialize dictionaries to hold an integer for each forecast ID. We update it to hold the maximum `NCOLS`/`NROWS` value available within forecast ID's set of NetCDF files.
+3. Initialize dictionaries to hold a set for each forecast ID. We update the set to hold all the unique `NCOLS`/`NROWS` values available within the forecast ID's set of NetCDF files.
+4. Initialize dictionaries to hold a dictionary of `xorig`/`yorig` and `xcell`/`ycell` values for each forecast ID. We update it to hold the maximum `xorig`/`yorig` and `xcell`/`ycell` pairs available within the forecast ID's set of NetCDF files.
+5. Initialize dictionaries to track unique `xorig`/`yorig` and `xcell`/`ycell` values.
+6. For each forecast ID, we populate the dictionaries above.
+7. Obtain a list of file names under the directory for `id_`. We loop through each file next.
+8. Begin loop over each file. Note `tqdm` is just an accessory for generating a visible status bar in our Jupyter Notebook.
+9. Obtain absolute path name to current file.
+10. Here we use a `try` statement since opening the file with `xarray` may lead to an error. `except` allows us to catch the exception accordingly and continue trying to open each file.
+11. At this line, the file opened without issue in `xarray`, so append this file name to the `id_` list in the `successful_files` dictionary.
+12. Use `max` to save the largest values in our dictionaries accordingly.
+13. Update the dictionaries of sets with the file's attributes, to ensure we catch all unique values.
+14. If the file did not open during the `try` continue to the next file.
+15. Sort the lists of successfully opened files by name, so they are in chronological order.
+
+The following shows the information gathered:
+
+::: {.panel-tabset}
+## BSC18CA12-01
+```
+dataset: BSC18CA12-01
+Number of successful files: 1010
+Max cell sizes: max_ncols = 1081 and max_nrows = 381
+Max xorig & xcell: {'xorig': -160.0, 'xcell': 0.10000000149011612}
+Max yorig & ycell: {'yorig': 32.0, 'ycell': 0.10000000149011612}
+ncols: {1081, 1041}
+nrows: {381}
+xorigs: {-160.0, -156.0}
+yorigs: {32.0}
+xcells: {0.10000000149011612}
+ycells: {0.10000000149011612}
+```
+## BSC00CA12-01
+```
+dataset: BSC00CA12-01
+Number of successful files: 1067
+Max cell sizes: max_ncols = 1081 and max_nrows = 381
+Max xorig & xcell: {'xorig': -160.0, 'xcell': 0.10000000149011612}
+Max yorig & ycell: {'yorig': 32.0, 'ycell': 0.10000000149011612}
+ncols: {1081, 1041}
+nrows: {381}
+xorigs: {-160.0, -156.0}
+yorigs: {32.0}
+xcells: {0.10000000149011612}
+ycells: {0.10000000149011612}
+```
+## BSC06CA12-01
+```
+dataset: BSC06CA12-01
+Number of successful files: 997
+Max cell sizes: max_ncols = 1081 and max_nrows = 381
+Max xorig & xcell: {'xorig': -160.0, 'xcell': 0.10000000149011612}
+Max yorig & ycell: {'yorig': 32.0, 'ycell': 0.10000000149011612}
+ncols: {1081, 1041}
+nrows: {381}
+xorigs: {-160.0, -156.0}
+yorigs: {32.0}
+xcells: {0.10000000149011612}
+ycells: {0.10000000149011612}
+```
+## BSC12CA12-01
+```
+dataset: BSC12CA12-01
+Number of successful files: 1003
+Max cell sizes: max_ncols = 1081 and max_nrows = 381
+Max xorig & xcell: {'xorig': -160.0, 'xcell': 0.10000000149011612}
+Max yorig & ycell: {'yorig': 32.0, 'ycell': 0.10000000149011612}
+ncols: {1081, 1041}
+nrows: {381}
+xorigs: {-160.0, -156.0}
+yorigs: {32.0}
+xcells: {0.10000000149011612}
+ycells: {0.10000000149011612}
+```
+:::
+
+### Rationale and Future Improvements
+
+We have used the `successful_files` dictionary to test which files are usable by testing whether they open with `xarray` or not.
+
+In version 2 of our conversion, we discovered that some files had differing values for `NCOLS`. The IDX file format expects all arrays across all time steps to have the same number of rows and columns. We realized that our assumption that all attributes were the same across all files was unfounded.  Therefore, we collected information about the values for all attributes in the NetCDF files as shown above so that we could resample arrays to use `1081` columns.
+
+One improvement to this step is to stop tracking maxes and unique values seperately. Instead, we could just track unique values then get maxes from there.
+
+## Preparing Resampling Grids
+To resample arrays of shape 1041x381 to 1081x381, we use the SciPy `griddata` function from the `interpolate` package. This function gives interpolated values on set of points `xi` from a set of `points` with corresponding `values`. We refer the reader to SciPy's [documentation](https://docs.scipy.org/doc/scipy/reference/generated/scipy.interpolate.griddata.html) for details.
+
+Recall we can generate a set of latitude and longitude coordinates on the 1041x381 and 1081x381 grid by using the attributes given in each NetCDF file, see @sec-data-source for an example. We can thus sample a set of corresponding `PM25` values on a 1081x381 grid by using using a 1041x381 array of latitude and longitudes as `points` and 1041x381 array of PM25 values as `values` with the `griddata` function. We willgenerate these grids of lat/lon points using the attribute information we collected in the previous step.
+
+### Generate Grids of Latitude and Longitude Points
+```python
+max_xorig = max_grid_x[ids[0]]['xorig'] # <1>
+max_xcell = max_grid_x[ids[0]]['xcell']
+max_yorig = max_grid_y[ids[0]]['yorig']
+max_ycell = max_grid_y[ids[0]]['ycell'] # <1>
+
+big_lon = np.linspace(max_xorig, max_xorig + max_xcell * (max_ncols[ids[0]] - 1), max_ncols[ids[0]]) # <2>
+big_lat = np.linspace(max_yorig, max_yorig + max_ycell * (max_nrows[ids[0]] - 1), max_nrows[ids[0]]) # <2>
+
+big_lon_pts, big_lat_pts = np.meshgrid(big_lon, big_lat) # <3>
+big_tups = np.array([tup for tup in zip(big_lon_pts.flatten(), big_lat_pts.flatten())]) # <3>
+
+sml_ds = xr.open_dataset(firesmoke_dir + "/BSC00CA12-01/dispersion_20210304.nc") # <4>
+sml_lon = np.linspace(sml_ds.XORIG, sml_ds.XORIG + sml_ds.XCELL * (sml_ds.NCOLS - 1), sml_ds.NCOLS)
+sml_lat = np.linspace(sml_ds.YORIG, sml_ds.YORIG + sml_ds.YCELL * (sml_ds.NROWS - 1), sml_ds.NROWS) # <4>
+
+sml_lon_pts, sml_lat_pts = np.meshgrid(sml_lon, sml_lat) # <5>
+sml_tups = np.array([tup for tup in zip(sml_lon_pts.flatten(), sml_lat_pts.flatten())]) # <5>
+```
+1. Get the x/y origin and cell size parameters for the big 1081x381 grid.
+2. Generate one two lists, defining a grid of latitudes and longitudes.
+3. Using `big_lon` and `big_lat`, use meshgrid to generate our 1081x381 set of longitudes and latitudes.
+4. Open a file that uses the small 1041x381 grid. Then, use the attributes in that file to generate two lists defining a grid of latitudes and longitudes.
+5. Using `sml_lon` and `sml_lat`, use meshgrid to generate our 1041x381 set of longitudes and latitudes.
+
+### Example with `griddata`
+
+Now that we have the two sets of latitude and longitude points, we show an example of how these are used to resample an array of data from a 1041x381 grid to a 1081x381 grid.
+
+**TODO**
+
+### Rationale and Previous Revelations
+
+IDX expects all arrays at each time step to be the same dimensionality. However, as noted above the data has either `NCOLS = 1041` or `NCOLS = 1081`.
+
+We considered various approaches to the question of: How do we normalize variance in data dimensionality? 
+
+| Approach                                                                                     | Weakness                                                                                                                           |
+|----------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------|
+| Exclude arrays with 1041 columns.                                                               | Throwing away those data points would discard all the information they hold.                                                     |
+| Force data with 1041 columns into an array with 1081 columns without resampling.              | This results in unused columns within the 1081-column array, leading to discontinuities and potential artifacts in the data representation. |
+| Crop arrays on  1081 columns to 1041 columns                                              | Cropping the data would result in loss of information.                                                                           |
+: The Weaknesses of Approaches to Handling Varying Array Sizes {#tbl-sizes}
+
+The approach we chose was to **resample the data with 1041 columns to arrays with 1081 columns**. This produced the most visually appealing result and preserved the most information possible.
+
+## Sequencing of NetCDF Files
+
+Across all the NetCDF files we have downloaded, recall for every hour there exists 1-4 different forecasts to represent that hour. We aim to choose the forecast which best represents each hour. In order to understand the best representation for each hour, we need to know what hours are represented in each forecast.
+
+### Finding Hours per Forecast ID
+
+Recall that within each set of Forecast ID files, some files failed to download or otherwise open. Therefore, we must check exactly what set of hours are available in each collection of forecast ID NetCDF files.
+
+In order to make loading an hour from a specified forecast ID dataset as easy as possible, we create a dictionary for each forecast ID set. Below you can see the first few entries of this dictionary:
+```python
+#TODO
+```
+
+To generate this dictionary, we did the following:
+```python
+id_sets = {id_: {} for id_ in ids} # <1>
+
+for id_ in ids:
+    # get successful files to add all successful hours to set
+    for file in tqdm(successful_files[id_]): # <2>
+        path = f'{firesmoke_dir}/{id_}/{file}' # <3>
+        
+        ds = xr.open_dataset(path) # <3>
+
+        for h in range(ds.sizes["TSTEP"]): # <4>
+            id_sets[id_][(file, parse_tflag(ds['TFLAG'].values[h][0]))] = h # <4>
+```
+1. Initialize a dictionary to hold an empty dictionary for each forecast ID.
+2. We step through all the successfully opened files found for `id_`.
+3. Open the file and open it using `xarray`.
+4. Create a tuple with the file name and the parsed TFLAG for current hour `h`. Add index `h` to our dictionary assigning the tuple as its key.
+
+### Creating the Sequence
+
+Now that we have an indexable set of all available hours for each forecast ID, we can generate the sequence to extract the time series dataset we would like to create.
+
+In particular, we would like to create a sequence wherein we use the first 6 hours of each forecast ID 

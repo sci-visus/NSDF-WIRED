@@ -7,23 +7,20 @@ book:
   date: "7/12/2024"
   chapters:
     - index.qmd
+    - demo.qmd
     - intro.qmd
     - sys_specs.qmd
     - data_source.qmd
     - data_loading.qmd
     - data_conversion.qmd
     - data_validation.qmd
+
 bibliography: references.bib
 
 format:
   html:
     code-overflow: wrap
-    eval: false
     code-fold: show
     code-annotations: hover
   pdf:
     documentclass: scrreprt
-    
-
-
-

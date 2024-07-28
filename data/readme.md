@@ -1,1 +1,1 @@
-`firesmoke_metadata_current.nc` is the most recent version of the IDX conversion of firesmoke data that is to be shared with WIRED Global.
+`firesmoke_metadata.nc` is the most recent version of the IDX conversion of firesmoke data that is to be shared with WIRED Global.

@@ -4,13 +4,14 @@ project:
 book:
   title: "UBC Smoke Forecast Data Curation"
   author: "NSDF"
-  date: "7/12/2024"
+  date: "7/28/2024"
   chapters:
     - index.qmd
     - demo.qmd
     - intro.qmd
     - sys_specs.qmd
     - data_source.qmd
+    - netcdf_demo.qmd
     - data_loading.qmd
     - data_conversion.qmd
     - data_validation.qmd

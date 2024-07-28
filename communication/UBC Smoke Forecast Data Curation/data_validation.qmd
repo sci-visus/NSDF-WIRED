@@ -1,2 +1,21 @@
 # Data Validation {#sec-data-validation}
 
+The success of this data curation project requires compotent data validation. Data validation is the bridge between theoretical and real-world data curation. We unfortunately used many assumptions about the data and systems we used that did not hold true, leading to unexplainable issues throughout the data curation process.
+
+Here, we will describe our deficiencies in performing data validation and the consequences we faced. We conclude with a discussion on how best data validation can be incorporated in this project and future such projects, so that one may avoid such issues next time.
+
+## Data Validation vs Data Exploration
+
+Data exploration enlightens one on the contents of the data and metadata one presumes they have. We performed data exploration by loading and visualizing a few files. This allowed us to understand what data UBC aims to provide.
+
+What data exploration *does not* do is explain the origin of issues such missing or seemingly corrupt data. Data exploration uses the assumption that the data is perfect.
+
+Data validation forces one to consider, where do issues that appear in the data come from, and are these issues with the data or with the systems used to access and manipulate the data?
+
+## Data Loading
+Most of the issues we faced during data curation resulted from failing to validate our data loading system.
+
+### 
+
+## Data Conversion
+

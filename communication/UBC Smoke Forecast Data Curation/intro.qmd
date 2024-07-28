@@ -4,7 +4,7 @@ Wildfires in North America have significantly impacted ecosystems and human soci
 
 The Weather Forecast Research Team at the University of British Columbia (UBC) generates a short term dataset of PM2.5 smoke particulate presence in North America. Over the past 3 years, each day four times a day, UBC has created forecasts of PM2.5 smoke particulate on the ground for Canada and the continental United States. This is done using their The BlueSky Western Canada Wildfire Smoke Forecasting System. UBC provides access to this data to paying customers and for free on a daily basis via a web-based visualization and file download.
 
-These smoke predictions are useful for those who must make decisions on how to deal with smoke as it comes. However, these years of forecasts are not available in a non-trivial fashion for long term forecasting. The data only exists among the hundreds of netCDF files that UBC has generated.
+These smoke predictions are useful for those who must make decisions on how to deal with smoke as it comes. However, these years of forecasts are not available in a non-trivial fashion for long term forecasting. The data only exists among the hundreds of NetCDF files that UBC has generated.
 
 Our task is to obtain a single long term dataset from the smoke forecast files that are available from UBC.
 

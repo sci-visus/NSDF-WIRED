@@ -32,7 +32,8 @@ For now, the reader should understand that data validation of the NetCDF files i
 For all our conversion attempts, the same general process is followed:
 
 1. Check which NetCDF files were successfully downloaded from the data source by attempting to open each downloaded file with `xarray`.
-2. Obtain a subset of data from the files to create a dataset of chronological, hour by hour, data. Save this time series data to an `IDX` file using the [OpenVisus](https://github.com/sci-visus/OpenVisus/tree/master) framework.
+2. Obtain a subset of data from the files to create a dataset of chronological, hour by hour, data. 
+3. Save this time series data to an `IDX` file using the [OpenVisus](https://github.com/sci-visus/OpenVisus/tree/master) framework.
 
 We will describe the latest version of our conversion, **version 4**. Throughout, we will explain how previous attempts differed. To see previous attemps in their entirety, refer to the side bar. Please note that the previous scripts were working scripts, therefore they may be incomplete.
 
@@ -53,9 +54,9 @@ end_dates = ["20240627", "20240627", "20240627", "20240627"]  # <2>
 
 ### Rationale and Future Improvements
 
-In versions 1 and 2 of our conversion attempt, we did not use all four sets of forecast ID files. We only used BSC12CA12-01 files to compile a single data set. We learned that by not using all four sets of data, the data set we created was less accurate. See @sec-data-validation for further details.
+In versions 1 and 2 of our conversion attempt, we did not use all four sets of forecast ID files. We only used BSC12CA12-01 files to compile a single dataset. We learned that by not using all four sets of data, the dataset we created was less accurate. See @sec-data-validation for further details.
 
-Therefore we decide to use all four datasets. We elect to use dates up to June 26, 2024 as this was the last time we ran our scripts. We have yet to address the issue of how to keep the IDX file constantly up to date with data available up to the present day.
+Therefore we decided to use all four datasets. We elect to use dates up to June 27, 2024 as this was the last time we ran our scripts. We have yet to address the issue of how to keep the IDX file constantly up to date with data available up to the present day.
 
 ## Checking the NetCDF Files
 Recall we downloaded all NetCDF files available from UBC onto our machine in their respective directories as follows:
@@ -207,16 +208,16 @@ ycells: {0.10000000149011612}
 
 ### Rationale and Future Improvements
 
-We have used the `successful_files` dictionary to test which files are usable by testing whether they open with `xarray` or not.
+On our first attempt to convert the data we discovered that various files failed to open. Therefore, we used a dictionary to keep track of which files successfully open.
 
 In version 2 of our conversion, we discovered that some files had differing values for `NCOLS`. The IDX file format expects all arrays across all time steps to have the same number of rows and columns. We realized that our assumption that all attributes were the same across all files was unfounded.  Therefore, we collected information about the values for all attributes in the NetCDF files as shown above so that we could resample arrays to use `1081` columns.
 
 One improvement to this step is to stop tracking maxes and unique values seperately. Instead, we could just track unique values then get maxes from there.
 
 ## Preparing Resampling Grids
-To resample arrays of shape 1041x381 to 1081x381, we use the SciPy `griddata` function from the `interpolate` package. This function gives interpolated values on set of points `xi` from a set of `points` with corresponding `values`. We refer the reader to SciPy's [documentation](https://docs.scipy.org/doc/scipy/reference/generated/scipy.interpolate.griddata.html) for details.
+To resample arrays of shape 1041×381 to 1081×381, we use the SciPy `griddata` function from the `interpolate` package. This function gives interpolated values on set of points `xi` from a set of `points` with corresponding `values`. We refer the reader to SciPy's [documentation](https://docs.scipy.org/doc/scipy/reference/generated/scipy.interpolate.griddata.html) for details.
 
-Recall we can generate a set of latitude and longitude coordinates on the 1041x381 and 1081x381 grid by using the attributes given in each NetCDF file, see @sec-data-source for an example. We can thus sample a set of corresponding `PM25` values on a 1081x381 grid by using using a 1041x381 array of latitude and longitudes as `points` and 1041x381 array of PM25 values as `values` with the `griddata` function. We willgenerate these grids of lat/lon points using the attribute information we collected in the previous step.
+Recall we can generate a set of latitude and longitude coordinates on the 1041×381 and 1081×381 grid by using the attributes given in each NetCDF file, see @sec-netcdf-demo for an example. We can thus sample a set of corresponding `PM25` values on a 1081×381 grid by using using a 1041×381 array of latitude and longitudes as `points` and 1041×381 array of PM25 values as `values` with the `griddata` function. We willgenerate these grids of lat/lon points using the attribute information we collected in the previous step.
 
 ### Generate Grids of Latitude and Longitude Points
 ```python
@@ -246,7 +247,7 @@ sml_tups = np.array([tup for tup in zip(sml_lon_pts.flatten(), sml_lat_pts.flatt
 
 ### Example with `griddata`
 
-Now that we have the two sets of latitude and longitude points, we show an example of how these are used to resample an array of data from a 1041x381 grid to a 1081x381 grid.
+Now that we have the two sets of latitude and longitude points, we show an example of how these are used to resample an array of data from a 1041×381 grid to a 1081×381 grid.
 
 **TODO**
 
@@ -267,7 +268,11 @@ The approach we chose was to **resample the data with 1041 columns to arrays wit
 
 ## Sequencing of NetCDF Files
 
+Recall that we have 2-day forecasts that are run 4 times a day.
+
 Across all the NetCDF files we have downloaded, recall for every hour there exists 1-4 different forecasts to represent that hour. We aim to choose the forecast which best represents each hour. In order to understand the best representation for each hour, we need to know what hours are represented in each forecast.
+
+
 
 ### Finding Hours per Forecast ID
 
@@ -301,4 +306,65 @@ for id_ in ids:
 
 Now that we have an indexable set of all available hours for each forecast ID, we can generate the sequence to extract the time series dataset we would like to create.
 
-In particular, we would like to create a sequence wherein we use the first 6 hours of each forecast ID 
+## Creating the IDX File
+
+At this point, we have precomputed the order in which we will load and write each array to our IDX file. We will now put everything together to generate our single dataset.
+
+```python
+f = Field("PM25", "float32") # <1>
+
+db = CreateIdx( # <2>
+    url=idx_dir + "/firesmoke.idx",
+    fields=[f],
+    dims=[int(max_ncols[ids[0]]), int(max_nrows[ids[0]])],
+    time=[0, len(idx_calls) - 1, "%00000000d/"],
+) # <2>
+
+tstep = 0 # <3>
+
+thresh = 1e-15 # <4>
+
+for call in tqdm(idx_calls): # <5>
+    curr_id = call[0]
+    curr_file = call[1]
+    tstep_index = call[3] # <5>
+
+    ds = xr.open_dataset(f"{firesmoke_dir}/{curr_id}/{curr_file}") # <6>
+
+    file_vals = np.squeeze(ds["PM25"].values) # <7>
+
+    resamp = ds.XORIG != max_xorig # <8>
+
+    if resamp: # <9>
+        file_vals_resamp = griddata(
+            sml_tups,
+            file_vals[tstep_index].flatten(),
+            big_tups,
+            method="cubic",
+            fill_value=0,
+        ) # <9>
+
+        file_vals_resamp[file_vals_resamp < thresh] = 0 # <10>
+
+        file_vals_resamp = file_vals_resamp.reshape((len(big_lat), len(big_lon))) # <11>
+
+        db.write(data=file_vals_resamp.astype(np.float32), field=f, time=tstep) # <12>
+    else: # <13>
+        db.write(data=file_vals[tstep_index], field=f, time=tstep) # <13>
+
+    tstep = tstep + 1 # <14>
+```
+1. Create an OpenVisus field to hold the PM25 variable data.
+2. Create the IDX file wherein `url` is the location to write the file, `fields` holds the data variables we will save, `dims` represents the shape of each array, and `time` defines how many time steps there are.
+3. We will usethis to keep track of which time step we are on as we step through our `idx_calls`.
+4. Threshold to use to change small-enough resampled values to 0.
+5. Get the information for current time step, in particular the [curr_id, file_str, parse_tflag(ds['TFLAG'].values[tstep_idx][0]), tstep_idx]
+6. Load the current file with `xarray`.
+7. Get the full array of PM25 values in the file.
+8. If `ds.XORIG` is not already for the 1081×381 grid, we need to resample it to the larger grid.
+9. Using `gridddata`, interpolate the values on a 1081×381 grid using the precomputed lat/lon points.
+10. Any values that are less than our threshold should have a value of 0. WHY
+11. Reshape the interpolated values to 1081×381.
+12. Write the resampled values for hour `h` to timestep `t` and field `f` of our IDX file.
+13. These values are already on a 1081×381 grid, so write the values at hour `h` to timestep `t` and field `f` of our IDX file.
+14. Increment to the next timestep for writing to IDX.

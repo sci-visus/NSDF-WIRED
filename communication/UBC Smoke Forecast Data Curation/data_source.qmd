@@ -2,10 +2,11 @@
 format:
   html:
     code-tools: true
+    code-annotations: true
 ---
 
 # The Data Source {#sec-data-source}
-It is important to understand exactly what data is available and how to obtain that data. 
+It is important to understand exactly what data is available and how to obtain that data.
 
 We encourage you to explore the dataset on [UBC's website](https://firesmoke.ca/forecasts/) to further understand the dataset's use as described by UBC.
 
@@ -18,6 +19,10 @@ Here we establish:
 This information **was not** determined the first time we explored this dataset. 
 
 As seen in the later chapters, we operated under misinformed assumptions and encountered issues only resolvable by operating on the data "blindly". The purpose of this chapter is to establish the final set of information we learned about our data source after extensive exploration and manipulation.
+
+## Overview
+
+The Weather Forecast Research Team at the University of British Columbia (UBC) generates a short term dataset of PM2.5 smoke particulate presence in North America. Over the past 3 years, each day four times a day, UBC creates 2-day forecasts of PM2.5 smoke particulate on the ground for Canada and the continental United States. This is done using their The BlueSky Western Canada Wildfire Smoke Forecasting System. UBC provides access to these predictions for free on a daily basis at their website firesmoke.ca.
 
 ## Downloading UBC Smoke Forecast Files
 
@@ -146,19 +151,6 @@ Of the 33 available attributes we use the ones shown in @tbl-attrs:
 
 Now that we understand what exactly is within one NetCDF file, let's establish the information we have when we download all available NetCDF files.
 
-### Using the Data
-
-We demonstrate a simple example of querying data at a certain timestep within this file and visualizing that data.
-
-**TODO USE netcdf_demo.ipynb**
-
-```{python}
-import xarray as xr
-
-ds = xr.open_dataset("data_notebooks/data_source/dispersion.nc") # <1>
-```
-1. Open the NetCDF file.
-
 ## Metadata of Collected NetCDF Files
 Here we describe metadata about the collection of NetCDF files we downloaded.
 
@@ -182,7 +174,7 @@ To create our dataset, we used the following understanding about the attributes 
 2. Some files have either `NCOLS = 1041` or `NCOLS = 1081`.
 3. `{C,W,S}_DATE` and `{C,W,S}_TIME` values are unique to each file.
 
-Now we know what data is available, how to download it, and how to extract information from the data to visualize it on a plot. We describe next how to extract data from these files to form one dataset.
+Now we know what data is available and how to download and view it, we show a demo of how to visualize the data.
 
 # References
 firesmoke.ca website

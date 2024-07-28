@@ -1,4 +1,5 @@
 ---
+title: "IDX File Demo"
 format:
   html:
     code-links:

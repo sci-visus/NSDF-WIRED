@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>5&nbsp; Data Loading – UBC Smoke Forecast Data Curation</title>
+<title>6&nbsp; Data Loading – UBC Smoke Forecast Data Curation</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -65,7 +65,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./data_conversion.html" rel="next">
-<link href="./data_source.html" rel="prev">
+<link href="./netcdf_demo.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -115,7 +115,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./data_loading.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Data Loading</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./data_loading.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Data Loading</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -149,7 +149,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./demo.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">demo.html</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">IDX File Demo</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -172,20 +172,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./netcdf_demo.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">NetCDF Visualization Demo</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./data_loading.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Data Loading</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Data Loading</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./data_conversion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Data Conversion</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Data Conversion</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./data_validation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Data Validation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Data Validation</span></span></a>
   </div>
 </li>
     </ul>
@@ -198,10 +204,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#downloading-data-locally" id="toc-downloading-data-locally" class="nav-link active" data-scroll-target="#downloading-data-locally"><span class="header-section-number">5.1</span> Downloading Data Locally</a>
+  <li><a href="#downloading-data-locally" id="toc-downloading-data-locally" class="nav-link active" data-scroll-target="#downloading-data-locally"><span class="header-section-number">6.1</span> Downloading Data Locally</a>
   <ul class="collapse">
-  <li><a href="#first-approach" id="toc-first-approach" class="nav-link" data-scroll-target="#first-approach"><span class="header-section-number">5.1.1</span> First Approach</a></li>
-  <li><a href="#second-approach" id="toc-second-approach" class="nav-link" data-scroll-target="#second-approach"><span class="header-section-number">5.1.2</span> Second Approach</a></li>
+  <li><a href="#first-approach" id="toc-first-approach" class="nav-link" data-scroll-target="#first-approach"><span class="header-section-number">6.1.1</span> First Approach</a></li>
+  <li><a href="#second-approach" id="toc-second-approach" class="nav-link" data-scroll-target="#second-approach"><span class="header-section-number">6.1.2</span> Second Approach</a></li>
   </ul></li>
   </ul>
 <div class="quarto-code-links"><h2>Code Links</h2><ul><li><a href="https://github.com/sci-visus/NSDF-WIRED/blob/main/data_download/get_data_v0.py"><i class="bi bi-file-code"></i>First Approach</a></li><li><a href="https://github.com/sci-visus/NSDF-WIRED/blob/main/data_download/get_data_v1.py"><i class="bi bi-file-code"></i>Second Approach</a></li></ul></div></nav>
@@ -211,7 +217,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title"><span id="sec-data-loading" class="quarto-section-identifier"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Data Loading</span></span></h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li><li><hr class="dropdown-divider"></li><li><a id="quarto-view-source" class="dropdown-item" href="javascript:void(0)" role="button">View Source</a></li></ul></div></div>
+<div class="quarto-title-block"><div><h1 class="title"><span id="sec-data-loading" class="quarto-section-identifier"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Data Loading</span></span></h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li><li><hr class="dropdown-divider"></li><li><a id="quarto-view-source" class="dropdown-item" href="javascript:void(0)" role="button">View Source</a></li></ul></div></div>
 </div>
 
 
@@ -229,8 +235,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <p>Knowing what data is available and how to obtain the data, we can proceed with loading the data onto our staging system.</p>
-<section id="downloading-data-locally" class="level2" data-number="5.1">
-<h2 data-number="5.1" class="anchored" data-anchor-id="downloading-data-locally"><span class="header-section-number">5.1</span> Downloading Data Locally</h2>
+<section id="downloading-data-locally" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="downloading-data-locally"><span class="header-section-number">6.1</span> Downloading Data Locally</h2>
 <p>We decided to download all the available files from the <a href="./data_source.html">data source</a> onto our <a href="./sys_specs.html">data staging machine</a> to process from there.</p>
 <p>We created 4 directories for each forecast ID that UBC provides at the following directory on our machine:</p>
 <pre><code>/usr/sci/cedmav/data/firesmoke
@@ -239,11 +245,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 ├── BSC12CA12-01
 ├── BSC18CA12-01</code></pre>
 <p>The following shows our approaches to doing this and discusses how our approach evolved. Note the scripts below refer to varying directories, but through simple copying operations we stored the final downloaded files to the directories listed above.</p>
-<section id="first-approach" class="level3" data-number="5.1.1">
-<h3 data-number="5.1.1" class="anchored" data-anchor-id="first-approach"><span class="header-section-number">5.1.1</span> First Approach</h3>
+<section id="first-approach" class="level3" data-number="6.1.1">
+<h3 data-number="6.1.1" class="anchored" data-anchor-id="first-approach"><span class="header-section-number">6.1.1</span> First Approach</h3>
 <p>We delineate our first approach by detailing our download script, which is available in it’s entirety in the side bar.</p>
 <hr>
-<div id="f476782c" class="cell" data-execution_count="1">
+<div id="9bfbf5ce" class="cell" data-execution_count="1">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="annotated-cell-2"><pre class="sourceCode python code-annotation-code code-with-copy code-annotated"><code class="sourceCode python"><span id="annotated-cell-2-1"><a href="#annotated-cell-2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> wget</span>
@@ -298,13 +304,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>We assumed that for all URLs, there was an available NetCDF file for download</p>
 <p>However, we realized that we downloaded either a NetCDF file <em>or an HTML webpage</em>. Using <code>wget</code> forcibly saved the contents at the URL into a NetCDF file.</p>
-<p>This issue was not identified until <em>after</em> we visualized each hour of the data, and we noticed gaps and errors in our scripts to create visualizations. See <a href="data_validation.html" class="quarto-xref"><span>Chapter 7</span></a> for further details on identifying these issues. For now, we show our modified approach to downloading the NetCDF files.</p>
+<p>This issue was not identified until <em>after</em> we visualized each hour of the data, and we noticed gaps and errors in our scripts to create visualizations. See <a href="data_validation.html" class="quarto-xref"><span>Chapter 8</span></a> for further details on identifying these issues. For now, we show our modified approach to downloading the NetCDF files.</p>
 </section>
-<section id="second-approach" class="level3" data-number="5.1.2">
-<h3 data-number="5.1.2" class="anchored" data-anchor-id="second-approach"><span class="header-section-number">5.1.2</span> Second Approach</h3>
+<section id="second-approach" class="level3" data-number="6.1.2">
+<h3 data-number="6.1.2" class="anchored" data-anchor-id="second-approach"><span class="header-section-number">6.1.2</span> Second Approach</h3>
 <p>Our second approach is similar to the first, except we use <a href="https://requests.readthedocs.io/en/latest/"><code>requests</code></a>, an HTTP client library that allows us to see the headers returned from the URL we query. The script is available in the side bar.</p>
 <hr>
-<div id="ba0e9798" class="cell" data-execution_count="2">
+<div id="50edc2bc" class="cell" data-execution_count="2">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="annotated-cell-3"><pre class="sourceCode python code-annotation-code code-with-copy code-annotated"><code class="sourceCode python"><span id="annotated-cell-3-1"><a href="#annotated-cell-3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
@@ -382,7 +388,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </dl>
 </div>
 </div>
-<p>This approach yielded the results we expected, we downloaded only NetCDF files. We had failed downloads which appeared during conversion as described in <a href="data_conversion.html" class="quarto-xref"><span>Chapter 6</span></a>. We assumed those files were unavailable from UBC which we later confirmed as described in <a href="data_validation.html" class="quarto-xref"><span>Chapter 7</span></a>.</p>
+<p>This approach yielded the results we expected, we downloaded only NetCDF files. We had failed downloads which appeared during conversion as described in <a href="data_conversion.html" class="quarto-xref"><span>Chapter 7</span></a>. We assumed those files were unavailable from UBC which we later confirmed as described in <a href="data_validation.html" class="quarto-xref"><span>Chapter 8</span></a>.</p>
 
 
 <!-- -->
@@ -903,13 +909,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./data_source.html" class="pagination-link" aria-label="The Data Source">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">The Data Source</span></span>
+      <a href="./netcdf_demo.html" class="pagination-link" aria-label="NetCDF Visualization Demo">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">NetCDF Visualization Demo</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./data_conversion.html" class="pagination-link" aria-label="Data Conversion">
-        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Data Conversion</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Data Conversion</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">

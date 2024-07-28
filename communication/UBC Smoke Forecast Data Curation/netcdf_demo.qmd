@@ -1,0 +1,14 @@
+---
+format:
+  html:
+    code-links:
+      - text: NetCDF Visualization Demo
+        icon: file-code
+        href: https://github.com/sci-visus/NSDF-WIRED/blob/main/visualizations/demos/v5/firesmoke-idx-demo_v5.ipynb
+    number-depth: 3
+---
+# NetCDF Visualization Demo {#sec-netcdf-demo}
+
+{{< embed data_notebooks/data_source/netcdf_demo.ipynb echo=true >}}
+
+Now that we understand how to load the data and metadata from the file, we will continue to describe our data curation process. The next question is, how do we load all of the data available from UBC onto our machine?

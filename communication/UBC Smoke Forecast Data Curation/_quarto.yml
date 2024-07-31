@@ -3,9 +3,10 @@ project:
   output-dir: docs
 
 book:
-  title: "UBC Smoke Forecast Data Curation"
-  author: "NSDF"
-  date: "7/28/2024"
+  title: "UBC Smoke Forecast Data Curation and Distribution"
+  author: "Arleth Salinas and Valerio Pascucci \n \n 
+  a 'WIRED Global Center' & 'National Science Data Fabric' collaboration"
+  date: "Release dat: 7/28/2024"  
   chapters:
     - index.qmd
     - demo.qmd

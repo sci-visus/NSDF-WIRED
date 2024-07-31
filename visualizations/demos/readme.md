@@ -28,3 +28,7 @@ v5:
 `backend_v3.py` is no longer required, it is in the `openvisuspy` library now. Additionally, demo now downloads latest version of `firesmoke_metadata_current.nc` and loads it accordingly. 
 
 Now one does not need to find these files themselves.
+
+v6:
+---
+Newly incorporated metadata is included in the demo.

@@ -266,7 +266,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="setting-system-directories" class="level2" data-number="6.3">
 <h2 data-number="6.3" class="anchored" data-anchor-id="setting-system-directories"><span class="header-section-number">6.3</span> Setting System Directories</h2>
 <p>First we set the directory paths we want to use during the conversion process, which is to our 4 directories of NetCDF files for each forecast ID.</p>
-<div id="d37f9499" class="cell" data-execution_count="1">
+<div id="e284881b" class="cell" data-execution_count="1">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="annotated-cell-1"><pre class="sourceCode python code-annotation-code code-with-copy code-annotated"><code class="sourceCode python"><button class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="1">1</button><span id="annotated-cell-1-1" class="code-annotation-target"><a href="#annotated-cell-1-1" aria-hidden="true" tabindex="-1"></a>firesmoke_dir <span class="op">=</span> <span class="st">"/usr/sci/cedmav/data/firesmoke"</span></span>
@@ -312,7 +312,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>All files across all four forecast IDs have the same <code>NROWS</code>, <code>XORIG</code>, <code>YORIG</code>, <code>XCELL</code>, <code>YCELL</code> values.</li>
 <li>Some files have either <code>NCOLS = 1041</code> or <code>NCOLS = 1081</code>, but always <code>NROWS = 381</code>.</li>
 </ol>
-<div id="72bd2ba0" class="cell" data-execution_count="2">
+<div id="f3cc4efb" class="cell" data-execution_count="2">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="annotated-cell-3"><pre class="sourceCode python code-annotation-code code-with-copy code-annotated"><code class="sourceCode python"><span id="annotated-cell-3-1"><a href="#annotated-cell-3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
@@ -514,7 +514,7 @@ ycells: {0.10000000149011612}</code></pre>
 <section id="generate-grids-of-latitude-and-longitude-points" class="level3" data-number="6.5.1">
 <h3 data-number="6.5.1" class="anchored" data-anchor-id="generate-grids-of-latitude-and-longitude-points"><span class="header-section-number">6.5.1</span> Generate Grids of Latitude and Longitude Points</h3>
 <p>Recall we can generate a set of latitude and longitude coordinates by using the attributes given in each NetCDF file, see <a href="#sec-netcdf-demo" class="quarto-xref"><span class="quarto-unresolved-ref">sec-netcdf-demo</span></a> for an example. Here we generate two sets of latitude and longitude coordinates for each grid size.</p>
-<div id="71a70bfd" class="cell" data-execution_count="3">
+<div id="d524dcde" class="cell" data-execution_count="3">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="annotated-cell-4"><pre class="sourceCode python code-annotation-code code-with-copy code-annotated"><code class="sourceCode python"><button class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="1">1</button><span id="annotated-cell-4-1" class="code-annotation-target"><a href="#annotated-cell-4-1" aria-hidden="true" tabindex="-1"></a>max_xorig <span class="op">=</span> max_grid_x[ids[<span class="dv">0</span>]][<span class="st">'xorig'</span>]</span>

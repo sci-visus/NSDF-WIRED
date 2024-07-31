@@ -3,6 +3,10 @@ format:
   html:
     code-tools: true
     code-annotations: true
+    code-links:
+      - text: NetCDF Visualization Demo
+        icon: file-code
+        href: https://github.com/sci-visus/NSDF-WIRED/blob/main/conversion/firesmoke_to_idx_v1.ipynb
 ---
 
 # The Data Source {#sec-data-source}
@@ -22,13 +26,12 @@ As seen in the later chapters, we operated under misinformed assumptions and enc
 
 ## Overview
 
-The Weather Forecast Research Team at the University of British Columbia (UBC) generates a short term dataset of PM2.5 smoke particulate presence in North America. Over the past 3 years, each day four times a day, UBC creates 2-day forecasts of PM2.5 smoke particulate on the ground for Canada and the continental United States. This is done using their The BlueSky Western Canada Wildfire Smoke Forecasting System. UBC provides access to these predictions for free on a daily basis at their website firesmoke.ca.
+The Weather Forecast Research Team at the University of British Columbia (UBC) generates a short term dataset of PM2.5 smoke particulate presence in North America. This is done using their [The BlueSky Western Canada Wildfire Smoke Forecasting System](https://firesmoke.ca/resources/bsc-2014-description.pdf). Over the past 3 years, each day four times a day, UBC creates 2-day forecasts of PM2.5 smoke particulate on the ground for Canada and the continental United States. Each such forecast is downloadable as a NetCDF file or KMZ file. UBC provides access to these predictions for free on a daily basis at their website [firesmoke.ca](https://firesmoke.ca/).
 
-## Downloading UBC Smoke Forecast Files
-
-### Available Time Range
-**TODO CREDIT UBC**
-The time ranges of available data for each forecast ID is shown in @tbl-time. Please note, there are occassional **failed forecasts or otherwise unavailable files** within the date ranges specified @tbl-time.
+## UBC Smoke Forecast Files Access
+<!-- TODO CREDIT UBC -->
+### Available Forecasts
+All forecast files are uniquely identifiable with a forecast ID based on when their meteorology forecast is initiated, a smoke forecast initialization time, and by date. The time ranges of available files by forecast ID is shown in @tbl-time. Please note, there are occassional **failed forecasts or otherwise unavailable files** within the date ranges specified @tbl-time, see @sec-collection-info for further details.
 
 | Forecast ID   | Meteorology Forecast Initialization (UTC) | Smoke Forecast Initialization (UTC) | Start Date   | End Date     |
 |---------------|---------------------------------|----------------------------------|--------------|--------------|
@@ -36,20 +39,17 @@ The time ranges of available data for each forecast ID is shown in @tbl-time. Pl
 | BSC06CA12-01  | 06Z                             | 14Z                              | March 4, 2021 | Present Day  |
 | BSC12CA12-01  | 12Z                             | 20Z                              | March 3, 2021 | Present Day  |
 | BSC18CA12-01  | 18Z                             | 02Z                              | March 4, 2021 | Present Day  |
-: Dates for which all Forecast ID Datasets are Publicly Available. All times are in UTC and the grid size is 12 km. {#tbl-time}
+: Dates for which all forecast ID datasets are publicly available. All times are in UTC and the grid size is 12 km. {#tbl-time}
 
-**TODO what do grid sizes mean, i.e. Meteorology: 00 UTC, nested 12 km + 36 km grids Smoke: 08 UTC**
+<!-- TODO what do grid sizes mean, i.e. Meteorology: 00 UTC, nested 12 km + 36 km grids Smoke: 08 UTC -->
 
 The smoke forecasts are updated daily, including the present day, so there is no fixed end date. Therefore, the latest data must be downloaded on a regular basis. We have not implemented this process yet, so the latest forecast files we use are up to June 27, 2024.
 
 There is no official source stating the earliest available date for each forecast. So, knowing the project began in 2021, we inferenced that the earliest available date would be in 2021. Via trial and error we found the earliest available dates.
 
-### Download Instructions
-
-To download the 2-day forecast for the forecast initialization date of one's choice, one follows the instructions below. The downloaded file can be a NetCDF or KMZ file. We use NetCDF files. Later in @sec-data-loading we detail our automation of the download process described below.
+### Download Instructions {#sec-download-instructions}
+To download the 2-day forecast for the forecast initialization date of one's choice, one follows the instructions below. The downloaded file can be a NetCDF or KMZ file.
 ---
-**TODO CREDIT UBC**
-
 Go to the URL:
 `https://firesmoke.ca/forecasts/{Forecast ID}/{YYYYMMDD}{InitTime}/{File Type}`
 
@@ -68,7 +68,6 @@ Where:
 : UBC Smoke Forecast Data Download Parameters. All times are in UTC and the grid size is 12 km. {#tbl-access}
 
 #### Download Example
-
 Let's try downloading the forecast for January 1, 2024 where the weather forecast is initiated at 00:00:00 UTC and the smoke forecast is initialized at 08:00:00 UTC by navigating to the corresponding URL.
 
 ```{python}
@@ -93,7 +92,7 @@ Next, let's look at what is within the NetCDF file located at the URL in our pre
 The file downloaded at the specified URL download the 2-day forecast for [DATE] and [TIME] one could download the following files.
 [GET 2 DAY FORECAST DESCRIPTION FROM scribbles.ipynb]. -->
 
-We load `dispersion.nc` using `xarray`, which provides a handy preview of the file.
+We load `dispersion.nc` using `xarray`, which provides a preview of the file.
 
 ```{python}
 # | eval: true
@@ -103,7 +102,7 @@ ds = xr.open_dataset("data_notebooks/data_source/dispersion.nc")
 ds
 ```
 
-### File Attributes {#attr}
+### File Attributes
 
 `dispersion.nc` contains the following attributes. Note that for all files across forecast IDs, they have the same dimension and variable names:
 
@@ -131,7 +130,7 @@ The variables described in @tbl-vars contain the data in question that we would 
 
 #### Attributes
 Of the 33 available attributes we use the ones shown in @tbl-attrs:
-**TODO NEED TO CONFIRM IF THIS IS RIGHT**
+<!-- TODO NEED TO CONFIRM IF THIS IS RIGHT -->
 
 | Attribute | Value               | Description                                                                                              |
 |-----------|---------------------|----------------------------------------------------------------------------------------------------------|
@@ -149,13 +148,17 @@ Of the 33 available attributes we use the ones shown in @tbl-attrs:
 | YCELL     | 0.10000000149011612 | The cell size in the y-direction.|
 : Description of Attributes in NetCDF Files {#tbl-attrs}
 
-Now that we understand what exactly is within one NetCDF file, let's establish the information we have when we download all available NetCDF files.
+Let's look closer at what exactly is within one NetCDF file in the following demo.
 
-## Metadata of Collected NetCDF Files
-Here we describe metadata about the collection of NetCDF files we downloaded.
+### NetCDF Visualization Demo {#sec-netcdf-demo}
+{{< embed data_notebooks/data_source/netcdf_demo.ipynb echo=true >}}
+
+Now that we understand how to load the data and metadata from the file and process it for visualization, let's establish the data and metadata available to us across *all* NetCDF files.
+
+## Information Across all NetCDF Files {#sec-collection-info}
+Knowing what is within one NetCDF file as well as the date range for which we can download them, let's establish the metadata associated with the NetCDF files as a *collection*.
 
 ### Disk Size
-
 For the time ranges we cover, @tbl-sizes shows how large the set of files per forecast ID are.
 
 | Forecast ID    | Date Range                          | Size  | File Count |
@@ -167,14 +170,12 @@ For the time ranges we cover, @tbl-sizes shows how large the set of files per fo
 | **Total**      |                                     | **320G** | **4144**   |
 : File Sizes and Counts for Each Forecast ID within the Specified Date Range {#tbl-sizes}
 
-### Data Uniformity
-To create our dataset, we used the following understanding about the attributes across all files:
+### Temporal Data Availability
+{{< embed data_notebooks/data_source/netcdf_collection_info.ipynb echo=true >}}
 
-1. All files across all four forecast IDs have the same `NROWS`, `XORIG`, `YORIG`, `XCELL`, `YCELL` values.
-2. Some files have either `NCOLS = 1041` or `NCOLS = 1081`.
-3. `{C,W,S}_DATE` and `{C,W,S}_TIME` values are unique to each file.
+### 
 
-Now we know what data is available and how to download and view it, we show a demo of how to visualize the data.
+Now that we know what exactly is within a NetCDF file and across all the NetCDF files, we will continue to describe our data curation process. Next we describe how we load all of the data available from UBC onto our machine.
 
 # References
 firesmoke.ca website

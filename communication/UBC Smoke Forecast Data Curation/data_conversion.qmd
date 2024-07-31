@@ -16,8 +16,7 @@ format:
         href: https://github.com/sci-visus/NSDF-WIRED/blob/main/conversion/firesmoke_to_idx_v4.ipynb
       - text: Example with griddata
         icon: file-code
-        href: https://github.com/sci-visus/NSDF-WIRED/blob/main/conversion/firesmoke_to_idx_v4.ipynb
-    code-tools: true
+        href: https://github.com/sci-visus/NSDF-WIRED/blob/main/communication/UBC%20Smoke%20Forecast%20Data%20Curation/data_notebooks/data_conversion/resample_example.ipynb
 ---
 
 # Data Conversion {#sec-data-conversion}

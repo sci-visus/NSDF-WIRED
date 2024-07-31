@@ -6,7 +6,7 @@ format:
     code-links:
       - text: NetCDF Visualization Demo
         icon: file-code
-        href: https://github.com/sci-visus/NSDF-WIRED/blob/main/conversion/firesmoke_to_idx_v1.ipynb
+        href: https://github.com/sci-visus/NSDF-WIRED/blob/main/communication/UBC%20Smoke%20Forecast%20Data%20Curation/data_notebooks/data_source/netcdf_demo.ipynb
 ---
 
 # The Data Source {#sec-data-source}

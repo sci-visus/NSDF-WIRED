@@ -8,7 +8,6 @@ format:
       - text: Second Approach
         icon: file-code
         href: https://github.com/sci-visus/NSDF-WIRED/blob/main/data_download/get_data_v1.py
-    code-tools: true
 ---
 
 # Data Loading {#sec-data-loading}

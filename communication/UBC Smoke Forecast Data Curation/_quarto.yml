@@ -4,9 +4,8 @@ project:
 
 book:
   title: "UBC Smoke Forecast Data Curation and Distribution"
-  author: "Arleth Salinas and Valerio Pascucci \n \n 
-  a 'WIRED Global Center' & 'National Science Data Fabric' collaboration"
-  date: "Release dat: 7/28/2024"  
+  author: "Arleth Salinas and Valerio Pascucci \n \n a 'WIRED Global Center' & 'National Science Data Fabric' collaboration"
+  date: "Release date: 7/28/2024"  
   chapters:
     - index.qmd
     - demo.qmd

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>5&nbsp; Data Loading – UBC Smoke Forecast Data Curation</title>
+<title>5&nbsp; Data Loading – UBC Smoke Forecast Data Curation and Distribution</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -130,7 +130,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">UBC Smoke Forecast Data Curation</a> 
+      <a href="./">UBC Smoke Forecast Data Curation and Distribution</a> 
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -243,7 +243,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 data-number="5.1.1" class="anchored" data-anchor-id="first-approach"><span class="header-section-number">5.1.1</span> First Approach</h3>
 <p>We delineate our first approach by detailing our download script, which is available in it’s entirety in the side bar.</p>
 <hr>
-<div id="9845c3ad" class="cell" data-execution_count="1">
+<div id="09d74ca9" class="cell" data-execution_count="1">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="annotated-cell-2"><pre class="sourceCode python code-annotation-code code-with-copy code-annotated"><code class="sourceCode python"><span id="annotated-cell-2-1"><a href="#annotated-cell-2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> wget</span>
@@ -298,13 +298,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>We assumed that for all URLs, there was an available NetCDF file for download</p>
 <p>However, we realized that we downloaded either a NetCDF file <em>or an HTML webpage</em>. Using <code>wget</code> forcibly saved the contents at the URL into a NetCDF file.</p>
-<p>This issue was not identified until <em>after</em> we visualized each hour of the data, and we noticed gaps and errors in our scripts to create visualizations. See <a href="#sec-data-validation" class="quarto-xref"><span class="quarto-unresolved-ref">sec-data-validation</span></a> for further details on identifying these issues. For now, we show our modified approach to downloading the NetCDF files.</p>
+<p>This issue was not identified until <em>after</em> we visualized each hour of the data, and we noticed gaps and errors in our scripts to create visualizations. See <a href="data_validation.html" class="quarto-xref"><span>Chapter 7</span></a> for further details on identifying these issues. For now, we show our modified approach to downloading the NetCDF files.</p>
 </section>
 <section id="second-approach" class="level3" data-number="5.1.2">
 <h3 data-number="5.1.2" class="anchored" data-anchor-id="second-approach"><span class="header-section-number">5.1.2</span> Second Approach</h3>
 <p>Our second approach is similar to the first, except we use <a href="https://requests.readthedocs.io/en/latest/"><code>requests</code></a>, an HTTP client library that allows us to see the headers returned from the URL we query. The script is available in the side bar.</p>
 <hr>
-<div id="49222b8d" class="cell" data-execution_count="2">
+<div id="8dcdc3ea" class="cell" data-execution_count="2">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="annotated-cell-3"><pre class="sourceCode python code-annotation-code code-with-copy code-annotated"><code class="sourceCode python"><span id="annotated-cell-3-1"><a href="#annotated-cell-3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
@@ -382,7 +382,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </dl>
 </div>
 </div>
-<p>This approach yielded the results we expected, we downloaded only NetCDF files. We had failed downloads which appeared during conversion as described in <a href="#sec-data-conversion" class="quarto-xref"><span class="quarto-unresolved-ref">sec-data-conversion</span></a>. We assumed those files were unavailable from UBC which we later confirmed as described in <a href="#sec-data-validation" class="quarto-xref"><span class="quarto-unresolved-ref">sec-data-validation</span></a>.</p>
+<p>This approach yielded the results we expected, we downloaded only NetCDF files. We had failed downloads which appeared during conversion as described in <a href="data_conversion.html" class="quarto-xref"><span>Chapter 6</span></a>. We assumed those files were unavailable from UBC which we later confirmed as described in <a href="data_validation.html" class="quarto-xref"><span>Chapter 7</span></a>.</p>
 
 
 <!-- -->

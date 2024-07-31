@@ -9,6 +9,6 @@ These smoke predictions are useful for those who must make decisions on how to d
 Our task is to obtain a single long term dataset from the smoke forecast files that are available from UBC.
 
 # References
-[1] https://dl.acm.org/doi/abs/10.1145/583890.583893
+<!-- [1] https://dl.acm.org/doi/abs/10.1145/583890.583893
 
-[2] climate change and wildfire article that was in spanish
+[2] climate change and wildfire article that was in spanish -->

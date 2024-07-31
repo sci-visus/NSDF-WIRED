@@ -57,7 +57,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -102,9 +102,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
-
-<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
 </head>
@@ -198,7 +195,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <div class="quarto-code-links"><h2>Code Links</h2><ul><li><a href="https://github.com/sci-visus/NSDF-WIRED/blob/main/visualizations/demos/v5/firesmoke-idx-demo_v5.ipynb"><i class="bi bi-file-code"></i>Demo Download</a></li></ul></div></div>
+    <div class="quarto-code-links"><h2>Code Links</h2><ul><li><a href="https://github.com/sci-visus/NSDF-WIRED/blob/main/communication/UBC%20Smoke%20Forecast%20Data%20Curation/data_notebooks/demo/demo.ipynb"><i class="bi bi-file-code"></i>Demo Download</a></li></ul></div></div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -304,405 +301,11 @@ PM25
 Adding field  PM25 shape  [27357, 381, 1081, 21] dtype  float32 labels  ['time', 'ROW', 'COL', 'resolution'] Max Resolution  20</code></pre>
 </div>
 </div>
-<div id="3ccc8607-1ead-46fd-8e17-37605ee3207b" class="cell" data-tags="[]" data-execution_count="3">
+<div id="3ccc8607-1ead-46fd-8e17-37605ee3207b" class="cell" data-tags="[]">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>ds</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-display" data-execution_count="3">
-<div><svg style="position: absolute; width: 0; height: 0; overflow: hidden">
-<defs>
-<symbol id="icon-database" viewbox="0 0 32 32">
-<path d="M16 0c-8.837 0-16 2.239-16 5v4c0 2.761 7.163 5 16 5s16-2.239 16-5v-4c0-2.761-7.163-5-16-5z"></path>
-<path d="M16 17c-8.837 0-16-2.239-16-5v6c0 2.761 7.163 5 16 5s16-2.239 16-5v-6c0 2.761-7.163 5-16 5z"></path>
-<path d="M16 26c-8.837 0-16-2.239-16-5v6c0 2.761 7.163 5 16 5s16-2.239 16-5v-6c0 2.761-7.163 5-16 5z"></path>
-</symbol>
-<symbol id="icon-file-text2" viewbox="0 0 32 32">
-<path d="M28.681 7.159c-0.694-0.947-1.662-2.053-2.724-3.116s-2.169-2.030-3.116-2.724c-1.612-1.182-2.393-1.319-2.841-1.319h-15.5c-1.378 0-2.5 1.121-2.5 2.5v27c0 1.378 1.122 2.5 2.5 2.5h23c1.378 0 2.5-1.122 2.5-2.5v-19.5c0-0.448-0.137-1.23-1.319-2.841zM24.543 5.457c0.959 0.959 1.712 1.825 2.268 2.543h-4.811v-4.811c0.718 0.556 1.584 1.309 2.543 2.268zM28 29.5c0 0.271-0.229 0.5-0.5 0.5h-23c-0.271 0-0.5-0.229-0.5-0.5v-27c0-0.271 0.229-0.5 0.5-0.5 0 0 15.499-0 15.5 0v7c0 0.552 0.448 1 1 1h7v19.5z"></path>
-<path d="M23 26h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
-<path d="M23 22h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
-<path d="M23 18h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
-</symbol>
-</defs>
-</svg>
-<style>/* CSS stylesheet for displaying xarray objects in jupyterlab.
- *
- */
-
-:root {
-  --xr-font-color0: var(--jp-content-font-color0, rgba(0, 0, 0, 1));
-  --xr-font-color2: var(--jp-content-font-color2, rgba(0, 0, 0, 0.54));
-  --xr-font-color3: var(--jp-content-font-color3, rgba(0, 0, 0, 0.38));
-  --xr-border-color: var(--jp-border-color2, #e0e0e0);
-  --xr-disabled-color: var(--jp-layout-color3, #bdbdbd);
-  --xr-background-color: var(--jp-layout-color0, white);
-  --xr-background-color-row-even: var(--jp-layout-color1, white);
-  --xr-background-color-row-odd: var(--jp-layout-color2, #eeeeee);
-}
-
-html[theme=dark],
-body[data-theme=dark],
-body.vscode-dark {
-  --xr-font-color0: rgba(255, 255, 255, 1);
-  --xr-font-color2: rgba(255, 255, 255, 0.54);
-  --xr-font-color3: rgba(255, 255, 255, 0.38);
-  --xr-border-color: #1F1F1F;
-  --xr-disabled-color: #515151;
-  --xr-background-color: #111111;
-  --xr-background-color-row-even: #111111;
-  --xr-background-color-row-odd: #313131;
-}
-
-.xr-wrap {
-  display: block !important;
-  min-width: 300px;
-  max-width: 700px;
-}
-
-.xr-text-repr-fallback {
-  /* fallback to plain text repr when CSS is not injected (untrusted notebook) */
-  display: none;
-}
-
-.xr-header {
-  padding-top: 6px;
-  padding-bottom: 6px;
-  margin-bottom: 4px;
-  border-bottom: solid 1px var(--xr-border-color);
-}
-
-.xr-header > div,
-.xr-header > ul {
-  display: inline;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.xr-obj-type,
-.xr-array-name {
-  margin-left: 2px;
-  margin-right: 10px;
-}
-
-.xr-obj-type {
-  color: var(--xr-font-color2);
-}
-
-.xr-sections {
-  padding-left: 0 !important;
-  display: grid;
-  grid-template-columns: 150px auto auto 1fr 20px 20px;
-}
-
-.xr-section-item {
-  display: contents;
-}
-
-.xr-section-item input {
-  display: none;
-}
-
-.xr-section-item input + label {
-  color: var(--xr-disabled-color);
-}
-
-.xr-section-item input:enabled + label {
-  cursor: pointer;
-  color: var(--xr-font-color2);
-}
-
-.xr-section-item input:enabled + label:hover {
-  color: var(--xr-font-color0);
-}
-
-.xr-section-summary {
-  grid-column: 1;
-  color: var(--xr-font-color2);
-  font-weight: 500;
-}
-
-.xr-section-summary > span {
-  display: inline-block;
-  padding-left: 0.5em;
-}
-
-.xr-section-summary-in:disabled + label {
-  color: var(--xr-font-color2);
-}
-
-.xr-section-summary-in + label:before {
-  display: inline-block;
-  content: '►';
-  font-size: 11px;
-  width: 15px;
-  text-align: center;
-}
-
-.xr-section-summary-in:disabled + label:before {
-  color: var(--xr-disabled-color);
-}
-
-.xr-section-summary-in:checked + label:before {
-  content: '▼';
-}
-
-.xr-section-summary-in:checked + label > span {
-  display: none;
-}
-
-.xr-section-summary,
-.xr-section-inline-details {
-  padding-top: 4px;
-  padding-bottom: 4px;
-}
-
-.xr-section-inline-details {
-  grid-column: 2 / -1;
-}
-
-.xr-section-details {
-  display: none;
-  grid-column: 1 / -1;
-  margin-bottom: 5px;
-}
-
-.xr-section-summary-in:checked ~ .xr-section-details {
-  display: contents;
-}
-
-.xr-array-wrap {
-  grid-column: 1 / -1;
-  display: grid;
-  grid-template-columns: 20px auto;
-}
-
-.xr-array-wrap > label {
-  grid-column: 1;
-  vertical-align: top;
-}
-
-.xr-preview {
-  color: var(--xr-font-color3);
-}
-
-.xr-array-preview,
-.xr-array-data {
-  padding: 0 5px !important;
-  grid-column: 2;
-}
-
-.xr-array-data,
-.xr-array-in:checked ~ .xr-array-preview {
-  display: none;
-}
-
-.xr-array-in:checked ~ .xr-array-data,
-.xr-array-preview {
-  display: inline-block;
-}
-
-.xr-dim-list {
-  display: inline-block !important;
-  list-style: none;
-  padding: 0 !important;
-  margin: 0;
-}
-
-.xr-dim-list li {
-  display: inline-block;
-  padding: 0;
-  margin: 0;
-}
-
-.xr-dim-list:before {
-  content: '(';
-}
-
-.xr-dim-list:after {
-  content: ')';
-}
-
-.xr-dim-list li:not(:last-child):after {
-  content: ',';
-  padding-right: 5px;
-}
-
-.xr-has-index {
-  font-weight: bold;
-}
-
-.xr-var-list,
-.xr-var-item {
-  display: contents;
-}
-
-.xr-var-item > div,
-.xr-var-item label,
-.xr-var-item > .xr-var-name span {
-  background-color: var(--xr-background-color-row-even);
-  margin-bottom: 0;
-}
-
-.xr-var-item > .xr-var-name:hover span {
-  padding-right: 5px;
-}
-
-.xr-var-list > li:nth-child(odd) > div,
-.xr-var-list > li:nth-child(odd) > label,
-.xr-var-list > li:nth-child(odd) > .xr-var-name span {
-  background-color: var(--xr-background-color-row-odd);
-}
-
-.xr-var-name {
-  grid-column: 1;
-}
-
-.xr-var-dims {
-  grid-column: 2;
-}
-
-.xr-var-dtype {
-  grid-column: 3;
-  text-align: right;
-  color: var(--xr-font-color2);
-}
-
-.xr-var-preview {
-  grid-column: 4;
-}
-
-.xr-index-preview {
-  grid-column: 2 / 5;
-  color: var(--xr-font-color2);
-}
-
-.xr-var-name,
-.xr-var-dims,
-.xr-var-dtype,
-.xr-preview,
-.xr-attrs dt {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  padding-right: 10px;
-}
-
-.xr-var-name:hover,
-.xr-var-dims:hover,
-.xr-var-dtype:hover,
-.xr-attrs dt:hover {
-  overflow: visible;
-  width: auto;
-  z-index: 1;
-}
-
-.xr-var-attrs,
-.xr-var-data,
-.xr-index-data {
-  display: none;
-  background-color: var(--xr-background-color) !important;
-  padding-bottom: 5px !important;
-}
-
-.xr-var-attrs-in:checked ~ .xr-var-attrs,
-.xr-var-data-in:checked ~ .xr-var-data,
-.xr-index-data-in:checked ~ .xr-index-data {
-  display: block;
-}
-
-.xr-var-data > table {
-  float: right;
-}
-
-.xr-var-name span,
-.xr-var-data,
-.xr-index-name div,
-.xr-index-data,
-.xr-attrs {
-  padding-left: 25px !important;
-}
-
-.xr-attrs,
-.xr-var-attrs,
-.xr-var-data,
-.xr-index-data {
-  grid-column: 1 / -1;
-}
-
-dl.xr-attrs {
-  padding: 0;
-  margin: 0;
-  display: grid;
-  grid-template-columns: 125px auto;
-}
-
-.xr-attrs dt,
-.xr-attrs dd {
-  padding: 0;
-  margin: 0;
-  float: left;
-  padding-right: 10px;
-  width: auto;
-}
-
-.xr-attrs dt {
-  font-weight: normal;
-  grid-column: 1;
-}
-
-.xr-attrs dt:hover span {
-  display: inline-block;
-  background: var(--xr-background-color);
-  padding-right: 10px;
-}
-
-.xr-attrs dd {
-  grid-column: 2;
-  white-space: pre-wrap;
-  word-break: break-all;
-}
-
-.xr-icon-database,
-.xr-icon-file-text2,
-.xr-no-icon {
-  display: inline-block;
-  vertical-align: middle;
-  width: 1em;
-  height: 1.5em !important;
-  stroke-width: 0;
-  stroke: currentColor;
-  fill: currentColor;
-}
-</style><pre class="xr-text-repr-fallback">&lt;xarray.Dataset&gt;
-Dimensions:            (time: 27357, ROW: 381, COL: 1081, resolution: 21,
-                        VAR: 1, DATE-TIME: 2)
-Dimensions without coordinates: time, ROW, COL, resolution, VAR, DATE-TIME
-Data variables:
-    PM25               (time, ROW, COL, resolution) float32 ...
-    TFLAG              (time, VAR, DATE-TIME) int32 ...
-    wrf_arw_init_time  (time, VAR, DATE-TIME) int32 ...
-    resampled          (time) bool ...
-    CDATE              (time) int32 ...
-    CTIME              (time) int32 ...
-    WDATE              (time) int32 ...
-    WTIME              (time) int32 ...
-    SDATE              (time) int32 ...
-    STIME              (time) int32 ...
-Attributes: (12/28)
-    IOAPI_VERSION:  $Id: @(#) ioapi library version 3.0 $                    ...
-    EXEC_ID:        ????????????????                                         ...
-    FTYPE:          1
-    TSTEP:          10000
-    NTHIK:          1
-    NCOLS:          1081
-    ...             ...
-    GDNAM:          HYSPLIT CONC    
-    UPNAM:          hysplit2netCDF  
-    VAR-LIST:       PM25            
-    FILEDESC:       Hysplit Concentration Model Output                       ...
-    HISTORY:        
-    idx_url:        http://atlantis.sci.utah.edu/mod_visus?dataset=UBC_fire_s...</pre><div class="xr-wrap" style="display:none"><div class="xr-header"><div class="xr-obj-type">xarray.Dataset</div></div><ul class="xr-sections"><li class="xr-section-item"><input id="section-e5919dab-dd30-4e9d-8fcc-583cb8b5c5d4" class="xr-section-summary-in" type="checkbox" disabled=""><label for="section-e5919dab-dd30-4e9d-8fcc-583cb8b5c5d4" class="xr-section-summary" title="Expand/collapse section">Dimensions:</label><div class="xr-section-inline-details"><ul class="xr-dim-list"><li><span>time</span>: 27357</li><li><span>ROW</span>: 381</li><li><span>COL</span>: 1081</li><li><span>resolution</span>: 21</li><li><span>VAR</span>: 1</li><li><span>DATE-TIME</span>: 2</li></ul></div><div class="xr-section-details"></div></li><li class="xr-section-item"><input id="section-3d206929-96b9-498e-8325-ef11d8da6aff" class="xr-section-summary-in" type="checkbox" disabled=""><label for="section-3d206929-96b9-498e-8325-ef11d8da6aff" class="xr-section-summary" title="Expand/collapse section">Coordinates: <span>(0)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><ul class="xr-var-list"></ul></div></li><li class="xr-section-item"><input id="section-4711b80b-b1c8-4028-aa82-92d89c6a4c50" class="xr-section-summary-in" type="checkbox" checked=""><label for="section-4711b80b-b1c8-4028-aa82-92d89c6a4c50" class="xr-section-summary">Data variables: <span>(10)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><ul class="xr-var-list"><li class="xr-var-item"><div class="xr-var-name"><span>PM25</span></div><div class="xr-var-dims">(time, ROW, COL, resolution)</div><div class="xr-var-dtype">float32</div><div class="xr-var-preview xr-preview">...</div><input id="attrs-04deaf53-fa78-443f-b37e-97d3713764fc" class="xr-var-attrs-in" type="checkbox"><label for="attrs-04deaf53-fa78-443f-b37e-97d3713764fc" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-d04a1732-6db4-4d32-bd71-7eab698f9508" class="xr-var-data-in" type="checkbox"><label for="data-d04a1732-6db4-4d32-bd71-7eab698f9508" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"><dt><span>long_name :</span></dt><dd>PM25            </dd><dt><span>units :</span></dt><dd>ug/m^3          </dd><dt><span>var_desc :</span></dt><dd>PM25                                                                            </dd></dl></div><div class="xr-var-data"><pre>[236612908917 values with dtype=float32]</pre></div></li><li class="xr-var-item"><div class="xr-var-name"><span>TFLAG</span></div><div class="xr-var-dims">(time, VAR, DATE-TIME)</div><div class="xr-var-dtype">int32</div><div class="xr-var-preview xr-preview">...</div><input id="attrs-4354ac5f-610b-492e-9fa9-e08fa6ce751d" class="xr-var-attrs-in" type="checkbox" disabled=""><label for="attrs-4354ac5f-610b-492e-9fa9-e08fa6ce751d" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-2c4c16e5-5e59-4362-9517-65a6f43a1085" class="xr-var-data-in" type="checkbox"><label for="data-2c4c16e5-5e59-4362-9517-65a6f43a1085" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"></dl></div><div class="xr-var-data"><pre>[54714 values with dtype=int32]</pre></div></li><li class="xr-var-item"><div class="xr-var-name"><span>wrf_arw_init_time</span></div><div class="xr-var-dims">(time, VAR, DATE-TIME)</div><div class="xr-var-dtype">int32</div><div class="xr-var-preview xr-preview">...</div><input id="attrs-3f1e9612-47be-41bf-98f4-5cb987823619" class="xr-var-attrs-in" type="checkbox" disabled=""><label for="attrs-3f1e9612-47be-41bf-98f4-5cb987823619" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-cd7aa70f-64b6-4221-82e5-04b1341b742d" class="xr-var-data-in" type="checkbox"><label for="data-cd7aa70f-64b6-4221-82e5-04b1341b742d" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"></dl></div><div class="xr-var-data"><pre>[54714 values with dtype=int32]</pre></div></li><li class="xr-var-item"><div class="xr-var-name"><span>resampled</span></div><div class="xr-var-dims">(time)</div><div class="xr-var-dtype">bool</div><div class="xr-var-preview xr-preview">...</div><input id="attrs-4e651819-f538-427f-b23a-9945de4395ae" class="xr-var-attrs-in" type="checkbox" disabled=""><label for="attrs-4e651819-f538-427f-b23a-9945de4395ae" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-50c17b4f-755d-414b-bcbc-65009df54893" class="xr-var-data-in" type="checkbox"><label for="data-50c17b4f-755d-414b-bcbc-65009df54893" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"></dl></div><div class="xr-var-data"><pre>[27357 values with dtype=bool]</pre></div></li><li class="xr-var-item"><div class="xr-var-name"><span>CDATE</span></div><div class="xr-var-dims">(time)</div><div class="xr-var-dtype">int32</div><div class="xr-var-preview xr-preview">...</div><input id="attrs-283a6f7c-656c-4d60-8aee-1d795da28311" class="xr-var-attrs-in" type="checkbox" disabled=""><label for="attrs-283a6f7c-656c-4d60-8aee-1d795da28311" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-73d03dad-dd5c-4d43-8bd1-56bdf095737a" class="xr-var-data-in" type="checkbox"><label for="data-73d03dad-dd5c-4d43-8bd1-56bdf095737a" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"></dl></div><div class="xr-var-data"><pre>[27357 values with dtype=int32]</pre></div></li><li class="xr-var-item"><div class="xr-var-name"><span>CTIME</span></div><div class="xr-var-dims">(time)</div><div class="xr-var-dtype">int32</div><div class="xr-var-preview xr-preview">...</div><input id="attrs-e61ba696-f6e5-47ec-9484-4a39aaa86de9" class="xr-var-attrs-in" type="checkbox" disabled=""><label for="attrs-e61ba696-f6e5-47ec-9484-4a39aaa86de9" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-2ab4989e-9af8-4b9f-a033-16aa77c1bcf9" class="xr-var-data-in" type="checkbox"><label for="data-2ab4989e-9af8-4b9f-a033-16aa77c1bcf9" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"></dl></div><div class="xr-var-data"><pre>[27357 values with dtype=int32]</pre></div></li><li class="xr-var-item"><div class="xr-var-name"><span>WDATE</span></div><div class="xr-var-dims">(time)</div><div class="xr-var-dtype">int32</div><div class="xr-var-preview xr-preview">...</div><input id="attrs-523e8af3-fbcd-4c66-a43c-43ae1b4f72ee" class="xr-var-attrs-in" type="checkbox" disabled=""><label for="attrs-523e8af3-fbcd-4c66-a43c-43ae1b4f72ee" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-29082e84-c8b6-4a24-b71c-4b16ff9b0ea6" class="xr-var-data-in" type="checkbox"><label for="data-29082e84-c8b6-4a24-b71c-4b16ff9b0ea6" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"></dl></div><div class="xr-var-data"><pre>[27357 values with dtype=int32]</pre></div></li><li class="xr-var-item"><div class="xr-var-name"><span>WTIME</span></div><div class="xr-var-dims">(time)</div><div class="xr-var-dtype">int32</div><div class="xr-var-preview xr-preview">...</div><input id="attrs-5d761edb-87ba-440c-b28b-0add4c8b447b" class="xr-var-attrs-in" type="checkbox" disabled=""><label for="attrs-5d761edb-87ba-440c-b28b-0add4c8b447b" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-fb9de7d1-7507-47ab-9f51-f5f5b68812df" class="xr-var-data-in" type="checkbox"><label for="data-fb9de7d1-7507-47ab-9f51-f5f5b68812df" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"></dl></div><div class="xr-var-data"><pre>[27357 values with dtype=int32]</pre></div></li><li class="xr-var-item"><div class="xr-var-name"><span>SDATE</span></div><div class="xr-var-dims">(time)</div><div class="xr-var-dtype">int32</div><div class="xr-var-preview xr-preview">...</div><input id="attrs-acfeae84-fae9-4997-941f-dec5ca2e1cc4" class="xr-var-attrs-in" type="checkbox" disabled=""><label for="attrs-acfeae84-fae9-4997-941f-dec5ca2e1cc4" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-8ffadefd-e258-4426-86fe-be397b321a54" class="xr-var-data-in" type="checkbox"><label for="data-8ffadefd-e258-4426-86fe-be397b321a54" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"></dl></div><div class="xr-var-data"><pre>[27357 values with dtype=int32]</pre></div></li><li class="xr-var-item"><div class="xr-var-name"><span>STIME</span></div><div class="xr-var-dims">(time)</div><div class="xr-var-dtype">int32</div><div class="xr-var-preview xr-preview">...</div><input id="attrs-14d4b4f5-d409-42d4-88c7-9811185b1bf9" class="xr-var-attrs-in" type="checkbox" disabled=""><label for="attrs-14d4b4f5-d409-42d4-88c7-9811185b1bf9" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-d10f6ece-bdb0-41f7-96c3-90083da0daf8" class="xr-var-data-in" type="checkbox"><label for="data-d10f6ece-bdb0-41f7-96c3-90083da0daf8" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"></dl></div><div class="xr-var-data"><pre>[27357 values with dtype=int32]</pre></div></li></ul></div></li><li class="xr-section-item"><input id="section-b9176507-c432-46b3-b410-97a94f5f5e61" class="xr-section-summary-in" type="checkbox" disabled=""><label for="section-b9176507-c432-46b3-b410-97a94f5f5e61" class="xr-section-summary" title="Expand/collapse section">Indexes: <span>(0)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><ul class="xr-var-list"></ul></div></li><li class="xr-section-item"><input id="section-357d8c0f-ffd3-43a1-a094-2df68e42db48" class="xr-section-summary-in" type="checkbox"><label for="section-357d8c0f-ffd3-43a1-a094-2df68e42db48" class="xr-section-summary">Attributes: <span>(28)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><dl class="xr-attrs"><dt><span>IOAPI_VERSION :</span></dt><dd>$Id: @(#) ioapi library version 3.0 $                                           </dd><dt><span>EXEC_ID :</span></dt><dd>????????????????                                                                </dd><dt><span>FTYPE :</span></dt><dd>1</dd><dt><span>TSTEP :</span></dt><dd>10000</dd><dt><span>NTHIK :</span></dt><dd>1</dd><dt><span>NCOLS :</span></dt><dd>1081</dd><dt><span>NROWS :</span></dt><dd>381</dd><dt><span>NLAYS :</span></dt><dd>1</dd><dt><span>NVARS :</span></dt><dd>1</dd><dt><span>GDTYP :</span></dt><dd>1</dd><dt><span>P_ALP :</span></dt><dd>0.0</dd><dt><span>P_BET :</span></dt><dd>0.0</dd><dt><span>P_GAM :</span></dt><dd>0.0</dd><dt><span>XCENT :</span></dt><dd>-106.0</dd><dt><span>YCENT :</span></dt><dd>51.0</dd><dt><span>XORIG :</span></dt><dd>-160.0</dd><dt><span>YORIG :</span></dt><dd>32.0</dd><dt><span>XCELL :</span></dt><dd>0.10000000149011612</dd><dt><span>YCELL :</span></dt><dd>0.10000000149011612</dd><dt><span>VGTYP :</span></dt><dd>5</dd><dt><span>VGTOP :</span></dt><dd>-9999.0</dd><dt><span>VGLVLS :</span></dt><dd>[10.  0.]</dd><dt><span>GDNAM :</span></dt><dd>HYSPLIT CONC    </dd><dt><span>UPNAM :</span></dt><dd>hysplit2netCDF  </dd><dt><span>VAR-LIST :</span></dt><dd>PM25            </dd><dt><span>FILEDESC :</span></dt><dd>Hysplit Concentration Model Output                                              lat-lon coordinate system                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       </dd><dt><span>HISTORY :</span></dt><dd></dd><dt><span>idx_url :</span></dt><dd>http://atlantis.sci.utah.edu/mod_visus?dataset=UBC_fire_smoke_BSC&amp;cached=1</dd></dl></div></li></ul></div></div>
-</div>
 </div>
 <section id="data-variables-description" class="level4" data-number="1.3.1.1">
 <h4 data-number="1.3.1.1" class="anchored" data-anchor-id="data-variables-description"><span class="header-section-number">1.3.1.1</span> Data Variables Description</h4>
@@ -769,7 +372,7 @@ Attributes: (12/28)
 <h3 data-number="1.4.1" class="anchored" data-anchor-id="this-is-required-to-allow-for-indexing-of-data-via-metadata"><span class="header-section-number">1.4.1</span> This is required to allow for indexing of data via metadata</h3>
 <section id="calculate-latitude-and-longitude-grid" class="level4" data-number="1.4.1.1">
 <h4 data-number="1.4.1.1" class="anchored" data-anchor-id="calculate-latitude-and-longitude-grid"><span class="header-section-number">1.4.1.1</span> Calculate latitude and longitude grid</h4>
-<div id="35d6b10f-6613-42ea-a0f8-a5e82d2e71df" class="cell" data-execution_count="4">
+<div id="35d6b10f-6613-42ea-a0f8-a5e82d2e71df" class="cell">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Get metadata to compute lon and lat</span></span>
@@ -790,28 +393,19 @@ Attributes: (12/28)
 <span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'longitude: min = </span><span class="sc">{</span>np<span class="sc">.</span><span class="bu">min</span>(longitude)<span class="sc">}</span><span class="ss">, max = </span><span class="sc">{</span>np<span class="sc">.</span><span class="bu">max</span>(longitude)<span class="sc">}</span><span class="ss">'</span>)</span>
 <span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'latitude: min = </span><span class="sc">{</span>np<span class="sc">.</span><span class="bu">min</span>(latitude)<span class="sc">}</span><span class="ss">, max = </span><span class="sc">{</span>np<span class="sc">.</span><span class="bu">max</span>(latitude)<span class="sc">}</span><span class="ss">'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-stdout">
-<pre><code>Size of longitude &amp; latitude arrays:
-np.size(longitude) = 1081
-np.size(latitude) = 381
-
-Min &amp; Max of longitude and latitude arrays:
-longitude: min = -160.0, max = -51.99999839067459
-latitude: min = 32.0, max = 70.00000056624413</code></pre>
-</div>
 </div>
 </section>
 <section id="using-calculated-latitude-and-longitude-create-coordinates-allowing-for-indexing-data-using-latlon" class="level4" data-number="1.4.1.2">
 <h4 data-number="1.4.1.2" class="anchored" data-anchor-id="using-calculated-latitude-and-longitude-create-coordinates-allowing-for-indexing-data-using-latlon"><span class="header-section-number">1.4.1.2</span> Using calculated latitude and longitude, create coordinates allowing for indexing data using lat/lon</h4>
-<div id="f889a8c8-29e1-4202-a02a-695765aedef5" class="cell" data-tags="[]" data-execution_count="5">
+<div id="f889a8c8-29e1-4202-a02a-695765aedef5" class="cell" data-tags="[]">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create coordinates for lat and lon (credit: Aashish Panta)</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>ds.coords[<span class="st">'lat'</span>] <span class="op">=</span> (<span class="st">'ROW'</span>, latitude)</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>ds.coords[<span class="st">'lon'</span>] <span class="op">=</span> (<span class="st">'COL'</span>, longitude)</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Replace col and row dimensions with newly calculated lon and lat arrays (credit: Aashish Panta)</span></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>ds <span class="op">=</span> ds.swap_dims({<span class="st">'COL'</span>: <span class="st">'lon'</span>, <span class="st">'ROW'</span>: <span class="st">'lat'</span>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create coordinates for lat and lon (credit: Aashish Panta)</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>ds.coords[<span class="st">'lat'</span>] <span class="op">=</span> (<span class="st">'ROW'</span>, latitude)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>ds.coords[<span class="st">'lon'</span>] <span class="op">=</span> (<span class="st">'COL'</span>, longitude)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Replace col and row dimensions with newly calculated lon and lat arrays (credit: Aashish Panta)</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>ds <span class="op">=</span> ds.swap_dims({<span class="st">'COL'</span>: <span class="st">'lon'</span>, <span class="st">'ROW'</span>: <span class="st">'lat'</span>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section>
@@ -819,63 +413,58 @@ latitude: min = 32.0, max = 70.00000056624413</code></pre>
 <h4 data-number="1.4.1.3" class="anchored" data-anchor-id="create-coordinates-allowing-for-indexing-data-using-timestamp"><span class="header-section-number">1.4.1.3</span> Create coordinates allowing for indexing data using timestamp</h4>
 <section id="first-convert-tflags-to-timestamps-that-are-compatible-with-xarray" class="level5" data-number="1.4.1.3.1">
 <h5 data-number="1.4.1.3.1" class="anchored" data-anchor-id="first-convert-tflags-to-timestamps-that-are-compatible-with-xarray"><span class="header-section-number">1.4.1.3.1</span> First, convert tflags to timestamps that are compatible with xarray</h5>
-<div id="c72cd60c-3ca6-4dd8-9f21-09ec41a27fb6" class="cell" data-scrolled="true" data-execution_count="6">
+<div id="c72cd60c-3ca6-4dd8-9f21-09ec41a27fb6" class="cell" data-scrolled="true">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> parse_tflag(tflag):</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Return the tflag as a datetime object</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co">    :param list tflag: a list of two int32, the 1st representing date and 2nd representing time</span></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># obtain year and day of year from tflag[0] (date)</span></span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>    date <span class="op">=</span> <span class="bu">int</span>(tflag[<span class="dv">0</span>])</span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>    year <span class="op">=</span> date <span class="op">//</span> <span class="dv">1000</span> <span class="co"># first 4 digits of tflag[0]</span></span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>    day_of_year <span class="op">=</span> date <span class="op">%</span> <span class="dv">1000</span> <span class="co"># last 3 digits of tflag[0]</span></span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>    <span class="co"># create datetime object representing date</span></span>
-<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>    final_date <span class="op">=</span> datetime.datetime(year, <span class="dv">1</span>, <span class="dv">1</span>) <span class="op">+</span> datetime.timedelta(days<span class="op">=</span>day_of_year <span class="op">-</span> <span class="dv">1</span>)</span>
-<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>    <span class="co"># obtain hour, mins, and secs from tflag[1] (time)</span></span>
-<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>    time <span class="op">=</span> <span class="bu">int</span>(tflag[<span class="dv">1</span>])</span>
-<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>    hours <span class="op">=</span> time <span class="op">//</span> <span class="dv">10000</span> <span class="co"># first 2 digits of tflag[1]</span></span>
-<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>    minutes <span class="op">=</span> (time <span class="op">%</span> <span class="dv">10000</span>) <span class="op">//</span> <span class="dv">100</span> <span class="co"># 3rd and 4th digits of tflag[1] </span></span>
-<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>    seconds <span class="op">=</span> time <span class="op">%</span> <span class="dv">100</span>  <span class="co"># last 2 digits of tflag[1]</span></span>
-<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>    <span class="co"># create final datetime object</span></span>
-<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a>    full_datetime <span class="op">=</span> datetime.datetime(year, final_date.month, final_date.day, hours, minutes, seconds)</span>
-<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> full_datetime</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> parse_tflag(tflag):</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Return the tflag as a datetime object</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co">    :param list tflag: a list of two int32, the 1st representing date and 2nd representing time</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># obtain year and day of year from tflag[0] (date)</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    date <span class="op">=</span> <span class="bu">int</span>(tflag[<span class="dv">0</span>])</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    year <span class="op">=</span> date <span class="op">//</span> <span class="dv">1000</span> <span class="co"># first 4 digits of tflag[0]</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>    day_of_year <span class="op">=</span> date <span class="op">%</span> <span class="dv">1000</span> <span class="co"># last 3 digits of tflag[0]</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>    <span class="co"># create datetime object representing date</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>    final_date <span class="op">=</span> datetime.datetime(year, <span class="dv">1</span>, <span class="dv">1</span>) <span class="op">+</span> datetime.timedelta(days<span class="op">=</span>day_of_year <span class="op">-</span> <span class="dv">1</span>)</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>    <span class="co"># obtain hour, mins, and secs from tflag[1] (time)</span></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>    time <span class="op">=</span> <span class="bu">int</span>(tflag[<span class="dv">1</span>])</span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>    hours <span class="op">=</span> time <span class="op">//</span> <span class="dv">10000</span> <span class="co"># first 2 digits of tflag[1]</span></span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>    minutes <span class="op">=</span> (time <span class="op">%</span> <span class="dv">10000</span>) <span class="op">//</span> <span class="dv">100</span> <span class="co"># 3rd and 4th digits of tflag[1] </span></span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>    seconds <span class="op">=</span> time <span class="op">%</span> <span class="dv">100</span>  <span class="co"># last 2 digits of tflag[1]</span></span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>    <span class="co"># create final datetime object</span></span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>    full_datetime <span class="op">=</span> datetime.datetime(year, final_date.month, final_date.day, hours, minutes, seconds)</span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> full_datetime</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section>
 <section id="return-an-array-of-the-tflags-as-pandas-timestamps" class="level5" data-number="1.4.1.3.2">
 <h5 data-number="1.4.1.3.2" class="anchored" data-anchor-id="return-an-array-of-the-tflags-as-pandas-timestamps"><span class="header-section-number">1.4.1.3.2</span> Return an array of the tflags as pandas timestamps</h5>
-<div id="f4c6a5cd-0a71-46b0-ac63-0c18290c1286" class="cell" data-execution_count="7">
+<div id="f4c6a5cd-0a71-46b0-ac63-0c18290c1286" class="cell">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># get all tflags</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>tflag_values <span class="op">=</span> ds[<span class="st">'TFLAG'</span>].values</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co"># to store pandas timestamps</span></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>timestamps <span class="op">=</span> []</span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="co"># convert all tflags to pandas timestamps, store in timestamps list</span></span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> tflag <span class="kw">in</span> tflag_values:</span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>    timestamps.append(pd.Timestamp(parse_tflag(tflag[<span class="dv">0</span>])))</span>
-<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a><span class="co"># check out the first 3 timestamps</span></span>
-<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>timestamps[<span class="dv">0</span>:<span class="dv">3</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># get all tflags</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>tflag_values <span class="op">=</span> ds[<span class="st">'TFLAG'</span>].values</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co"># to store pandas timestamps</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>timestamps <span class="op">=</span> []</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="co"># convert all tflags to pandas timestamps, store in timestamps list</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> tflag <span class="kw">in</span> tflag_values:</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>    timestamps.append(pd.Timestamp(parse_tflag(tflag[<span class="dv">0</span>])))</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="co"># check out the first 3 timestamps</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>timestamps[<span class="dv">0</span>:<span class="dv">3</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-display" data-execution_count="7">
-<pre><code>[Timestamp('2021-03-04 00:00:00'),
- Timestamp('2021-03-04 01:00:00'),
- Timestamp('2021-03-04 02:00:00')]</code></pre>
 </div>
-</div>
-<div id="867c6c2b-8a9e-44b6-9dfc-49838d0c9c04" class="cell" data-execution_count="8">
+<div id="867c6c2b-8a9e-44b6-9dfc-49838d0c9c04" class="cell">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># set coordinates to each timestep with these pandas timestamps</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>ds.coords[<span class="st">'time'</span>] <span class="op">=</span> (<span class="st">'time'</span>, timestamps)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># set coordinates to each timestep with these pandas timestamps</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>ds.coords[<span class="st">'time'</span>] <span class="op">=</span> (<span class="st">'time'</span>, timestamps)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section>
@@ -884,33 +473,33 @@ latitude: min = 32.0, max = 70.00000056624413</code></pre>
 <h4 data-number="1.4.1.4" class="anchored" data-anchor-id="the-timestamps-may-not-be-intuitive.-the-following-utility-function-returns-the-desired-pandas-timestamp-based-on-your-date-and-time-of-interest."><span class="header-section-number">1.4.1.4</span> The timestamps may not be intuitive. The following utility function returns the desired pandas timestamp based on your date and time of interest.</h4>
 <section id="when-you-index-the-data-at-a-desired-time-use-this-function-to-get-the-timestamp-you-need-to-index." class="level5" data-number="1.4.1.4.1">
 <h5 data-number="1.4.1.4.1" class="anchored" data-anchor-id="when-you-index-the-data-at-a-desired-time-use-this-function-to-get-the-timestamp-you-need-to-index."><span class="header-section-number">1.4.1.4.1</span> When you index the data at a desired time, use this function to get the timestamp you need to index.</h5>
-<div id="7ae260b4-0b7d-48e7-909d-7fe9ba82bf61" class="cell" data-execution_count="9">
+<div id="7ae260b4-0b7d-48e7-909d-7fe9ba82bf61" class="cell">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_timestamp(year, month, day, hour):</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co">    return a pandas timestamp using the given date-time arguments</span></span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co">    :param int year: year</span></span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="co">    :param int month: month</span></span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="co">    :param int day: day</span></span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="co">    :param int hour: hour</span></span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Convert year, month, day, and hour to a datetime object</span></span>
-<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>    full_datetime <span class="op">=</span> datetime.datetime(year, month, day, hour)</span>
-<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Extract components from the datetime object</span></span>
-<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>    year <span class="op">=</span> full_datetime.year</span>
-<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>    day_of_year <span class="op">=</span> full_datetime.timetuple().tm_yday</span>
-<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>    hours <span class="op">=</span> full_datetime.hour</span>
-<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>    minutes <span class="op">=</span> full_datetime.minute</span>
-<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>    seconds <span class="op">=</span> full_datetime.second</span>
-<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Compute tflag[0] and tflag[1]</span></span>
-<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a>    tflag0 <span class="op">=</span> year <span class="op">*</span> <span class="dv">1000</span> <span class="op">+</span> day_of_year</span>
-<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a>    tflag1 <span class="op">=</span> hours <span class="op">*</span> <span class="dv">10000</span> <span class="op">+</span> minutes <span class="op">*</span> <span class="dv">100</span> <span class="op">+</span> seconds</span>
-<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Return the Pandas Timestamp object</span></span>
-<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> pd.Timestamp(full_datetime)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_timestamp(year, month, day, hour):</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="co">    return a pandas timestamp using the given date-time arguments</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co">    :param int year: year</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="co">    :param int month: month</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="co">    :param int day: day</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="co">    :param int hour: hour</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Convert year, month, day, and hour to a datetime object</span></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>    full_datetime <span class="op">=</span> datetime.datetime(year, month, day, hour)</span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Extract components from the datetime object</span></span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>    year <span class="op">=</span> full_datetime.year</span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>    day_of_year <span class="op">=</span> full_datetime.timetuple().tm_yday</span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>    hours <span class="op">=</span> full_datetime.hour</span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>    minutes <span class="op">=</span> full_datetime.minute</span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>    seconds <span class="op">=</span> full_datetime.second</span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Compute tflag[0] and tflag[1]</span></span>
+<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a>    tflag0 <span class="op">=</span> year <span class="op">*</span> <span class="dv">1000</span> <span class="op">+</span> day_of_year</span>
+<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a>    tflag1 <span class="op">=</span> hours <span class="op">*</span> <span class="dv">10000</span> <span class="op">+</span> minutes <span class="op">*</span> <span class="dv">100</span> <span class="op">+</span> seconds</span>
+<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Return the Pandas Timestamp object</span></span>
+<span id="cb10-24"><a href="#cb10-24" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> pd.Timestamp(full_datetime)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section>
@@ -924,75 +513,58 @@ latitude: min = 32.0, max = 70.00000056624413</code></pre>
 <section id="you-can-index-the-data-using-indices-timestamps-latitude-longitude-and-by-desired-resolution." class="level4" data-number="1.5.1.1">
 <h4 data-number="1.5.1.1" class="anchored" data-anchor-id="you-can-index-the-data-using-indices-timestamps-latitude-longitude-and-by-desired-resolution."><span class="header-section-number">1.5.1.1</span> You can index the data using indices, timestamps*, latitude &amp; longitude, and by desired resolution**.</h4>
 <p>*Not setting any time means the first timestep available is selected. **Not setting quality means full data resolution is selected.</p>
-<hr>
+<!-- --- -->
 <section id="in-this-case-lets-get-all-available-firesmoke-data-for-march-5-2021-000000-and-the-time-and-date-for-which-its-weather-and-smoke-forecast-were-initiated." class="level5" data-number="1.5.1.1.1">
 <h5 data-number="1.5.1.1.1" class="anchored" data-anchor-id="in-this-case-lets-get-all-available-firesmoke-data-for-march-5-2021-000000-and-the-time-and-date-for-which-its-weather-and-smoke-forecast-were-initiated."><span class="header-section-number">1.5.1.1.1</span> In this case, let’s get all available firesmoke data for March 5, 2021 00:00:00 and the time and date for which it’s weather and smoke forecast were initiated.</h5>
-<div id="9aea7adf-5eb2-4480-99ec-a3ef7047d3e0" class="cell" data-execution_count="10">
+<div id="9aea7adf-5eb2-4480-99ec-a3ef7047d3e0" class="cell">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># select timestamp</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>my_timestamp <span class="op">=</span> get_timestamp(<span class="dv">2021</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">0</span>)</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="co"># select resolution, let's use full resolution since data isn't too big at one time slice</span></span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="co"># data resolution can be -19 for lowest res and 0 for highest res</span></span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>data_resolution <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="co"># get PM25 values and provide 4 values, the colons mean select all lat and lon indices</span></span>
-<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>data_array_at_time <span class="op">=</span> ds[<span class="st">'PM25'</span>].loc[my_timestamp, :, :, data_resolution]</span>
-<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a><span class="co"># the metadata specifying weather and smoke forecast initialization times</span></span>
-<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>resampled <span class="op">=</span> ds[<span class="st">'resampled'</span>].loc[my_timestamp]</span>
-<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>sdate <span class="op">=</span> ds[<span class="st">'SDATE'</span>].loc[my_timestamp]</span>
-<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>stime <span class="op">=</span> ds[<span class="st">'STIME'</span>].loc[my_timestamp]</span>
-<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>wdate <span class="op">=</span> ds[<span class="st">'WDATE'</span>].loc[my_timestamp]</span>
-<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a>wtime <span class="op">=</span> ds[<span class="st">'WTIME'</span>].loc[my_timestamp]</span>
-<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a><span class="co"># notice, to access the data, you must append ".values" to the data array we got above</span></span>
-<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'timestamp: </span><span class="sc">{</span>my_timestamp<span class="sc">}</span><span class="ss">'</span>)</span>
-<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'resampled: </span><span class="sc">{</span>resampled<span class="sc">.</span>values<span class="sc">}</span><span class="ss"> (boolean)'</span>)</span>
-<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'SDATE is </span><span class="sc">{</span>sdate<span class="sc">.</span>values<span class="sc">}</span><span class="ss"> (YYYYDDD)'</span>)</span>
-<span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'STIME is </span><span class="sc">{</span>stime<span class="sc">.</span>values<span class="sc">}</span><span class="ss"> (HHMMSS)'</span>)</span>
-<span id="cb13-23"><a href="#cb13-23" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'WDATE is </span><span class="sc">{</span>wdate<span class="sc">.</span>values<span class="sc">}</span><span class="ss"> (YYYYDDD)'</span>)</span>
-<span id="cb13-24"><a href="#cb13-24" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'WTIME is </span><span class="sc">{</span>wtime<span class="sc">.</span>values<span class="sc">}</span><span class="ss"> (HHMMSS)'</span>)</span>
-<span id="cb13-25"><a href="#cb13-25" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'shape of data_array_at_time.values = </span><span class="sc">{</span>np<span class="sc">.</span>shape(data_array_at_time.values)<span class="sc">}</span><span class="ss">'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># select timestamp</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>my_timestamp <span class="op">=</span> get_timestamp(<span class="dv">2021</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">0</span>)</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co"># select resolution, let's use full resolution since data isn't too big at one time slice</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="co"># data resolution can be -19 for lowest res and 0 for highest res</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>data_resolution <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="co"># get PM25 values and provide 4 values, the colons mean select all lat and lon indices</span></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>data_array_at_time <span class="op">=</span> ds[<span class="st">'PM25'</span>].loc[my_timestamp, :, :, data_resolution]</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a><span class="co"># the metadata specifying weather and smoke forecast initialization times</span></span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>resampled <span class="op">=</span> ds[<span class="st">'resampled'</span>].loc[my_timestamp]</span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>sdate <span class="op">=</span> ds[<span class="st">'SDATE'</span>].loc[my_timestamp]</span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>stime <span class="op">=</span> ds[<span class="st">'STIME'</span>].loc[my_timestamp]</span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>wdate <span class="op">=</span> ds[<span class="st">'WDATE'</span>].loc[my_timestamp]</span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>wtime <span class="op">=</span> ds[<span class="st">'WTIME'</span>].loc[my_timestamp]</span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a><span class="co"># notice, to access the data, you must append ".values" to the data array we got above</span></span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'timestamp: </span><span class="sc">{</span>my_timestamp<span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'resampled: </span><span class="sc">{</span>resampled<span class="sc">.</span>values<span class="sc">}</span><span class="ss"> (boolean)'</span>)</span>
+<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'SDATE is </span><span class="sc">{</span>sdate<span class="sc">.</span>values<span class="sc">}</span><span class="ss"> (YYYYDDD)'</span>)</span>
+<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'STIME is </span><span class="sc">{</span>stime<span class="sc">.</span>values<span class="sc">}</span><span class="ss"> (HHMMSS)'</span>)</span>
+<span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'WDATE is </span><span class="sc">{</span>wdate<span class="sc">.</span>values<span class="sc">}</span><span class="ss"> (YYYYDDD)'</span>)</span>
+<span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'WTIME is </span><span class="sc">{</span>wtime<span class="sc">.</span>values<span class="sc">}</span><span class="ss"> (HHMMSS)'</span>)</span>
+<span id="cb11-25"><a href="#cb11-25" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'shape of data_array_at_time.values = </span><span class="sc">{</span>np<span class="sc">.</span>shape(data_array_at_time.values)<span class="sc">}</span><span class="ss">'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-stdout">
-<pre><code>timestamp: 2021-03-05 00:00:00
-resampled: True (boolean)
-SDATE is 2021063 (YYYYDDD)
-STIME is 210000 (HHMMSS)
-WDATE is 2021063 (YYYYDDD)
-WTIME is 204413 (HHMMSS)
-Using Max Resolution:  20
-Time: 24, max_resolution: 20, logic_box=(0, 1081, 0, 381), field: PM25
-shape of data_array_at_time.values = (381, 1081)</code></pre>
-</div>
 </div>
 </section>
 <section id="perhaps-we-want-to-slice-a-specific-latitude-longitude-range-from-our-data_array_at_time-for-example-latitude-range-35-50-and-longitude-range--140--80.-lets-do-that-below." class="level5" data-number="1.5.1.1.2">
 <h5 data-number="1.5.1.1.2" class="anchored" data-anchor-id="perhaps-we-want-to-slice-a-specific-latitude-longitude-range-from-our-data_array_at_time-for-example-latitude-range-35-50-and-longitude-range--140--80.-lets-do-that-below."><span class="header-section-number">1.5.1.1.2</span> Perhaps we want to slice a specific latitude longitude range from our <code>data_array_at_time</code>, for example, latitude range <code>[35, 50]</code> and longitude range <code>[-140, -80]</code>. Let’s do that below.</h5>
-<div id="a74de20b-30bf-4bed-bb25-745c1ad6403b" class="cell" data-execution_count="11">
+<div id="a74de20b-30bf-4bed-bb25-745c1ad6403b" class="cell">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># # define range for latitude and longitude to use</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>min_lat <span class="op">=</span> <span class="dv">35</span></span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>max_lat <span class="op">=</span> <span class="dv">50</span></span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>min_lon <span class="op">=</span> <span class="op">-</span><span class="dv">140</span></span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>max_lon <span class="op">=</span> <span class="op">-</span><span class="dv">80</span></span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="co"># get PM25 values and provide 4 values, but this time at our desired ranges</span></span>
-<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>data_array_at_latlon <span class="op">=</span> ds[<span class="st">'PM25'</span>].loc[my_timestamp, min_lat:max_lat, min_lon:max_lon, data_resolution]</span>
-<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a><span class="co"># notice, to access the data, you must append ".values" to the data array we got above</span></span>
-<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'timestamp: </span><span class="sc">{</span>my_timestamp<span class="sc">}</span><span class="ss">'</span>)</span>
-<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'shape of data_array_at_time.values = </span><span class="sc">{</span>np<span class="sc">.</span>shape(data_array_at_latlon.values)<span class="sc">}</span><span class="ss">'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># # define range for latitude and longitude to use</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>min_lat <span class="op">=</span> <span class="dv">35</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>max_lat <span class="op">=</span> <span class="dv">50</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>min_lon <span class="op">=</span> <span class="op">-</span><span class="dv">140</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>max_lon <span class="op">=</span> <span class="op">-</span><span class="dv">80</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="co"># get PM25 values and provide 4 values, but this time at our desired ranges</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>data_array_at_latlon <span class="op">=</span> ds[<span class="st">'PM25'</span>].loc[my_timestamp, min_lat:max_lat, min_lon:max_lon, data_resolution]</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="co"># notice, to access the data, you must append ".values" to the data array we got above</span></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'timestamp: </span><span class="sc">{</span>my_timestamp<span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'shape of data_array_at_time.values = </span><span class="sc">{</span>np<span class="sc">.</span>shape(data_array_at_latlon.values)<span class="sc">}</span><span class="ss">'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-stdout">
-<pre><code>timestamp: 2021-03-05 00:00:00
-Using Max Resolution:  20
-Time: 24, max_resolution: 20, logic_box=(200, 800, 30, 180), field: PM25
-shape of data_array_at_time.values = (150, 600)</code></pre>
-</div>
 </div>
 <p>We show how to obtain this attribute information for a time step of one’s choice, let’s use</p>
 </section>
@@ -1001,27 +573,18 @@ shape of data_array_at_time.values = (150, 600)</code></pre>
 <h4 data-number="1.5.1.2" class="anchored" data-anchor-id="the-following-are-the-max-and-min-timestamps-lonlat-values-and-data-resolutions-you-can-index-by"><span class="header-section-number">1.5.1.2</span> The following are the max and min timestamps, lon/lat values, and data resolutions you can index by</h4>
 <section id="be-sure-you-index-within-the-data-range-otherwise-you-may-get-errors-since-no-data-exists-outside-these-ranges" class="level5" data-number="1.5.1.2.1">
 <h5 data-number="1.5.1.2.1" class="anchored" data-anchor-id="be-sure-you-index-within-the-data-range-otherwise-you-may-get-errors-since-no-data-exists-outside-these-ranges"><span class="header-section-number">1.5.1.2.1</span> Be sure you index within the data range, otherwise you may get errors since no data exists outside these ranges!</h5>
-<div id="8689f676-5f72-434f-aa84-f3f608dc9a4c" class="cell" data-execution_count="12">
+<div id="8689f676-5f72-434f-aa84-f3f608dc9a4c" class="cell">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># </span><span class="al">NOTE</span><span class="co">: there is one dummy date, ignore ds['time'].values[-1]</span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"earliest valid timestamp is: </span><span class="sc">{</span>ds[<span class="st">'time'</span>]<span class="sc">.</span>values[<span class="dv">0</span>]<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"latest valid timestamp is: </span><span class="sc">{</span>ds[<span class="st">'time'</span>]<span class="sc">.</span>values[<span class="op">-</span><span class="dv">2</span>]<span class="sc">}</span><span class="ch">\n</span><span class="ss">"</span>)</span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"valid longitude range is: </span><span class="sc">{</span>ds[<span class="st">'lon'</span>]<span class="sc">.</span>values[<span class="dv">0</span>]<span class="sc">}</span><span class="ss">, </span><span class="sc">{</span>ds[<span class="st">'lon'</span>]<span class="sc">.</span>values[<span class="op">-</span><span class="dv">1</span>]<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"valid latitude range is: </span><span class="sc">{</span>ds[<span class="st">'lat'</span>]<span class="sc">.</span>values[<span class="dv">0</span>]<span class="sc">}</span><span class="ss">, </span><span class="sc">{</span>ds[<span class="st">'lat'</span>]<span class="sc">.</span>values[<span class="op">-</span><span class="dv">1</span>]<span class="sc">}</span><span class="ch">\n</span><span class="ss">"</span>)</span>
-<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"valid data resolutions range is: [-19, 0]"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># </span><span class="al">NOTE</span><span class="co">: there is one dummy date, ignore ds['time'].values[-1]</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"earliest valid timestamp is: </span><span class="sc">{</span>ds[<span class="st">'time'</span>]<span class="sc">.</span>values[<span class="dv">0</span>]<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"latest valid timestamp is: </span><span class="sc">{</span>ds[<span class="st">'time'</span>]<span class="sc">.</span>values[<span class="op">-</span><span class="dv">2</span>]<span class="sc">}</span><span class="ch">\n</span><span class="ss">"</span>)</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"valid longitude range is: </span><span class="sc">{</span>ds[<span class="st">'lon'</span>]<span class="sc">.</span>values[<span class="dv">0</span>]<span class="sc">}</span><span class="ss">, </span><span class="sc">{</span>ds[<span class="st">'lon'</span>]<span class="sc">.</span>values[<span class="op">-</span><span class="dv">1</span>]<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"valid latitude range is: </span><span class="sc">{</span>ds[<span class="st">'lat'</span>]<span class="sc">.</span>values[<span class="dv">0</span>]<span class="sc">}</span><span class="ss">, </span><span class="sc">{</span>ds[<span class="st">'lat'</span>]<span class="sc">.</span>values[<span class="op">-</span><span class="dv">1</span>]<span class="sc">}</span><span class="ch">\n</span><span class="ss">"</span>)</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"valid data resolutions range is: [-19, 0]"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-stdout">
-<pre><code>earliest valid timestamp is: 2021-03-04T00:00:00.000000000
-latest valid timestamp is: 2024-06-27T22:00:00.000000000
-
-valid longitude range is: -160.0, -51.99999839067459
-valid latitude range is: 32.0, 70.00000056624413
-
-valid data resolutions range is: [-19, 0]</code></pre>
-</div>
 </div>
 </section>
 </section>
@@ -1034,187 +597,160 @@ valid data resolutions range is: [-19, 0]</code></pre>
 </section>
 <section id="get-the-values-from-your-data_array_at_time-and-plot-using-your-favorite-python-visualization-library.-well-use-matplotlib." class="level3" data-number="1.6.2">
 <h3 data-number="1.6.2" class="anchored" data-anchor-id="get-the-values-from-your-data_array_at_time-and-plot-using-your-favorite-python-visualization-library.-well-use-matplotlib."><span class="header-section-number">1.6.2</span> 1. Get the values from your <code>data_array_at_time</code> and plot using your favorite python visualization library. We’ll use matplotlib.</h3>
-</section>
-</section>
-<section id="use-xarrays-built-in-plotting-function-not-recommended-as-it-is-not-robust" class="level2" data-number="1.7">
-<h2 data-number="1.7" class="anchored" data-anchor-id="use-xarrays-built-in-plotting-function-not-recommended-as-it-is-not-robust"><span class="header-section-number">1.7</span> #### 2. Use xarray’s built in plotting function (not recommended, as it is not robust)</h2>
+<section id="use-xarrays-built-in-plotting-function-not-recommended-as-it-is-not-robust" class="level4" data-number="1.6.2.1">
+<h4 data-number="1.6.2.1" class="anchored" data-anchor-id="use-xarrays-built-in-plotting-function-not-recommended-as-it-is-not-robust"><span class="header-section-number">1.6.2.1</span> 2. Use xarray’s built in plotting function (not recommended, as it is not robust)</h4>
+<!-- --- -->
 <p>Here we plot <code>data_array_at_time</code> with matplotlib and its basemap extenstion to add geographic context.</p>
-<div id="c58133a1" class="cell" data-tags="[]" data-execution_count="13">
+<div id="c58133a1" class="cell" data-tags="[]">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Let's use matplotlib's imshow, since our data is on a grid</span></span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="co"># ref: https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.imshow.html</span></span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Initialize a figure and plot, so we can customize figure and plot of data</span></span>
-<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="co"># ref: https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.subplots.html</span></span>
-<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a><span class="co"># ref: https://scitools.org.uk/cartopy/docs/latest/getting_started/index.html</span></span>
-<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>my_fig, my_plt <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">15</span>, <span class="dv">6</span>), subplot_kw<span class="op">=</span><span class="bu">dict</span>(projection<span class="op">=</span>ccrs.PlateCarree()))</span>
-<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Let's set some parameters to get the visualization we want</span></span>
-<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a><span class="co"># ref: https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.imshow.html</span></span>
-<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a><span class="co"># color PM25 values on a log scale, since values are small</span></span>
-<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a>my_norm <span class="op">=</span> <span class="st">"log"</span> </span>
-<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a><span class="co"># this will number our x and y axes based on the longitude latitude range</span></span>
-<span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a>my_extent <span class="op">=</span> [np.<span class="bu">min</span>(longitude), np.<span class="bu">max</span>(longitude), np.<span class="bu">min</span>(latitude), np.<span class="bu">max</span>(latitude)]</span>
-<span id="cb19-16"><a href="#cb19-16" aria-hidden="true" tabindex="-1"></a><span class="co"># ensure the aspect ratio of our plot fits all data, matplotlib can does this automatically</span></span>
-<span id="cb19-17"><a href="#cb19-17" aria-hidden="true" tabindex="-1"></a>my_aspect <span class="op">=</span> <span class="st">'auto'</span></span>
-<span id="cb19-18"><a href="#cb19-18" aria-hidden="true" tabindex="-1"></a><span class="co"># tell matplotlib, our origin is the lower-left corner</span></span>
-<span id="cb19-19"><a href="#cb19-19" aria-hidden="true" tabindex="-1"></a>my_origin <span class="op">=</span> <span class="st">'lower'</span></span>
-<span id="cb19-20"><a href="#cb19-20" aria-hidden="true" tabindex="-1"></a><span class="co"># select a colormap for our plot and the color bar on the right</span></span>
-<span id="cb19-21"><a href="#cb19-21" aria-hidden="true" tabindex="-1"></a>my_cmap <span class="op">=</span> <span class="st">'Oranges'</span></span>
-<span id="cb19-22"><a href="#cb19-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-23"><a href="#cb19-23" aria-hidden="true" tabindex="-1"></a><span class="co"># create our plot using imshow</span></span>
-<span id="cb19-24"><a href="#cb19-24" aria-hidden="true" tabindex="-1"></a>plot <span class="op">=</span> my_plt.imshow(data_array_at_time.values, norm<span class="op">=</span>my_norm, extent<span class="op">=</span>my_extent, </span>
-<span id="cb19-25"><a href="#cb19-25" aria-hidden="true" tabindex="-1"></a>          aspect<span class="op">=</span>my_aspect, origin<span class="op">=</span>my_origin, cmap<span class="op">=</span>my_cmap)</span>
-<span id="cb19-26"><a href="#cb19-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-27"><a href="#cb19-27" aria-hidden="true" tabindex="-1"></a><span class="co"># draw coastlines</span></span>
-<span id="cb19-28"><a href="#cb19-28" aria-hidden="true" tabindex="-1"></a>my_plt.coastlines()</span>
-<span id="cb19-29"><a href="#cb19-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-30"><a href="#cb19-30" aria-hidden="true" tabindex="-1"></a><span class="co"># draw latitude longitude lines</span></span>
-<span id="cb19-31"><a href="#cb19-31" aria-hidden="true" tabindex="-1"></a><span class="co"># ref: https://scitools.org.uk/cartopy/docs/latest/gallery/gridlines_and_labels/gridliner.html</span></span>
-<span id="cb19-32"><a href="#cb19-32" aria-hidden="true" tabindex="-1"></a>my_plt.gridlines(draw_labels<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb19-33"><a href="#cb19-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-34"><a href="#cb19-34" aria-hidden="true" tabindex="-1"></a><span class="co"># add a colorbar to our figure, based on the plot we just made above</span></span>
-<span id="cb19-35"><a href="#cb19-35" aria-hidden="true" tabindex="-1"></a>my_fig.colorbar(plot,location<span class="op">=</span><span class="st">'right'</span>, label<span class="op">=</span><span class="st">'ug/m^3'</span>)</span>
-<span id="cb19-36"><a href="#cb19-36" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-37"><a href="#cb19-37" aria-hidden="true" tabindex="-1"></a><span class="co"># Add metadata as text annotations</span></span>
-<span id="cb19-38"><a href="#cb19-38" aria-hidden="true" tabindex="-1"></a>metadata_text <span class="op">=</span> (</span>
-<span id="cb19-39"><a href="#cb19-39" aria-hidden="true" tabindex="-1"></a>    <span class="ss">f'resampled: </span><span class="sc">{</span>resampled<span class="sc">.</span>values<span class="sc">}</span><span class="ch">\n</span><span class="ss">'</span></span>
-<span id="cb19-40"><a href="#cb19-40" aria-hidden="true" tabindex="-1"></a>    <span class="ss">f'SDATE: </span><span class="sc">{</span>sdate<span class="sc">.</span>values<span class="sc">}</span><span class="ch">\n</span><span class="ss">'</span></span>
-<span id="cb19-41"><a href="#cb19-41" aria-hidden="true" tabindex="-1"></a>    <span class="ss">f'STIME: </span><span class="sc">{</span>stime<span class="sc">.</span>values<span class="sc">}</span><span class="ch">\n</span><span class="ss">'</span></span>
-<span id="cb19-42"><a href="#cb19-42" aria-hidden="true" tabindex="-1"></a>    <span class="ss">f'WDATE: </span><span class="sc">{</span>wdate<span class="sc">.</span>values<span class="sc">}</span><span class="ch">\n</span><span class="ss">'</span></span>
-<span id="cb19-43"><a href="#cb19-43" aria-hidden="true" tabindex="-1"></a>    <span class="ss">f'WTIME: </span><span class="sc">{</span>wtime<span class="sc">.</span>values<span class="sc">}</span><span class="ss">'</span></span>
-<span id="cb19-44"><a href="#cb19-44" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb19-45"><a href="#cb19-45" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-46"><a href="#cb19-46" aria-hidden="true" tabindex="-1"></a><span class="co"># Place metadata text on the plot</span></span>
-<span id="cb19-47"><a href="#cb19-47" aria-hidden="true" tabindex="-1"></a>my_plt.text(<span class="fl">0.02</span>, <span class="fl">0.02</span>, metadata_text, transform<span class="op">=</span>my_plt.transAxes,</span>
-<span id="cb19-48"><a href="#cb19-48" aria-hidden="true" tabindex="-1"></a>            fontsize<span class="op">=</span><span class="dv">12</span>, verticalalignment<span class="op">=</span><span class="st">'bottom'</span>, bbox<span class="op">=</span><span class="bu">dict</span>(facecolor<span class="op">=</span><span class="st">'white'</span>, alpha<span class="op">=</span><span class="fl">0.8</span>))</span>
-<span id="cb19-49"><a href="#cb19-49" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-50"><a href="#cb19-50" aria-hidden="true" tabindex="-1"></a><span class="co"># Set x and y axis labels on our ax</span></span>
-<span id="cb19-51"><a href="#cb19-51" aria-hidden="true" tabindex="-1"></a>my_fig.supxlabel(<span class="st">'Longitude'</span>)</span>
-<span id="cb19-52"><a href="#cb19-52" aria-hidden="true" tabindex="-1"></a>my_fig.supylabel(<span class="st">'Latitude'</span>)</span>
-<span id="cb19-53"><a href="#cb19-53" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-54"><a href="#cb19-54" aria-hidden="true" tabindex="-1"></a><span class="co"># Set title of our figure</span></span>
-<span id="cb19-55"><a href="#cb19-55" aria-hidden="true" tabindex="-1"></a>my_fig.suptitle(<span class="st">'Ground level concentration of PM2.5 microns and smaller'</span>)</span>
-<span id="cb19-56"><a href="#cb19-56" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-57"><a href="#cb19-57" aria-hidden="true" tabindex="-1"></a><span class="co"># Set title of our plot as the timestamp of our data</span></span>
-<span id="cb19-58"><a href="#cb19-58" aria-hidden="true" tabindex="-1"></a>my_plt.set_title(<span class="ss">f'</span><span class="sc">{</span>my_timestamp<span class="sc">}</span><span class="ss">'</span>)</span>
-<span id="cb19-59"><a href="#cb19-59" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-60"><a href="#cb19-60" aria-hidden="true" tabindex="-1"></a><span class="co"># Show the resulting visualization</span></span>
-<span id="cb19-61"><a href="#cb19-61" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Let's use matplotlib's imshow, since our data is on a grid</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="co"># ref: https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.imshow.html</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Initialize a figure and plot, so we can customize figure and plot of data</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="co"># ref: https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.subplots.html</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="co"># ref: https://scitools.org.uk/cartopy/docs/latest/getting_started/index.html</span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>my_fig, my_plt <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">15</span>, <span class="dv">6</span>), subplot_kw<span class="op">=</span><span class="bu">dict</span>(projection<span class="op">=</span>ccrs.PlateCarree()))</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Let's set some parameters to get the visualization we want</span></span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a><span class="co"># ref: https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.imshow.html</span></span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a><span class="co"># color PM25 values on a log scale, since values are small</span></span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>my_norm <span class="op">=</span> <span class="st">"log"</span> </span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a><span class="co"># this will number our x and y axes based on the longitude latitude range</span></span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>my_extent <span class="op">=</span> [np.<span class="bu">min</span>(longitude), np.<span class="bu">max</span>(longitude), np.<span class="bu">min</span>(latitude), np.<span class="bu">max</span>(latitude)]</span>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a><span class="co"># ensure the aspect ratio of our plot fits all data, matplotlib can does this automatically</span></span>
+<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a>my_aspect <span class="op">=</span> <span class="st">'auto'</span></span>
+<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a><span class="co"># tell matplotlib, our origin is the lower-left corner</span></span>
+<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a>my_origin <span class="op">=</span> <span class="st">'lower'</span></span>
+<span id="cb14-20"><a href="#cb14-20" aria-hidden="true" tabindex="-1"></a><span class="co"># select a colormap for our plot and the color bar on the right</span></span>
+<span id="cb14-21"><a href="#cb14-21" aria-hidden="true" tabindex="-1"></a>my_cmap <span class="op">=</span> <span class="st">'Oranges'</span></span>
+<span id="cb14-22"><a href="#cb14-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-23"><a href="#cb14-23" aria-hidden="true" tabindex="-1"></a><span class="co"># create our plot using imshow</span></span>
+<span id="cb14-24"><a href="#cb14-24" aria-hidden="true" tabindex="-1"></a>plot <span class="op">=</span> my_plt.imshow(data_array_at_time.values, norm<span class="op">=</span>my_norm, extent<span class="op">=</span>my_extent, </span>
+<span id="cb14-25"><a href="#cb14-25" aria-hidden="true" tabindex="-1"></a>          aspect<span class="op">=</span>my_aspect, origin<span class="op">=</span>my_origin, cmap<span class="op">=</span>my_cmap)</span>
+<span id="cb14-26"><a href="#cb14-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-27"><a href="#cb14-27" aria-hidden="true" tabindex="-1"></a><span class="co"># draw coastlines</span></span>
+<span id="cb14-28"><a href="#cb14-28" aria-hidden="true" tabindex="-1"></a>my_plt.coastlines()</span>
+<span id="cb14-29"><a href="#cb14-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-30"><a href="#cb14-30" aria-hidden="true" tabindex="-1"></a><span class="co"># draw latitude longitude lines</span></span>
+<span id="cb14-31"><a href="#cb14-31" aria-hidden="true" tabindex="-1"></a><span class="co"># ref: https://scitools.org.uk/cartopy/docs/latest/gallery/gridlines_and_labels/gridliner.html</span></span>
+<span id="cb14-32"><a href="#cb14-32" aria-hidden="true" tabindex="-1"></a>my_plt.gridlines(draw_labels<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb14-33"><a href="#cb14-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-34"><a href="#cb14-34" aria-hidden="true" tabindex="-1"></a><span class="co"># add a colorbar to our figure, based on the plot we just made above</span></span>
+<span id="cb14-35"><a href="#cb14-35" aria-hidden="true" tabindex="-1"></a>my_fig.colorbar(plot,location<span class="op">=</span><span class="st">'right'</span>, label<span class="op">=</span><span class="st">'ug/m^3'</span>)</span>
+<span id="cb14-36"><a href="#cb14-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-37"><a href="#cb14-37" aria-hidden="true" tabindex="-1"></a><span class="co"># Add metadata as text annotations</span></span>
+<span id="cb14-38"><a href="#cb14-38" aria-hidden="true" tabindex="-1"></a>metadata_text <span class="op">=</span> (</span>
+<span id="cb14-39"><a href="#cb14-39" aria-hidden="true" tabindex="-1"></a>    <span class="ss">f'resampled: </span><span class="sc">{</span>resampled<span class="sc">.</span>values<span class="sc">}</span><span class="ch">\n</span><span class="ss">'</span></span>
+<span id="cb14-40"><a href="#cb14-40" aria-hidden="true" tabindex="-1"></a>    <span class="ss">f'SDATE: </span><span class="sc">{</span>sdate<span class="sc">.</span>values<span class="sc">}</span><span class="ch">\n</span><span class="ss">'</span></span>
+<span id="cb14-41"><a href="#cb14-41" aria-hidden="true" tabindex="-1"></a>    <span class="ss">f'STIME: </span><span class="sc">{</span>stime<span class="sc">.</span>values<span class="sc">}</span><span class="ch">\n</span><span class="ss">'</span></span>
+<span id="cb14-42"><a href="#cb14-42" aria-hidden="true" tabindex="-1"></a>    <span class="ss">f'WDATE: </span><span class="sc">{</span>wdate<span class="sc">.</span>values<span class="sc">}</span><span class="ch">\n</span><span class="ss">'</span></span>
+<span id="cb14-43"><a href="#cb14-43" aria-hidden="true" tabindex="-1"></a>    <span class="ss">f'WTIME: </span><span class="sc">{</span>wtime<span class="sc">.</span>values<span class="sc">}</span><span class="ss">'</span></span>
+<span id="cb14-44"><a href="#cb14-44" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb14-45"><a href="#cb14-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-46"><a href="#cb14-46" aria-hidden="true" tabindex="-1"></a><span class="co"># Place metadata text on the plot</span></span>
+<span id="cb14-47"><a href="#cb14-47" aria-hidden="true" tabindex="-1"></a>my_plt.text(<span class="fl">0.02</span>, <span class="fl">0.02</span>, metadata_text, transform<span class="op">=</span>my_plt.transAxes,</span>
+<span id="cb14-48"><a href="#cb14-48" aria-hidden="true" tabindex="-1"></a>            fontsize<span class="op">=</span><span class="dv">12</span>, verticalalignment<span class="op">=</span><span class="st">'bottom'</span>, bbox<span class="op">=</span><span class="bu">dict</span>(facecolor<span class="op">=</span><span class="st">'white'</span>, alpha<span class="op">=</span><span class="fl">0.8</span>))</span>
+<span id="cb14-49"><a href="#cb14-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-50"><a href="#cb14-50" aria-hidden="true" tabindex="-1"></a><span class="co"># Set x and y axis labels on our ax</span></span>
+<span id="cb14-51"><a href="#cb14-51" aria-hidden="true" tabindex="-1"></a>my_fig.supxlabel(<span class="st">'Longitude'</span>)</span>
+<span id="cb14-52"><a href="#cb14-52" aria-hidden="true" tabindex="-1"></a>my_fig.supylabel(<span class="st">'Latitude'</span>)</span>
+<span id="cb14-53"><a href="#cb14-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-54"><a href="#cb14-54" aria-hidden="true" tabindex="-1"></a><span class="co"># Set title of our figure</span></span>
+<span id="cb14-55"><a href="#cb14-55" aria-hidden="true" tabindex="-1"></a>my_fig.suptitle(<span class="st">'Ground level concentration of PM2.5 microns and smaller'</span>)</span>
+<span id="cb14-56"><a href="#cb14-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-57"><a href="#cb14-57" aria-hidden="true" tabindex="-1"></a><span class="co"># Set title of our plot as the timestamp of our data</span></span>
+<span id="cb14-58"><a href="#cb14-58" aria-hidden="true" tabindex="-1"></a>my_plt.set_title(<span class="ss">f'</span><span class="sc">{</span>my_timestamp<span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb14-59"><a href="#cb14-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-60"><a href="#cb14-60" aria-hidden="true" tabindex="-1"></a><span class="co"># Show the resulting visualization</span></span>
+<span id="cb14-61"><a href="#cb14-61" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="demo_files/figure-html/data_notebooks-demo-demo-cell-14-output-1.png" class="img-fluid figure-img"></p>
-</figure>
-</div>
-</div>
 </div>
 <p>Here we plot with xarray’s built-in matplotlib powered plotter.</p>
-<div id="ccf70c29-97c3-4ce6-93c7-e6045bef8597" class="cell" data-tags="[]" data-execution_count="14">
+<div id="ccf70c29-97c3-4ce6-93c7-e6045bef8597" class="cell" data-tags="[]">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>data_array_at_time.plot(vmin<span class="op">=</span><span class="dv">0</span>, vmax<span class="op">=</span><span class="dv">30</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>data_array_at_time.plot(vmin<span class="op">=</span><span class="dv">0</span>, vmax<span class="op">=</span><span class="dv">30</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="demo_files/figure-html/data_notebooks-demo-demo-cell-15-output-1.png" class="img-fluid figure-img"></p>
-</figure>
 </div>
-</div>
-</div>
-<hr>
+<!-- --- -->
 <p>Here we plot data_array_at_latlon. We use the exact same code, but define <code>my_extent</code> accordingly.</p>
-<div id="5084c252-567b-4339-b71a-691d44d28898" class="cell" data-execution_count="15">
+<div id="5084c252-567b-4339-b71a-691d44d28898" class="cell">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Let's use matplotlib's imshow, since our data is on a grid</span></span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="co"># ref: https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.imshow.html</span></span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Initialize a figure and plot, so we can customize figure and plot of data</span></span>
-<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a><span class="co"># ref: https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.subplots.html</span></span>
-<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>my_fig, my_plt <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">15</span>, <span class="dv">6</span>), subplot_kw<span class="op">=</span><span class="bu">dict</span>(projection<span class="op">=</span>ccrs.PlateCarree()))</span>
-<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Let's set some parameters to get the visualization we want</span></span>
-<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a><span class="co"># ref: https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.imshow.html</span></span>
-<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a><span class="co"># color PM25 values on a log scale, since values are small</span></span>
-<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>my_norm <span class="op">=</span> <span class="st">"log"</span> </span>
-<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a><span class="co"># ***this will number our x and y axes based on the longitude latitude range***</span></span>
-<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a>my_extent <span class="op">=</span> [min_lon, max_lon, min_lat, max_lat]</span>
-<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a><span class="co"># ensure the aspect ratio of our plot fits all data, matplotlib can does this automatically</span></span>
-<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a>my_aspect <span class="op">=</span> <span class="st">'auto'</span></span>
-<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a><span class="co"># tell matplotlib, our origin is the lower-left corner</span></span>
-<span id="cb21-18"><a href="#cb21-18" aria-hidden="true" tabindex="-1"></a>my_origin <span class="op">=</span> <span class="st">'lower'</span></span>
-<span id="cb21-19"><a href="#cb21-19" aria-hidden="true" tabindex="-1"></a><span class="co"># select a colormap for our plot and the color bar on the right</span></span>
-<span id="cb21-20"><a href="#cb21-20" aria-hidden="true" tabindex="-1"></a>my_cmap <span class="op">=</span> <span class="st">'Oranges'</span></span>
-<span id="cb21-21"><a href="#cb21-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-22"><a href="#cb21-22" aria-hidden="true" tabindex="-1"></a><span class="co"># create our plot using imshow</span></span>
-<span id="cb21-23"><a href="#cb21-23" aria-hidden="true" tabindex="-1"></a>plot <span class="op">=</span> plt.imshow(data_array_at_latlon.values, norm<span class="op">=</span>my_norm, extent<span class="op">=</span>my_extent, </span>
-<span id="cb21-24"><a href="#cb21-24" aria-hidden="true" tabindex="-1"></a>          aspect<span class="op">=</span>my_aspect, origin<span class="op">=</span>my_origin, cmap<span class="op">=</span>my_cmap)</span>
-<span id="cb21-25"><a href="#cb21-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-26"><a href="#cb21-26" aria-hidden="true" tabindex="-1"></a><span class="co"># draw coastlines</span></span>
-<span id="cb21-27"><a href="#cb21-27" aria-hidden="true" tabindex="-1"></a>my_plt.coastlines()</span>
-<span id="cb21-28"><a href="#cb21-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-29"><a href="#cb21-29" aria-hidden="true" tabindex="-1"></a><span class="co"># draw latitude longitude lines</span></span>
-<span id="cb21-30"><a href="#cb21-30" aria-hidden="true" tabindex="-1"></a><span class="co"># ref: https://scitools.org.uk/cartopy/docs/latest/gallery/gridlines_and_labels/gridliner.html</span></span>
-<span id="cb21-31"><a href="#cb21-31" aria-hidden="true" tabindex="-1"></a>my_plt.gridlines(draw_labels<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb21-32"><a href="#cb21-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-33"><a href="#cb21-33" aria-hidden="true" tabindex="-1"></a><span class="co"># add a colorbar to our figure, based on the plot we just made above</span></span>
-<span id="cb21-34"><a href="#cb21-34" aria-hidden="true" tabindex="-1"></a>my_fig.colorbar(plot,location<span class="op">=</span><span class="st">'right'</span>, label<span class="op">=</span><span class="st">'ug/m^3'</span>)</span>
-<span id="cb21-35"><a href="#cb21-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-36"><a href="#cb21-36" aria-hidden="true" tabindex="-1"></a><span class="co"># Add metadata as text annotations</span></span>
-<span id="cb21-37"><a href="#cb21-37" aria-hidden="true" tabindex="-1"></a>metadata_text <span class="op">=</span> (</span>
-<span id="cb21-38"><a href="#cb21-38" aria-hidden="true" tabindex="-1"></a>    <span class="ss">f'resampled: </span><span class="sc">{</span>resampled<span class="sc">.</span>values<span class="sc">}</span><span class="ch">\n</span><span class="ss">'</span></span>
-<span id="cb21-39"><a href="#cb21-39" aria-hidden="true" tabindex="-1"></a>    <span class="ss">f'SDATE: </span><span class="sc">{</span>sdate<span class="sc">.</span>values<span class="sc">}</span><span class="ch">\n</span><span class="ss">'</span></span>
-<span id="cb21-40"><a href="#cb21-40" aria-hidden="true" tabindex="-1"></a>    <span class="ss">f'STIME: </span><span class="sc">{</span>stime<span class="sc">.</span>values<span class="sc">}</span><span class="ch">\n</span><span class="ss">'</span></span>
-<span id="cb21-41"><a href="#cb21-41" aria-hidden="true" tabindex="-1"></a>    <span class="ss">f'WDATE: </span><span class="sc">{</span>wdate<span class="sc">.</span>values<span class="sc">}</span><span class="ch">\n</span><span class="ss">'</span></span>
-<span id="cb21-42"><a href="#cb21-42" aria-hidden="true" tabindex="-1"></a>    <span class="ss">f'WTIME: </span><span class="sc">{</span>wtime<span class="sc">.</span>values<span class="sc">}</span><span class="ss">'</span></span>
-<span id="cb21-43"><a href="#cb21-43" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb21-44"><a href="#cb21-44" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-45"><a href="#cb21-45" aria-hidden="true" tabindex="-1"></a><span class="co"># Place metadata text on the plot</span></span>
-<span id="cb21-46"><a href="#cb21-46" aria-hidden="true" tabindex="-1"></a>my_plt.text(<span class="fl">0.02</span>, <span class="fl">0.02</span>, metadata_text, transform<span class="op">=</span>my_plt.transAxes,</span>
-<span id="cb21-47"><a href="#cb21-47" aria-hidden="true" tabindex="-1"></a>            fontsize<span class="op">=</span><span class="dv">12</span>, verticalalignment<span class="op">=</span><span class="st">'bottom'</span>, bbox<span class="op">=</span><span class="bu">dict</span>(facecolor<span class="op">=</span><span class="st">'white'</span>, alpha<span class="op">=</span><span class="fl">0.8</span>))</span>
-<span id="cb21-48"><a href="#cb21-48" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-49"><a href="#cb21-49" aria-hidden="true" tabindex="-1"></a><span class="co"># Set x and y axis labels on our ax</span></span>
-<span id="cb21-50"><a href="#cb21-50" aria-hidden="true" tabindex="-1"></a>my_fig.supxlabel(<span class="st">'Longitude'</span>)</span>
-<span id="cb21-51"><a href="#cb21-51" aria-hidden="true" tabindex="-1"></a>my_fig.supylabel(<span class="st">'Latitude'</span>)</span>
-<span id="cb21-52"><a href="#cb21-52" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-53"><a href="#cb21-53" aria-hidden="true" tabindex="-1"></a><span class="co"># Set title of our figure</span></span>
-<span id="cb21-54"><a href="#cb21-54" aria-hidden="true" tabindex="-1"></a>my_fig.suptitle(<span class="st">'Ground level concentration of PM2.5 microns and smaller'</span>)</span>
-<span id="cb21-55"><a href="#cb21-55" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-56"><a href="#cb21-56" aria-hidden="true" tabindex="-1"></a><span class="co"># Set title of our plot as the timestamp of our data</span></span>
-<span id="cb21-57"><a href="#cb21-57" aria-hidden="true" tabindex="-1"></a>my_plt.set_title(<span class="ss">f'</span><span class="sc">{</span>my_timestamp<span class="sc">}</span><span class="ss">'</span>)</span>
-<span id="cb21-58"><a href="#cb21-58" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-59"><a href="#cb21-59" aria-hidden="true" tabindex="-1"></a><span class="co"># Show the resulting visualization</span></span>
-<span id="cb21-60"><a href="#cb21-60" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Let's use matplotlib's imshow, since our data is on a grid</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="co"># ref: https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.imshow.html</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Initialize a figure and plot, so we can customize figure and plot of data</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="co"># ref: https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.subplots.html</span></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>my_fig, my_plt <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">15</span>, <span class="dv">6</span>), subplot_kw<span class="op">=</span><span class="bu">dict</span>(projection<span class="op">=</span>ccrs.PlateCarree()))</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Let's set some parameters to get the visualization we want</span></span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a><span class="co"># ref: https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.imshow.html</span></span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a><span class="co"># color PM25 values on a log scale, since values are small</span></span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>my_norm <span class="op">=</span> <span class="st">"log"</span> </span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a><span class="co"># ***this will number our x and y axes based on the longitude latitude range***</span></span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a>my_extent <span class="op">=</span> [min_lon, max_lon, min_lat, max_lat]</span>
+<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a><span class="co"># ensure the aspect ratio of our plot fits all data, matplotlib can does this automatically</span></span>
+<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a>my_aspect <span class="op">=</span> <span class="st">'auto'</span></span>
+<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a><span class="co"># tell matplotlib, our origin is the lower-left corner</span></span>
+<span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a>my_origin <span class="op">=</span> <span class="st">'lower'</span></span>
+<span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a><span class="co"># select a colormap for our plot and the color bar on the right</span></span>
+<span id="cb16-20"><a href="#cb16-20" aria-hidden="true" tabindex="-1"></a>my_cmap <span class="op">=</span> <span class="st">'Oranges'</span></span>
+<span id="cb16-21"><a href="#cb16-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-22"><a href="#cb16-22" aria-hidden="true" tabindex="-1"></a><span class="co"># create our plot using imshow</span></span>
+<span id="cb16-23"><a href="#cb16-23" aria-hidden="true" tabindex="-1"></a>plot <span class="op">=</span> plt.imshow(data_array_at_latlon.values, norm<span class="op">=</span>my_norm, extent<span class="op">=</span>my_extent, </span>
+<span id="cb16-24"><a href="#cb16-24" aria-hidden="true" tabindex="-1"></a>          aspect<span class="op">=</span>my_aspect, origin<span class="op">=</span>my_origin, cmap<span class="op">=</span>my_cmap)</span>
+<span id="cb16-25"><a href="#cb16-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-26"><a href="#cb16-26" aria-hidden="true" tabindex="-1"></a><span class="co"># draw coastlines</span></span>
+<span id="cb16-27"><a href="#cb16-27" aria-hidden="true" tabindex="-1"></a>my_plt.coastlines()</span>
+<span id="cb16-28"><a href="#cb16-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-29"><a href="#cb16-29" aria-hidden="true" tabindex="-1"></a><span class="co"># draw latitude longitude lines</span></span>
+<span id="cb16-30"><a href="#cb16-30" aria-hidden="true" tabindex="-1"></a><span class="co"># ref: https://scitools.org.uk/cartopy/docs/latest/gallery/gridlines_and_labels/gridliner.html</span></span>
+<span id="cb16-31"><a href="#cb16-31" aria-hidden="true" tabindex="-1"></a>my_plt.gridlines(draw_labels<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb16-32"><a href="#cb16-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-33"><a href="#cb16-33" aria-hidden="true" tabindex="-1"></a><span class="co"># add a colorbar to our figure, based on the plot we just made above</span></span>
+<span id="cb16-34"><a href="#cb16-34" aria-hidden="true" tabindex="-1"></a>my_fig.colorbar(plot,location<span class="op">=</span><span class="st">'right'</span>, label<span class="op">=</span><span class="st">'ug/m^3'</span>)</span>
+<span id="cb16-35"><a href="#cb16-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-36"><a href="#cb16-36" aria-hidden="true" tabindex="-1"></a><span class="co"># Add metadata as text annotations</span></span>
+<span id="cb16-37"><a href="#cb16-37" aria-hidden="true" tabindex="-1"></a>metadata_text <span class="op">=</span> (</span>
+<span id="cb16-38"><a href="#cb16-38" aria-hidden="true" tabindex="-1"></a>    <span class="ss">f'resampled: </span><span class="sc">{</span>resampled<span class="sc">.</span>values<span class="sc">}</span><span class="ch">\n</span><span class="ss">'</span></span>
+<span id="cb16-39"><a href="#cb16-39" aria-hidden="true" tabindex="-1"></a>    <span class="ss">f'SDATE: </span><span class="sc">{</span>sdate<span class="sc">.</span>values<span class="sc">}</span><span class="ch">\n</span><span class="ss">'</span></span>
+<span id="cb16-40"><a href="#cb16-40" aria-hidden="true" tabindex="-1"></a>    <span class="ss">f'STIME: </span><span class="sc">{</span>stime<span class="sc">.</span>values<span class="sc">}</span><span class="ch">\n</span><span class="ss">'</span></span>
+<span id="cb16-41"><a href="#cb16-41" aria-hidden="true" tabindex="-1"></a>    <span class="ss">f'WDATE: </span><span class="sc">{</span>wdate<span class="sc">.</span>values<span class="sc">}</span><span class="ch">\n</span><span class="ss">'</span></span>
+<span id="cb16-42"><a href="#cb16-42" aria-hidden="true" tabindex="-1"></a>    <span class="ss">f'WTIME: </span><span class="sc">{</span>wtime<span class="sc">.</span>values<span class="sc">}</span><span class="ss">'</span></span>
+<span id="cb16-43"><a href="#cb16-43" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb16-44"><a href="#cb16-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-45"><a href="#cb16-45" aria-hidden="true" tabindex="-1"></a><span class="co"># Place metadata text on the plot</span></span>
+<span id="cb16-46"><a href="#cb16-46" aria-hidden="true" tabindex="-1"></a>my_plt.text(<span class="fl">0.02</span>, <span class="fl">0.02</span>, metadata_text, transform<span class="op">=</span>my_plt.transAxes,</span>
+<span id="cb16-47"><a href="#cb16-47" aria-hidden="true" tabindex="-1"></a>            fontsize<span class="op">=</span><span class="dv">12</span>, verticalalignment<span class="op">=</span><span class="st">'bottom'</span>, bbox<span class="op">=</span><span class="bu">dict</span>(facecolor<span class="op">=</span><span class="st">'white'</span>, alpha<span class="op">=</span><span class="fl">0.8</span>))</span>
+<span id="cb16-48"><a href="#cb16-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-49"><a href="#cb16-49" aria-hidden="true" tabindex="-1"></a><span class="co"># Set x and y axis labels on our ax</span></span>
+<span id="cb16-50"><a href="#cb16-50" aria-hidden="true" tabindex="-1"></a>my_fig.supxlabel(<span class="st">'Longitude'</span>)</span>
+<span id="cb16-51"><a href="#cb16-51" aria-hidden="true" tabindex="-1"></a>my_fig.supylabel(<span class="st">'Latitude'</span>)</span>
+<span id="cb16-52"><a href="#cb16-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-53"><a href="#cb16-53" aria-hidden="true" tabindex="-1"></a><span class="co"># Set title of our figure</span></span>
+<span id="cb16-54"><a href="#cb16-54" aria-hidden="true" tabindex="-1"></a>my_fig.suptitle(<span class="st">'Ground level concentration of PM2.5 microns and smaller'</span>)</span>
+<span id="cb16-55"><a href="#cb16-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-56"><a href="#cb16-56" aria-hidden="true" tabindex="-1"></a><span class="co"># Set title of our plot as the timestamp of our data</span></span>
+<span id="cb16-57"><a href="#cb16-57" aria-hidden="true" tabindex="-1"></a>my_plt.set_title(<span class="ss">f'</span><span class="sc">{</span>my_timestamp<span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb16-58"><a href="#cb16-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-59"><a href="#cb16-59" aria-hidden="true" tabindex="-1"></a><span class="co"># Show the resulting visualization</span></span>
+<span id="cb16-60"><a href="#cb16-60" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="demo_files/figure-html/data_notebooks-demo-demo-cell-16-output-1.png" class="img-fluid figure-img"></p>
-</figure>
 </div>
-</div>
-</div>
-<div id="edf41f8c-3774-45cb-82b7-d83e673c054b" class="cell" data-tags="[]" data-execution_count="16">
+<div id="edf41f8c-3774-45cb-82b7-d83e673c054b" class="cell" data-tags="[]">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>data_array_at_latlon.plot(vmin<span class="op">=</span><span class="dv">0</span>, vmax<span class="op">=</span><span class="dv">30</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>data_array_at_latlon.plot(vmin<span class="op">=</span><span class="dv">0</span>, vmax<span class="op">=</span><span class="dv">30</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="demo_files/figure-html/data_notebooks-demo-demo-cell-17-output-1.png" class="img-fluid figure-img"></p>
-</figure>
 </div>
-</div>
-</div>
-<section id="please-reach-out-to-arleth-salinas-or-valerio-pascucci-for-any-concerns-about-the-notebook.-thank-you" class="level3" data-number="1.7.1">
-<h3 data-number="1.7.1" class="anchored" data-anchor-id="please-reach-out-to-arleth-salinas-or-valerio-pascucci-for-any-concerns-about-the-notebook.-thank-you"><span class="header-section-number">1.7.1</span> <em>Please reach out to Arleth Salinas or Valerio Pascucci for any concerns about the notebook. Thank you!</em></h3>
+</section>
+</section>
+<section id="please-reach-out-to-arleth-salinas-or-valerio-pascucci-for-any-concerns-about-the-notebook.-thank-you" class="level3" data-number="1.6.3">
+<h3 data-number="1.6.3" class="anchored" data-anchor-id="please-reach-out-to-arleth-salinas-or-valerio-pascucci-for-any-concerns-about-the-notebook.-thank-you"><span class="header-section-number">1.6.3</span> <em>Please reach out to Arleth Salinas or Valerio Pascucci for any concerns about the notebook. Thank you!</em></h3>
 <ul>
 <li>Arleth Salinas (arleth.salinas@utah.edu)</li>
 <li>Valerio Pascucci (pascucci.valerio@gmail.com)</li>

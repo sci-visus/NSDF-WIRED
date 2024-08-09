@@ -1,8 +1,6 @@
 ---
 format:
   html:
-    code-tools: true
-    code-annotations: true
     code-links:
       - text: NetCDF Visualization Demo
         icon: file-code
@@ -12,7 +10,7 @@ format:
 # The Data Source {#sec-data-source}
 It is important to understand exactly what data is available and how to obtain that data.
 
-We encourage you to explore the dataset on [UBC's website](https://firesmoke.ca/forecasts/) to further understand the dataset's use as described by UBC.
+We encourage you to explore the dataset on [UBC's website](https://firesmoke.ca/forecasts/) to further understand the dataset's use and development by UBC.
 
 Here we establish:
 
@@ -49,7 +47,7 @@ There is no official source stating the earliest available date for each forecas
 
 ### Download Instructions {#sec-download-instructions}
 To download the 2-day forecast for the forecast initialization date of one's choice, one follows the instructions below. The downloaded file can be a NetCDF or KMZ file.
----
+
 Go to the URL:
 `https://firesmoke.ca/forecasts/{Forecast ID}/{YYYYMMDD}{InitTime}/{File Type}`
 
@@ -61,11 +59,11 @@ Where:
 
 | Forecast ID   | Smoke Forecast Initialization (UTC) |
 |---------------|-------------------------------------|
-| BSC00CA12-01  | 08Z                                 |
-| BSC06CA12-01  | 14Z                                 |
-| BSC12CA12-01  | 20Z                                 |
-| BSC18CA12-01  | 02Z                                 |
-: UBC Smoke Forecast Data Download Parameters. All times are in UTC and the grid size is 12 km. {#tbl-access}
+| `BSC00CA12-01`  | `08`                                 |
+| `BSC06CA12-01`  | `14`                                 |
+| `BSC12CA12-01`  | `20`                                 |
+| `BSC18CA12-01`  | `02`                                 |
+: UBC Smoke Forecast Data Download Parameters. {#tbl-access}
 
 #### Download Example
 Let's try downloading the forecast for January 1, 2024 where the weather forecast is initiated at 00:00:00 UTC and the smoke forecast is initialized at 08:00:00 UTC by navigating to the corresponding URL.
@@ -146,7 +144,7 @@ Of the 33 available attributes we use the ones shown in @tbl-attrs:
 | YORIG     | 32.0                | The origin (starting point) of the grid in the y-direction.                                              |
 | XCELL     | 0.10000000149011612 | The cell size in the x-direction.|
 | YCELL     | 0.10000000149011612 | The cell size in the y-direction.|
-: Description of Attributes in NetCDF Files {#tbl-attrs}
+: Description of Attributes in `dispersion.nc` {#tbl-attrs}
 
 Let's look closer at what exactly is within one NetCDF file in the following demo.
 
@@ -170,10 +168,8 @@ For the time ranges we cover, @tbl-sizes shows how large the set of files per fo
 | **Total**      |                                     | **320G** | **4144**   |
 : File Sizes and Counts for Each Forecast ID within the Specified Date Range {#tbl-sizes}
 
-### Temporal Data Availability
+### Temporal Data Availability {#sec-temporal-visual}
 {{< embed data_notebooks/data_source/netcdf_collection_info.ipynb echo=true >}}
-
-### 
 
 Now that we know what exactly is within a NetCDF file and across all the NetCDF files, we will continue to describe our data curation process. Next we describe how we load all of the data available from UBC onto our machine.
 

@@ -15,7 +15,5 @@ Data validation forces one to consider, where do issues that appear in the data 
 ## Data Loading
 Most of the issues we faced during data curation resulted from failing to validate our data loading system.
 
-### 
-
 ## Data Conversion
 

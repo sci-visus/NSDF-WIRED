@@ -6,6 +6,8 @@ format:
       - text: Demo Download
         icon: file-code
         href: https://github.com/sci-visus/NSDF-WIRED/blob/main/communication/UBC%20Smoke%20Forecast%20Data%20Curation/data_notebooks/demo/demo.ipynb
+    toc: true
+    toc-depth: 3
 ---
-
+<!-- NOTES: change level to 3/4 -->
 {{< embed data_notebooks/demo/demo.ipynb echo=true >}}

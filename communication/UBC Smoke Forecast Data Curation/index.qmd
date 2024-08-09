@@ -13,6 +13,6 @@ All files or directories in this website are hosted at our GitHub repository, un
 
 All code blocks contain annotations, hover over the numbers on the right hand side to see the accompanying annotation.
 ```python
-Hover over me ---> # <1>
+Hover over me ----> # <1>
 ```
 1. I'm an annotation.

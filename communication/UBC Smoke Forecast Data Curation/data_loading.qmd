@@ -32,7 +32,6 @@ The following shows our approaches to doing this and discusses how our approach 
 ### First Approach
 
 We delineate our first approach by detailing our download script, which is available in it's entirety in the side bar.
----
 ```{python}
 #| eval: false
 import wget
@@ -78,7 +77,6 @@ This issue was not identified until *after* we visualized each hour of the data,
 ### Second Approach
 
 Our second approach is similar to the first, except we use [`requests`](https://requests.readthedocs.io/en/latest/), an HTTP client library that allows us to see the headers returned from the URL we query. The script is available in the side bar.
----
 ```{python}
 # | eval: false
 import requests

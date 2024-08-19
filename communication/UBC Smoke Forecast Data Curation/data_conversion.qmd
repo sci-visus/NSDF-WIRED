@@ -298,18 +298,16 @@ One future improvement is to generalize precomputing additional grids if in the 
 
 At this point we have the lists of openable files and our resampling grids. Now we will determine which files to use and in what order.
 
-The unique challenge of UBC's short term dataset is that the forecasts overlap, creating staggered predictions as shown in @sec-temporal-visual.
+The unique challenge of UBC's short term dataset is that the forecasts overlap, creating staggered predictions as shown in @sec-temporal-visual. Additionally, there are often missing files or data points. In the following sections we show how we use the data given these factors.
 
-Across all the NetCDF files we have downloaded, recall for every hour there exists 1-4 different forecasts to represent that hour. We aim to choose the forecast which best represents each hour.
+### Hourly Data per Forecast ID Dictionary
 
-### Finding Hours per Forecast ID
+Recall that within each set of Forecast ID files, some files failed to download or open. Therefore, we check exactly what set of hours are available in each collection of forecast ID NetCDF files and store that information in a dictionary.
 
-Recall that within each set of Forecast ID files, some files failed to download or otherwise open. Therefore, we must check exactly what set of hours are available in each collection of forecast ID NetCDF files.
-
-In order to make loading an hour from a specified forecast ID dataset as easy as possible, we create a dictionary for each forecast ID set. Below you can see the first few entries of this dictionary:
+Below you can see the first few entries of this dictionary:
 ```{python}
 # | eval: false
-#TODO
+# TODO
 ```
 
 To generate this dictionary, we did the following:
@@ -318,27 +316,194 @@ To generate this dictionary, we did the following:
 id_sets = {id_: {} for id_ in ids} # <1>
 
 for id_ in ids:
-    # get successful files to add all successful hours to set
     for file in tqdm(successful_files[id_]): # <2>
-        path = f'{firesmoke_dir}/{id_}/{file}' # <3>
-        
-        ds = xr.open_dataset(path) # <3>
+        path = f"{firesmoke_dir}/{id_}/{file}" # <3>
 
-        for h in range(ds.sizes["TSTEP"]): # <4>
-            id_sets[id_][(file, parse_tflag(ds['TFLAG'].values[h][0]))] = h # <4>
+        ds = xr.open_dataset(path) # <4>
+
+        for h in range(ds.sizes["TSTEP"]): # <5>
+            id_sets[id_][(file, parse_tflag(ds["TFLAG"].values[h][0]))] = h # <5>
 ```
-1. Initialize a dictionary to hold an empty dictionary for each forecast ID.
-2. We step through all the successfully opened files found for `id_`.
-3. Open the file and open it using `xarray`.
-4. Create a tuple with the file name and the parsed TFLAG for current hour `h`. Add index `h` to our dictionary assigning the tuple as its key.
+1. Initialize a dictionary for each forecast ID.
+2. For all successfully opened files per forecast ID.
+3. Build path string to the file.
+4. Open the file with `xarray`.
+5. For every time step, get the dictionary at key `id_`. Then, add a key, value pair. The *key* is a tuple with the current file name and the TFLAG at `h` parsed with `parse_tflag`. The *value* is the index `h`.
 
-### Creating the Sequence
+Now that we have an indexable set of all available hours for each forecast ID, we can generate the sequence to choose the best predictions for every time step.
 
-Now that we have an indexable set of all available hours for each forecast ID, we can generate the sequence to extract the time series dataset we would like to create.
+### Utility Functions
 
-## Creating the IDX File
+Recall that for each timestep, there are various predictions available as shown in @sec-temporal-visual.
 
-At this point, we have precomputed the order in which we will load and write each array to our IDX file. We will now put everything together to generate our single dataset.
+The following utility functions encode the logic used for selecting the most accurate PM2.5 prediction per time step. Most accurate means, the prediction produced by the forecast run as close as possible to the time step of interest.
+
+```{python}
+# | eval: false
+def prev_id(curr_id, verbose):
+    """
+    Return the string of the previous dataset ID to use based on the current ID.
+    'Previous' means, last most recently updated forecast before curr_id.
+
+    Details on forecast update time can be found here: https://firesmoke.ca/forecasts/
+
+    Listed in order: ["BSC18CA12-01", "BSC00CA12-01", "BSC06CA12-01", "BSC12CA12-01"]
+
+    :param string curr_id: the ID used:
+    :param boolean verbose: whether to enable print statements for debugging:
+    """
+    ret = ""
+
+    if curr_id == "BSC18CA12-01":
+        ret = "BSC12CA12-01"
+    if curr_id == "BSC00CA12-01":
+        ret = "BSC18CA12-01"
+    if curr_id == "BSC06CA12-01":
+        ret = "BSC00CA12-01"
+    if curr_id == "BSC12CA12-01":
+        ret = "BSC06CA12-01"
+
+    if verbose:
+        print(f"prev_id({curr_id}) = {ret}")
+
+    return ret
+```
+
+```{python}
+# | eval: false
+def get_id_from_date(date, verbose):
+    """
+    Return the string of the dataset ID to use based on the date and hour given.
+
+    We aim to use the dataset that provides the latest forecast update available for the hour.
+
+    Details on forecast update time can be found here: https://firesmoke.ca/forecasts/
+
+    :param datetime date: pandas timestamp of the YYYYMMDD 00:00:00 date:
+    :param boolean verbose: whether to enable print statements for debugging:
+    """
+    ret = ""
+
+    if date <= date.replace(hour=2):  # <1>
+        ret = "BSC12CA12-01"
+    if date >= date.replace(hour=3) and date <= date.replace(hour=8):
+        ret = "BSC18CA12-01"
+    if date >= date.replace(hour=9) and date <= date.replace(hour=14):
+        ret = "BSC00CA12-01"
+    if date >= date.replace(hour=15) and date <= date.replace(hour=20):
+        ret = "BSC06CA12-01"
+    if date >= date.replace(hour=21):
+        ret = "BSC12CA12-01"  # <1>
+
+    if verbose:
+        print(f"get_id_from_date({date}) = {ret}")
+    return ret
+```
+1. Based on the given `date`, use the optimal forecast ID.
+
+```{python}
+# | eval: false
+def dispersion_date_str(date, id_, verbose):
+    """
+    For a given date object and forecats ID, generate the name for the dispersion file in which the optimal prediction is located in.
+    :param pd.Timestamp date: pandas timestamp of the date to make file name string out of:
+    :param string id_: string with the dataset id to use
+    :param boolean verbose: whether to enable print statements for debugging:
+    """
+    ret = ""
+
+    if id_ == "BSC12CA12-01":  # <1>
+        new_date = date + datetime.timedelta(days=-1)
+        ret = f'dispersion_{new_date.strftime("%Y%m%d")}.nc'  # <1>
+    else:  # <2>
+        ret = f'dispersion_{date.strftime("%Y%m%d")}.nc'  # <2>
+
+    if verbose:
+        print(f"dispersion_date_str({date}, {id_}) = {ret}")
+
+    return ret
+```
+1. BSC00CA12-01 generates the first hours of the given `date` in 'yesterday's' file. For example, the hours 12am-6am for January 2, 2023 are generated in dispersion_01012023.nc in the BSC00CA12-01 dataset.
+2. For all other forecast IDs, the optimal hour for all hours is in "today's" file, where 'today' is the `date` given.
+
+### Populating the `idx_calls` Array
+
+Here, we describe how we use our utility functions to parse all the NetCDF files we have to populate our `idx_calls` array. `idx_calls` is used in the final step by defining *which* predictions to load and in what *order*. See @sec-create-idx for details on exact usage.
+
+First, we initialize our variables.
+```{python}
+# | eval: false
+idx_calls = [] # <1>
+
+start_date = datetime.datetime.strptime("20210304", "%Y%m%d") # <2>
+end_date = datetime.datetime.strptime("20240627", "%Y%m%d") # <2>
+
+current_date = start_date  # <3>
+current_hour = datetime.datetime(current_date.year, current_date.month, current_date.day) # <3>
+
+file_str = '' # <4>
+
+verbose = 1 # <5>
+```
+1. Arrays to hold the final order we will index files
+2. Define the start and end dates we will step through.
+3. Initialize these variables to the start date and time. We use these to increment through to the `end_date` next.
+4. Initialize a variable for holding the current file name in use.
+5. Tell utility functions to print for debugging.
+
+Then, we use a `while` loop to populate `idx_calls` with the optimal sequence.
+
+```{python}
+# | eval: false
+while current_date <= end_date:  # <1>
+    while current_hour < current_date + datetime.timedelta(days=1):  # <2>
+        prev_day_count = 0
+        found = 0
+
+        while found == 0 and prev_day_count <= 4:  # <3>
+            curr_date = current_hour + datetime.timedelta(days=-prev_day_count)  # <4>
+
+            curr_id = get_id_from_date(curr_date, verbose)  # <5>
+
+            forecast_search_count = 0
+
+            while found == 0 and forecast_search_count < 4:  # <6>
+                file_str = dispersion_date_str(curr_date, curr_id, verbose)  # <7>
+
+                if (file_str, current_hour) in id_sets[curr_id]:  # <8>
+                    update_idx_calls(
+                        idx_calls, curr_id, (file_str, current_hour), id_sets  # <9>
+                    )
+                    found = 1
+                else:
+                    forecast_search_count += 1
+
+                curr_id = prev_id(curr_id, verbose)  # <10>
+
+            prev_day_count += 1  # <11>
+
+        current_hour += datetime.timedelta(hours=1)  # <12>
+
+    current_date += datetime.timedelta(days=1)  # <13>
+```
+
+1. Iterate from `current_date` by one hour increments until the `end_date` is reached.
+2. Iterate through each hour until the next day starts.
+3. If no optimal prediction is found and not more than 4 days have been searched.
+4. Subtract `prev_day_count` from `current_hour` to test earlier dates.
+5. Retrieve the forecast ID corresponding to the `curr_date` being tested.
+6. Loop through potential forecasts until one is found or 4 different forecasts have been checked.
+7. Construct the filename string for the forecast dataset corresponding to `curr_date` and `curr_id`.
+8. Verify if the `file_str` and `current_hour` combination exists in `id_sets` for the given `curr_id`.
+9. If available, record the forecast ID and time in `idx_calls`, and mark this combination as 'found.'
+10. If the current ID doesn't have the forecast, move to a previous forecast ID.
+11. Increment `prev_day_count` and repeat the search for an earlier day.
+12. Increment `current_hour` to move to the next hour in the `current_date`.
+13. After completing all hours of a day, move to the next day.
+
+## Creating the IDX File {#sec-create-idx}
+
+At this point, we have precomputed the order in which we will load and write each array to our IDX file. We will now use `idx_calls` to create the final IDX file containing our single dataset.
 
 ```{python}
 # | eval: false

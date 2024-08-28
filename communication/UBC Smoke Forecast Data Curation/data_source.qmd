@@ -84,21 +84,17 @@ print(f"Navigate to this URL in your browser: {url}")
 Next, let's look at what is within the NetCDF file located at the URL in our previous example.
 
 ### File Preview
-<!-- **TODO, MOVE TO ANOTHER SPOT**: To view and manipulate NetCDF files, we have selected the `xarray` Python library and created a [custom built backend](https://github.com/sci-visus/openvisuspy/blob/a2570ab485802375c075b6dbc0e3c79ebca02d02/src/openvisuspy/xarray_backend.py#L2) that connects `xarray` to the `OpenVisus` framework.
-
-**TODO**
-The file downloaded at the specified URL download the 2-day forecast for [DATE] and [TIME] one could download the following files.
-[GET 2 DAY FORECAST DESCRIPTION FROM scribbles.ipynb]. -->
+<!-- **TODO, MOVE TO ANOTHER SPOT**: To view and manipulate NetCDF files, we have selected the `xarray` Python library and created a [custom built backend](https://github.com/sci-visus/openvisuspy/blob/a2570ab485802375c075b6dbc0e3c79ebca02d02/src/openvisuspy/xarray_backend.py#L2) that connects `xarray` to the `OpenVisus` framework. -->
 
 We load `dispersion.nc` using `xarray`, which provides a preview of the file.
 
-```{python}
+<!-- ```{python}
 # | eval: true
 import xarray as xr
 
 ds = xr.open_dataset("data_notebooks/data_source/dispersion.nc")
 ds
-```
+``` -->
 
 ### File Attributes
 
@@ -149,6 +145,7 @@ Of the 33 available attributes we use the ones shown in @tbl-attrs:
 Let's look closer at what exactly is within one NetCDF file in the following demo.
 
 ### NetCDF Visualization Demo {#sec-netcdf-demo}
+
 {{< embed data_notebooks/data_source/netcdf_demo.ipynb echo=true >}}
 
 Now that we understand how to load the data and metadata from the file and process it for visualization, let's establish the data and metadata available to us across *all* NetCDF files.
@@ -169,6 +166,7 @@ For the time ranges we cover, @tbl-sizes shows how large the set of files per fo
 : File Sizes and Counts for Each Forecast ID within the Specified Date Range {#tbl-sizes}
 
 ### Temporal Data Availability {#sec-temporal-visual}
+
 {{< embed data_notebooks/data_source/netcdf_collection_info.ipynb echo=true >}}
 
 Now that we know what exactly is within a NetCDF file and across all the NetCDF files, we will continue to describe our data curation process. Next we describe how we load all of the data available from UBC onto our machine.

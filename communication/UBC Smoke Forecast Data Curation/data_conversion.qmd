@@ -307,7 +307,7 @@ Recall that within each set of Forecast ID files, some files failed to download 
 Below you can see the first few entries of this dictionary:
 ```{python}
 # | eval: false
-# TODO
+
 ```
 
 To generate this dictionary, we did the following:
@@ -500,6 +500,29 @@ while current_date <= end_date:  # <1>
 11. Increment `prev_day_count` and repeat the search for an earlier day.
 12. Increment `current_hour` to move to the next hour in the `current_date`.
 13. After completing all hours of a day, move to the next day.
+
+The following shows the first 2 and final 2 entires of the `idx_calls` array.
+
+```{python}
+# | eval: false
+[['BSC12CA12-01',
+  'dispersion_20210303.nc',
+  datetime.datetime(2021, 3, 4, 0, 0),
+  3],
+ ['BSC12CA12-01',
+  'dispersion_20210303.nc',
+  datetime.datetime(2021, 3, 4, 1, 0),
+  4],
+ ...
+ ['BSC12CA12-01',
+  'dispersion_20240626.nc',
+  datetime.datetime(2024, 6, 27, 22, 0),
+  25],
+ ['BSC12CA12-01',
+  'dispersion_20240626.nc',
+  datetime.datetime(2024, 6, 27, 23, 0),
+  26]]
+```
 
 ## Creating the IDX File {#sec-create-idx}
 

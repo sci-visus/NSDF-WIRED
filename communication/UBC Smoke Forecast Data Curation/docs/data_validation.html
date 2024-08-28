@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -171,10 +205,14 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#data-validation-vs-data-exploration" id="toc-data-validation-vs-data-exploration" class="nav-link active" data-scroll-target="#data-validation-vs-data-exploration"><span class="header-section-number">7.1</span> Data Validation vs Data Exploration</a></li>
-  <li><a href="#data-loading" id="toc-data-loading" class="nav-link" data-scroll-target="#data-loading"><span class="header-section-number">7.2</span> Data Loading</a></li>
+  <li><a href="#data-validation-for-data-loading" id="toc-data-validation-for-data-loading" class="nav-link" data-scroll-target="#data-validation-for-data-loading"><span class="header-section-number">7.2</span> Data Validation for Data Loading</a>
+  <ul class="collapse">
+  <li><a href="#the-problem" id="toc-the-problem" class="nav-link" data-scroll-target="#the-problem"><span class="header-section-number">7.2.1</span> The Problem</a></li>
+  <li><a href="#visualizing-all-timesteps" id="toc-visualizing-all-timesteps" class="nav-link" data-scroll-target="#visualizing-all-timesteps"><span class="header-section-number">7.2.2</span> Visualizing all Timesteps</a></li>
+  </ul></li>
   <li><a href="#data-conversion" id="toc-data-conversion" class="nav-link" data-scroll-target="#data-conversion"><span class="header-section-number">7.3</span> Data Conversion</a></li>
   </ul>
-</nav>
+<div class="quarto-code-links"><h2>Code Links</h2><ul><li><a href="https://github.com/sci-visus/NSDF-WIRED/blob/main/conversion/firesmoke_to_idx_v1.ipynb"><i class="bi bi-file-code"></i>Conversion Script Version 1</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -198,7 +236,7 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>The success of this data curation project requires compotent data validation. Data validation is the bridge between theoretical and real-world data curation. We unfortunately used many assumptions about the data and systems we used that did not hold true, leading to unexplainable issues throughout the data curation process.</p>
+<p>The success of this data curation project requires competent data validation. Data validation is the bridge between theoretical and real-world data curation. We unfortunately used many assumptions about the data and systems we used that did not hold true, leading to unexplainable issues throughout the data curation process.</p>
 <p>Here, we will describe our deficiencies in performing data validation and the consequences we faced. We conclude with a discussion on how best data validation can be incorporated in this project and future such projects, so that one may avoid such issues next time.</p>
 <section id="data-validation-vs-data-exploration" class="level2" data-number="7.1">
 <h2 data-number="7.1" class="anchored" data-anchor-id="data-validation-vs-data-exploration"><span class="header-section-number">7.1</span> Data Validation vs Data Exploration</h2>
@@ -206,9 +244,61 @@ ul.task-list li input[type="checkbox"] {
 <p>What data exploration <em>does not</em> do is explain the origin of issues such missing or seemingly corrupt data. Data exploration uses the assumption that the data is perfect.</p>
 <p>Data validation forces one to consider, where do issues that appear in the data come from, and are these issues with the data or with the systems used to access and manipulate the data?</p>
 </section>
-<section id="data-loading" class="level2" data-number="7.2">
-<h2 data-number="7.2" class="anchored" data-anchor-id="data-loading"><span class="header-section-number">7.2</span> Data Loading</h2>
-<p>Most of the issues we faced during data curation resulted from failing to validate our data loading system.</p>
+<section id="data-validation-for-data-loading" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="data-validation-for-data-loading"><span class="header-section-number">7.2</span> Data Validation for Data Loading</h2>
+<p>Here, we will describe how we discovered the consequences of failing to validate that the files we downloaded were true NetCDF files instead of HTML webpages, as described in <a href="data_loading.html" class="quarto-xref"><span>Chapter 5</span></a>.</p>
+<section id="the-problem" class="level3" data-number="7.2.1">
+<h3 data-number="7.2.1" class="anchored" data-anchor-id="the-problem"><span class="header-section-number">7.2.1</span> The Problem</h3>
+<p>When doing rudimentary visualizations we saw missing timesteps from our final dataset in the IDX file. We assumed that any missing time steps were due to the files being unavailable from the data source. However, we decided to validate which time steps were missing and why, in case the cause for apparently missing time steps was our fault.</p>
+</section>
+<section id="visualizing-all-timesteps" class="level3" data-number="7.2.2">
+<h3 data-number="7.2.2" class="anchored" data-anchor-id="visualizing-all-timesteps"><span class="header-section-number">7.2.2</span> Visualizing all Timesteps</h3>
+<p>To determine exactly which time steps were unavailable, we decided to load and visualize every timestep from March 3, 2021 to June 27, 2024 as a video. We then identify which time steps fail to load or visualize and diagnose <em>why</em>. The scripts we proceed to describe can be found in the side bar or <a href="https://github.com/sci-visus/NSDF-WIRED/tree/main/visualizations/make_videos">here</a>.</p>
+<section id="creating-the-images" class="level4" data-number="7.2.2.1">
+<h4 data-number="7.2.2.1" class="anchored" data-anchor-id="creating-the-images"><span class="header-section-number">7.2.2.1</span> Creating the Images</h4>
+<p>In the following scripts, we generate PNG images for every time step in our IDX file <em>and</em> for every time step directly loaded from the downloaded NetCDF files. The time steps we load are the same ones specified in our <code>idx_calls</code> array from <a href="data_conversion.html" class="quarto-xref"><span>Chapter 6</span></a>.</p>
+<p>The purpose for loading from both our IDX file and NetCDF files to later check if any issues we encounter are present in the original files we downloaded as well.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">IDX File PNGs</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">NetCDF Files PNGs</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<div id="52aca285" class="cell" data-execution_count="1">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># path to tiny NetCDF</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> (<span class="st">"https://github.com/sci-visus/NSDF-WIRED/raw/main/data/firesmoke_metadata_recent.nc"</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Download the file using requests</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>response <span class="op">=</span> requests.get(url)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>local_netcdf <span class="op">=</span> <span class="st">"firesmoke_metadata.nc"</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(local_netcdf, <span class="st">"wb"</span>) <span class="im">as</span> f:</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    f.write(response.content)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co"># open tiny netcdf with xarray and OpenVisus backend</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>ds <span class="op">=</span> xr.open_dataset(local_netcdf, engine<span class="op">=</span>OpenVisusBackendEntrypoint)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<div id="56e859a5" class="cell" data-execution_count="2">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>fizz_buzz <span class="op">&lt;-</span> function(fbnums <span class="op">=</span> <span class="dv">1</span>:<span class="dv">50</span>) {</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  output <span class="op">&lt;-</span> dplyr::case_when(</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    fbnums <span class="op">%%</span> <span class="dv">15</span> <span class="op">==</span> <span class="dv">0</span> <span class="op">~</span> <span class="st">"FizzBuzz"</span>,</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    fbnums <span class="op">%%</span> <span class="dv">3</span> <span class="op">==</span> <span class="dv">0</span> <span class="op">~</span> <span class="st">"Fizz"</span>,</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    fbnums <span class="op">%%</span> <span class="dv">5</span> <span class="op">==</span> <span class="dv">0</span> <span class="op">~</span> <span class="st">"Buzz"</span>,</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    TRUE <span class="op">~</span> <span class="im">as</span>.character(fbnums)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(output)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
 </section>
 <section id="data-conversion" class="level2" data-number="7.3">
 <h2 data-number="7.3" class="anchored" data-anchor-id="data-conversion"><span class="header-section-number">7.3</span> Data Conversion</h2>

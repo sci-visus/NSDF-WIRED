@@ -29,7 +29,7 @@ We created 4 directories for each forecast ID that UBC provides at the following
 
 The following shows our approaches to doing this and discusses how our approach evolved. Note the scripts below refer to varying directories, but through simple copying operations we stored the final downloaded files to the directories listed above.
 
-### First Approach
+### First Approach {#sec-loading-first-approach}
 
 We delineate our first approach by detailing our download script, which is available in it's entirety in the side bar.
 ```{python}

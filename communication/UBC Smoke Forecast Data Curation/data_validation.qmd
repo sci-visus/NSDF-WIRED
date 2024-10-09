@@ -2,9 +2,9 @@
 format:
   html:
     code-links:
-      - text: Conversion Script Version 1
+      - text: Visualizing all Timesteps
         icon: file-code
-        href: https://github.com/sci-visus/NSDF-WIRED/blob/main/conversion/firesmoke_to_idx_v1.ipynb
+        href: https://github.com/sci-visus/NSDF-WIRED/tree/main/visualizations/make_videos
 ---
 # Data Validation {#sec-data-validation}
 
@@ -30,49 +30,25 @@ When doing rudimentary visualizations we saw missing timesteps from our final da
 ### Visualizing all Timesteps
 To determine exactly which time steps were unavailable, we decided to load and visualize every timestep from March 3, 2021 to June 27, 2024 as a video. We then identify which time steps fail to load or visualize and diagnose *why*. The scripts we proceed to describe can be found in the side bar or [here](https://github.com/sci-visus/NSDF-WIRED/tree/main/visualizations/make_videos).
 
-#### Creating the Images
+---
 
 In the following scripts, we generate PNG images for every time step in our IDX file *and* for every time step directly loaded from the downloaded NetCDF files. The time steps we load are the same ones specified in our `idx_calls` array from @sec-data-conversion.
 
-The purpose for loading from both our IDX file and NetCDF files to later check if any issues we encounter are present in the original files we downloaded as well.
+We load from both our IDX file and NetCDF files to crosscheck any issues we encounter in both file formats.
 
 ::: {.panel-tabset}
 ## IDX File PNGs
-
-``` {python}
-# | eval: false
-# path to tiny NetCDF
-url = ("https://github.com/sci-visus/NSDF-WIRED/raw/main/data/firesmoke_metadata_recent.nc")
-
-# Download the file using requests
-response = requests.get(url)
-local_netcdf = "firesmoke_metadata.nc"
-with open(local_netcdf, "wb") as f:
-    f.write(response.content)
-
-# open tiny netcdf with xarray and OpenVisus backend
-ds = xr.open_dataset(local_netcdf, engine=OpenVisusBackendEntrypoint)
-```
-
+{{< embed data_notebooks/data_validation/firesmoke_idx_all_frames.ipynb echo=true >}}
 
 ## NetCDF Files PNGs
-
-``` {python}
-# | eval: false
-fizz_buzz <- function(fbnums = 1:50) {
-  output <- dplyr::case_when(
-    fbnums %% 15 == 0 ~ "FizzBuzz",
-    fbnums %% 3 == 0 ~ "Fizz",
-    fbnums %% 5 == 0 ~ "Buzz",
-    TRUE ~ as.character(fbnums)
-  )
-  print(output)
-}
-```
-
+{{< embed data_notebooks/data_validation/firesmoke_netcdf_all_frames.ipynb echo=true >}}
 :::
 
+---
 
+Now with all images for each time step generated, we create videos to save to file.
+
+{{< embed  data_notebooks/data_validation/make_videos.ipynb echo=true >}}
 
 ## Data Conversion
 

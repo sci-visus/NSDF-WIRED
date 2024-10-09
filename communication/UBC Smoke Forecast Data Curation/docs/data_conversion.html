@@ -190,6 +190,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./test.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">test.html</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./references.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">References</span></a>
   </div>
@@ -272,7 +278,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="setting-system-directories" class="level2" data-number="6.3">
 <h2 data-number="6.3" class="anchored" data-anchor-id="setting-system-directories"><span class="header-section-number">6.3</span> Setting System Directories</h2>
 <p>First we set the directory paths we want to use during the conversion process, which is to our 4 directories of NetCDF files for each forecast ID.</p>
-<div id="e7f7b8cb" class="cell" data-execution_count="1">
+<div id="ba0a1a8a" class="cell" data-execution_count="1">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="annotated-cell-1"><pre class="sourceCode python code-annotation-code code-with-copy code-annotated"><code class="sourceCode python"><button class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="1">1</button><span id="annotated-cell-1-1" class="code-annotation-target"><a href="#annotated-cell-1-1" aria-hidden="true" tabindex="-1"></a>firesmoke_dir <span class="op">=</span> <span class="st">"/usr/sci/cedmav/data/firesmoke"</span></span>
@@ -318,7 +324,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>All files across all four forecast IDs have the same <code>NROWS</code>, <code>XORIG</code>, <code>YORIG</code>, <code>XCELL</code>, <code>YCELL</code> values.</li>
 <li>Some files have either <code>NCOLS = 1041</code> or <code>NCOLS = 1081</code>, but always <code>NROWS = 381</code>.</li>
 </ol>
-<div id="3a820112" class="cell" data-execution_count="2">
+<div id="211106d5" class="cell" data-execution_count="2">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="annotated-cell-3"><pre class="sourceCode python code-annotation-code code-with-copy code-annotated"><code class="sourceCode python"><span id="annotated-cell-3-1"><a href="#annotated-cell-3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
@@ -520,7 +526,7 @@ ycells: {0.10000000149011612}</code></pre>
 <section id="generate-grids-of-latitude-and-longitude-points" class="level3" data-number="6.5.1">
 <h3 data-number="6.5.1" class="anchored" data-anchor-id="generate-grids-of-latitude-and-longitude-points"><span class="header-section-number">6.5.1</span> Generate Grids of Latitude and Longitude Points</h3>
 <p>Recall we can generate a set of latitude and longitude coordinates by using the attributes given in each NetCDF file, see <a href="data_source.html#sec-netcdf-demo" class="quarto-xref"><span>Section 4.3.3</span></a> for an example. Here we generate two sets of latitude and longitude coordinates for each grid size.</p>
-<div id="e3079994" class="cell" data-execution_count="3">
+<div id="728c9ff6" class="cell" data-execution_count="3">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="annotated-cell-4"><pre class="sourceCode python code-annotation-code code-with-copy code-annotated"><code class="sourceCode python"><button class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="1">1</button><span id="annotated-cell-4-1" class="code-annotation-target"><a href="#annotated-cell-4-1" aria-hidden="true" tabindex="-1"></a>max_xorig <span class="op">=</span> max_grid_x[ids[<span class="dv">0</span>]][<span class="st">'xorig'</span>]</span>
@@ -996,7 +1002,7 @@ Table&nbsp;6.1: The Weaknesses of Approaches to Handling Varying Array Sizes
 <p>Recall that within each set of Forecast ID files, some files failed to download or open. Therefore, we check exactly what set of hours are available in each collection of forecast ID NetCDF files and store that information in a dictionary.</p>
 <p>Below you can see the first few entries of this dictionary:</p>
 <p>To generate this dictionary, we did the following:</p>
-<div id="daa915e1" class="cell" data-execution_count="5">
+<div id="31451c9b" class="cell" data-execution_count="5">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="annotated-cell-5"><pre class="sourceCode python code-annotation-code code-with-copy code-annotated"><code class="sourceCode python"><button class="code-annotation-anchor" data-target-cell="annotated-cell-5" data-target-annotation="1">1</button><span id="annotated-cell-5-1" class="code-annotation-target"><a href="#annotated-cell-5-1" aria-hidden="true" tabindex="-1"></a>id_sets <span class="op">=</span> {id_: {} <span class="cf">for</span> id_ <span class="kw">in</span> ids}</span>
@@ -1041,7 +1047,7 @@ Table&nbsp;6.1: The Weaknesses of Approaches to Handling Varying Array Sizes
 <h3 data-number="6.6.2" class="anchored" data-anchor-id="utility-functions"><span class="header-section-number">6.6.2</span> Utility Functions</h3>
 <p>Recall that for each timestep, there are various predictions available as shown in <a href="data_source.html#sec-temporal-visual" class="quarto-xref"><span>Section 4.4.2</span></a>.</p>
 <p>The following utility functions encode the logic used for selecting the most accurate PM2.5 prediction per time step. Most accurate means, the prediction produced by the forecast run as close as possible to the time step of interest.</p>
-<div id="66630ba4" class="cell" data-execution_count="6">
+<div id="8becb529" class="cell" data-execution_count="6">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> prev_id(curr_id, verbose):</span>
@@ -1073,7 +1079,7 @@ Table&nbsp;6.1: The Weaknesses of Approaches to Handling Varying Array Sizes
 <span id="cb15-27"><a href="#cb15-27" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> ret</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<div id="98815133" class="cell" data-execution_count="7">
+<div id="6fb3ed78" class="cell" data-execution_count="7">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="annotated-cell-7"><pre class="sourceCode python code-annotation-code code-with-copy code-annotated"><code class="sourceCode python"><span id="annotated-cell-7-1"><a href="#annotated-cell-7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_id_from_date(date, verbose):</span>
@@ -1113,7 +1119,7 @@ Table&nbsp;6.1: The Weaknesses of Approaches to Handling Varying Array Sizes
 </dl>
 </div>
 </div>
-<div id="5260357a" class="cell" data-execution_count="8">
+<div id="e9dd4126" class="cell" data-execution_count="8">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="annotated-cell-8"><pre class="sourceCode python code-annotation-code code-with-copy code-annotated"><code class="sourceCode python"><span id="annotated-cell-8-1"><a href="#annotated-cell-8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> dispersion_date_str(date, id_, verbose):</span>
@@ -1154,7 +1160,7 @@ Table&nbsp;6.1: The Weaknesses of Approaches to Handling Varying Array Sizes
 <h3 data-number="6.6.3" class="anchored" data-anchor-id="populating-the-idx_calls-array"><span class="header-section-number">6.6.3</span> Populating the <code>idx_calls</code> Array</h3>
 <p>Here, we describe how we use our utility functions to parse all the NetCDF files we have to populate our <code>idx_calls</code> array. <code>idx_calls</code> is used in the final step by defining <em>which</em> predictions to load and in what <em>order</em>. See <a href="#sec-create-idx" class="quarto-xref"><span>Section 6.7</span></a> for details on exact usage.</p>
 <p>First, we initialize our variables.</p>
-<div id="06bfcb27" class="cell" data-execution_count="9">
+<div id="71a8e349" class="cell" data-execution_count="9">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="annotated-cell-9"><pre class="sourceCode python code-annotation-code code-with-copy code-annotated"><code class="sourceCode python"><button class="code-annotation-anchor" data-target-cell="annotated-cell-9" data-target-annotation="1">1</button><span id="annotated-cell-9-1" class="code-annotation-target"><a href="#annotated-cell-9-1" aria-hidden="true" tabindex="-1"></a>idx_calls <span class="op">=</span> []</span>
@@ -1195,7 +1201,7 @@ Table&nbsp;6.1: The Weaknesses of Approaches to Handling Varying Array Sizes
 </div>
 </div>
 <p>Then, we use a <code>while</code> loop to populate <code>idx_calls</code> with the optimal sequence.</p>
-<div id="b458c7ab" class="cell" data-execution_count="10">
+<div id="e7687ed3" class="cell" data-execution_count="10">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="annotated-cell-10"><pre class="sourceCode python code-annotation-code code-with-copy code-annotated"><code class="sourceCode python"><button class="code-annotation-anchor" data-target-cell="annotated-cell-10" data-target-annotation="1">1</button><span id="annotated-cell-10-1" class="code-annotation-target"><a href="#annotated-cell-10-1" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> current_date <span class="op">&lt;=</span> end_date:</span>
@@ -1287,7 +1293,7 @@ Table&nbsp;6.1: The Weaknesses of Approaches to Handling Varying Array Sizes
 </div>
 </div>
 <p>The following shows the first 2 and final 2 entires of the <code>idx_calls</code> array.</p>
-<div id="15e07741" class="cell" data-execution_count="11">
+<div id="9492df47" class="cell" data-execution_count="11">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>[[<span class="st">'BSC12CA12-01'</span>,</span>
@@ -1314,7 +1320,7 @@ Table&nbsp;6.1: The Weaknesses of Approaches to Handling Varying Array Sizes
 <section id="sec-create-idx" class="level2" data-number="6.7">
 <h2 data-number="6.7" class="anchored" data-anchor-id="sec-create-idx"><span class="header-section-number">6.7</span> Creating the IDX File</h2>
 <p>At this point, we have precomputed the order in which we will load and write each array to our IDX file. We will now use <code>idx_calls</code> to create the final IDX file containing our single dataset.</p>
-<div id="8d75fff6" class="cell" data-execution_count="12">
+<div id="b9b3821c" class="cell" data-execution_count="12">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="annotated-cell-12"><pre class="sourceCode python code-annotation-code code-with-copy code-annotated"><code class="sourceCode python"><button class="code-annotation-anchor" data-target-cell="annotated-cell-12" data-target-annotation="1">1</button><span id="annotated-cell-12-1" class="code-annotation-target"><a href="#annotated-cell-12-1" aria-hidden="true" tabindex="-1"></a>f <span class="op">=</span> Field(<span class="st">"PM25"</span>, <span class="st">"float32"</span>)</span>

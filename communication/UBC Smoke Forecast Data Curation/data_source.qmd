@@ -66,6 +66,7 @@ Where:
 : UBC Smoke Forecast Data Download Parameters. {#tbl-access}
 
 #### Download Example
+
 Let's try downloading the forecast for January 1, 2024 where the weather forecast is initiated at 00:00:00 UTC and the smoke forecast is initialized at 08:00:00 UTC by navigating to the corresponding URL.
 
 ```{python}
@@ -88,13 +89,13 @@ Next, let's look at what is within the NetCDF file located at the URL in our pre
 
 We load `dispersion.nc` using `xarray`, which provides a preview of the file.
 
-<!-- ```{python}
+```{python}
 # | eval: true
 import xarray as xr
 
 ds = xr.open_dataset("data_notebooks/data_source/dispersion.nc")
 ds
-``` -->
+```
 
 ### File Attributes
 
@@ -145,7 +146,6 @@ Of the 33 available attributes we use the ones shown in @tbl-attrs:
 Let's look closer at what exactly is within one NetCDF file in the following demo.
 
 ### NetCDF Visualization Demo {#sec-netcdf-demo}
-
 {{< embed data_notebooks/data_source/netcdf_demo.ipynb echo=true >}}
 
 Now that we understand how to load the data and metadata from the file and process it for visualization, let's establish the data and metadata available to us across *all* NetCDF files.

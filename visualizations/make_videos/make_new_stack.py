@@ -2,13 +2,13 @@
 from moviepy.editor import VideoFileClip, clips_array
 
 # load netcdf and idx videos
-netcdf_vid = VideoFileClip(
-    "/usr/sci/scratch_nvme/arleth/dump/videos/netcdf_video_7_10_24.mp4", audio=False
+vid1 = VideoFileClip(
+    "/usr/sci/scratch_nvme/arleth/dump/videos/netcdf_parallel.mp4", audio=False
 )
-idx_vid = VideoFileClip("/usr/sci/scratch_nvme/arleth/dump2/videos/idx_video_7_10_24.mp4", audio=False)
+vid2 = VideoFileClip("/usr/sci/scratch_nvme/arleth/dump/videos/netcdf_serial.mp4", audio=False)
 
 # stack the clips vertically
-final_clip = clips_array([[netcdf_vid], [idx_vid]])
+final_clip = clips_array([[vid1], [vid2]])
 
 # Write the final video to a file using ffmpeg
-final_clip.write_videofile("/usr/sci/scratch_nvme/arleth/dump2/videos/new_stack.mp4", codec="libx264", fps=netcdf_vid.fps)
+final_clip.write_videofile("/usr/sci/scratch_nvme/arleth/dump/videos/netcdf_stack.mp4", codec="libx264", fps=vid1.fps)

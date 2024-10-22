@@ -28,3 +28,7 @@ We use `wget` to download the content at the URL specified.
 get_data_v1:
 ---
 We use `requests` now, as this allow us to download _only_ netCDF files if they exist at the URL. `wget` downloads whatever is at the specified URL whether it is a netCDF file or not, which we have had to clean up.
+
+get_data_v1-westerncanada:
+---
+We use a parallelized version of the `get_data_v1.py1` script to download data for the BSC00WC04-01 forecast, which is a higher resolution forecast of western Canada, a different range than the other datasets which cover North America.

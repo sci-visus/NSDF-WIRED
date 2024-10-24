@@ -239,7 +239,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="sec-data-source" class="quarto-section-identifier"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">The Data Source</span></span></h1>
+<div class="quarto-title-block"><div><h1 class="title"><span id="sec-data-source" class="quarto-section-identifier"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">The Data Source</span></span></h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li><li><hr class="dropdown-divider"></li><li><a id="quarto-view-source" class="dropdown-item" href="javascript:void(0)" role="button">View Source</a></li></ul></div></div>
 </div>
 
 
@@ -385,7 +385,7 @@ Table&nbsp;4.2: UBC Smoke Forecast Data Download Parameters.
 <section id="download-example" class="level4" data-number="4.2.2.1">
 <h4 data-number="4.2.2.1" class="anchored" data-anchor-id="download-example"><span class="header-section-number">4.2.2.1</span> Download Example</h4>
 <p>Let’s try downloading the forecast for January 1, 2024 where the weather forecast is initiated at 00:00:00 UTC and the smoke forecast is initialized at 08:00:00 UTC by navigating to the corresponding URL.</p>
-<div id="c876ebcd" class="cell" data-execution_count="1">
+<div id="9069fcf8" class="cell" data-execution_count="1">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>forecast_id <span class="op">=</span> <span class="st">"BSC00CA12-01"</span></span>
@@ -412,7 +412,7 @@ Table&nbsp;4.2: UBC Smoke Forecast Data Download Parameters.
 <h3 data-number="4.3.1" class="anchored" data-anchor-id="file-preview"><span class="header-section-number">4.3.1</span> File Preview</h3>
 <!-- **TODO, MOVE TO ANOTHER SPOT**: To view and manipulate NetCDF files, we have selected the `xarray` Python library and created a [custom built backend](https://github.com/sci-visus/openvisuspy/blob/a2570ab485802375c075b6dbc0e3c79ebca02d02/src/openvisuspy/xarray_backend.py#L2) that connects `xarray` to the `OpenVisus` framework. -->
 <p>We load <code>dispersion.nc</code> using <code>xarray</code>, which provides a preview of the file.</p>
-<div id="13488daa" class="cell" data-execution_count="2">
+<div id="1f637365" class="cell" data-execution_count="2">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> xarray <span class="im">as</span> xr</span>
@@ -420,7 +420,7 @@ Table&nbsp;4.2: UBC Smoke Forecast Data Download Parameters.
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>ds <span class="op">=</span> xr.open_dataset(<span class="st">"data_notebooks/data_source/dispersion.nc"</span>)</span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>ds</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-display" data-execution_count="20">
+<div class="cell-output cell-output-display" data-execution_count="2">
 <div><svg style="position: absolute; width: 0; height: 0; overflow: hidden">
 <defs>
 <symbol id="icon-database" viewbox="0 0 32 32">
@@ -804,7 +804,7 @@ Attributes: (12/33)
     UPNAM:          hysplit2netCDF  
     VAR-LIST:       PM25            
     FILEDESC:       Hysplit Concentration Model Output                       ...
-    HISTORY:        </pre><div class="xr-wrap" style="display:none"><div class="xr-header"><div class="xr-obj-type">xarray.Dataset</div></div><ul class="xr-sections"><li class="xr-section-item"><input id="section-7223b36c-e97c-4d91-a939-8dca5fa5feb0" class="xr-section-summary-in" type="checkbox" disabled=""><label for="section-7223b36c-e97c-4d91-a939-8dca5fa5feb0" class="xr-section-summary" title="Expand/collapse section">Dimensions:</label><div class="xr-section-inline-details"><ul class="xr-dim-list"><li><span>TSTEP</span>: 51</li><li><span>VAR</span>: 1</li><li><span>DATE-TIME</span>: 2</li><li><span>LAY</span>: 1</li><li><span>ROW</span>: 381</li><li><span>COL</span>: 1041</li></ul></div><div class="xr-section-details"></div></li><li class="xr-section-item"><input id="section-d1f46806-0aec-4fa4-a6f1-c0748e63a9ee" class="xr-section-summary-in" type="checkbox" disabled=""><label for="section-d1f46806-0aec-4fa4-a6f1-c0748e63a9ee" class="xr-section-summary" title="Expand/collapse section">Coordinates: <span>(0)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><ul class="xr-var-list"></ul></div></li><li class="xr-section-item"><input id="section-0534b423-acda-4e07-a4ea-b22c50e2426d" class="xr-section-summary-in" type="checkbox" checked=""><label for="section-0534b423-acda-4e07-a4ea-b22c50e2426d" class="xr-section-summary">Data variables: <span>(2)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><ul class="xr-var-list"><li class="xr-var-item"><div class="xr-var-name"><span>TFLAG</span></div><div class="xr-var-dims">(TSTEP, VAR, DATE-TIME)</div><div class="xr-var-dtype">int32</div><div class="xr-var-preview xr-preview">...</div><input id="attrs-0e1e7fef-52dc-45a2-8cdb-5dbd6b5c1e5b" class="xr-var-attrs-in" type="checkbox"><label for="attrs-0e1e7fef-52dc-45a2-8cdb-5dbd6b5c1e5b" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-19f2a1cb-e229-41f1-83de-0cb6a00c1f7e" class="xr-var-data-in" type="checkbox"><label for="data-19f2a1cb-e229-41f1-83de-0cb6a00c1f7e" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"><dt><span>units :</span></dt><dd>&lt;YYYYDDD,HHMMSS&gt;</dd><dt><span>long_name :</span></dt><dd>TFLAG           </dd><dt><span>var_desc :</span></dt><dd>Timestep-valid flags:  (1) YYYYDDD or (2) HHMMSS                                </dd></dl></div><div class="xr-var-data"><pre>[102 values with dtype=int32]</pre></div></li><li class="xr-var-item"><div class="xr-var-name"><span>PM25</span></div><div class="xr-var-dims">(TSTEP, LAY, ROW, COL)</div><div class="xr-var-dtype">float32</div><div class="xr-var-preview xr-preview">...</div><input id="attrs-4d113a6e-479a-4da1-831d-cf20f01ba323" class="xr-var-attrs-in" type="checkbox"><label for="attrs-4d113a6e-479a-4da1-831d-cf20f01ba323" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-5b9f4d07-f912-447f-987b-4db38ce33591" class="xr-var-data-in" type="checkbox"><label for="data-5b9f4d07-f912-447f-987b-4db38ce33591" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"><dt><span>long_name :</span></dt><dd>PM25            </dd><dt><span>units :</span></dt><dd>ug/m^3          </dd><dt><span>var_desc :</span></dt><dd>PM25                                                                            </dd></dl></div><div class="xr-var-data"><pre>[20227671 values with dtype=float32]</pre></div></li></ul></div></li><li class="xr-section-item"><input id="section-fe4a8e1f-3387-4d55-aee8-036a0925076a" class="xr-section-summary-in" type="checkbox" disabled=""><label for="section-fe4a8e1f-3387-4d55-aee8-036a0925076a" class="xr-section-summary" title="Expand/collapse section">Indexes: <span>(0)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><ul class="xr-var-list"></ul></div></li><li class="xr-section-item"><input id="section-3da63800-34b4-465f-bd75-5b7272991553" class="xr-section-summary-in" type="checkbox"><label for="section-3da63800-34b4-465f-bd75-5b7272991553" class="xr-section-summary">Attributes: <span>(33)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><dl class="xr-attrs"><dt><span>IOAPI_VERSION :</span></dt><dd>$Id: @(#) ioapi library version 3.0 $                                           </dd><dt><span>EXEC_ID :</span></dt><dd>????????????????                                                                </dd><dt><span>FTYPE :</span></dt><dd>1</dd><dt><span>CDATE :</span></dt><dd>2021063</dd><dt><span>CTIME :</span></dt><dd>101914</dd><dt><span>WDATE :</span></dt><dd>2021063</dd><dt><span>WTIME :</span></dt><dd>101914</dd><dt><span>SDATE :</span></dt><dd>2021063</dd><dt><span>STIME :</span></dt><dd>90000</dd><dt><span>TSTEP :</span></dt><dd>10000</dd><dt><span>NTHIK :</span></dt><dd>1</dd><dt><span>NCOLS :</span></dt><dd>1041</dd><dt><span>NROWS :</span></dt><dd>381</dd><dt><span>NLAYS :</span></dt><dd>1</dd><dt><span>NVARS :</span></dt><dd>1</dd><dt><span>GDTYP :</span></dt><dd>1</dd><dt><span>P_ALP :</span></dt><dd>0.0</dd><dt><span>P_BET :</span></dt><dd>0.0</dd><dt><span>P_GAM :</span></dt><dd>0.0</dd><dt><span>XCENT :</span></dt><dd>-104.0</dd><dt><span>YCENT :</span></dt><dd>51.0</dd><dt><span>XORIG :</span></dt><dd>-156.0</dd><dt><span>YORIG :</span></dt><dd>32.0</dd><dt><span>XCELL :</span></dt><dd>0.10000000149011612</dd><dt><span>YCELL :</span></dt><dd>0.10000000149011612</dd><dt><span>VGTYP :</span></dt><dd>5</dd><dt><span>VGTOP :</span></dt><dd>-9999.0</dd><dt><span>VGLVLS :</span></dt><dd>[10.  0.]</dd><dt><span>GDNAM :</span></dt><dd>HYSPLIT CONC    </dd><dt><span>UPNAM :</span></dt><dd>hysplit2netCDF  </dd><dt><span>VAR-LIST :</span></dt><dd>PM25            </dd><dt><span>FILEDESC :</span></dt><dd>Hysplit Concentration Model Output                                              lat-lon coordinate system                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       </dd><dt><span>HISTORY :</span></dt><dd></dd></dl></div></li></ul></div></div>
+    HISTORY:        </pre><div class="xr-wrap" style="display:none"><div class="xr-header"><div class="xr-obj-type">xarray.Dataset</div></div><ul class="xr-sections"><li class="xr-section-item"><input id="section-e31ecc3d-aa21-47a2-bfdd-5d67c5a249d8" class="xr-section-summary-in" type="checkbox" disabled=""><label for="section-e31ecc3d-aa21-47a2-bfdd-5d67c5a249d8" class="xr-section-summary" title="Expand/collapse section">Dimensions:</label><div class="xr-section-inline-details"><ul class="xr-dim-list"><li><span>TSTEP</span>: 51</li><li><span>VAR</span>: 1</li><li><span>DATE-TIME</span>: 2</li><li><span>LAY</span>: 1</li><li><span>ROW</span>: 381</li><li><span>COL</span>: 1041</li></ul></div><div class="xr-section-details"></div></li><li class="xr-section-item"><input id="section-7f238e32-9a47-478a-8217-dd675298a13c" class="xr-section-summary-in" type="checkbox" disabled=""><label for="section-7f238e32-9a47-478a-8217-dd675298a13c" class="xr-section-summary" title="Expand/collapse section">Coordinates: <span>(0)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><ul class="xr-var-list"></ul></div></li><li class="xr-section-item"><input id="section-217bb3d0-1494-44b9-bbd2-1285f8a27615" class="xr-section-summary-in" type="checkbox" checked=""><label for="section-217bb3d0-1494-44b9-bbd2-1285f8a27615" class="xr-section-summary">Data variables: <span>(2)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><ul class="xr-var-list"><li class="xr-var-item"><div class="xr-var-name"><span>TFLAG</span></div><div class="xr-var-dims">(TSTEP, VAR, DATE-TIME)</div><div class="xr-var-dtype">int32</div><div class="xr-var-preview xr-preview">...</div><input id="attrs-c7556233-f54c-412f-9ec6-9ea7bde08c2a" class="xr-var-attrs-in" type="checkbox"><label for="attrs-c7556233-f54c-412f-9ec6-9ea7bde08c2a" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-02b8537a-3ca6-4f0c-b3fd-2e6089ccf211" class="xr-var-data-in" type="checkbox"><label for="data-02b8537a-3ca6-4f0c-b3fd-2e6089ccf211" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"><dt><span>units :</span></dt><dd>&lt;YYYYDDD,HHMMSS&gt;</dd><dt><span>long_name :</span></dt><dd>TFLAG           </dd><dt><span>var_desc :</span></dt><dd>Timestep-valid flags:  (1) YYYYDDD or (2) HHMMSS                                </dd></dl></div><div class="xr-var-data"><pre>[102 values with dtype=int32]</pre></div></li><li class="xr-var-item"><div class="xr-var-name"><span>PM25</span></div><div class="xr-var-dims">(TSTEP, LAY, ROW, COL)</div><div class="xr-var-dtype">float32</div><div class="xr-var-preview xr-preview">...</div><input id="attrs-ec9620c7-a575-4894-a6a2-2379ef92aa3a" class="xr-var-attrs-in" type="checkbox"><label for="attrs-ec9620c7-a575-4894-a6a2-2379ef92aa3a" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-d8407884-396b-4517-87ba-bd88b11e0652" class="xr-var-data-in" type="checkbox"><label for="data-d8407884-396b-4517-87ba-bd88b11e0652" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"><dt><span>long_name :</span></dt><dd>PM25            </dd><dt><span>units :</span></dt><dd>ug/m^3          </dd><dt><span>var_desc :</span></dt><dd>PM25                                                                            </dd></dl></div><div class="xr-var-data"><pre>[20227671 values with dtype=float32]</pre></div></li></ul></div></li><li class="xr-section-item"><input id="section-e61b079c-7cd9-4181-b1c4-3eb959cbdeab" class="xr-section-summary-in" type="checkbox" disabled=""><label for="section-e61b079c-7cd9-4181-b1c4-3eb959cbdeab" class="xr-section-summary" title="Expand/collapse section">Indexes: <span>(0)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><ul class="xr-var-list"></ul></div></li><li class="xr-section-item"><input id="section-1dd02d55-c73a-45f5-a233-dd2a52010ed0" class="xr-section-summary-in" type="checkbox"><label for="section-1dd02d55-c73a-45f5-a233-dd2a52010ed0" class="xr-section-summary">Attributes: <span>(33)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><dl class="xr-attrs"><dt><span>IOAPI_VERSION :</span></dt><dd>$Id: @(#) ioapi library version 3.0 $                                           </dd><dt><span>EXEC_ID :</span></dt><dd>????????????????                                                                </dd><dt><span>FTYPE :</span></dt><dd>1</dd><dt><span>CDATE :</span></dt><dd>2021063</dd><dt><span>CTIME :</span></dt><dd>101914</dd><dt><span>WDATE :</span></dt><dd>2021063</dd><dt><span>WTIME :</span></dt><dd>101914</dd><dt><span>SDATE :</span></dt><dd>2021063</dd><dt><span>STIME :</span></dt><dd>90000</dd><dt><span>TSTEP :</span></dt><dd>10000</dd><dt><span>NTHIK :</span></dt><dd>1</dd><dt><span>NCOLS :</span></dt><dd>1041</dd><dt><span>NROWS :</span></dt><dd>381</dd><dt><span>NLAYS :</span></dt><dd>1</dd><dt><span>NVARS :</span></dt><dd>1</dd><dt><span>GDTYP :</span></dt><dd>1</dd><dt><span>P_ALP :</span></dt><dd>0.0</dd><dt><span>P_BET :</span></dt><dd>0.0</dd><dt><span>P_GAM :</span></dt><dd>0.0</dd><dt><span>XCENT :</span></dt><dd>-104.0</dd><dt><span>YCENT :</span></dt><dd>51.0</dd><dt><span>XORIG :</span></dt><dd>-156.0</dd><dt><span>YORIG :</span></dt><dd>32.0</dd><dt><span>XCELL :</span></dt><dd>0.10000000149011612</dd><dt><span>YCELL :</span></dt><dd>0.10000000149011612</dd><dt><span>VGTYP :</span></dt><dd>5</dd><dt><span>VGTOP :</span></dt><dd>-9999.0</dd><dt><span>VGLVLS :</span></dt><dd>[10.  0.]</dd><dt><span>GDNAM :</span></dt><dd>HYSPLIT CONC    </dd><dt><span>UPNAM :</span></dt><dd>hysplit2netCDF  </dd><dt><span>VAR-LIST :</span></dt><dd>PM25            </dd><dt><span>FILEDESC :</span></dt><dd>Hysplit Concentration Model Output                                              lat-lon coordinate system                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       </dd><dt><span>HISTORY :</span></dt><dd></dd></dl></div></li></ul></div></div>
 </div>
 </div>
 </section>
@@ -3199,6 +3199,8 @@ Table&nbsp;4.6: File Sizes and Counts for Each Forecast ID within the Specified 
 <p>firesmoke.ca website https://docs.xarray.dev/en/stable/internals/how-to-add-new-backend.html</p>
 
 
+<!-- -->
+
 </section>
 
 </main> <!-- /main -->
@@ -3281,6 +3283,57 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
+  const viewSource = window.document.getElementById('quarto-view-source') ||
+                     window.document.getElementById('quarto-code-tools-source');
+  if (viewSource) {
+    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+    viewSource.addEventListener("click", function(e) {
+      if (sourceUrl) {
+        // rstudio viewer pane
+        if (/\bcapabilities=\b/.test(window.location)) {
+          window.open(sourceUrl);
+        } else {
+          window.location.href = sourceUrl;
+        }
+      } else {
+        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+        modal.show();
+      }
+      return false;
+    });
+  }
+  function toggleCodeHandler(show) {
+    return function(e) {
+      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+      for (let i=0; i<detailsSrc.length; i++) {
+        const details = detailsSrc[i].parentElement;
+        if (show) {
+          details.open = true;
+        } else {
+          details.removeAttribute("open");
+        }
+      }
+      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+      const fromCls = show ? "hidden" : "unhidden";
+      const toCls = show ? "unhidden" : "hidden";
+      for (let i=0; i<cellCodeDivs.length; i++) {
+        const codeDiv = cellCodeDivs[i];
+        if (codeDiv.classList.contains(fromCls)) {
+          codeDiv.classList.remove(fromCls);
+          codeDiv.classList.add(toCls);
+        } 
+      }
+      return false;
+    }
+  }
+  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+  if (hideAllCode) {
+    hideAllCode.addEventListener("click", toggleCodeHandler(false));
+  }
+  const showAllCode = window.document.getElementById("quarto-show-all-code");
+  if (showAllCode) {
+    showAllCode.addEventListener("click", toggleCodeHandler(true));
+  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp('/' + window.location.host + '/');
@@ -3661,7 +3714,185 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Data Loading</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
-</nav>
+</nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="sourceCode" id="cb17" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="co">    code-links:</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="co">      - text: NetCDF Visualization Demo</span></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="co">        icon: file-code</span></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a><span class="co">        href: https://github.com/sci-visus/NSDF-WIRED/blob/main/communication/UBC%20Smoke%20Forecast%20Data%20Curation/data_notebooks/data_source/netcdf_demo.ipynb</span></span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a><span class="fu"># The Data Source {#sec-data-source}</span></span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>It is important to understand exactly what data is available and how to obtain that data.</span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a>We encourage you to explore the dataset on <span class="co">[</span><span class="ot">UBC's website</span><span class="co">](https://firesmoke.ca/forecasts/)</span> to further understand the dataset's use and development by UBC.</span>
+<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a>Here we establish:</span>
+<span id="cb17-16"><a href="#cb17-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-17"><a href="#cb17-17" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>What systems are available to obtain the smoke forecast data from UBC?</span>
+<span id="cb17-18"><a href="#cb17-18" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>What are in the files that UBC provides?</span>
+<span id="cb17-19"><a href="#cb17-19" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>What metadata is associated with the files we obtain, both from within the file and about the files as a whole?</span>
+<span id="cb17-20"><a href="#cb17-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-21"><a href="#cb17-21" aria-hidden="true" tabindex="-1"></a>This information **was not** determined the first time we explored this dataset. </span>
+<span id="cb17-22"><a href="#cb17-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-23"><a href="#cb17-23" aria-hidden="true" tabindex="-1"></a>As seen in the later chapters, we operated under misinformed assumptions and encountered issues only resolvable by operating on the data "blindly". The purpose of this chapter is to establish the final set of information we learned about our data source after extensive exploration and manipulation.</span>
+<span id="cb17-24"><a href="#cb17-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-25"><a href="#cb17-25" aria-hidden="true" tabindex="-1"></a><span class="fu">## Overview</span></span>
+<span id="cb17-26"><a href="#cb17-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-27"><a href="#cb17-27" aria-hidden="true" tabindex="-1"></a>The Weather Forecast Research Team at the University of British Columbia (UBC) generates a short term dataset of PM2.5 smoke particulate presence in North America. This is done using their <span class="co">[</span><span class="ot">The BlueSky Western Canada Wildfire Smoke Forecasting System</span><span class="co">](https://firesmoke.ca/resources/bsc-2014-description.pdf)</span>. Over the past 3 years, each day four times a day, UBC creates 2-day forecasts of PM2.5 smoke particulate on the ground for Canada and the continental United States. Each such forecast is downloadable as a NetCDF file or KMZ file. UBC provides access to these predictions for free on a daily basis at their website <span class="co">[</span><span class="ot">firesmoke.ca</span><span class="co">](https://firesmoke.ca/)</span>.</span>
+<span id="cb17-28"><a href="#cb17-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-29"><a href="#cb17-29" aria-hidden="true" tabindex="-1"></a><span class="fu">## UBC Smoke Forecast Files Access</span></span>
+<span id="cb17-30"><a href="#cb17-30" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- </span><span class="al">TODO</span><span class="co"> CREDIT UBC --&gt;</span></span>
+<span id="cb17-31"><a href="#cb17-31" aria-hidden="true" tabindex="-1"></a><span class="fu">### Available Forecasts</span></span>
+<span id="cb17-32"><a href="#cb17-32" aria-hidden="true" tabindex="-1"></a>All forecast files are uniquely identifiable with a forecast ID based on when their meteorology forecast is initiated, a smoke forecast initialization time, and by date. The time ranges of available files by forecast ID is shown in @tbl-time. Please note, there are occassional **failed forecasts or otherwise unavailable files** within the date ranges specified @tbl-time, see @sec-collection-info for further details.</span>
+<span id="cb17-33"><a href="#cb17-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-34"><a href="#cb17-34" aria-hidden="true" tabindex="-1"></a>| Forecast ID   | Meteorology Forecast Initialization (UTC) | Smoke Forecast Initialization (UTC) | Start Date   | End Date     |</span>
+<span id="cb17-35"><a href="#cb17-35" aria-hidden="true" tabindex="-1"></a>|---------------|---------------------------------|----------------------------------|--------------|--------------|</span>
+<span id="cb17-36"><a href="#cb17-36" aria-hidden="true" tabindex="-1"></a>| BSC00CA12-01  | 00Z                             | 08Z                              | March 4, 2021 | Present Day  |</span>
+<span id="cb17-37"><a href="#cb17-37" aria-hidden="true" tabindex="-1"></a>| BSC06CA12-01  | 06Z                             | 14Z                              | March 4, 2021 | Present Day  |</span>
+<span id="cb17-38"><a href="#cb17-38" aria-hidden="true" tabindex="-1"></a>| BSC12CA12-01  | 12Z                             | 20Z                              | March 3, 2021 | Present Day  |</span>
+<span id="cb17-39"><a href="#cb17-39" aria-hidden="true" tabindex="-1"></a>| BSC18CA12-01  | 18Z                             | 02Z                              | March 4, 2021 | Present Day  |</span>
+<span id="cb17-40"><a href="#cb17-40" aria-hidden="true" tabindex="-1"></a>: Dates for which all forecast ID datasets are publicly available. All times are in UTC and the grid size is 12 km. {#tbl-time}</span>
+<span id="cb17-41"><a href="#cb17-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-42"><a href="#cb17-42" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- </span><span class="al">TODO</span><span class="co"> what do grid sizes mean, i.e. Meteorology: 00 UTC, nested 12 km + 36 km grids Smoke: 08 UTC --&gt;</span></span>
+<span id="cb17-43"><a href="#cb17-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-44"><a href="#cb17-44" aria-hidden="true" tabindex="-1"></a>The smoke forecasts are updated daily, including the present day, so there is no fixed end date. Therefore, the latest data must be downloaded on a regular basis. We have not implemented this process yet, so the latest forecast files we use are up to June 27, 2024.</span>
+<span id="cb17-45"><a href="#cb17-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-46"><a href="#cb17-46" aria-hidden="true" tabindex="-1"></a>There is no official source stating the earliest available date for each forecast. So, knowing the project began in 2021, we inferenced that the earliest available date would be in 2021. Via trial and error we found the earliest available dates.</span>
+<span id="cb17-47"><a href="#cb17-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-48"><a href="#cb17-48" aria-hidden="true" tabindex="-1"></a><span class="fu">### Download Instructions {#sec-download-instructions}</span></span>
+<span id="cb17-49"><a href="#cb17-49" aria-hidden="true" tabindex="-1"></a>To download the 2-day forecast for the forecast initialization date of one's choice, one follows the instructions below. The downloaded file can be a NetCDF or KMZ file.</span>
+<span id="cb17-50"><a href="#cb17-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-51"><a href="#cb17-51" aria-hidden="true" tabindex="-1"></a>Go to the URL:</span>
+<span id="cb17-52"><a href="#cb17-52" aria-hidden="true" tabindex="-1"></a><span class="in">`https://firesmoke.ca/forecasts/{Forecast ID}/{YYYYMMDD}{InitTime}/{File Type}`</span></span>
+<span id="cb17-53"><a href="#cb17-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-54"><a href="#cb17-54" aria-hidden="true" tabindex="-1"></a>Where:</span>
+<span id="cb17-55"><a href="#cb17-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-56"><a href="#cb17-56" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`YYYYMMDD`</span> is the date of choice. </span>
+<span id="cb17-57"><a href="#cb17-57" aria-hidden="true" tabindex="-1"></a><span class="ss">-  </span><span class="in">`ForecastID`</span> and <span class="in">`InitTime`</span> are the chosen values as described in @tbl-access.</span>
+<span id="cb17-58"><a href="#cb17-58" aria-hidden="true" tabindex="-1"></a><span class="ss">-  </span><span class="in">`File Type`</span> is either <span class="in">`dispersion.nc`</span> or <span class="in">`dispersion.kmz`</span> for either the NetCDF file or KMZ file, respectively.</span>
+<span id="cb17-59"><a href="#cb17-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-60"><a href="#cb17-60" aria-hidden="true" tabindex="-1"></a>| Forecast ID   | Smoke Forecast Initialization (UTC) |</span>
+<span id="cb17-61"><a href="#cb17-61" aria-hidden="true" tabindex="-1"></a>|---------------|-------------------------------------|</span>
+<span id="cb17-62"><a href="#cb17-62" aria-hidden="true" tabindex="-1"></a>| <span class="in">`BSC00CA12-01`</span>  | <span class="in">`08`</span>                                 |</span>
+<span id="cb17-63"><a href="#cb17-63" aria-hidden="true" tabindex="-1"></a>| <span class="in">`BSC06CA12-01`</span>  | <span class="in">`14`</span>                                 |</span>
+<span id="cb17-64"><a href="#cb17-64" aria-hidden="true" tabindex="-1"></a>| <span class="in">`BSC12CA12-01`</span>  | <span class="in">`20`</span>                                 |</span>
+<span id="cb17-65"><a href="#cb17-65" aria-hidden="true" tabindex="-1"></a>| <span class="in">`BSC18CA12-01`</span>  | <span class="in">`02`</span>                                 |</span>
+<span id="cb17-66"><a href="#cb17-66" aria-hidden="true" tabindex="-1"></a>: UBC Smoke Forecast Data Download Parameters. {#tbl-access}</span>
+<span id="cb17-67"><a href="#cb17-67" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-68"><a href="#cb17-68" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Download Example</span></span>
+<span id="cb17-69"><a href="#cb17-69" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-70"><a href="#cb17-70" aria-hidden="true" tabindex="-1"></a>Let's try downloading the forecast for January 1, 2024 where the weather forecast is initiated at 00:00:00 UTC and the smoke forecast is initialized at 08:00:00 UTC by navigating to the corresponding URL.</span>
+<span id="cb17-71"><a href="#cb17-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-74"><a href="#cb17-74" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb17-75"><a href="#cb17-75" aria-hidden="true" tabindex="-1"></a>forecast_id <span class="op">=</span> <span class="st">"BSC00CA12-01"</span></span>
+<span id="cb17-76"><a href="#cb17-76" aria-hidden="true" tabindex="-1"></a>yyyymmdd <span class="op">=</span> <span class="st">"20210304"</span></span>
+<span id="cb17-77"><a href="#cb17-77" aria-hidden="true" tabindex="-1"></a>init_time <span class="op">=</span> <span class="st">"08"</span></span>
+<span id="cb17-78"><a href="#cb17-78" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-79"><a href="#cb17-79" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> (</span>
+<span id="cb17-80"><a href="#cb17-80" aria-hidden="true" tabindex="-1"></a>    <span class="ss">f"https://firesmoke.ca/forecasts/</span><span class="sc">{</span>forecast_id<span class="sc">}</span><span class="ss">/</span><span class="sc">{</span>yyyymmdd<span class="sc">}{</span>init_time<span class="sc">}</span><span class="ss">/dispersion.nc"</span></span>
+<span id="cb17-81"><a href="#cb17-81" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb17-82"><a href="#cb17-82" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-83"><a href="#cb17-83" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Navigate to this URL in your browser: </span><span class="sc">{</span>url<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb17-84"><a href="#cb17-84" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb17-85"><a href="#cb17-85" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-86"><a href="#cb17-86" aria-hidden="true" tabindex="-1"></a><span class="fu">## The NetCDF File</span></span>
+<span id="cb17-87"><a href="#cb17-87" aria-hidden="true" tabindex="-1"></a>Next, let's look at what is within the NetCDF file located at the URL in our previous example.</span>
+<span id="cb17-88"><a href="#cb17-88" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-89"><a href="#cb17-89" aria-hidden="true" tabindex="-1"></a><span class="fu">### File Preview</span></span>
+<span id="cb17-90"><a href="#cb17-90" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- **</span><span class="al">TODO</span><span class="co">, MOVE TO ANOTHER SPOT**: To view and manipulate NetCDF files, we have selected the `xarray` Python library and created a [custom built backend](https://github.com/sci-visus/openvisuspy/blob/a2570ab485802375c075b6dbc0e3c79ebca02d02/src/openvisuspy/xarray_backend.py#L2) that connects `xarray` to the `OpenVisus` framework. --&gt;</span></span>
+<span id="cb17-91"><a href="#cb17-91" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-92"><a href="#cb17-92" aria-hidden="true" tabindex="-1"></a>We load <span class="in">`dispersion.nc`</span> using <span class="in">`xarray`</span>, which provides a preview of the file.</span>
+<span id="cb17-93"><a href="#cb17-93" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-96"><a href="#cb17-96" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb17-97"><a href="#cb17-97" aria-hidden="true" tabindex="-1"></a><span class="co"># | eval: true</span></span>
+<span id="cb17-98"><a href="#cb17-98" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> xarray <span class="im">as</span> xr</span>
+<span id="cb17-99"><a href="#cb17-99" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-100"><a href="#cb17-100" aria-hidden="true" tabindex="-1"></a>ds <span class="op">=</span> xr.open_dataset(<span class="st">"data_notebooks/data_source/dispersion.nc"</span>)</span>
+<span id="cb17-101"><a href="#cb17-101" aria-hidden="true" tabindex="-1"></a>ds</span>
+<span id="cb17-102"><a href="#cb17-102" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb17-103"><a href="#cb17-103" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-104"><a href="#cb17-104" aria-hidden="true" tabindex="-1"></a><span class="fu">### File Attributes</span></span>
+<span id="cb17-105"><a href="#cb17-105" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-106"><a href="#cb17-106" aria-hidden="true" tabindex="-1"></a><span class="in">`dispersion.nc`</span> contains the following attributes. Note that for all files across forecast IDs, they have the same dimension and variable names:</span>
+<span id="cb17-107"><a href="#cb17-107" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-108"><a href="#cb17-108" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Dimensions:</span></span>
+<span id="cb17-109"><a href="#cb17-109" aria-hidden="true" tabindex="-1"></a>The dimensions described in @tbl-dims determine on which indicies we may index our variables.</span>
+<span id="cb17-110"><a href="#cb17-110" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-111"><a href="#cb17-111" aria-hidden="true" tabindex="-1"></a>| Dimension  | Size | Description                                                                                       |</span>
+<span id="cb17-112"><a href="#cb17-112" aria-hidden="true" tabindex="-1"></a>|------------|------|---------------------------------------------------------------------------------------------------|</span>
+<span id="cb17-113"><a href="#cb17-113" aria-hidden="true" tabindex="-1"></a>| TSTEP      | 51   | This dimension represents the number of time steps in the file. Each file has 51 hours represented.                                   |</span>
+<span id="cb17-114"><a href="#cb17-114" aria-hidden="true" tabindex="-1"></a>| VAR        | 1    | This dimension is a placeholder for the variables in the file.     |</span>
+<span id="cb17-115"><a href="#cb17-115" aria-hidden="true" tabindex="-1"></a>| DATE-TIME  | 2    | This dimension stores the date and time information for each time step.                           |</span>
+<span id="cb17-116"><a href="#cb17-116" aria-hidden="true" tabindex="-1"></a>| LAY        | 1    | This dimension represents the number of layers in the file, which is 1 in this case.              |</span>
+<span id="cb17-117"><a href="#cb17-117" aria-hidden="true" tabindex="-1"></a>| ROW        | 381  | This dimension represents the number of rows in the spatial grid.                                 |</span>
+<span id="cb17-118"><a href="#cb17-118" aria-hidden="true" tabindex="-1"></a>| COL        | 1041 | This dimension represents the number of columns in the spatial grid.                              |</span>
+<span id="cb17-119"><a href="#cb17-119" aria-hidden="true" tabindex="-1"></a>: Description of Dimensions for Indexing Data in NetCDF Files {#tbl-dims}</span>
+<span id="cb17-120"><a href="#cb17-120" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-121"><a href="#cb17-121" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Variables:</span></span>
+<span id="cb17-122"><a href="#cb17-122" aria-hidden="true" tabindex="-1"></a>The variables described in @tbl-vars contain the data in question that we would like to extract.</span>
+<span id="cb17-123"><a href="#cb17-123" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-124"><a href="#cb17-124" aria-hidden="true" tabindex="-1"></a>| Variable | Dimensions            | Data Type | Description                                                                            |</span>
+<span id="cb17-125"><a href="#cb17-125" aria-hidden="true" tabindex="-1"></a>|----------|-----------------------|-----------|----------------------------------------------------------------------------------------|</span>
+<span id="cb17-126"><a href="#cb17-126" aria-hidden="true" tabindex="-1"></a>| TFLAG    | TSTEP, VAR, DATE-TIME | int32     | This variable stores the date and time of each time step.                               |</span>
+<span id="cb17-127"><a href="#cb17-127" aria-hidden="true" tabindex="-1"></a>| PM25     | TSTEP, LAY, ROW, COL | float32   | This variable contains the concentration of particulate matter (PM2.5) for each time step, layer, row, and column in the spatial grid. |</span>
+<span id="cb17-128"><a href="#cb17-128" aria-hidden="true" tabindex="-1"></a>: Description of Variables in NetCDF Files {#tbl-vars}</span>
+<span id="cb17-129"><a href="#cb17-129" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-130"><a href="#cb17-130" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Attributes</span></span>
+<span id="cb17-131"><a href="#cb17-131" aria-hidden="true" tabindex="-1"></a>Of the 33 available attributes we use the ones shown in @tbl-attrs:</span>
+<span id="cb17-132"><a href="#cb17-132" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- </span><span class="al">TODO</span><span class="co"> NEED TO CONFIRM IF THIS IS RIGHT --&gt;</span></span>
+<span id="cb17-133"><a href="#cb17-133" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-134"><a href="#cb17-134" aria-hidden="true" tabindex="-1"></a>| Attribute | Value               | Description                                                                                              |</span>
+<span id="cb17-135"><a href="#cb17-135" aria-hidden="true" tabindex="-1"></a>|-----------|---------------------|----------------------------------------------------------------------------------------------------------|</span>
+<span id="cb17-136"><a href="#cb17-136" aria-hidden="true" tabindex="-1"></a>| CDATE     | 2021063             | The creation date of the dataset, in YYYYDDD format.                                        |</span>
+<span id="cb17-137"><a href="#cb17-137" aria-hidden="true" tabindex="-1"></a>| CTIME     | 101914              | The creation time of the dataset, in HHMMSS format.                                        |</span>
+<span id="cb17-138"><a href="#cb17-138" aria-hidden="true" tabindex="-1"></a>| WDATE     | 2021063             | The date for which the weather forecast is initiated, in YYYYDDD format.                       |</span>
+<span id="cb17-139"><a href="#cb17-139" aria-hidden="true" tabindex="-1"></a>| WTIME     | 101914              | The time for which the weather forecast is initiated, in HHMMSS format.                       |</span>
+<span id="cb17-140"><a href="#cb17-140" aria-hidden="true" tabindex="-1"></a>| SDATE     | 2021063             | The date for which the smoke forecast is initiated,in YYYYDDD format.                            |</span>
+<span id="cb17-141"><a href="#cb17-141" aria-hidden="true" tabindex="-1"></a>| STIME     | 90000               | The time for which the weather forecast is initiated, in HHMMSS format.                            |</span>
+<span id="cb17-142"><a href="#cb17-142" aria-hidden="true" tabindex="-1"></a>| NCOLS     | 1041                | The number of columns in the spatial grid.                                                               |</span>
+<span id="cb17-143"><a href="#cb17-143" aria-hidden="true" tabindex="-1"></a>| NROWS     | 381                 | The number of rows in the spatial grid.                                                                  |</span>
+<span id="cb17-144"><a href="#cb17-144" aria-hidden="true" tabindex="-1"></a>| XORIG     | -156.0              | The origin (starting point) of the grid in the x-direction.                                              |</span>
+<span id="cb17-145"><a href="#cb17-145" aria-hidden="true" tabindex="-1"></a>| YORIG     | 32.0                | The origin (starting point) of the grid in the y-direction.                                              |</span>
+<span id="cb17-146"><a href="#cb17-146" aria-hidden="true" tabindex="-1"></a>| XCELL     | 0.10000000149011612 | The cell size in the x-direction.|</span>
+<span id="cb17-147"><a href="#cb17-147" aria-hidden="true" tabindex="-1"></a>| YCELL     | 0.10000000149011612 | The cell size in the y-direction.|</span>
+<span id="cb17-148"><a href="#cb17-148" aria-hidden="true" tabindex="-1"></a>: Description of Attributes in <span class="in">`dispersion.nc`</span> {#tbl-attrs}</span>
+<span id="cb17-149"><a href="#cb17-149" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-150"><a href="#cb17-150" aria-hidden="true" tabindex="-1"></a>Let's look closer at what exactly is within one NetCDF file in the following demo.</span>
+<span id="cb17-151"><a href="#cb17-151" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-152"><a href="#cb17-152" aria-hidden="true" tabindex="-1"></a><span class="fu">### NetCDF Visualization Demo {#sec-netcdf-demo}</span></span>
+<span id="cb17-153"><a href="#cb17-153" aria-hidden="true" tabindex="-1"></a>{{&lt; embed data_notebooks/data_source/netcdf_demo.ipynb echo=true &gt;}}</span>
+<span id="cb17-154"><a href="#cb17-154" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-155"><a href="#cb17-155" aria-hidden="true" tabindex="-1"></a>Now that we understand how to load the data and metadata from the file and process it for visualization, let's establish the data and metadata available to us across *all* NetCDF files.</span>
+<span id="cb17-156"><a href="#cb17-156" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-157"><a href="#cb17-157" aria-hidden="true" tabindex="-1"></a><span class="fu">## Information Across all NetCDF Files {#sec-collection-info}</span></span>
+<span id="cb17-158"><a href="#cb17-158" aria-hidden="true" tabindex="-1"></a>Knowing what is within one NetCDF file as well as the date range for which we can download them, let's establish the metadata associated with the NetCDF files as a *collection*.</span>
+<span id="cb17-159"><a href="#cb17-159" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-160"><a href="#cb17-160" aria-hidden="true" tabindex="-1"></a><span class="fu">### Disk Size</span></span>
+<span id="cb17-161"><a href="#cb17-161" aria-hidden="true" tabindex="-1"></a>For the time ranges we cover, @tbl-sizes shows how large the set of files per forecast ID are.</span>
+<span id="cb17-162"><a href="#cb17-162" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-163"><a href="#cb17-163" aria-hidden="true" tabindex="-1"></a>| Forecast ID    | Date Range                          | Size  | File Count |</span>
+<span id="cb17-164"><a href="#cb17-164" aria-hidden="true" tabindex="-1"></a>|----------------|-------------------------------------|-------|------------|</span>
+<span id="cb17-165"><a href="#cb17-165" aria-hidden="true" tabindex="-1"></a>| BSC00CA12-01   | March 4, 2021 - June 27, 2024          | 84G   | 1077       |</span>
+<span id="cb17-166"><a href="#cb17-166" aria-hidden="true" tabindex="-1"></a>| BSC06CA12-01   | March 4, 2021 - June 27, 2024          | 78G   | 1022       |</span>
+<span id="cb17-167"><a href="#cb17-167" aria-hidden="true" tabindex="-1"></a>| BSC12CA12-01   | March 3, 2021 - June 27, 2024          | 79G   | 1022       |</span>
+<span id="cb17-168"><a href="#cb17-168" aria-hidden="true" tabindex="-1"></a>| BSC18CA12-01   | March 4, 2021 - June 27, 2024          | 79G   | 1023       |</span>
+<span id="cb17-169"><a href="#cb17-169" aria-hidden="true" tabindex="-1"></a>| **Total**      |                                     | **320G** | **4144**   |</span>
+<span id="cb17-170"><a href="#cb17-170" aria-hidden="true" tabindex="-1"></a>: File Sizes and Counts for Each Forecast ID within the Specified Date Range {#tbl-sizes}</span>
+<span id="cb17-171"><a href="#cb17-171" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-172"><a href="#cb17-172" aria-hidden="true" tabindex="-1"></a><span class="fu">### Temporal Data Availability {#sec-temporal-visual}</span></span>
+<span id="cb17-173"><a href="#cb17-173" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-174"><a href="#cb17-174" aria-hidden="true" tabindex="-1"></a>{{&lt; embed data_notebooks/data_source/netcdf_collection_info.ipynb echo=true &gt;}}</span>
+<span id="cb17-175"><a href="#cb17-175" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-176"><a href="#cb17-176" aria-hidden="true" tabindex="-1"></a>Now that we know what exactly is within a NetCDF file and across all the NetCDF files, we will continue to describe our data curation process. Next we describe how we load all of the data available from UBC onto our machine.</span>
+<span id="cb17-177"><a href="#cb17-177" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-178"><a href="#cb17-178" aria-hidden="true" tabindex="-1"></a><span class="fu"># References</span></span>
+<span id="cb17-179"><a href="#cb17-179" aria-hidden="true" tabindex="-1"></a>firesmoke.ca website</span>
+<span id="cb17-180"><a href="#cb17-180" aria-hidden="true" tabindex="-1"></a>https://docs.xarray.dev/en/stable/internals/how-to-add-new-backend.html</span>
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div></div></div></div>
 </div> <!-- /content -->
 
 

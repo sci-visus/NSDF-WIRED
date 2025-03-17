@@ -18,17 +18,6 @@ from bokeh.models import (
     CustomJS,
 )
 
-# create a plot centering in north america
-min_coords = latlon_to_mercator(32, -160)
-max_coords = latlon_to_mercator(71, -51)
-p = figure(
-    x_range=(min_coords[0], max_coords[0]),
-    y_range=(min_coords[1], max_coords[1]),
-    x_axis_type="mercator",
-    y_axis_type="mercator",
-)
-p.add_tile(xyz.OpenStreetMap.Mapnik)
-
 ##### Init ColumnDataSource #####
 # Create a ColumnDataSource for the data
 # for now, we use all latitudes and longitudes
@@ -49,8 +38,20 @@ source = ColumnDataSource(
         color=[default_pm25_vals],
     )
 )
-for i in source.data:
-    print(f"shape of source.data[{i}] = {np.shape(source.data[i])}")
+
+##### Init bokeh figure #####
+# create a plot centering in north america
+min_coords = latlon_to_mercator(32, -160)
+max_coords = latlon_to_mercator(71, -51)
+p = figure(
+    x_range=(min_coords[0], max_coords[0]),
+    y_range=(min_coords[1], max_coords[1]),
+    x_axis_type="mercator",
+    y_axis_type="mercator",
+)
+p.add_tile(xyz.OpenStreetMap.Mapnik)
+p.scatter(x="x", y="y", source=source, color="color")
+
 ##### Widgets #####
 ### datepicker widget ###
 date_picker = DatePicker(
@@ -63,7 +64,6 @@ date_picker = DatePicker(
 
 # callback function to update selected data on new date
 def update_date(attr, old_date, new_date):
-    print("Selected date:", new_date)
     # update data
     new_data = dict()
 
@@ -86,7 +86,10 @@ date_picker.on_change("value", update_date)
 
 
 ### hour widget ###
-# https://discourse.bokeh.org/t/a-simple-way-to-custom-a-slider-as-a-dateslider/10005
+# refs:
+#   https://github.com/bokeh/bokeh/blob/branch-3.8/examples/server/app/gapminder/main.py
+#   https://discourse.bokeh.org/t/a-simple-way-to-custom-a-slider-as-a-dateslider/10005
+
 # hour slider shows hours for currently selected date
 curr_date = source.data["date"][0]
 year = int(curr_date[0:4])
@@ -111,14 +114,12 @@ hour_slider = Slider(
 def animate_update():
     # get next hour
     hour = hour_slider.value + 1
-    print(f"hour = {hour}")
     if hour > 23:
         hour = 0
     hour_slider.value = hour
 
 
 def update_hour(attr, old_hour, new_hour):
-    print("Selected hour:", new_hour)
     # update data
     new_data = dict()
 

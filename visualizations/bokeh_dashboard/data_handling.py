@@ -85,29 +85,29 @@ def get_latslons():
 
     # numpy array to return
     mercator_latlons = np.zeros((np.shape(data_stacked_index)[1], 2))
-    for i, tup in enumerate(latlon_to_mercator_iter(data_stacked_index.lat_lon.values)):
+    for i, tup in enumerate(latlon_to_mercator_iter(data_stacked_index.lat_lon.data)):
         mercator_latlons[i][0] = tup[0]
         mercator_latlons[i][1] = tup[1]
 
     return mercator_latlons
 
 
-def get_pm25(date, res):
+def get_pm25(date, hour, res):
     """
     Return a numpy array of pm2.5 values for all hours of given date at specified resolution
     :param string date: Date to query data for, in format "YYYY-MM-DD"
+    :param int hour: Hour to query data for, from hours 0-23
     :param int res: IDX resolution to use
     """
-    # get time range
+    # make timestamp
     print(date)
     year = int(date[0:4])
     month = int(date[5:7])
     day = int(date[-2:])
-    start_time = get_timestamp(year, month, day, 0)
-    end_time = get_timestamp(year, month, day, 23)
+    t = get_pd_timestamp(year, month, day, hour)
 
-    # get slice
+    # get slice, then flatten it
     # TODO: need to handle when a date that is unavailable is given, e.g. 2021-03-03
-    data_array_at_time = ds["PM25"].loc[start_time:end_time, :, :, res]
+    data_array_at_time = ds["PM25"].loc[t, :, :, res].data[:, :, 0]
 
-    return data_array_at_time.values
+    return data_array_at_time

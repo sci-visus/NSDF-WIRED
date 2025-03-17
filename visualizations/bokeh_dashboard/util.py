@@ -76,7 +76,7 @@ def parse_tflag(tflag):
     return full_datetime
 
 
-def get_timestamp(year, month, day, hour):
+def get_pd_timestamp(year, month, day, hour):
     """
     return a pandas timestamp using the given date-time arguments
     :param int year: year
@@ -100,3 +100,11 @@ def get_timestamp(year, month, day, hour):
 
     # Return the Pandas Timestamp object
     return pd.Timestamp(full_datetime)
+
+
+def get_datetime(year, month, day, hour):
+    """
+    Return a datetime timestamp
+    """
+    pd_t = get_pd_timestamp(year, month, day, hour)
+    return pd.to_datetime(pd_t, utc=True)

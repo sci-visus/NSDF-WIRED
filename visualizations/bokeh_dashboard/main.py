@@ -1,11 +1,20 @@
-# imports for data handling
+# imports for data handling and utility functions
 from data_handling import *
+from util import *
+from datetime import datetime, timedelta, timezone
 
 # imports for visualization
+from bokeh.layouts import layout
 import xyzservices.providers as xyz
 from bokeh.layouts import column, row
 from bokeh.plotting import figure, curdoc
-from bokeh.models import CustomJS, DatePicker, Slider, ColumnDataSource
+from bokeh.models import (
+    DatePicker,
+    Slider,
+    DateSlider,
+    ColumnDataSource,
+    Button,
+)
 
 # create a plot centering in north america
 min_coords = latlon_to_mercator(32, -160)
@@ -23,28 +32,30 @@ p.add_tile(xyz.OpenStreetMap.Mapnik)
 # for now, we use all latitudes and longitudes
 default_res = 0
 default_date = "2021-03-04"
+default_hour = 0
 latslons = get_latslons()
 default_lats = latslons[:, 0]
 default_lons = latslons[:, 1]
-default_pm25_vals = get_pm25(default_date, default_res)
-
+default_pm25_vals = get_pm25(default_date, default_hour, default_res)
 source = ColumnDataSource(
     data=dict(
         date=[default_date],
+        hour=[default_hour],
         res=[default_res],
-        lat=[default_lats],
-        lon=[default_lons],
-        pm25_vals=[default_pm25_vals],
+        x=[default_lats],
+        y=[default_lons],
+        color=[default_pm25_vals],
     )
 )
-
+for i in source.data:
+    print(f"shape of source.data[{i}] = {np.shape(source.data[i])}")
 ##### Widgets #####
 ### datepicker widget ###
 date_picker = DatePicker(
     title="Select date",
-    value="2021-03-03",
-    min_date="2021-03-04",
-    max_date="2024-06-27",
+    value=default_date,
+    min_date="2021-03-04",  # earliest available forecast
+    max_date="2024-06-27",  # last time we downloaded forecast
 )
 
 
@@ -55,34 +66,118 @@ def update_date(attr, old_date, new_date):
     new_data = dict()
 
     # keep the same
+    new_data["hour"] = source.data["hour"]
     new_data["res"] = source.data["res"]
-    new_data["lat"] = source.data["lat"]
-    new_data["lon"] = source.data["lon"]
+    new_data["x"] = source.data["x"]
+    new_data["y"] = source.data["y"]
 
     # new date and new pm2.5 values
     new_data["date"] = [new_date]
-    new_data["pm25_vals"] = [get_pm25(new_date, new_data["res"])]
+    new_data["color"] = [
+        get_pm25(new_data["date"][0], new_data["hour"][0], new_data["res"][0])
+    ]
     source.data = new_data
 
 
 # when date selected changes, call update_date
 date_picker.on_change("value", update_date)
 
+
+### hour widget ###
+# hour slider shows hours for currently selected date
+curr_date = source.data["date"][0]
+year = int(curr_date[0:4])
+month = int(curr_date[5:7])
+day = int(curr_date[-2:])
+# https://stackoverflow.com/questions/15307623/cant-compare-naive-and-aware-datetime-now-challenge-datetime-end
+hr_start = get_datetime(year, month, day, 0)
+hr_end = get_datetime(year, month, day, 23)
+print(type(hr_end))
+hour_slider = DateSlider(
+    start=hr_start,
+    end=hr_end,
+    value=hr_start,
+    step=3_600_000,
+    title="Hour",
+    format="%Y-%m-%d %H:%M",
+)
+
+
+def animate_update():
+    # get next hour
+    hour = hour_slider.value_as_datetime + timedelta(hours=1)
+    print(f"hour = {hour}")
+    print(f"hr_end = {hr_end}")
+    if hour > hr_end:
+        hour = hr_start
+    hour_slider.value = hour
+
+
+def update_hour(attr, old_hour, new_hour):
+    print("Selected hour:", new_hour)
+    # update data
+    new_data = dict()
+
+    # keep the same
+    new_data["date"] = source.data["date"]
+    new_data["res"] = source.data["res"]
+    new_data["x"] = source.data["x"]
+    new_data["y"] = source.data["y"]
+
+    # new date and new pm2.5 values
+    new_data["hour"] = [new_hour]
+    new_data["color"] = [
+        get_pm25(new_data["date"][0], new_data["hour"][0], new_data["res"][0])
+    ]
+    source.data = new_data
+
+
+hour_slider.on_change("value", update_hour)
+
+callback_id = None
+
+
+def animate():
+    global callback_id
+    if button.label == "► Play":
+        button.label = "❚❚ Pause"
+        callback_id = curdoc().add_periodic_callback(animate_update, 200)
+    else:
+        button.label = "► Play"
+        curdoc().remove_periodic_callback(callback_id)
+
+
+button = Button(label="► Play", width=60)
+button.on_event("button_click", animate)
+
 ### resolution widget ###
-res_picker = Slider(start=-19, end=0, value=0, step=1, title="Resolution")
+res_slider = Slider(start=-19, end=0, value=default_res, step=1, title="Resolution")
 
 
 # callback function to update selected resolution
 def update_res(attr, old_res, new_res):
     print("Selected resolution:", new_res)
     # update data
-    new_data = source.data
-    new_data["res"] = new_res
-    new_data["pm25_vals"] = get_pm25(new_data["date"], new_res)
+    new_data = dict()
+
+    # keep the same
+    new_data["date"] = source.data["date"]
+    new_data["hour"] = source.data["hour"]
+    new_data["x"] = source.data["x"]
+    new_data["y"] = source.data["y"]
+
+    # new res and new pm2.5 values
+    new_data["res"] = [new_res]
+    new_data["color"] = [
+        get_pm25(new_data["date"][0], new_data["hour"][0], new_data["res"][0])
+    ]
+    source.data = new_data
 
 
-res_picker.on_change("value", update_res)
+res_slider.on_change("value", update_res)
 
 # set up the layout and add to the current document
-layout = row(column(date_picker, res_picker), p)
+# sizing_mode="scale_width"
+layout = layout([[date_picker, res_slider], [hour_slider, button], [p]])
 curdoc().add_root(layout)
+curdoc().title = "UBC FireSmoke Data Curation Dashboard"

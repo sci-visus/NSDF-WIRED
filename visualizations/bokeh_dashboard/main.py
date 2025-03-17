@@ -2,6 +2,7 @@
 from data_handling import *
 from util import *
 from datetime import datetime, timedelta, timezone
+import pandas as pd
 
 # imports for visualization
 from bokeh.layouts import layout
@@ -14,6 +15,7 @@ from bokeh.models import (
     DateSlider,
     ColumnDataSource,
     Button,
+    CustomJS,
 )
 
 # create a plot centering in north america
@@ -84,32 +86,34 @@ date_picker.on_change("value", update_date)
 
 
 ### hour widget ###
+# https://discourse.bokeh.org/t/a-simple-way-to-custom-a-slider-as-a-dateslider/10005
 # hour slider shows hours for currently selected date
 curr_date = source.data["date"][0]
 year = int(curr_date[0:4])
 month = int(curr_date[5:7])
 day = int(curr_date[-2:])
+step = timedelta(hours=1)
 # https://stackoverflow.com/questions/15307623/cant-compare-naive-and-aware-datetime-now-challenge-datetime-end
 hr_start = get_datetime(year, month, day, 0)
 hr_end = get_datetime(year, month, day, 23)
-print(type(hr_end))
-hour_slider = DateSlider(
-    start=hr_start,
-    end=hr_end,
-    value=hr_start,
-    step=3_600_000,
-    title="Hour",
-    format="%Y-%m-%d %H:%M",
+step_times = pd.date_range(start=hr_start, end=hr_end, freq=step, tz="utc")
+t = [str(t) for t in step_times]
+hour_slider = Slider(
+    start=0,
+    end=len(step_times) - 1,
+    value=0,
+    step=1,
+    title=f"{curr_date} {t[0]}",
+    show_value=False,
 )
 
 
 def animate_update():
     # get next hour
-    hour = hour_slider.value_as_datetime + timedelta(hours=1)
+    hour = hour_slider.value + 1
     print(f"hour = {hour}")
-    print(f"hr_end = {hr_end}")
-    if hour > hr_end:
-        hour = hr_start
+    if hour > 23:
+        hour = 0
     hour_slider.value = hour
 
 
@@ -132,6 +136,16 @@ def update_hour(attr, old_hour, new_hour):
     source.data = new_data
 
 
+hour_slider.js_on_change(
+    "value",
+    CustomJS(
+        args=dict(sl=hour_slider, t=t, d=curr_date),
+        code="""
+    console.log('hour_slider: value=' + this.value, this.toString())
+    sl.title = t[this.value];
+""",
+    ),
+)
 hour_slider.on_change("value", update_hour)
 
 callback_id = None

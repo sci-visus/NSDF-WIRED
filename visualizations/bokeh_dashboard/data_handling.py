@@ -100,7 +100,6 @@ def get_pm25(date, hour, res):
     :param int res: IDX resolution to use
     """
     # make timestamp
-    print(date)
     year = int(date[0:4])
     month = int(date[5:7])
     day = int(date[-2:])
@@ -110,4 +109,5 @@ def get_pm25(date, hour, res):
     # TODO: need to handle when a date that is unavailable is given, e.g. 2021-03-03
     data_array_at_time = ds["PM25"].loc[t, :, :, res].data[:, :, 0]
 
-    return data_array_at_time
+    # TODO: is this flattened right?
+    return data_array_at_time.flatten()

@@ -30,12 +30,9 @@ default_lons = latslons[:, 1]
 default_pm25_vals = get_pm25(default_date, default_hour, default_res)
 source = ColumnDataSource(
     data=dict(
-        date=[default_date],
-        hour=[default_hour],
-        res=[default_res],
-        x=[default_lats],
-        y=[default_lons],
-        color=[default_pm25_vals],
+        x=default_lats,
+        y=default_lons,
+        color=default_pm25_vals,
     )
 )
 
@@ -50,7 +47,8 @@ p = figure(
     y_axis_type="mercator",
 )
 p.add_tile(xyz.OpenStreetMap.Mapnik)
-p.scatter(x="x", y="y", source=source, color="color")
+# print(source.data)
+# p.scatter(x="x", y="y", source=source, color="color")
 
 ##### Widgets #####
 ### datepicker widget ###
@@ -68,17 +66,16 @@ def update_date(attr, old_date, new_date):
     new_data = dict()
 
     # keep the same
-    new_data["hour"] = source.data["hour"]
-    new_data["res"] = source.data["res"]
     new_data["x"] = source.data["x"]
     new_data["y"] = source.data["y"]
 
     # new date and new pm2.5 values
-    new_data["date"] = [new_date]
-    new_data["color"] = [
-        get_pm25(new_data["date"][0], new_data["hour"][0], new_data["res"][0])
-    ]
+    new_data["color"] = get_pm25(new_date, hour_slider.value, res_slider.value)
     source.data = new_data
+    # print(source.data)
+    print(f"np.shape(source.data['x']) = {np.shape(source.data['x'])}")
+    print(f"np.shape(source.data['y']) = {np.shape(source.data['y'])}")
+    print(f"np.shape(source.data['color']) = {np.shape(source.data['color'])}")
 
 
 # when date selected changes, call update_date
@@ -91,7 +88,7 @@ date_picker.on_change("value", update_date)
 #   https://discourse.bokeh.org/t/a-simple-way-to-custom-a-slider-as-a-dateslider/10005
 
 # hour slider shows hours for currently selected date
-curr_date = source.data["date"][0]
+curr_date = date_picker.value
 year = int(curr_date[0:4])
 month = int(curr_date[5:7])
 day = int(curr_date[-2:])
@@ -106,7 +103,7 @@ hour_slider = Slider(
     end=len(step_times) - 1,
     value=0,
     step=1,
-    title=f"{curr_date} {t[0]}",
+    title=f"{t[0]}",
     show_value=False,
 )
 
@@ -124,16 +121,12 @@ def update_hour(attr, old_hour, new_hour):
     new_data = dict()
 
     # keep the same
-    new_data["date"] = source.data["date"]
-    new_data["res"] = source.data["res"]
     new_data["x"] = source.data["x"]
     new_data["y"] = source.data["y"]
 
     # new date and new pm2.5 values
     new_data["hour"] = [new_hour]
-    new_data["color"] = [
-        get_pm25(new_data["date"][0], new_data["hour"][0], new_data["res"][0])
-    ]
+    new_data["color"] = [get_pm25(date_picker.value, new_hour, res_slider.value)]
     source.data = new_data
 
 
@@ -176,16 +169,11 @@ def update_res(attr, old_res, new_res):
     new_data = dict()
 
     # keep the same
-    new_data["date"] = source.data["date"]
-    new_data["hour"] = source.data["hour"]
     new_data["x"] = source.data["x"]
     new_data["y"] = source.data["y"]
 
     # new res and new pm2.5 values
-    new_data["res"] = [new_res]
-    new_data["color"] = [
-        get_pm25(new_data["date"][0], new_data["hour"][0], new_data["res"][0])
-    ]
+    new_data["color"] = get_pm25(date_picker.value, hour_slider.value, new_res)
     source.data = new_data
 
 

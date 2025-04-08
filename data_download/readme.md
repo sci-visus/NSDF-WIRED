@@ -1,4 +1,4 @@
-## Here you find download scripts for all the netCDF files available from [firesmoke.ca](https://firesmoke.ca/forecasts)
+## Here you find download scripts for all the NetCDF files available from [firesmoke.ca](https://firesmoke.ca/forecasts)
 
 ### Instructions for downloading from firesmoke.ca
 Each download script version uses these primary instructions.
@@ -27,7 +27,7 @@ We use `wget` to download the content at the URL specified.
 
 get_data_v1:
 ---
-We use `requests` now, as this allow us to download _only_ netCDF files if they exist at the URL. `wget` downloads whatever is at the specified URL whether it is a netCDF file or not, which we have had to clean up.
+We use `requests` now, as this allow us to download _only_ NetCDF files if they exist at the URL. `wget` downloads whatever is at the specified URL whether it is a NetCDF file or not, which we have had to clean up.
 
 get_data_v1-westerncanada:
 ---

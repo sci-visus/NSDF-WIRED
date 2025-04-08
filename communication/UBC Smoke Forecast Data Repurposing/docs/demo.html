@@ -1,0 +1,1766 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.557">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>UBC Smoke Forecast Data Repurposing and Distribution - 1&nbsp; IDX File Demo</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./intro.html" rel="next">
+<link href="./index.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./demo.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">IDX File Demo</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">UBC Smoke Forecast Data Repurposing and Distribution</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./demo.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">IDX File Demo</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sys_specs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">System and Environment</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data_source.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">The Data Source</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data_loading.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Data Loading</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data_conversion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Data Conversion</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data_validation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Data Validation</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        
+    <div class="quarto-code-links"><h2>Code Links</h2><ul><li><a href="https://github.com/sci-visus/NSDF-WIRED/blob/main/communication/UBC%20Smoke%20Forecast%20Data%20Curation/data_notebooks/demo/demo.ipynb"><i class="bi bi-file-code"></i>Demo Download</a></li></ul></div></div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">IDX File Demo</span></h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li><li><hr class="dropdown-divider"></li><li><a id="quarto-view-source" class="dropdown-item" href="javascript:void(0)" role="button">View Source</a></li></ul></div></div>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<!-- NOTES: change level to 3/4 -->
+<div class="quarto-embed-nb-cell" data-notebook="/Users/arleth/Research_Work/NSDF-WIRED/communication/UBC Smoke Forecast Data Repurposing/data_notebooks/demo/demo.ipynb" data-notebook-title="WIRED Global Center  + National Science Data Fabric collaboration: Jupyter Notebook using 3 years of smoke forecast data over US and Canada stored in the cloud and dsitributed via regular internet connection." data-notebook-cellid="ca4a48bc-5759-4493-9c86-8115d81615f7">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;"><img src="https://www.sci.utah.edu/~pascucci/public/wired-logo-small.png" class="img-fluid" alt="wired"></th>
+<th style="text-align: center;"><a href="https://resilience.utah.edu/">WIRED Global Center</a> + <a href="https://nationalsciencedatafabric.org/">National Science Data Fabric</a> <a href="https://jupyter.org/">Jupyter notebook</a> <br> created by <a href="https://arlethzuri.github.io/">Arleth Z. Salinas</a>, and <a href="http://cedmav.com/">Valerio Pascucci</a></th>
+<th style="text-align: right;"><img src="https://www.sci.utah.edu/~pascucci/public/NSDF-smaller.PNG" class="img-fluid" alt="nsdf"></th>
+</tr>
+</thead>
+
+</table>
+<section id="wired-global-center-national-science-data-fabric-collaboration-jupyter-notebook-using-3-years-of-smoke-forecast-data-over-us-and-canada-stored-in-the-cloud-and-dsitributed-via-regular-internet-connection." class="level3" data-number="1.0.1">
+<h3 data-number="1.0.1" class="anchored" data-anchor-id="wired-global-center-national-science-data-fabric-collaboration-jupyter-notebook-using-3-years-of-smoke-forecast-data-over-us-and-canada-stored-in-the-cloud-and-dsitributed-via-regular-internet-connection."><span class="header-section-number">1.0.1</span> WIRED Global Center + National Science Data Fabric collaboration: Jupyter Notebook using 3 years of smoke forecast data over US and Canada stored in the cloud and dsitributed via regular internet connection.</h3>
+<p>Data source: <a href="https://bluesky4.eos.ubc.ca/">BlueSky Canada Smoke Forecast</a></p>
+</section>
+<section id="this-notebook-provide-the-instructions-on-how-to-read-ubc-firesmoke-data-from-firsmoke_metadata.nc-using-xarray-and-the-openvisus-xarray-backend." class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="this-notebook-provide-the-instructions-on-how-to-read-ubc-firesmoke-data-from-firsmoke_metadata.nc-using-xarray-and-the-openvisus-xarray-backend."><span class="header-section-number">1.1</span> This notebook provide the instructions on how to read UBC firesmoke data from <a href="https://github.com/sci-visus/NSDF-WIRED/raw/main/data/firesmoke_metadata.nc"><code>firsmoke_metadata.nc</code></a> using xarray and the OpenVisus xarray backend.</h2>
+<p>Dashboard visible here: http://chpc3.nationalsciencedatafabric.org:9988/dashboards</p>
+</section>
+<section id="step-1-importing-the-libraries" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="step-1-importing-the-libraries"><span class="header-section-number">1.2</span> <strong>Step 1: Importing the libraries</strong></h2>
+<section id="please-be-sure-to-have-libraries-installed" class="level3" data-number="1.2.1">
+<h3 data-number="1.2.1" class="anchored" data-anchor-id="please-be-sure-to-have-libraries-installed"><span class="header-section-number">1.2.1</span> Please be sure to have libraries installed</h3>
+<div id="c9e182d7" class="cell" data-tags="[]" data-execution_count="1">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># for numerical work</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># for accessing file system</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># for loading netcdf files, for metadata</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> xarray <span class="im">as</span> xr</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># for connecting OpenVisus framework to xarray</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co"># from https://github.com/sci-visus/openvisuspy, </span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> openvisuspy.xarray_backend <span class="im">import</span> OpenVisusBackendEntrypoint</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Used for processing netCDF time data</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> datetime</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Used for indexing via metadata</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="co"># for plotting</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> cartopy.crs <span class="im">as</span> ccrs</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="co">#Stores the OpenVisus cache in the local direcrtory </span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>os.environ[<span class="st">"VISUS_CACHE"</span>]<span class="op">=</span><span class="st">"./visus_cache_can_be_erased"</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>os.environ[<span class="st">'CURL_CA_BUNDLE'</span>] <span class="op">=</span> <span class="st">''</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section>
+</section>
+<section id="step-2-reading-the-data-metadata-from-file" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="step-2-reading-the-data-metadata-from-file"><span class="header-section-number">1.3</span> <strong>Step 2: Reading the data &amp; metadata from file</strong></h2>
+<section id="in-this-section-we-load-our-data-using-xr.open_dataset." class="level3" data-number="1.3.1">
+<h3 data-number="1.3.1" class="anchored" data-anchor-id="in-this-section-we-load-our-data-using-xr.open_dataset."><span class="header-section-number">1.3.1</span> In this section, we load our data using <code>xr.open_dataset</code>.</h3>
+<div id="4c25b405-fa12-4831-b51a-116da6c88a77" class="cell" data-tags="[]" data-execution_count="2">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># path to tiny NetCDF</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> <span class="st">'https://github.com/sci-visus/NSDF-WIRED/raw/main/data/firesmoke_metadata.nc'</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Download the file using requests</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>response <span class="op">=</span> requests.get(url)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>local_netcdf <span class="op">=</span> <span class="st">'firesmoke_metadata.nc'</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(local_netcdf, <span class="st">'wb'</span>) <span class="im">as</span> f:</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    f.write(response.content)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co"># open tiny netcdf with xarray and OpenVisus backend</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>ds <span class="op">=</span> xr.open_dataset(local_netcdf, engine<span class="op">=</span>OpenVisusBackendEntrypoint)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>ov.LoadDataset(http://atlantis.sci.utah.edu/mod_visus?dataset=UBC_fire_smoke_BSC&amp;cached=1)
+PM25
+Adding field  PM25 shape  [27357, 381, 1081, 21] dtype  float32 labels  ['time', 'ROW', 'COL', 'resolution'] Max Resolution  20</code></pre>
+</div>
+</div>
+<div id="3ccc8607-1ead-46fd-8e17-37605ee3207b" class="cell" data-tags="[]" data-execution_count="3">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>ds</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="3">
+<div><svg style="position: absolute; width: 0; height: 0; overflow: hidden">
+<defs>
+<symbol id="icon-database" viewbox="0 0 32 32">
+<path d="M16 0c-8.837 0-16 2.239-16 5v4c0 2.761 7.163 5 16 5s16-2.239 16-5v-4c0-2.761-7.163-5-16-5z"></path>
+<path d="M16 17c-8.837 0-16-2.239-16-5v6c0 2.761 7.163 5 16 5s16-2.239 16-5v-6c0 2.761-7.163 5-16 5z"></path>
+<path d="M16 26c-8.837 0-16-2.239-16-5v6c0 2.761 7.163 5 16 5s16-2.239 16-5v-6c0 2.761-7.163 5-16 5z"></path>
+</symbol>
+<symbol id="icon-file-text2" viewbox="0 0 32 32">
+<path d="M28.681 7.159c-0.694-0.947-1.662-2.053-2.724-3.116s-2.169-2.030-3.116-2.724c-1.612-1.182-2.393-1.319-2.841-1.319h-15.5c-1.378 0-2.5 1.121-2.5 2.5v27c0 1.378 1.122 2.5 2.5 2.5h23c1.378 0 2.5-1.122 2.5-2.5v-19.5c0-0.448-0.137-1.23-1.319-2.841zM24.543 5.457c0.959 0.959 1.712 1.825 2.268 2.543h-4.811v-4.811c0.718 0.556 1.584 1.309 2.543 2.268zM28 29.5c0 0.271-0.229 0.5-0.5 0.5h-23c-0.271 0-0.5-0.229-0.5-0.5v-27c0-0.271 0.229-0.5 0.5-0.5 0 0 15.499-0 15.5 0v7c0 0.552 0.448 1 1 1h7v19.5z"></path>
+<path d="M23 26h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+<path d="M23 22h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+<path d="M23 18h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+</symbol>
+</defs>
+</svg>
+<style>/* CSS stylesheet for displaying xarray objects in jupyterlab.
+ *
+ */
+
+:root {
+  --xr-font-color0: var(--jp-content-font-color0, rgba(0, 0, 0, 1));
+  --xr-font-color2: var(--jp-content-font-color2, rgba(0, 0, 0, 0.54));
+  --xr-font-color3: var(--jp-content-font-color3, rgba(0, 0, 0, 0.38));
+  --xr-border-color: var(--jp-border-color2, #e0e0e0);
+  --xr-disabled-color: var(--jp-layout-color3, #bdbdbd);
+  --xr-background-color: var(--jp-layout-color0, white);
+  --xr-background-color-row-even: var(--jp-layout-color1, white);
+  --xr-background-color-row-odd: var(--jp-layout-color2, #eeeeee);
+}
+
+html[theme=dark],
+body[data-theme=dark],
+body.vscode-dark {
+  --xr-font-color0: rgba(255, 255, 255, 1);
+  --xr-font-color2: rgba(255, 255, 255, 0.54);
+  --xr-font-color3: rgba(255, 255, 255, 0.38);
+  --xr-border-color: #1F1F1F;
+  --xr-disabled-color: #515151;
+  --xr-background-color: #111111;
+  --xr-background-color-row-even: #111111;
+  --xr-background-color-row-odd: #313131;
+}
+
+.xr-wrap {
+  display: block !important;
+  min-width: 300px;
+  max-width: 700px;
+}
+
+.xr-text-repr-fallback {
+  /* fallback to plain text repr when CSS is not injected (untrusted notebook) */
+  display: none;
+}
+
+.xr-header {
+  padding-top: 6px;
+  padding-bottom: 6px;
+  margin-bottom: 4px;
+  border-bottom: solid 1px var(--xr-border-color);
+}
+
+.xr-header > div,
+.xr-header > ul {
+  display: inline;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.xr-obj-type,
+.xr-array-name {
+  margin-left: 2px;
+  margin-right: 10px;
+}
+
+.xr-obj-type {
+  color: var(--xr-font-color2);
+}
+
+.xr-sections {
+  padding-left: 0 !important;
+  display: grid;
+  grid-template-columns: 150px auto auto 1fr 20px 20px;
+}
+
+.xr-section-item {
+  display: contents;
+}
+
+.xr-section-item input {
+  display: none;
+}
+
+.xr-section-item input + label {
+  color: var(--xr-disabled-color);
+}
+
+.xr-section-item input:enabled + label {
+  cursor: pointer;
+  color: var(--xr-font-color2);
+}
+
+.xr-section-item input:enabled + label:hover {
+  color: var(--xr-font-color0);
+}
+
+.xr-section-summary {
+  grid-column: 1;
+  color: var(--xr-font-color2);
+  font-weight: 500;
+}
+
+.xr-section-summary > span {
+  display: inline-block;
+  padding-left: 0.5em;
+}
+
+.xr-section-summary-in:disabled + label {
+  color: var(--xr-font-color2);
+}
+
+.xr-section-summary-in + label:before {
+  display: inline-block;
+  content: '►';
+  font-size: 11px;
+  width: 15px;
+  text-align: center;
+}
+
+.xr-section-summary-in:disabled + label:before {
+  color: var(--xr-disabled-color);
+}
+
+.xr-section-summary-in:checked + label:before {
+  content: '▼';
+}
+
+.xr-section-summary-in:checked + label > span {
+  display: none;
+}
+
+.xr-section-summary,
+.xr-section-inline-details {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.xr-section-inline-details {
+  grid-column: 2 / -1;
+}
+
+.xr-section-details {
+  display: none;
+  grid-column: 1 / -1;
+  margin-bottom: 5px;
+}
+
+.xr-section-summary-in:checked ~ .xr-section-details {
+  display: contents;
+}
+
+.xr-array-wrap {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 20px auto;
+}
+
+.xr-array-wrap > label {
+  grid-column: 1;
+  vertical-align: top;
+}
+
+.xr-preview {
+  color: var(--xr-font-color3);
+}
+
+.xr-array-preview,
+.xr-array-data {
+  padding: 0 5px !important;
+  grid-column: 2;
+}
+
+.xr-array-data,
+.xr-array-in:checked ~ .xr-array-preview {
+  display: none;
+}
+
+.xr-array-in:checked ~ .xr-array-data,
+.xr-array-preview {
+  display: inline-block;
+}
+
+.xr-dim-list {
+  display: inline-block !important;
+  list-style: none;
+  padding: 0 !important;
+  margin: 0;
+}
+
+.xr-dim-list li {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+}
+
+.xr-dim-list:before {
+  content: '(';
+}
+
+.xr-dim-list:after {
+  content: ')';
+}
+
+.xr-dim-list li:not(:last-child):after {
+  content: ',';
+  padding-right: 5px;
+}
+
+.xr-has-index {
+  font-weight: bold;
+}
+
+.xr-var-list,
+.xr-var-item {
+  display: contents;
+}
+
+.xr-var-item > div,
+.xr-var-item label,
+.xr-var-item > .xr-var-name span {
+  background-color: var(--xr-background-color-row-even);
+  margin-bottom: 0;
+}
+
+.xr-var-item > .xr-var-name:hover span {
+  padding-right: 5px;
+}
+
+.xr-var-list > li:nth-child(odd) > div,
+.xr-var-list > li:nth-child(odd) > label,
+.xr-var-list > li:nth-child(odd) > .xr-var-name span {
+  background-color: var(--xr-background-color-row-odd);
+}
+
+.xr-var-name {
+  grid-column: 1;
+}
+
+.xr-var-dims {
+  grid-column: 2;
+}
+
+.xr-var-dtype {
+  grid-column: 3;
+  text-align: right;
+  color: var(--xr-font-color2);
+}
+
+.xr-var-preview {
+  grid-column: 4;
+}
+
+.xr-index-preview {
+  grid-column: 2 / 5;
+  color: var(--xr-font-color2);
+}
+
+.xr-var-name,
+.xr-var-dims,
+.xr-var-dtype,
+.xr-preview,
+.xr-attrs dt {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-right: 10px;
+}
+
+.xr-var-name:hover,
+.xr-var-dims:hover,
+.xr-var-dtype:hover,
+.xr-attrs dt:hover {
+  overflow: visible;
+  width: auto;
+  z-index: 1;
+}
+
+.xr-var-attrs,
+.xr-var-data,
+.xr-index-data {
+  display: none;
+  background-color: var(--xr-background-color) !important;
+  padding-bottom: 5px !important;
+}
+
+.xr-var-attrs-in:checked ~ .xr-var-attrs,
+.xr-var-data-in:checked ~ .xr-var-data,
+.xr-index-data-in:checked ~ .xr-index-data {
+  display: block;
+}
+
+.xr-var-data > table {
+  float: right;
+}
+
+.xr-var-name span,
+.xr-var-data,
+.xr-index-name div,
+.xr-index-data,
+.xr-attrs {
+  padding-left: 25px !important;
+}
+
+.xr-attrs,
+.xr-var-attrs,
+.xr-var-data,
+.xr-index-data {
+  grid-column: 1 / -1;
+}
+
+dl.xr-attrs {
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 125px auto;
+}
+
+.xr-attrs dt,
+.xr-attrs dd {
+  padding: 0;
+  margin: 0;
+  float: left;
+  padding-right: 10px;
+  width: auto;
+}
+
+.xr-attrs dt {
+  font-weight: normal;
+  grid-column: 1;
+}
+
+.xr-attrs dt:hover span {
+  display: inline-block;
+  background: var(--xr-background-color);
+  padding-right: 10px;
+}
+
+.xr-attrs dd {
+  grid-column: 2;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.xr-icon-database,
+.xr-icon-file-text2,
+.xr-no-icon {
+  display: inline-block;
+  vertical-align: middle;
+  width: 1em;
+  height: 1.5em !important;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+</style><pre class="xr-text-repr-fallback">&lt;xarray.Dataset&gt;
+Dimensions:            (time: 27357, ROW: 381, COL: 1081, resolution: 21,
+                        VAR: 1, DATE-TIME: 2)
+Dimensions without coordinates: time, ROW, COL, resolution, VAR, DATE-TIME
+Data variables:
+    PM25               (time, ROW, COL, resolution) float32 ...
+    TFLAG              (time, VAR, DATE-TIME) int32 ...
+    wrf_arw_init_time  (time, VAR, DATE-TIME) int32 ...
+    resampled          (time) bool ...
+    CDATE              (time) int32 ...
+    CTIME              (time) int32 ...
+    WDATE              (time) int32 ...
+    WTIME              (time) int32 ...
+    SDATE              (time) int32 ...
+    STIME              (time) int32 ...
+Attributes: (12/28)
+    IOAPI_VERSION:  $Id: @(#) ioapi library version 3.0 $                    ...
+    EXEC_ID:        ????????????????                                         ...
+    FTYPE:          1
+    TSTEP:          10000
+    NTHIK:          1
+    NCOLS:          1081
+    ...             ...
+    GDNAM:          HYSPLIT CONC    
+    UPNAM:          hysplit2netCDF  
+    VAR-LIST:       PM25            
+    FILEDESC:       Hysplit Concentration Model Output                       ...
+    HISTORY:        
+    idx_url:        http://atlantis.sci.utah.edu/mod_visus?dataset=UBC_fire_s...</pre><div class="xr-wrap" style="display:none"><div class="xr-header"><div class="xr-obj-type">xarray.Dataset</div></div><ul class="xr-sections"><li class="xr-section-item"><input id="section-6a892371-5cd3-4ddf-a467-207a10dbf745" class="xr-section-summary-in" type="checkbox" disabled=""><label for="section-6a892371-5cd3-4ddf-a467-207a10dbf745" class="xr-section-summary" title="Expand/collapse section">Dimensions:</label><div class="xr-section-inline-details"><ul class="xr-dim-list"><li><span>time</span>: 27357</li><li><span>ROW</span>: 381</li><li><span>COL</span>: 1081</li><li><span>resolution</span>: 21</li><li><span>VAR</span>: 1</li><li><span>DATE-TIME</span>: 2</li></ul></div><div class="xr-section-details"></div></li><li class="xr-section-item"><input id="section-486e9974-3b24-4f04-9733-50d83d4fba20" class="xr-section-summary-in" type="checkbox" disabled=""><label for="section-486e9974-3b24-4f04-9733-50d83d4fba20" class="xr-section-summary" title="Expand/collapse section">Coordinates: <span>(0)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><ul class="xr-var-list"></ul></div></li><li class="xr-section-item"><input id="section-7e0072bf-4613-43a2-99eb-bcf43ddb2fe8" class="xr-section-summary-in" type="checkbox" checked=""><label for="section-7e0072bf-4613-43a2-99eb-bcf43ddb2fe8" class="xr-section-summary">Data variables: <span>(10)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><ul class="xr-var-list"><li class="xr-var-item"><div class="xr-var-name"><span>PM25</span></div><div class="xr-var-dims">(time, ROW, COL, resolution)</div><div class="xr-var-dtype">float32</div><div class="xr-var-preview xr-preview">...</div><input id="attrs-da27b184-0ccb-415b-96e1-82b466e2f16f" class="xr-var-attrs-in" type="checkbox"><label for="attrs-da27b184-0ccb-415b-96e1-82b466e2f16f" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-5e763316-9f62-4e3e-b075-9d5450220ff6" class="xr-var-data-in" type="checkbox"><label for="data-5e763316-9f62-4e3e-b075-9d5450220ff6" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"><dt><span>long_name :</span></dt><dd>PM25            </dd><dt><span>units :</span></dt><dd>ug/m^3          </dd><dt><span>var_desc :</span></dt><dd>PM25                                                                            </dd></dl></div><div class="xr-var-data"><pre>[236612908917 values with dtype=float32]</pre></div></li><li class="xr-var-item"><div class="xr-var-name"><span>TFLAG</span></div><div class="xr-var-dims">(time, VAR, DATE-TIME)</div><div class="xr-var-dtype">int32</div><div class="xr-var-preview xr-preview">...</div><input id="attrs-6c367fde-5101-41a5-b91d-b7bfdc329663" class="xr-var-attrs-in" type="checkbox" disabled=""><label for="attrs-6c367fde-5101-41a5-b91d-b7bfdc329663" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-60bb7ce5-08ab-4071-8967-6102800a8b72" class="xr-var-data-in" type="checkbox"><label for="data-60bb7ce5-08ab-4071-8967-6102800a8b72" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"></dl></div><div class="xr-var-data"><pre>[54714 values with dtype=int32]</pre></div></li><li class="xr-var-item"><div class="xr-var-name"><span>wrf_arw_init_time</span></div><div class="xr-var-dims">(time, VAR, DATE-TIME)</div><div class="xr-var-dtype">int32</div><div class="xr-var-preview xr-preview">...</div><input id="attrs-5fb34d4a-bfe7-4783-b3ad-007ee71d9fb3" class="xr-var-attrs-in" type="checkbox" disabled=""><label for="attrs-5fb34d4a-bfe7-4783-b3ad-007ee71d9fb3" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-66a08246-ac19-4575-95bf-d1f4784f7775" class="xr-var-data-in" type="checkbox"><label for="data-66a08246-ac19-4575-95bf-d1f4784f7775" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"></dl></div><div class="xr-var-data"><pre>[54714 values with dtype=int32]</pre></div></li><li class="xr-var-item"><div class="xr-var-name"><span>resampled</span></div><div class="xr-var-dims">(time)</div><div class="xr-var-dtype">bool</div><div class="xr-var-preview xr-preview">...</div><input id="attrs-6b006691-dee8-4ac7-acb9-1e2b547b6b70" class="xr-var-attrs-in" type="checkbox" disabled=""><label for="attrs-6b006691-dee8-4ac7-acb9-1e2b547b6b70" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-b89a0fe9-e10a-4cee-b744-3d5938b3374d" class="xr-var-data-in" type="checkbox"><label for="data-b89a0fe9-e10a-4cee-b744-3d5938b3374d" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"></dl></div><div class="xr-var-data"><pre>[27357 values with dtype=bool]</pre></div></li><li class="xr-var-item"><div class="xr-var-name"><span>CDATE</span></div><div class="xr-var-dims">(time)</div><div class="xr-var-dtype">int32</div><div class="xr-var-preview xr-preview">...</div><input id="attrs-925873e8-dd2c-4d5d-a60d-a840d83544aa" class="xr-var-attrs-in" type="checkbox" disabled=""><label for="attrs-925873e8-dd2c-4d5d-a60d-a840d83544aa" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-d6e269e1-7254-41eb-aa2e-b979c0533498" class="xr-var-data-in" type="checkbox"><label for="data-d6e269e1-7254-41eb-aa2e-b979c0533498" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"></dl></div><div class="xr-var-data"><pre>[27357 values with dtype=int32]</pre></div></li><li class="xr-var-item"><div class="xr-var-name"><span>CTIME</span></div><div class="xr-var-dims">(time)</div><div class="xr-var-dtype">int32</div><div class="xr-var-preview xr-preview">...</div><input id="attrs-c989c046-6184-4391-bec5-eb44baea4b26" class="xr-var-attrs-in" type="checkbox" disabled=""><label for="attrs-c989c046-6184-4391-bec5-eb44baea4b26" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-a578682d-8e08-41e8-ab19-a943591e5f04" class="xr-var-data-in" type="checkbox"><label for="data-a578682d-8e08-41e8-ab19-a943591e5f04" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"></dl></div><div class="xr-var-data"><pre>[27357 values with dtype=int32]</pre></div></li><li class="xr-var-item"><div class="xr-var-name"><span>WDATE</span></div><div class="xr-var-dims">(time)</div><div class="xr-var-dtype">int32</div><div class="xr-var-preview xr-preview">...</div><input id="attrs-cb47eefd-df55-46e3-8e81-9e5fbe978a80" class="xr-var-attrs-in" type="checkbox" disabled=""><label for="attrs-cb47eefd-df55-46e3-8e81-9e5fbe978a80" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-6df313cb-8df8-4b9f-b571-939a50d4946b" class="xr-var-data-in" type="checkbox"><label for="data-6df313cb-8df8-4b9f-b571-939a50d4946b" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"></dl></div><div class="xr-var-data"><pre>[27357 values with dtype=int32]</pre></div></li><li class="xr-var-item"><div class="xr-var-name"><span>WTIME</span></div><div class="xr-var-dims">(time)</div><div class="xr-var-dtype">int32</div><div class="xr-var-preview xr-preview">...</div><input id="attrs-1c7943e3-6ba8-45d7-93cd-9a9441e25bf9" class="xr-var-attrs-in" type="checkbox" disabled=""><label for="attrs-1c7943e3-6ba8-45d7-93cd-9a9441e25bf9" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-d5ae5e69-93b4-4020-b1db-8ad31abc5fb9" class="xr-var-data-in" type="checkbox"><label for="data-d5ae5e69-93b4-4020-b1db-8ad31abc5fb9" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"></dl></div><div class="xr-var-data"><pre>[27357 values with dtype=int32]</pre></div></li><li class="xr-var-item"><div class="xr-var-name"><span>SDATE</span></div><div class="xr-var-dims">(time)</div><div class="xr-var-dtype">int32</div><div class="xr-var-preview xr-preview">...</div><input id="attrs-2c64fe0c-6335-4ab0-a619-946fda6eb3d1" class="xr-var-attrs-in" type="checkbox" disabled=""><label for="attrs-2c64fe0c-6335-4ab0-a619-946fda6eb3d1" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-f3aabfed-7e7f-4d2a-bf20-8b657afcc39f" class="xr-var-data-in" type="checkbox"><label for="data-f3aabfed-7e7f-4d2a-bf20-8b657afcc39f" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"></dl></div><div class="xr-var-data"><pre>[27357 values with dtype=int32]</pre></div></li><li class="xr-var-item"><div class="xr-var-name"><span>STIME</span></div><div class="xr-var-dims">(time)</div><div class="xr-var-dtype">int32</div><div class="xr-var-preview xr-preview">...</div><input id="attrs-d893710e-a194-4d66-b6d6-c774fa080b72" class="xr-var-attrs-in" type="checkbox" disabled=""><label for="attrs-d893710e-a194-4d66-b6d6-c774fa080b72" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-b69b3d17-1502-4b4f-a34e-2191e42ab9a0" class="xr-var-data-in" type="checkbox"><label for="data-b69b3d17-1502-4b4f-a34e-2191e42ab9a0" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"></dl></div><div class="xr-var-data"><pre>[27357 values with dtype=int32]</pre></div></li></ul></div></li><li class="xr-section-item"><input id="section-a5d74dbd-57c2-426d-a619-29025e08ae30" class="xr-section-summary-in" type="checkbox" disabled=""><label for="section-a5d74dbd-57c2-426d-a619-29025e08ae30" class="xr-section-summary" title="Expand/collapse section">Indexes: <span>(0)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><ul class="xr-var-list"></ul></div></li><li class="xr-section-item"><input id="section-9ebb00be-53c8-489f-9df2-cb941e63d47b" class="xr-section-summary-in" type="checkbox"><label for="section-9ebb00be-53c8-489f-9df2-cb941e63d47b" class="xr-section-summary">Attributes: <span>(28)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><dl class="xr-attrs"><dt><span>IOAPI_VERSION :</span></dt><dd>$Id: @(#) ioapi library version 3.0 $                                           </dd><dt><span>EXEC_ID :</span></dt><dd>????????????????                                                                </dd><dt><span>FTYPE :</span></dt><dd>1</dd><dt><span>TSTEP :</span></dt><dd>10000</dd><dt><span>NTHIK :</span></dt><dd>1</dd><dt><span>NCOLS :</span></dt><dd>1081</dd><dt><span>NROWS :</span></dt><dd>381</dd><dt><span>NLAYS :</span></dt><dd>1</dd><dt><span>NVARS :</span></dt><dd>1</dd><dt><span>GDTYP :</span></dt><dd>1</dd><dt><span>P_ALP :</span></dt><dd>0.0</dd><dt><span>P_BET :</span></dt><dd>0.0</dd><dt><span>P_GAM :</span></dt><dd>0.0</dd><dt><span>XCENT :</span></dt><dd>-106.0</dd><dt><span>YCENT :</span></dt><dd>51.0</dd><dt><span>XORIG :</span></dt><dd>-160.0</dd><dt><span>YORIG :</span></dt><dd>32.0</dd><dt><span>XCELL :</span></dt><dd>0.10000000149011612</dd><dt><span>YCELL :</span></dt><dd>0.10000000149011612</dd><dt><span>VGTYP :</span></dt><dd>5</dd><dt><span>VGTOP :</span></dt><dd>-9999.0</dd><dt><span>VGLVLS :</span></dt><dd>[10.  0.]</dd><dt><span>GDNAM :</span></dt><dd>HYSPLIT CONC    </dd><dt><span>UPNAM :</span></dt><dd>hysplit2netCDF  </dd><dt><span>VAR-LIST :</span></dt><dd>PM25            </dd><dt><span>FILEDESC :</span></dt><dd>Hysplit Concentration Model Output                                              lat-lon coordinate system                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       </dd><dt><span>HISTORY :</span></dt><dd></dd><dt><span>idx_url :</span></dt><dd>http://atlantis.sci.utah.edu/mod_visus?dataset=UBC_fire_smoke_BSC&amp;cached=1</dd></dl></div></li></ul></div></div>
+</div>
+</div>
+<section id="data-variables-description" class="level4" data-number="1.3.1.1">
+<h4 data-number="1.3.1.1" class="anchored" data-anchor-id="data-variables-description"><span class="header-section-number">1.3.1.1</span> Data Variables Description</h4>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 13%">
+<col style="width: 86%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Attribute</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>PM25</td>
+<td>The concentration of particulate matter (PM2.5) for each time step, layer, row, and column in the spatial grid.</td>
+</tr>
+<tr class="even">
+<td>TFLAG</td>
+<td>The date and time of each data point.</td>
+</tr>
+<tr class="odd">
+<td>wrf_arw_init_time</td>
+<td>The time at which this prediction’s weather forecast was initiated.</td>
+</tr>
+<tr class="even">
+<td>resampled</td>
+<td>Whether this timestamp was resampled from a 381x1041 to 381x1081 grid or not.</td>
+</tr>
+<tr class="odd">
+<td>CDATE</td>
+<td>The creation date of the data point, in YYYYDDD format.</td>
+</tr>
+<tr class="even">
+<td>CTIME</td>
+<td>The creation time of the data point, in HHMMSS format.</td>
+</tr>
+<tr class="odd">
+<td>WDATE</td>
+<td>The date for which the weather forecast is initiated, in YYYYDDD format.</td>
+</tr>
+<tr class="even">
+<td>WTIME</td>
+<td>The time for which the weather forecast is initiated, in HHMMSS format.</td>
+</tr>
+<tr class="odd">
+<td>SDATE</td>
+<td>The date for which the smoke forecast is initiated, in YYYYDDD format.</td>
+</tr>
+<tr class="even">
+<td>STIME</td>
+<td>The time for which the weather forecast is initiated, in HHMMSS format.</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+</section>
+<section id="step-2.5-calculate-derived-metadata-using-original-metadata-above-to-create-coordinates" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="step-2.5-calculate-derived-metadata-using-original-metadata-above-to-create-coordinates"><span class="header-section-number">1.4</span> <strong>Step 2.5, Calculate derived metadata using original metadata above to create coordinates</strong></h2>
+<section id="this-is-required-to-allow-for-indexing-of-data-via-metadata" class="level3" data-number="1.4.1">
+<h3 data-number="1.4.1" class="anchored" data-anchor-id="this-is-required-to-allow-for-indexing-of-data-via-metadata"><span class="header-section-number">1.4.1</span> This is required to allow for indexing of data via metadata</h3>
+<section id="calculate-latitude-and-longitude-grid" class="level4" data-number="1.4.1.1">
+<h4 data-number="1.4.1.1" class="anchored" data-anchor-id="calculate-latitude-and-longitude-grid"><span class="header-section-number">1.4.1.1</span> Calculate latitude and longitude grid</h4>
+<div id="35d6b10f-6613-42ea-a0f8-a5e82d2e71df" class="cell" data-execution_count="4">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Get metadata to compute lon and lat</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>xorig <span class="op">=</span> ds.XORIG</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>yorig <span class="op">=</span> ds.YORIG</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>xcell <span class="op">=</span> ds.XCELL</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>ycell <span class="op">=</span> ds.YCELL</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>ncols <span class="op">=</span> ds.NCOLS</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>nrows <span class="op">=</span> ds.NROWS</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>longitude <span class="op">=</span> np.linspace(xorig, xorig <span class="op">+</span> xcell <span class="op">*</span> (ncols <span class="op">-</span> <span class="dv">1</span>), ncols)</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>latitude <span class="op">=</span> np.linspace(yorig, yorig <span class="op">+</span> ycell <span class="op">*</span> (nrows <span class="op">-</span> <span class="dv">1</span>), nrows)</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Size of longitude &amp; latitude arrays:"</span>)</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'np.size(longitude) = </span><span class="sc">{</span>np<span class="sc">.</span>size(longitude)<span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'np.size(latitude) = </span><span class="sc">{</span>np<span class="sc">.</span>size(latitude)<span class="sc">}</span><span class="ch">\n</span><span class="ss">'</span>)</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Min &amp; Max of longitude and latitude arrays:"</span>)</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'longitude: min = </span><span class="sc">{</span>np<span class="sc">.</span><span class="bu">min</span>(longitude)<span class="sc">}</span><span class="ss">, max = </span><span class="sc">{</span>np<span class="sc">.</span><span class="bu">max</span>(longitude)<span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'latitude: min = </span><span class="sc">{</span>np<span class="sc">.</span><span class="bu">min</span>(latitude)<span class="sc">}</span><span class="ss">, max = </span><span class="sc">{</span>np<span class="sc">.</span><span class="bu">max</span>(latitude)<span class="sc">}</span><span class="ss">'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Size of longitude &amp; latitude arrays:
+np.size(longitude) = 1081
+np.size(latitude) = 381
+
+Min &amp; Max of longitude and latitude arrays:
+longitude: min = -160.0, max = -51.99999839067459
+latitude: min = 32.0, max = 70.00000056624413</code></pre>
+</div>
+</div>
+</section>
+<section id="using-calculated-latitude-and-longitude-create-coordinates-allowing-for-indexing-data-using-latlon" class="level4" data-number="1.4.1.2">
+<h4 data-number="1.4.1.2" class="anchored" data-anchor-id="using-calculated-latitude-and-longitude-create-coordinates-allowing-for-indexing-data-using-latlon"><span class="header-section-number">1.4.1.2</span> Using calculated latitude and longitude, create coordinates allowing for indexing data using lat/lon</h4>
+<div id="f889a8c8-29e1-4202-a02a-695765aedef5" class="cell" data-tags="[]" data-execution_count="5">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create coordinates for lat and lon (credit: Aashish Panta)</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>ds.coords[<span class="st">'lat'</span>] <span class="op">=</span> (<span class="st">'ROW'</span>, latitude)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>ds.coords[<span class="st">'lon'</span>] <span class="op">=</span> (<span class="st">'COL'</span>, longitude)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Replace col and row dimensions with newly calculated lon and lat arrays (credit: Aashish Panta)</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>ds <span class="op">=</span> ds.swap_dims({<span class="st">'COL'</span>: <span class="st">'lon'</span>, <span class="st">'ROW'</span>: <span class="st">'lat'</span>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section>
+<section id="create-coordinates-allowing-for-indexing-data-using-timestamp" class="level4" data-number="1.4.1.3">
+<h4 data-number="1.4.1.3" class="anchored" data-anchor-id="create-coordinates-allowing-for-indexing-data-using-timestamp"><span class="header-section-number">1.4.1.3</span> Create coordinates allowing for indexing data using timestamp</h4>
+<section id="first-convert-tflags-to-timestamps-that-are-compatible-with-xarray" class="level5" data-number="1.4.1.3.1">
+<h5 data-number="1.4.1.3.1" class="anchored" data-anchor-id="first-convert-tflags-to-timestamps-that-are-compatible-with-xarray"><span class="header-section-number">1.4.1.3.1</span> First, convert tflags to timestamps that are compatible with xarray</h5>
+<div id="c72cd60c-3ca6-4dd8-9f21-09ec41a27fb6" class="cell" data-scrolled="true" data-execution_count="6">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> parse_tflag(tflag):</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Return the tflag as a datetime object</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co">    :param list tflag: a list of two int32, the 1st representing date and 2nd representing time</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># obtain year and day of year from tflag[0] (date)</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>    date <span class="op">=</span> <span class="bu">int</span>(tflag[<span class="dv">0</span>])</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>    year <span class="op">=</span> date <span class="op">//</span> <span class="dv">1000</span> <span class="co"># first 4 digits of tflag[0]</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>    day_of_year <span class="op">=</span> date <span class="op">%</span> <span class="dv">1000</span> <span class="co"># last 3 digits of tflag[0]</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>    <span class="co"># create datetime object representing date</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>    final_date <span class="op">=</span> datetime.datetime(year, <span class="dv">1</span>, <span class="dv">1</span>) <span class="op">+</span> datetime.timedelta(days<span class="op">=</span>day_of_year <span class="op">-</span> <span class="dv">1</span>)</span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>    <span class="co"># obtain hour, mins, and secs from tflag[1] (time)</span></span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>    time <span class="op">=</span> <span class="bu">int</span>(tflag[<span class="dv">1</span>])</span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>    hours <span class="op">=</span> time <span class="op">//</span> <span class="dv">10000</span> <span class="co"># first 2 digits of tflag[1]</span></span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>    minutes <span class="op">=</span> (time <span class="op">%</span> <span class="dv">10000</span>) <span class="op">//</span> <span class="dv">100</span> <span class="co"># 3rd and 4th digits of tflag[1] </span></span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>    seconds <span class="op">=</span> time <span class="op">%</span> <span class="dv">100</span>  <span class="co"># last 2 digits of tflag[1]</span></span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>    <span class="co"># create final datetime object</span></span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a>    full_datetime <span class="op">=</span> datetime.datetime(year, final_date.month, final_date.day, hours, minutes, seconds)</span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> full_datetime</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section>
+<section id="return-an-array-of-the-tflags-as-pandas-timestamps" class="level5" data-number="1.4.1.3.2">
+<h5 data-number="1.4.1.3.2" class="anchored" data-anchor-id="return-an-array-of-the-tflags-as-pandas-timestamps"><span class="header-section-number">1.4.1.3.2</span> Return an array of the tflags as pandas timestamps</h5>
+<div id="f4c6a5cd-0a71-46b0-ac63-0c18290c1286" class="cell" data-execution_count="7">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># get all tflags</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>tflag_values <span class="op">=</span> ds[<span class="st">'TFLAG'</span>].values</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co"># to store pandas timestamps</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>timestamps <span class="op">=</span> []</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="co"># convert all tflags to pandas timestamps, store in timestamps list</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> tflag <span class="kw">in</span> tflag_values:</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>    timestamps.append(pd.Timestamp(parse_tflag(tflag[<span class="dv">0</span>])))</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a><span class="co"># check out the first 3 timestamps</span></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>timestamps[<span class="dv">0</span>:<span class="dv">3</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="7">
+<pre><code>[Timestamp('2021-03-04 00:00:00'),
+ Timestamp('2021-03-04 01:00:00'),
+ Timestamp('2021-03-04 02:00:00')]</code></pre>
+</div>
+</div>
+<div id="867c6c2b-8a9e-44b6-9dfc-49838d0c9c04" class="cell" data-execution_count="8">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># set coordinates to each timestep with these pandas timestamps</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>ds.coords[<span class="st">'time'</span>] <span class="op">=</span> (<span class="st">'time'</span>, timestamps)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section>
+</section>
+<section id="the-timestamps-may-not-be-intuitive.-the-following-utility-function-returns-the-desired-pandas-timestamp-based-on-your-date-and-time-of-interest." class="level4" data-number="1.4.1.4">
+<h4 data-number="1.4.1.4" class="anchored" data-anchor-id="the-timestamps-may-not-be-intuitive.-the-following-utility-function-returns-the-desired-pandas-timestamp-based-on-your-date-and-time-of-interest."><span class="header-section-number">1.4.1.4</span> The timestamps may not be intuitive. The following utility function returns the desired pandas timestamp based on your date and time of interest.</h4>
+<section id="when-you-index-the-data-at-a-desired-time-use-this-function-to-get-the-timestamp-you-need-to-index." class="level5" data-number="1.4.1.4.1">
+<h5 data-number="1.4.1.4.1" class="anchored" data-anchor-id="when-you-index-the-data-at-a-desired-time-use-this-function-to-get-the-timestamp-you-need-to-index."><span class="header-section-number">1.4.1.4.1</span> When you index the data at a desired time, use this function to get the timestamp you need to index.</h5>
+<div id="7ae260b4-0b7d-48e7-909d-7fe9ba82bf61" class="cell" data-execution_count="9">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_timestamp(year, month, day, hour):</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co">    return a pandas timestamp using the given date-time arguments</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co">    :param int year: year</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="co">    :param int month: month</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="co">    :param int day: day</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="co">    :param int hour: hour</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Convert year, month, day, and hour to a datetime object</span></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>    full_datetime <span class="op">=</span> datetime.datetime(year, month, day, hour)</span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Extract components from the datetime object</span></span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>    year <span class="op">=</span> full_datetime.year</span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>    day_of_year <span class="op">=</span> full_datetime.timetuple().tm_yday</span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>    hours <span class="op">=</span> full_datetime.hour</span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>    minutes <span class="op">=</span> full_datetime.minute</span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>    seconds <span class="op">=</span> full_datetime.second</span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Compute tflag[0] and tflag[1]</span></span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a>    tflag0 <span class="op">=</span> year <span class="op">*</span> <span class="dv">1000</span> <span class="op">+</span> day_of_year</span>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a>    tflag1 <span class="op">=</span> hours <span class="op">*</span> <span class="dv">10000</span> <span class="op">+</span> minutes <span class="op">*</span> <span class="dv">100</span> <span class="op">+</span> seconds</span>
+<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Return the Pandas Timestamp object</span></span>
+<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> pd.Timestamp(full_datetime)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section>
+</section>
+</section>
+</section>
+<section id="step-3-select-a-data_slice" class="level2" data-number="1.5">
+<h2 data-number="1.5" class="anchored" data-anchor-id="step-3-select-a-data_slice"><span class="header-section-number">1.5</span> <strong>Step 3: Select a <code>data_slice</code></strong></h2>
+<section id="this-section-shows-you-how-to-load-the-data-you-want." class="level3" data-number="1.5.1">
+<h3 data-number="1.5.1" class="anchored" data-anchor-id="this-section-shows-you-how-to-load-the-data-you-want."><span class="header-section-number">1.5.1</span> This section shows you how to load the data you want.</h3>
+<section id="you-can-index-the-data-using-indices-timestamps-latitude-longitude-and-by-desired-resolution." class="level4" data-number="1.5.1.1">
+<h4 data-number="1.5.1.1" class="anchored" data-anchor-id="you-can-index-the-data-using-indices-timestamps-latitude-longitude-and-by-desired-resolution."><span class="header-section-number">1.5.1.1</span> You can index the data using indices, timestamps*, latitude &amp; longitude, and by desired resolution**.</h4>
+<p>*Not setting any time means the first timestep available is selected. **Not setting quality means full data resolution is selected.</p>
+<section id="in-this-case-lets-get-all-available-firesmoke-data-for-march-5-2021-000000-and-the-time-and-date-for-which-its-weather-and-smoke-forecast-were-initiated." class="level5" data-number="1.5.1.1.1">
+<h5 data-number="1.5.1.1.1" class="anchored" data-anchor-id="in-this-case-lets-get-all-available-firesmoke-data-for-march-5-2021-000000-and-the-time-and-date-for-which-its-weather-and-smoke-forecast-were-initiated."><span class="header-section-number">1.5.1.1.1</span> In this case, let’s get all available firesmoke data for March 5, 2021 00:00:00 and the time and date for which it’s weather and smoke forecast were initiated.</h5>
+<div id="9aea7adf-5eb2-4480-99ec-a3ef7047d3e0" class="cell" data-execution_count="10">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># select timestamp</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>my_timestamp <span class="op">=</span> get_timestamp(<span class="dv">2021</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">0</span>)</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="co"># select resolution, let's use full resolution since data isn't too big at one time slice</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="co"># data resolution can be -19 for lowest res and 0 for highest res</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>data_resolution <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="co"># get PM25 values and provide 4 values, the colons mean select all lat and lon indices</span></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>data_array_at_time <span class="op">=</span> ds[<span class="st">'PM25'</span>].loc[my_timestamp, :, :, data_resolution]</span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a><span class="co"># the metadata specifying weather and smoke forecast initialization times</span></span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>resampled <span class="op">=</span> ds[<span class="st">'resampled'</span>].loc[my_timestamp]</span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>sdate <span class="op">=</span> ds[<span class="st">'SDATE'</span>].loc[my_timestamp]</span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>stime <span class="op">=</span> ds[<span class="st">'STIME'</span>].loc[my_timestamp]</span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>wdate <span class="op">=</span> ds[<span class="st">'WDATE'</span>].loc[my_timestamp]</span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a>wtime <span class="op">=</span> ds[<span class="st">'WTIME'</span>].loc[my_timestamp]</span>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a><span class="co"># notice, to access the data, you must append ".values" to the data array we got above</span></span>
+<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'timestamp: </span><span class="sc">{</span>my_timestamp<span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'resampled: </span><span class="sc">{</span>resampled<span class="sc">.</span>values<span class="sc">}</span><span class="ss"> (boolean)'</span>)</span>
+<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'SDATE is </span><span class="sc">{</span>sdate<span class="sc">.</span>values<span class="sc">}</span><span class="ss"> (YYYYDDD)'</span>)</span>
+<span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'STIME is </span><span class="sc">{</span>stime<span class="sc">.</span>values<span class="sc">}</span><span class="ss"> (HHMMSS)'</span>)</span>
+<span id="cb13-23"><a href="#cb13-23" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'WDATE is </span><span class="sc">{</span>wdate<span class="sc">.</span>values<span class="sc">}</span><span class="ss"> (YYYYDDD)'</span>)</span>
+<span id="cb13-24"><a href="#cb13-24" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'WTIME is </span><span class="sc">{</span>wtime<span class="sc">.</span>values<span class="sc">}</span><span class="ss"> (HHMMSS)'</span>)</span>
+<span id="cb13-25"><a href="#cb13-25" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'shape of data_array_at_time.values = </span><span class="sc">{</span>np<span class="sc">.</span>shape(data_array_at_time.values)<span class="sc">}</span><span class="ss">'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>timestamp: 2021-03-05 00:00:00
+resampled: True (boolean)
+SDATE is 2021063 (YYYYDDD)
+STIME is 210000 (HHMMSS)
+WDATE is 2021063 (YYYYDDD)
+WTIME is 204413 (HHMMSS)
+Using Max Resolution:  20
+Time: 24, max_resolution: 20, logic_box=(0, 1081, 0, 381), field: PM25
+shape of data_array_at_time.values = (381, 1081)</code></pre>
+</div>
+</div>
+</section>
+<section id="perhaps-we-want-to-slice-a-specific-latitude-longitude-range-from-our-data_array_at_time-for-example-latitude-range-35-50-and-longitude-range--140--80.-lets-do-that-below." class="level5" data-number="1.5.1.1.2">
+<h5 data-number="1.5.1.1.2" class="anchored" data-anchor-id="perhaps-we-want-to-slice-a-specific-latitude-longitude-range-from-our-data_array_at_time-for-example-latitude-range-35-50-and-longitude-range--140--80.-lets-do-that-below."><span class="header-section-number">1.5.1.1.2</span> Perhaps we want to slice a specific latitude longitude range from our <code>data_array_at_time</code>, for example, latitude range <code>[35, 50]</code> and longitude range <code>[-140, -80]</code>. Let’s do that below.</h5>
+<div id="a74de20b-30bf-4bed-bb25-745c1ad6403b" class="cell" data-execution_count="11">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># # define range for latitude and longitude to use</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>min_lat <span class="op">=</span> <span class="dv">35</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>max_lat <span class="op">=</span> <span class="dv">50</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>min_lon <span class="op">=</span> <span class="op">-</span><span class="dv">140</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>max_lon <span class="op">=</span> <span class="op">-</span><span class="dv">80</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="co"># get PM25 values and provide 4 values, but this time at our desired ranges</span></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>data_array_at_latlon <span class="op">=</span> ds[<span class="st">'PM25'</span>].loc[my_timestamp, min_lat:max_lat, min_lon:max_lon, data_resolution]</span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a><span class="co"># notice, to access the data, you must append ".values" to the data array we got above</span></span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'timestamp: </span><span class="sc">{</span>my_timestamp<span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'shape of data_array_at_time.values = </span><span class="sc">{</span>np<span class="sc">.</span>shape(data_array_at_latlon.values)<span class="sc">}</span><span class="ss">'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>timestamp: 2021-03-05 00:00:00
+Using Max Resolution:  20
+Time: 24, max_resolution: 20, logic_box=(200, 800, 30, 180), field: PM25
+shape of data_array_at_time.values = (150, 600)</code></pre>
+</div>
+</div>
+<p>We show how to obtain this attribute information for a time step of one’s choice, let’s use</p>
+</section>
+</section>
+<section id="the-following-are-the-max-and-min-timestamps-lonlat-values-and-data-resolutions-you-can-index-by" class="level4" data-number="1.5.1.2">
+<h4 data-number="1.5.1.2" class="anchored" data-anchor-id="the-following-are-the-max-and-min-timestamps-lonlat-values-and-data-resolutions-you-can-index-by"><span class="header-section-number">1.5.1.2</span> The following are the max and min timestamps, lon/lat values, and data resolutions you can index by</h4>
+<section id="be-sure-you-index-within-the-data-range-otherwise-you-may-get-errors-since-no-data-exists-outside-these-ranges" class="level5" data-number="1.5.1.2.1">
+<h5 data-number="1.5.1.2.1" class="anchored" data-anchor-id="be-sure-you-index-within-the-data-range-otherwise-you-may-get-errors-since-no-data-exists-outside-these-ranges"><span class="header-section-number">1.5.1.2.1</span> Be sure you index within the data range, otherwise you may get errors since no data exists outside these ranges!</h5>
+<div id="8689f676-5f72-434f-aa84-f3f608dc9a4c" class="cell" data-execution_count="12">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># </span><span class="al">NOTE</span><span class="co">: there is one dummy date, ignore ds['time'].values[-1]</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"earliest valid timestamp is: </span><span class="sc">{</span>ds[<span class="st">'time'</span>]<span class="sc">.</span>values[<span class="dv">0</span>]<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"latest valid timestamp is: </span><span class="sc">{</span>ds[<span class="st">'time'</span>]<span class="sc">.</span>values[<span class="op">-</span><span class="dv">2</span>]<span class="sc">}</span><span class="ch">\n</span><span class="ss">"</span>)</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"valid longitude range is: </span><span class="sc">{</span>ds[<span class="st">'lon'</span>]<span class="sc">.</span>values[<span class="dv">0</span>]<span class="sc">}</span><span class="ss">, </span><span class="sc">{</span>ds[<span class="st">'lon'</span>]<span class="sc">.</span>values[<span class="op">-</span><span class="dv">1</span>]<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"valid latitude range is: </span><span class="sc">{</span>ds[<span class="st">'lat'</span>]<span class="sc">.</span>values[<span class="dv">0</span>]<span class="sc">}</span><span class="ss">, </span><span class="sc">{</span>ds[<span class="st">'lat'</span>]<span class="sc">.</span>values[<span class="op">-</span><span class="dv">1</span>]<span class="sc">}</span><span class="ch">\n</span><span class="ss">"</span>)</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"valid data resolutions range is: [-19, 0]"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>earliest valid timestamp is: 2021-03-04T00:00:00.000000000
+latest valid timestamp is: 2024-06-27T22:00:00.000000000
+
+valid longitude range is: -160.0, -51.99999839067459
+valid latitude range is: 32.0, 70.00000056624413
+
+valid data resolutions range is: [-19, 0]</code></pre>
+</div>
+</div>
+</section>
+</section>
+</section>
+</section>
+<section id="step-4-visualize-data_slice" class="level2" data-number="1.6">
+<h2 data-number="1.6" class="anchored" data-anchor-id="step-4-visualize-data_slice"><span class="header-section-number">1.6</span> <strong>Step 4: Visualize <code>data_slice</code></strong></h2>
+<section id="one-can-visualize-the-data-either-by" class="level3" data-number="1.6.1">
+<h3 data-number="1.6.1" class="anchored" data-anchor-id="one-can-visualize-the-data-either-by"><span class="header-section-number">1.6.1</span> One can visualize the data either by:</h3>
+</section>
+<section id="get-the-values-from-your-data_array_at_time-and-plot-using-your-favorite-python-visualization-library.-well-use-matplotlib." class="level3" data-number="1.6.2">
+<h3 data-number="1.6.2" class="anchored" data-anchor-id="get-the-values-from-your-data_array_at_time-and-plot-using-your-favorite-python-visualization-library.-well-use-matplotlib."><span class="header-section-number">1.6.2</span> 1. Get the values from your <code>data_array_at_time</code> and plot using your favorite python visualization library. We’ll use matplotlib.</h3>
+<section id="use-xarrays-built-in-plotting-function-not-recommended-as-it-is-not-robust" class="level4" data-number="1.6.2.1">
+<h4 data-number="1.6.2.1" class="anchored" data-anchor-id="use-xarrays-built-in-plotting-function-not-recommended-as-it-is-not-robust"><span class="header-section-number">1.6.2.1</span> 2. Use xarray’s built in plotting function (not recommended, as it is not robust)</h4>
+<p>Here we plot <code>data_array_at_time</code> with matplotlib and its basemap extenstion to add geographic context.</p>
+<div id="c58133a1" class="cell" data-tags="[]" data-execution_count="13">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Let's use matplotlib's imshow, since our data is on a grid</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="co"># ref: https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.imshow.html</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Initialize a figure and plot, so we can customize figure and plot of data</span></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="co"># ref: https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.subplots.html</span></span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a><span class="co"># ref: https://scitools.org.uk/cartopy/docs/latest/getting_started/index.html</span></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>my_fig, my_plt <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">15</span>, <span class="dv">6</span>), subplot_kw<span class="op">=</span><span class="bu">dict</span>(projection<span class="op">=</span>ccrs.PlateCarree()))</span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Let's set some parameters to get the visualization we want</span></span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a><span class="co"># ref: https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.imshow.html</span></span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a><span class="co"># color PM25 values on a log scale, since values are small</span></span>
+<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a>my_norm <span class="op">=</span> <span class="st">"log"</span> </span>
+<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a><span class="co"># this will number our x and y axes based on the longitude latitude range</span></span>
+<span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a>my_extent <span class="op">=</span> [np.<span class="bu">min</span>(longitude), np.<span class="bu">max</span>(longitude), np.<span class="bu">min</span>(latitude), np.<span class="bu">max</span>(latitude)]</span>
+<span id="cb19-16"><a href="#cb19-16" aria-hidden="true" tabindex="-1"></a><span class="co"># ensure the aspect ratio of our plot fits all data, matplotlib can does this automatically</span></span>
+<span id="cb19-17"><a href="#cb19-17" aria-hidden="true" tabindex="-1"></a>my_aspect <span class="op">=</span> <span class="st">'auto'</span></span>
+<span id="cb19-18"><a href="#cb19-18" aria-hidden="true" tabindex="-1"></a><span class="co"># tell matplotlib, our origin is the lower-left corner</span></span>
+<span id="cb19-19"><a href="#cb19-19" aria-hidden="true" tabindex="-1"></a>my_origin <span class="op">=</span> <span class="st">'lower'</span></span>
+<span id="cb19-20"><a href="#cb19-20" aria-hidden="true" tabindex="-1"></a><span class="co"># select a colormap for our plot and the color bar on the right</span></span>
+<span id="cb19-21"><a href="#cb19-21" aria-hidden="true" tabindex="-1"></a>my_cmap <span class="op">=</span> <span class="st">'Oranges'</span></span>
+<span id="cb19-22"><a href="#cb19-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-23"><a href="#cb19-23" aria-hidden="true" tabindex="-1"></a><span class="co"># create our plot using imshow</span></span>
+<span id="cb19-24"><a href="#cb19-24" aria-hidden="true" tabindex="-1"></a>plot <span class="op">=</span> my_plt.imshow(data_array_at_time.values, norm<span class="op">=</span>my_norm, extent<span class="op">=</span>my_extent, </span>
+<span id="cb19-25"><a href="#cb19-25" aria-hidden="true" tabindex="-1"></a>          aspect<span class="op">=</span>my_aspect, origin<span class="op">=</span>my_origin, cmap<span class="op">=</span>my_cmap)</span>
+<span id="cb19-26"><a href="#cb19-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-27"><a href="#cb19-27" aria-hidden="true" tabindex="-1"></a><span class="co"># draw coastlines</span></span>
+<span id="cb19-28"><a href="#cb19-28" aria-hidden="true" tabindex="-1"></a>my_plt.coastlines()</span>
+<span id="cb19-29"><a href="#cb19-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-30"><a href="#cb19-30" aria-hidden="true" tabindex="-1"></a><span class="co"># draw latitude longitude lines</span></span>
+<span id="cb19-31"><a href="#cb19-31" aria-hidden="true" tabindex="-1"></a><span class="co"># ref: https://scitools.org.uk/cartopy/docs/latest/gallery/gridlines_and_labels/gridliner.html</span></span>
+<span id="cb19-32"><a href="#cb19-32" aria-hidden="true" tabindex="-1"></a>my_plt.gridlines(draw_labels<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb19-33"><a href="#cb19-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-34"><a href="#cb19-34" aria-hidden="true" tabindex="-1"></a><span class="co"># add a colorbar to our figure, based on the plot we just made above</span></span>
+<span id="cb19-35"><a href="#cb19-35" aria-hidden="true" tabindex="-1"></a>my_fig.colorbar(plot,location<span class="op">=</span><span class="st">'right'</span>, label<span class="op">=</span><span class="st">'ug/m^3'</span>)</span>
+<span id="cb19-36"><a href="#cb19-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-37"><a href="#cb19-37" aria-hidden="true" tabindex="-1"></a><span class="co"># Add metadata as text annotations</span></span>
+<span id="cb19-38"><a href="#cb19-38" aria-hidden="true" tabindex="-1"></a>metadata_text <span class="op">=</span> (</span>
+<span id="cb19-39"><a href="#cb19-39" aria-hidden="true" tabindex="-1"></a>    <span class="ss">f'resampled: </span><span class="sc">{</span>resampled<span class="sc">.</span>values<span class="sc">}</span><span class="ch">\n</span><span class="ss">'</span></span>
+<span id="cb19-40"><a href="#cb19-40" aria-hidden="true" tabindex="-1"></a>    <span class="ss">f'SDATE: </span><span class="sc">{</span>sdate<span class="sc">.</span>values<span class="sc">}</span><span class="ch">\n</span><span class="ss">'</span></span>
+<span id="cb19-41"><a href="#cb19-41" aria-hidden="true" tabindex="-1"></a>    <span class="ss">f'STIME: </span><span class="sc">{</span>stime<span class="sc">.</span>values<span class="sc">}</span><span class="ch">\n</span><span class="ss">'</span></span>
+<span id="cb19-42"><a href="#cb19-42" aria-hidden="true" tabindex="-1"></a>    <span class="ss">f'WDATE: </span><span class="sc">{</span>wdate<span class="sc">.</span>values<span class="sc">}</span><span class="ch">\n</span><span class="ss">'</span></span>
+<span id="cb19-43"><a href="#cb19-43" aria-hidden="true" tabindex="-1"></a>    <span class="ss">f'WTIME: </span><span class="sc">{</span>wtime<span class="sc">.</span>values<span class="sc">}</span><span class="ss">'</span></span>
+<span id="cb19-44"><a href="#cb19-44" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb19-45"><a href="#cb19-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-46"><a href="#cb19-46" aria-hidden="true" tabindex="-1"></a><span class="co"># Place metadata text on the plot</span></span>
+<span id="cb19-47"><a href="#cb19-47" aria-hidden="true" tabindex="-1"></a>my_plt.text(<span class="fl">0.02</span>, <span class="fl">0.02</span>, metadata_text, transform<span class="op">=</span>my_plt.transAxes,</span>
+<span id="cb19-48"><a href="#cb19-48" aria-hidden="true" tabindex="-1"></a>            fontsize<span class="op">=</span><span class="dv">12</span>, verticalalignment<span class="op">=</span><span class="st">'bottom'</span>, bbox<span class="op">=</span><span class="bu">dict</span>(facecolor<span class="op">=</span><span class="st">'white'</span>, alpha<span class="op">=</span><span class="fl">0.8</span>))</span>
+<span id="cb19-49"><a href="#cb19-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-50"><a href="#cb19-50" aria-hidden="true" tabindex="-1"></a><span class="co"># Set x and y axis labels on our ax</span></span>
+<span id="cb19-51"><a href="#cb19-51" aria-hidden="true" tabindex="-1"></a>my_fig.supxlabel(<span class="st">'Longitude'</span>)</span>
+<span id="cb19-52"><a href="#cb19-52" aria-hidden="true" tabindex="-1"></a>my_fig.supylabel(<span class="st">'Latitude'</span>)</span>
+<span id="cb19-53"><a href="#cb19-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-54"><a href="#cb19-54" aria-hidden="true" tabindex="-1"></a><span class="co"># Set title of our figure</span></span>
+<span id="cb19-55"><a href="#cb19-55" aria-hidden="true" tabindex="-1"></a>my_fig.suptitle(<span class="st">'Ground level concentration of PM2.5 microns and smaller'</span>)</span>
+<span id="cb19-56"><a href="#cb19-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-57"><a href="#cb19-57" aria-hidden="true" tabindex="-1"></a><span class="co"># Set title of our plot as the timestamp of our data</span></span>
+<span id="cb19-58"><a href="#cb19-58" aria-hidden="true" tabindex="-1"></a>my_plt.set_title(<span class="ss">f'</span><span class="sc">{</span>my_timestamp<span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb19-59"><a href="#cb19-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-60"><a href="#cb19-60" aria-hidden="true" tabindex="-1"></a><span class="co"># Show the resulting visualization</span></span>
+<span id="cb19-61"><a href="#cb19-61" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="demo_files/figure-html/data_notebooks-demo-demo-cell-14-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Here we plot with xarray’s built-in matplotlib powered plotter.</p>
+<div id="ccf70c29-97c3-4ce6-93c7-e6045bef8597" class="cell" data-tags="[]" data-execution_count="14">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>data_array_at_time.plot(vmin<span class="op">=</span><span class="dv">0</span>, vmax<span class="op">=</span><span class="dv">30</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="demo_files/figure-html/data_notebooks-demo-demo-cell-15-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Here we plot data_array_at_latlon. We use the exact same code, but define <code>my_extent</code> accordingly.</p>
+<div id="5084c252-567b-4339-b71a-691d44d28898" class="cell" data-execution_count="15">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Let's use matplotlib's imshow, since our data is on a grid</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="co"># ref: https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.imshow.html</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Initialize a figure and plot, so we can customize figure and plot of data</span></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a><span class="co"># ref: https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.subplots.html</span></span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>my_fig, my_plt <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">15</span>, <span class="dv">6</span>), subplot_kw<span class="op">=</span><span class="bu">dict</span>(projection<span class="op">=</span>ccrs.PlateCarree()))</span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Let's set some parameters to get the visualization we want</span></span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a><span class="co"># ref: https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.imshow.html</span></span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a><span class="co"># color PM25 values on a log scale, since values are small</span></span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>my_norm <span class="op">=</span> <span class="st">"log"</span> </span>
+<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a><span class="co"># ***this will number our x and y axes based on the longitude latitude range***</span></span>
+<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a>my_extent <span class="op">=</span> [min_lon, max_lon, min_lat, max_lat]</span>
+<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a><span class="co"># ensure the aspect ratio of our plot fits all data, matplotlib can does this automatically</span></span>
+<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a>my_aspect <span class="op">=</span> <span class="st">'auto'</span></span>
+<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a><span class="co"># tell matplotlib, our origin is the lower-left corner</span></span>
+<span id="cb21-18"><a href="#cb21-18" aria-hidden="true" tabindex="-1"></a>my_origin <span class="op">=</span> <span class="st">'lower'</span></span>
+<span id="cb21-19"><a href="#cb21-19" aria-hidden="true" tabindex="-1"></a><span class="co"># select a colormap for our plot and the color bar on the right</span></span>
+<span id="cb21-20"><a href="#cb21-20" aria-hidden="true" tabindex="-1"></a>my_cmap <span class="op">=</span> <span class="st">'Oranges'</span></span>
+<span id="cb21-21"><a href="#cb21-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-22"><a href="#cb21-22" aria-hidden="true" tabindex="-1"></a><span class="co"># create our plot using imshow</span></span>
+<span id="cb21-23"><a href="#cb21-23" aria-hidden="true" tabindex="-1"></a>plot <span class="op">=</span> plt.imshow(data_array_at_latlon.values, norm<span class="op">=</span>my_norm, extent<span class="op">=</span>my_extent, </span>
+<span id="cb21-24"><a href="#cb21-24" aria-hidden="true" tabindex="-1"></a>          aspect<span class="op">=</span>my_aspect, origin<span class="op">=</span>my_origin, cmap<span class="op">=</span>my_cmap)</span>
+<span id="cb21-25"><a href="#cb21-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-26"><a href="#cb21-26" aria-hidden="true" tabindex="-1"></a><span class="co"># draw coastlines</span></span>
+<span id="cb21-27"><a href="#cb21-27" aria-hidden="true" tabindex="-1"></a>my_plt.coastlines()</span>
+<span id="cb21-28"><a href="#cb21-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-29"><a href="#cb21-29" aria-hidden="true" tabindex="-1"></a><span class="co"># draw latitude longitude lines</span></span>
+<span id="cb21-30"><a href="#cb21-30" aria-hidden="true" tabindex="-1"></a><span class="co"># ref: https://scitools.org.uk/cartopy/docs/latest/gallery/gridlines_and_labels/gridliner.html</span></span>
+<span id="cb21-31"><a href="#cb21-31" aria-hidden="true" tabindex="-1"></a>my_plt.gridlines(draw_labels<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb21-32"><a href="#cb21-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-33"><a href="#cb21-33" aria-hidden="true" tabindex="-1"></a><span class="co"># add a colorbar to our figure, based on the plot we just made above</span></span>
+<span id="cb21-34"><a href="#cb21-34" aria-hidden="true" tabindex="-1"></a>my_fig.colorbar(plot,location<span class="op">=</span><span class="st">'right'</span>, label<span class="op">=</span><span class="st">'ug/m^3'</span>)</span>
+<span id="cb21-35"><a href="#cb21-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-36"><a href="#cb21-36" aria-hidden="true" tabindex="-1"></a><span class="co"># Add metadata as text annotations</span></span>
+<span id="cb21-37"><a href="#cb21-37" aria-hidden="true" tabindex="-1"></a>metadata_text <span class="op">=</span> (</span>
+<span id="cb21-38"><a href="#cb21-38" aria-hidden="true" tabindex="-1"></a>    <span class="ss">f'resampled: </span><span class="sc">{</span>resampled<span class="sc">.</span>values<span class="sc">}</span><span class="ch">\n</span><span class="ss">'</span></span>
+<span id="cb21-39"><a href="#cb21-39" aria-hidden="true" tabindex="-1"></a>    <span class="ss">f'SDATE: </span><span class="sc">{</span>sdate<span class="sc">.</span>values<span class="sc">}</span><span class="ch">\n</span><span class="ss">'</span></span>
+<span id="cb21-40"><a href="#cb21-40" aria-hidden="true" tabindex="-1"></a>    <span class="ss">f'STIME: </span><span class="sc">{</span>stime<span class="sc">.</span>values<span class="sc">}</span><span class="ch">\n</span><span class="ss">'</span></span>
+<span id="cb21-41"><a href="#cb21-41" aria-hidden="true" tabindex="-1"></a>    <span class="ss">f'WDATE: </span><span class="sc">{</span>wdate<span class="sc">.</span>values<span class="sc">}</span><span class="ch">\n</span><span class="ss">'</span></span>
+<span id="cb21-42"><a href="#cb21-42" aria-hidden="true" tabindex="-1"></a>    <span class="ss">f'WTIME: </span><span class="sc">{</span>wtime<span class="sc">.</span>values<span class="sc">}</span><span class="ss">'</span></span>
+<span id="cb21-43"><a href="#cb21-43" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb21-44"><a href="#cb21-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-45"><a href="#cb21-45" aria-hidden="true" tabindex="-1"></a><span class="co"># Place metadata text on the plot</span></span>
+<span id="cb21-46"><a href="#cb21-46" aria-hidden="true" tabindex="-1"></a>my_plt.text(<span class="fl">0.02</span>, <span class="fl">0.02</span>, metadata_text, transform<span class="op">=</span>my_plt.transAxes,</span>
+<span id="cb21-47"><a href="#cb21-47" aria-hidden="true" tabindex="-1"></a>            fontsize<span class="op">=</span><span class="dv">12</span>, verticalalignment<span class="op">=</span><span class="st">'bottom'</span>, bbox<span class="op">=</span><span class="bu">dict</span>(facecolor<span class="op">=</span><span class="st">'white'</span>, alpha<span class="op">=</span><span class="fl">0.8</span>))</span>
+<span id="cb21-48"><a href="#cb21-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-49"><a href="#cb21-49" aria-hidden="true" tabindex="-1"></a><span class="co"># Set x and y axis labels on our ax</span></span>
+<span id="cb21-50"><a href="#cb21-50" aria-hidden="true" tabindex="-1"></a>my_fig.supxlabel(<span class="st">'Longitude'</span>)</span>
+<span id="cb21-51"><a href="#cb21-51" aria-hidden="true" tabindex="-1"></a>my_fig.supylabel(<span class="st">'Latitude'</span>)</span>
+<span id="cb21-52"><a href="#cb21-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-53"><a href="#cb21-53" aria-hidden="true" tabindex="-1"></a><span class="co"># Set title of our figure</span></span>
+<span id="cb21-54"><a href="#cb21-54" aria-hidden="true" tabindex="-1"></a>my_fig.suptitle(<span class="st">'Ground level concentration of PM2.5 microns and smaller'</span>)</span>
+<span id="cb21-55"><a href="#cb21-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-56"><a href="#cb21-56" aria-hidden="true" tabindex="-1"></a><span class="co"># Set title of our plot as the timestamp of our data</span></span>
+<span id="cb21-57"><a href="#cb21-57" aria-hidden="true" tabindex="-1"></a>my_plt.set_title(<span class="ss">f'</span><span class="sc">{</span>my_timestamp<span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb21-58"><a href="#cb21-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-59"><a href="#cb21-59" aria-hidden="true" tabindex="-1"></a><span class="co"># Show the resulting visualization</span></span>
+<span id="cb21-60"><a href="#cb21-60" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="demo_files/figure-html/data_notebooks-demo-demo-cell-16-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="edf41f8c-3774-45cb-82b7-d83e673c054b" class="cell" data-tags="[]" data-execution_count="16">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>data_array_at_latlon.plot(vmin<span class="op">=</span><span class="dv">0</span>, vmax<span class="op">=</span><span class="dv">30</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="demo_files/figure-html/data_notebooks-demo-demo-cell-17-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="please-reach-out-to-arleth-salinas-or-valerio-pascucci-for-any-concerns-about-the-notebook.-thank-you" class="level3" data-number="1.6.3">
+<h3 data-number="1.6.3" class="anchored" data-anchor-id="please-reach-out-to-arleth-salinas-or-valerio-pascucci-for-any-concerns-about-the-notebook.-thank-you"><span class="header-section-number">1.6.3</span> <em>Please reach out to Arleth Salinas or Valerio Pascucci for any concerns about the notebook. Thank you!</em></h3>
+<ul>
+<li>Arleth Salinas (arleth.salinas@utah.edu)</li>
+<li>Valerio Pascucci (pascucci.valerio@gmail.com)</li>
+</ul>
+</section>
+</section>
+</div>
+
+
+<!-- -->
+
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  const viewSource = window.document.getElementById('quarto-view-source') ||
+                     window.document.getElementById('quarto-code-tools-source');
+  if (viewSource) {
+    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+    viewSource.addEventListener("click", function(e) {
+      if (sourceUrl) {
+        // rstudio viewer pane
+        if (/\bcapabilities=\b/.test(window.location)) {
+          window.open(sourceUrl);
+        } else {
+          window.location.href = sourceUrl;
+        }
+      } else {
+        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+        modal.show();
+      }
+      return false;
+    });
+  }
+  function toggleCodeHandler(show) {
+    return function(e) {
+      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+      for (let i=0; i<detailsSrc.length; i++) {
+        const details = detailsSrc[i].parentElement;
+        if (show) {
+          details.open = true;
+        } else {
+          details.removeAttribute("open");
+        }
+      }
+      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+      const fromCls = show ? "hidden" : "unhidden";
+      const toCls = show ? "unhidden" : "hidden";
+      for (let i=0; i<cellCodeDivs.length; i++) {
+        const codeDiv = cellCodeDivs[i];
+        if (codeDiv.classList.contains(fromCls)) {
+          codeDiv.classList.remove(fromCls);
+          codeDiv.classList.add(toCls);
+        } 
+      }
+      return false;
+    }
+  }
+  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+  if (hideAllCode) {
+    hideAllCode.addEventListener("click", toggleCodeHandler(false));
+  }
+  const showAllCode = window.document.getElementById("quarto-show-all-code");
+  if (showAllCode) {
+    showAllCode.addEventListener("click", toggleCodeHandler(true));
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      const annoteTargets = window.document.querySelectorAll('.code-annotation-anchor');
+      for (let i=0; i<annoteTargets.length; i++) {
+        const annoteTarget = annoteTargets[i];
+        const targetCell = annoteTarget.getAttribute("data-target-cell");
+        const targetAnnotation = annoteTarget.getAttribute("data-target-annotation");
+        const contentFn = () => {
+          const content = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          if (content) {
+            const tipContent = content.cloneNode(true);
+            tipContent.classList.add("code-annotation-tip-content");
+            return tipContent.outerHTML;
+          }
+        }
+        const config = {
+          allowHTML: true,
+          content: contentFn,
+          onShow: (instance) => {
+            selectCodeLines(instance.reference);
+            instance.reference.classList.add('code-annotation-active');
+            window.tippy.hideAll();
+          },
+          onHide: (instance) => {
+            unselectCodeLines();
+            instance.reference.classList.remove('code-annotation-active');
+          },
+          maxWidth: 300,
+          delay: [50, 0],
+          duration: [200, 0],
+          offset: [5, 10],
+          arrow: true,
+          appendTo: function(el) {
+            return el.parentElement.parentElement.parentElement;
+          },
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'quarto',
+          placement: 'right',
+          popperOptions: {
+            modifiers: [
+            {
+              name: 'flip',
+              options: {
+                flipVariations: false, // true by default
+                allowedAutoPlacements: ['right'],
+                fallbackPlacements: ['right', 'top', 'top-start', 'top-end', 'bottom', 'bottom-start', 'bottom-end', 'left'],
+              },
+            },
+            {
+              name: 'preventOverflow',
+              options: {
+                mainAxis: false,
+                altAxis: false
+              }
+            }
+            ]        
+          }      
+        };
+        window.tippy(annoteTarget, config); 
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./index.html" class="pagination-link" aria-label="Preface">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Preface</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./intro.html" class="pagination-link" aria-label="Introduction">
+        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introduction</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="sourceCode" id="cb23" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "IDX File Demo"</span></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a><span class="co">    code-links:</span></span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a><span class="co">      - text: Demo Download</span></span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a><span class="co">        icon: file-code</span></span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a><span class="co">        href: https://github.com/sci-visus/NSDF-WIRED/blob/main/communication/UBC%20Smoke%20Forecast%20Data%20Curation/data_notebooks/demo/demo.ipynb</span></span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a><span class="co">    toc: true</span></span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a><span class="co">    toc-depth: 3</span></span>
+<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- NOTES: change level to 3/4 --&gt;</span></span>
+<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a>{{&lt; embed data_notebooks/demo/demo.ipynb echo=true &gt;}}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div></div></div></div>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

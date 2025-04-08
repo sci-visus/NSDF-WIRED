@@ -1,0 +1,4 @@
+- source: project
+  quarto-pub:
+    - id: e7d24aaa-c47a-4771-99c8-8c9e376d2bab
+      url: 'https://arleth.quarto.pub/ubc-smoke-forecast-data-repurposing-and-distribution'

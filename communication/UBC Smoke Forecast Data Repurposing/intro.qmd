@@ -1,0 +1,15 @@
+# Introduction {#sec-introduction}
+
+Wildfires in North America have significantly impacted ecosystems and human society [@mckenzie_climatic_2004]. Climate change affects the frequency, duration, and severity of wildfires thus necessitating the use of wildfire prediction systems to effectively mitigate wildfire impact. However, data for understanding the impact of climate change on wildfires is limited, only available for a few regions and for only a few decades [@Taylor2013Wildfire]. Furthermore, wildfire prediction systems in North America prioritize decision making and fire management on short timescales, from minutes to months. Therefore, long term wildfire prediction systems have limited access to aggregate short term data, due to resource constraints from fire management entities to share the data they collect and curate. 
+
+The Weather Forecast Research Team at the University of British Columbia (UBC) generates a short term dataset of PM2.5 smoke particulate presence in North America. Over the past 3 years, each day four times a day, UBC has created forecasts of PM2.5 smoke particulate on the ground for Canada and the continental United States. This is done using their The BlueSky Western Canada Wildfire Smoke Forecasting System [@firesmoke]. UBC provides access to this data to paying customers and for free on a daily basis via a web-based visualization and file download.
+
+These smoke predictions are useful for those who must make decisions on how to deal with smoke as it comes. However, these years of forecasts are not available in a non-trivial fashion for long term forecasting. The data only exists among the hundreds of NetCDF files that UBC has generated.
+
+Our task is to obtain a single historical dataset from the smoke forecast files that are available from UBC.
+<!-- 
+[1] McKENZIE, Donald, Ze’ev Gedalof, David L. Peterson, and Philip Mote. “Climatic Change, Wildfire, and Conservation.” Conservation Biology 18, no. 4 (2004): 890–902. https://doi.org/10.1111/j.1523-1739.2004.00492.x.
+
+[1] https://dl.acm.org/doi/abs/10.1145/583890.583893
+
+[2] climate change and wildfire article that was in spanish -->

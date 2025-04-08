@@ -1,0 +1,37 @@
+---
+format:
+  html:
+    code-links:
+      - text: Conda YML File
+        icon: file-code
+        href: https://github.com/sci-visus/NSDF-WIRED/blob/main/conda_environment.yml
+---
+
+# System and Environment {#sec-sys-specs}
+
+## Machine Specification
+
+The data we curate is over 300 gigabytes large. Therefore we used the SCI institute's in-house machine 'atlantis' for data staging and processing. See @tbl-specs.
+
+| Property                   | Value                      |
+|----------------------------|----------------------------|
+| Architecture               | x86_64                     |
+| CPU op-mode(s)             | 32-bit, 64-bit             |
+| Byte Order                 | Little Endian              |
+| Address sizes              | 44 bits physical, 48 bits virtual |
+| CPU(s)                     | 48                         |
+| On-line CPU(s) list        | 0-47                       |
+| Thread(s) per core         | 2                          |
+| Core(s) per socket         | 6                          |
+| Socket(s)                  | 4                          |
+: 'atlantis' System Specifications {#tbl-specs}
+
+## Environment
+
+We aim to work in an environment that can be most easily reproduced and documented. Therefore we used Python 3.9.19 via conda. We did all our work within the Project Jupyter environment.
+
+To find our the `yml` file containing our exported conda environment please see the sidebar.
+
+To work on the 'atlantis' machine, we used SSH to connect to the machine.
+
+In the proceeding chapters we will specify which tools and libraries were used and why.

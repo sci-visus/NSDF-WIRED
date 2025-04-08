@@ -1,0 +1,55 @@
+---
+format:
+  html:
+    code-links:
+      - text: Visualizing all Timesteps
+        icon: file-code
+        href: https://github.com/sci-visus/NSDF-WIRED/tree/main/visualizations/make_videos
+---
+# Data Validation {#sec-data-validation}
+
+The success of this data curation project requires competent data validation. Data validation is the bridge between theoretical and real-world data curation. We unfortunately used many assumptions about the data and systems we used that did not hold true, leading to unexplainable issues throughout the data curation process.
+
+Here, we will describe our deficiencies in performing data validation and the consequences we faced. We conclude with a discussion on how best data validation can be incorporated in this project and future such projects, so that one may avoid such issues next time.
+
+## Data Validation vs Data Exploration
+
+Data exploration enlightens one on the contents of the data and metadata one presumes they have. We performed data exploration by loading and visualizing a few files. This allowed us to understand what data UBC aims to provide.
+
+What data exploration *does not* do is explain the origin of issues such missing or seemingly corrupt data. Data exploration uses the assumption that the data is perfect.
+
+Data validation forces one to consider, where do issues that appear in the data come from, and are these issues with the data or with the systems used to access and manipulate the data?
+
+## Data Validation for Data Loading
+Here, we will describe how we discovered the consequences of failing to validate that the files we downloaded were true NetCDF files instead of HTML webpages, as described in @sec-data-loading.
+
+### The Problem
+
+When doing rudimentary visualizations we saw missing timesteps from our final dataset in the IDX file. We assumed that any missing time steps were due to the files being unavailable from the data source. However, we decided to validate which time steps were missing and why, in case the cause for apparently missing time steps was our fault.
+
+### Visualizing all Timesteps
+To determine exactly which time steps were unavailable, we decided to load and visualize every timestep from March 3, 2021 to June 27, 2024 as a video. We then identify which time steps fail to load or visualize and diagnose *why*. The scripts we proceed to describe can be found in the side bar or [here](https://github.com/sci-visus/NSDF-WIRED/tree/main/visualizations/make_videos).
+
+---
+
+In the following scripts, we generate PNG images for every time step in our IDX file *and* for every time step directly loaded from the downloaded NetCDF files. The time steps we load are the same ones specified in our `idx_calls` array from @sec-data-conversion.
+
+We load from both our IDX file and NetCDF files to crosscheck any issues we encounter in both file formats.
+
+::: {.panel-tabset}
+# IDX File PNGs
+{{< embed data_notebooks/data_validation/firesmoke_idx_all_frames.ipynb echo=true >}}
+
+# NetCDF Files PNGs
+{{< embed data_notebooks/data_validation/firesmoke_netcdf_all_frames.ipynb echo=true >}}
+:::
+
+---
+
+Now with all images for each time step generated, we create videos to save to file.
+
+{{< embed  data_notebooks/data_validation/make_videos.ipynb echo=true >}}
+
+Visually inspecting these videos allowed us to explore where significant bouts of missing timeseries data were missing.
+
+<!-- ## Data Conversion -->

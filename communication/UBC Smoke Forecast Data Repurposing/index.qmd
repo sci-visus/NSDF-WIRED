@@ -1,0 +1,18 @@
+# Preface {.unnumbered}
+
+Welcome to NSDF's UBC Firesmoke Data Repurposing website. Here we describe the data repurposing process of UBC's Smoke Forecast datasets. We inform readers of the challenges and solutions we found when repurposing these short term datasets into a long term dataset.
+
+It is important to note that although we will present the data repurposing process in a linear fashion here, it was not a linear process. Rather, the process was iterative, and at each iteration we introduced new improvements.
+
+## Navigation and Webpage Information
+This webpage is produced using [Quart](https://quarto.org/). 
+
+You can find the source code for this page [here](https://github.com/sci-visus/NSDF-WIRED/tree/main/communication/UBC%20Smoke%20Forecast%20Data%20Curation). 
+
+All files or directories in this website are hosted at our GitHub repository, unless otherwise specified.
+
+All code blocks contain annotations, hover over the numbers on the right hand side to see the accompanying annotation.
+```python
+Hover over me ----> # <1>
+```
+1. I'm an annotation.

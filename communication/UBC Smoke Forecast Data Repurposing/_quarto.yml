@@ -1,0 +1,30 @@
+project:
+  type: book
+  output-dir: docs
+
+book:
+  title: "UBC Smoke Forecast Data Repurposing and Distribution"
+  author: "Arleth Salinas and Valerio Pascucci \n \n a 'WIRED Global Center' & 'National Science Data Fabric' collaboration"
+  date: "Last update: 4/7/2025"  
+  chapters:
+    - index.qmd
+    - demo.qmd
+    - intro.qmd
+    - sys_specs.qmd
+    - data_source.qmd
+    - data_loading.qmd
+    - data_conversion.qmd
+    - data_validation.qmd
+    # - test.qmd
+    - references.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    code-overflow: wrap
+    code-fold: show
+    code-annotations: hover
+    code-tools: true
+  pdf:
+    documentclass: scrreprt

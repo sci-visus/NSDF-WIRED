@@ -9,7 +9,6 @@ from bokeh.layouts import layout
 import xyzservices.providers as xyz
 from bokeh.layouts import column, row
 from bokeh.plotting import figure, curdoc
-from bokeh.models import LinearColorMapper
 from bokeh.models import (
     DatePicker,
     Slider,
@@ -29,6 +28,11 @@ latslons = get_latslons()
 default_lats = latslons[:, 0]
 default_lons = latslons[:, 1]
 default_pm25_vals = get_pm25(default_date, default_hour, default_res)
+params = dict(
+    date=default_date,
+    hour=default_hour,
+    res=default_res,
+)
 source = ColumnDataSource(
     data=dict(
         x=default_lats,
@@ -48,18 +52,6 @@ p = figure(
     y_axis_type="mercator",
 )
 p.add_tile(xyz.OpenStreetMap.Mapnik)
-print(f"({source.data['x'][0]}, {source.data['y'][0]}): {source.data['color'][0]}")
-exp_cmap = LinearColorMapper(
-    palette="Viridis256", low=min(source.data["color"]), high=max(source.data["color"])
-)
-p.circle(
-    source=source,
-    x="x",
-    y="y",
-    fill_color={"field": "color", "transform": exp_cmap},
-    line_width=0,
-    radius=10000,
-)
 # p.scatter(x="x", y="y", source=source, color="color")
 
 ##### Widgets #####
@@ -74,20 +66,27 @@ date_picker = DatePicker(
 
 # callback function to update selected data on new date
 def update_date(attr, old_date, new_date):
-    # update data
+    # update data and parameters
+    new_params = dict()
     new_data = dict()
 
     # keep the same
+    new_params["hour"] = params["hour"]
+    new_params["res"] = params["res"]
     new_data["x"] = source.data["x"]
     new_data["y"] = source.data["y"]
 
     # new date and new pm2.5 values
-    new_data["color"] = get_pm25(new_date, hour_slider.value, res_slider.value)
+    new_params["date"] = new_date
+    new_data["color"] = get_pm25(
+        new_params["date"], new_params["hour"], new_params["res"]
+    )
+
+    # update params and source dicts
+    params = new_params
     source.data = new_data
-    # print(source.data)
-    print(f"np.shape(source.data['x']) = {np.shape(source.data['x'])}")
-    print(f"np.shape(source.data['y']) = {np.shape(source.data['y'])}")
-    print(f"np.shape(source.data['color']) = {np.shape(source.data['color'])}")
+    print(params)
+    print(source.data)
 
 
 # when date selected changes, call update_date
@@ -100,7 +99,7 @@ date_picker.on_change("value", update_date)
 #   https://discourse.bokeh.org/t/a-simple-way-to-custom-a-slider-as-a-dateslider/10005
 
 # hour slider shows hours for currently selected date
-curr_date = date_picker.value
+curr_date = params["date"]
 year = int(curr_date[0:4])
 month = int(curr_date[5:7])
 day = int(curr_date[-2:])
@@ -129,16 +128,24 @@ def animate_update():
 
 
 def update_hour(attr, old_hour, new_hour):
-    # update data
+    # update data and parameters
+    new_params = dict()
     new_data = dict()
 
     # keep the same
+    new_params["date"] = params["date"]
+    new_params["res"] = params["res"]
     new_data["x"] = source.data["x"]
     new_data["y"] = source.data["y"]
 
     # new date and new pm2.5 values
-    new_data["hour"] = [new_hour]
-    new_data["color"] = [get_pm25(date_picker.value, new_hour, res_slider.value)]
+    new_params["hour"] = new_hour
+    new_data["color"] = [
+        get_pm25(new_params["date"], new_params["hour"], new_params["res"])
+    ]
+
+    # update params and source dicts
+    params = new_params
     source.data = new_data
 
 
@@ -177,15 +184,24 @@ res_slider = Slider(start=-19, end=0, value=default_res, step=1, title="Resoluti
 # callback function to update selected resolution
 def update_res(attr, old_res, new_res):
     print("Selected resolution:", new_res)
-    # update data
+    # update data and params
+    new_params = dict()
     new_data = dict()
 
     # keep the same
+    new_params["date"] = params["date"]
+    new_params["hour"] = params["hour"]
     new_data["x"] = source.data["x"]
     new_data["y"] = source.data["y"]
 
     # new res and new pm2.5 values
-    new_data["color"] = get_pm25(date_picker.value, hour_slider.value, new_res)
+    new_params["res"] = new_res
+    new_data["color"] = [
+        get_pm25(new_params["date"], new_params["hour"], new_params["res"])
+    ]
+
+    # update params and source dicts
+    params = new_params
     source.data = new_data
 
 

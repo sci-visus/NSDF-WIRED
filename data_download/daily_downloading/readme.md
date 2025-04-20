@@ -1,6 +1,11 @@
-## Here you find download scripts for all the NetCDF files available from [firesmoke.ca](https://firesmoke.ca/forecasts)
+## `daily_downloading`
+
+We run a cron job at 01 UTC each day downloading yesterday's (relative to cron job run) forecasts.
 
 ### Instructions for downloading from firesmoke.ca
+We use these primary instructions.
+
+
 | Forecast ID     | Description                                                            | URL                                                                          | Instructions                                                                                             |
 |-----------------|------------------------------------------------------------------------|------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------|
 | BSC00CA12-01    | BlueSky Canada smoke forecast, 00Z met (12km grid), 08Z fires, North America domain | https://firesmoke.ca/forecasts/BSC00CA12-01/YYYYMMDD08/              | Replace YYYYMMDD with date; append "dispersion.nc" or "dispersion.kmz" to download data                    |
@@ -9,22 +14,20 @@
 | BSC18CA12-01    | BlueSky Canada smoke forecast, 18Z met (12km grid), 02Z fires, North America domain | https://firesmoke.ca/forecasts/BSC18CA12-01/YYYYMMDD02/               | Replace YYYYMMDD with date; append "dispersion.nc" or "dispersion.kmz" to download data                    |
 | BSC00WC04-01    | BlueSky Canada smoke forecast, 00Z met (4km grid), 08Z fires, western Canada domain | https://firesmoke.ca/forecasts/BSC00WC04-01/YYYYMMDD08/         | Replace YYYYMMDD with date; append "dispersion.nc" or "dispersion.kmz" to download data |
 
-### Available Dates
+### File Descriptions
 
-We manually determined the earliest available files' dates to be March 4, 2021 for the BSC18CA12-01, BSC00CA12-01, BSC06CA12-01 datasets and March 3, 2021 for the BSC12CA12-01 dataset.
+#### download_daily.py:
+The python download script to download yesterday's forecasts. Using similar approach as in batch downloading scripts.
 
-We also manually determined the latest available files' dates to be October 16, 2023 for BSC18CA12-01 and BSC06CA12-01, October 15, 2023 for BSC12CA12-01, and February 10, 2024 for BSC00CA12-01.
+#### download.sh:
+The script that launches as a cron job everyday at 01 UTC.
 
-We did this by simply checking the firesmoke.ca website and downloading the earliest and latest dates available. It would be good to later confirm if there are earlier/later dates and redownloading and convert accordingly.
+#### firesmoke_daily_download.log
+Log output from each time the download_daily.py script runs, reporting if downloads were successful or not.
 
-### Batch vs. Daily Downloading
-
-#### batch_downloading
-Beginning the project we downloaded all available NetCDF files from the earliest available dates identified above to the last time we ran the download scripts, June 25, 2024. We then backfilled missing data from June 25, to April 19, 2025 and then implemented a daily download for the NetCDF files to avoid arbitrarily returning and downloading newly created forecasts.
-
-#### daily_downloading
-The scripts here are used to run a daily cron job where the NetCDF files for yesterday's (realtive to 'today' for the cron job) forecasts  are all downloaded.
-
-We expect all files that were published yesterday to be available the next day. We make sure to download all files before the new forecasts for the day are published.
-
-Since the earliest forecast for the day is published at approximately 09 UTC and the latest at approximately 03 UTC we run the download script at 01 UTC.
+### Cron Job
+Run by user `arleth` on `atlantis.sci.utah.edu` with:
+```
+CRON_TZ="UTC"
+0 1 * * * echo "cron ran at $(date -u)" >> /home/collab/arleth/work/NSDF-WIRED/data_download/daily_downloading/cron_heartbeat.log && /home/collab/arleth/work/NSDF-WIRED/data_download/daily_downloading/download.sh
+```

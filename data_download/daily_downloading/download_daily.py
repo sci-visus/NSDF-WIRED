@@ -22,7 +22,7 @@ logging.basicConfig(
 ids = ["BSC18CA12-01", "BSC00CA12-01", "BSC06CA12-01", "BSC12CA12-01", "BSC00WC04-01"]
 init_times = ["02", "08", "14", "20", "08"]
 parent_dir = "/usr/sci/cedmav/data/firesmoke/daily_downloads/"
-yesterday = (datetime.now() - timedelta(days=6)).strftime('%Y%m%d')
+yesterday = (datetime.now() - timedelta(days=1)).strftime('%Y%m%d')
 
 for forecast_id, init_time in zip(ids, init_times):
     # create directory for forecast if it doesn't exist already

@@ -13,17 +13,18 @@ logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s [%(levelname)s] %(message)s',
     handlers=[
-        logging.FileHandler("june_backfill_download.log"),
+        logging.FileHandler("aprilmay_backfill_download.log"),
         logging.StreamHandler()
     ]
 )
 
 # get metadata of datasets, had to be obtained manually
-ids = ["BSC18CA12-01", "BSC00CA12-01", "BSC06CA12-01", "BSC12CA12-01"]
-start_dates = ["20240625", "20240625", "20240625", "20240625"]
-end_date = "20250414"
+ids = ["BSC18CA12-05", "BSC00CA12-05", "BSC06CA12-05", "BSC12CA12-05"]
+# ids = ["BSC18CA12-01", "BSC00CA12-01", "BSC06CA12-01", "BSC12CA12-01"]
+start_dates = ["20250519", "20250519", "20250519", "20250519"]
+end_date = "20250524"
 init_times = ["02", "08", "14", "20"]
-parent_dir = "/usr/sci/cedmav/data/firesmoke/download_4-14-2025/"
+parent_dir = "/usr/sci/cedmav/data/firesmoke/download_5-19-2025/"
 
 # try downloading all files starting the day after dataset's corresponding end date
 for i in zip(start_dates, ids, init_times):

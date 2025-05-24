@@ -1,5 +1,10 @@
 ## Here you find download scripts for all the NetCDF files available from [firesmoke.ca](https://firesmoke.ca/forecasts)
 
+### Current Workflow
+Our current workflow is doing hourly downloading.
+
+We use the `rename_all.py` workflow to rename all previously downloaded files to follow the naming convention `dispersion_{CDATE}_{CTIME}.nc` convention. Metadata in the filename is not best practice probably... however all metadata is *also* in the file itself, we store name each file using `CDATE` and `CTIME` for convenience i.e. no need to open the file and check the `CDATE` and `CTIME` during conversion to IDX.
+
 ### Instructions for downloading from firesmoke.ca
 | Forecast ID     | Description                                                            | URL                                                                          | Instructions                                                                                             |
 |-----------------|------------------------------------------------------------------------|------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------|
@@ -17,14 +22,20 @@ We also manually determined the latest available files' dates to be October 16, 
 
 We did this by simply checking the firesmoke.ca website and downloading the earliest and latest dates available. It would be good to later confirm if there are earlier/later dates and redownloading and convert accordingly.
 
-### Batch vs. Daily Downloading
+### Batch vs. Daily vs. Hourly Downloading
 
-#### batch_downloading
+#### `batch_downloading`
 Beginning the project we downloaded all available NetCDF files from the earliest available dates identified above to the last time we ran the download scripts, June 25, 2024. We then backfilled missing data from June 25, to April 19, 2025 and then implemented a daily download for the NetCDF files to avoid arbitrarily returning and downloading newly created forecasts.
 
-#### daily_downloading
+#### `daily_downloading`
 The scripts here are used to run a daily cron job where the NetCDF files for yesterday's (realtive to 'today' for the cron job) forecasts  are all downloaded.
 
 We expect all files that were published yesterday to be available the next day. We make sure to download all files before the new forecasts for the day are published.
 
 Since the earliest forecast for the day is published at approximately 09 UTC and the latest at approximately 03 UTC we run the download script at 01 UTC.
+
+#### `hourly_downloading`
+The scripts here are used to run an hourly cron job where the NetCDF file at https://firesmoke.ca/forecasts/current/ is downloaded and kept, if we haven't already downloaded it.
+
+### `rename_all.py`
+

@@ -1,0 +1,24 @@
+2025-05-23 12:30:56,152 [INFO] Success: https://firesmoke.ca/forecasts/BSC18CA12-05/2025051902/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/download_5-19-2025/BSC18CA12-05/dispersion_20250519.nc
+2025-05-23 12:30:59,312 [INFO] Success: https://firesmoke.ca/forecasts/BSC18CA12-05/2025052002/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/download_5-19-2025/BSC18CA12-05/dispersion_20250520.nc
+2025-05-23 12:31:02,832 [INFO] Success: https://firesmoke.ca/forecasts/BSC18CA12-05/2025052102/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/download_5-19-2025/BSC18CA12-05/dispersion_20250521.nc
+2025-05-23 12:31:06,022 [INFO] Success: https://firesmoke.ca/forecasts/BSC18CA12-05/2025052202/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/download_5-19-2025/BSC18CA12-05/dispersion_20250522.nc
+2025-05-23 12:31:09,858 [INFO] Success: https://firesmoke.ca/forecasts/BSC18CA12-05/2025052302/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/download_5-19-2025/BSC18CA12-05/dispersion_20250523.nc
+2025-05-23 12:31:10,312 [ERROR] Failed: https://firesmoke.ca/forecasts/BSC18CA12-05/2025052402/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/download_5-19-2025/BSC18CA12-05/dispersion_20250524.nc | Header Content-Type: text/html
+2025-05-23 12:31:13,134 [INFO] Success: https://firesmoke.ca/forecasts/BSC00CA12-05/2025051908/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/download_5-19-2025/BSC00CA12-05/dispersion_20250519.nc
+2025-05-23 12:31:46,417 [INFO] Success: https://firesmoke.ca/forecasts/BSC00CA12-05/2025052008/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/download_5-19-2025/BSC00CA12-05/dispersion_20250520.nc
+2025-05-23 12:31:49,411 [INFO] Success: https://firesmoke.ca/forecasts/BSC00CA12-05/2025052108/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/download_5-19-2025/BSC00CA12-05/dispersion_20250521.nc
+2025-05-23 12:31:52,426 [INFO] Success: https://firesmoke.ca/forecasts/BSC00CA12-05/2025052208/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/download_5-19-2025/BSC00CA12-05/dispersion_20250522.nc
+2025-05-23 12:31:55,500 [INFO] Success: https://firesmoke.ca/forecasts/BSC00CA12-05/2025052308/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/download_5-19-2025/BSC00CA12-05/dispersion_20250523.nc
+2025-05-23 12:31:55,964 [ERROR] Failed: https://firesmoke.ca/forecasts/BSC00CA12-05/2025052408/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/download_5-19-2025/BSC00CA12-05/dispersion_20250524.nc | Header Content-Type: text/html
+2025-05-23 12:32:00,812 [INFO] Success: https://firesmoke.ca/forecasts/BSC06CA12-05/2025051914/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/download_5-19-2025/BSC06CA12-05/dispersion_20250519.nc
+2025-05-23 12:32:07,656 [INFO] Success: https://firesmoke.ca/forecasts/BSC06CA12-05/2025052014/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/download_5-19-2025/BSC06CA12-05/dispersion_20250520.nc
+2025-05-23 12:32:10,850 [INFO] Success: https://firesmoke.ca/forecasts/BSC06CA12-05/2025052114/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/download_5-19-2025/BSC06CA12-05/dispersion_20250521.nc
+2025-05-23 12:32:17,704 [INFO] Success: https://firesmoke.ca/forecasts/BSC06CA12-05/2025052214/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/download_5-19-2025/BSC06CA12-05/dispersion_20250522.nc
+2025-05-23 12:32:21,033 [INFO] Success: https://firesmoke.ca/forecasts/BSC06CA12-05/2025052314/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/download_5-19-2025/BSC06CA12-05/dispersion_20250523.nc
+2025-05-23 12:32:21,470 [ERROR] Failed: https://firesmoke.ca/forecasts/BSC06CA12-05/2025052414/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/download_5-19-2025/BSC06CA12-05/dispersion_20250524.nc | Header Content-Type: text/html
+2025-05-23 12:32:26,394 [INFO] Success: https://firesmoke.ca/forecasts/BSC12CA12-05/2025051920/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/download_5-19-2025/BSC12CA12-05/dispersion_20250519.nc
+2025-05-23 12:32:39,859 [INFO] Success: https://firesmoke.ca/forecasts/BSC12CA12-05/2025052020/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/download_5-19-2025/BSC12CA12-05/dispersion_20250520.nc
+2025-05-23 12:32:45,066 [INFO] Success: https://firesmoke.ca/forecasts/BSC12CA12-05/2025052120/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/download_5-19-2025/BSC12CA12-05/dispersion_20250521.nc
+2025-05-23 12:32:48,773 [INFO] Success: https://firesmoke.ca/forecasts/BSC12CA12-05/2025052220/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/download_5-19-2025/BSC12CA12-05/dispersion_20250522.nc
+2025-05-23 12:32:49,225 [ERROR] Failed: https://firesmoke.ca/forecasts/BSC12CA12-05/2025052320/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/download_5-19-2025/BSC12CA12-05/dispersion_20250523.nc | Header Content-Type: text/html
+2025-05-23 12:32:49,491 [ERROR] Failed: https://firesmoke.ca/forecasts/BSC12CA12-05/2025052420/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/download_5-19-2025/BSC12CA12-05/dispersion_20250524.nc | Header Content-Type: text/html

@@ -9,6 +9,8 @@
 *.out
 *.pkl
 *.txt
+*.log
+*.nfs*
 *.code-workspace
 **/.ipynb_checkpoints
 **/__pycache__

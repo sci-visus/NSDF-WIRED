@@ -47,3 +47,623 @@
 2025-05-24 11:00:17,683 [INFO] Saved to /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025144_155154.nc
 2025-05-24 12:00:13,795 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
 2025-05-24 12:00:16,902 [INFO] Saved to /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025144_155154.nc
+2025-05-24 13:00:15,183 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-24 13:00:18,142 [INFO] Saved to /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025144_155154.nc
+2025-05-24 14:00:15,376 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-24 14:00:18,611 [INFO] Saved to /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025144_155154.nc
+2025-05-24 15:00:14,668 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-24 15:00:18,158 [INFO] Saved to /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025144_155154.nc
+2025-05-24 16:00:15,389 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-24 16:00:18,677 [INFO] Saved to /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025144_155154.nc
+2025-05-24 17:00:44,859 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-24 17:00:47,795 [INFO] Saved to /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025144_220133.nc
+2025-05-24 18:00:14,191 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-24 18:00:17,362 [INFO] Saved to /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025144_220133.nc
+2025-05-24 19:00:14,664 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-24 19:00:17,869 [INFO] Saved to /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025144_220133.nc
+2025-05-24 20:00:15,132 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-24 20:00:18,308 [INFO] Saved to /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025144_220133.nc
+2025-05-24 21:00:14,834 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-24 21:00:17,975 [INFO] Saved to /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025144_220133.nc
+2025-05-24 22:00:14,641 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-24 22:00:17,746 [INFO] Saved to /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025145_034650.nc
+2025-05-24 23:00:13,427 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-24 23:00:14,393 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025145_34650.nc
+2025-05-25 00:00:13,138 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-25 00:00:14,062 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025145_34650.nc
+2025-05-25 01:00:12,495 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-25 01:00:13,414 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025145_34650.nc
+2025-05-25 02:00:13,708 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-25 02:00:14,589 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025145_34650.nc
+2025-05-25 03:00:13,247 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-25 03:00:14,121 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025145_34650.nc
+2025-05-25 04:00:13,475 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-25 04:00:14,384 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025145_34650.nc
+2025-05-25 05:00:13,890 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-25 05:00:14,844 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025145_34650.nc
+2025-05-25 06:00:14,878 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-25 06:00:15,799 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025145_34650.nc
+2025-05-25 07:00:14,811 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-25 07:00:17,841 [INFO] Saved to /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025145_122955.nc
+2025-05-25 08:00:12,697 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-25 08:00:13,600 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025145_122955.nc
+2025-05-25 09:00:13,319 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-25 09:00:14,245 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025145_122955.nc
+2025-05-25 10:00:13,237 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-25 10:00:14,201 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025145_122955.nc
+2025-05-25 11:00:14,471 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-25 11:00:17,587 [INFO] Saved to /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025145_155314.nc
+2025-05-25 12:00:13,357 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-25 12:00:14,263 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025145_155314.nc
+2025-05-25 13:00:13,172 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-25 13:00:14,057 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025145_155314.nc
+2025-05-25 14:00:13,290 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-25 14:00:14,211 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025145_155314.nc
+2025-05-25 15:00:13,959 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-25 15:00:14,837 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025145_155314.nc
+2025-05-25 16:00:13,106 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-25 16:00:14,038 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025145_155314.nc
+2025-05-25 17:00:24,711 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-25 17:00:27,695 [INFO] Saved to /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025145_220121.nc
+2025-05-25 18:00:22,231 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-25 18:00:23,131 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025145_220121.nc
+2025-05-25 19:00:16,170 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-25 19:00:17,139 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025145_220121.nc
+2025-05-25 20:00:30,623 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-25 20:00:32,925 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025145_220121.nc
+2025-05-25 21:00:28,104 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-25 21:00:30,860 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025145_220121.nc
+2025-05-25 22:00:25,800 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-25 22:00:32,320 [INFO] Saved to /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025146_033636.nc
+2025-05-25 23:00:21,942 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-25 23:00:24,601 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025146_33636.nc
+2025-05-26 00:00:24,263 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-26 00:00:26,351 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025146_33636.nc
+2025-05-26 01:00:26,900 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-26 01:00:29,265 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025146_33636.nc
+2025-05-26 02:00:29,613 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-26 02:00:32,287 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025146_33636.nc
+2025-05-26 03:00:12,984 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-26 03:00:13,874 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025146_33636.nc
+2025-05-26 04:00:13,203 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-26 04:00:14,065 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025146_33636.nc
+2025-05-26 05:00:12,821 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-26 05:00:13,739 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025146_33636.nc
+2025-05-26 06:00:12,302 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-26 06:00:15,255 [INFO] Saved to /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025146_115115.nc
+2025-05-26 07:00:13,324 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-26 07:00:14,163 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025146_115115.nc
+2025-05-26 08:00:12,543 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-26 08:00:13,431 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025146_115115.nc
+2025-05-26 09:00:13,029 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-26 09:00:13,923 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025146_115115.nc
+2025-05-26 10:00:13,560 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-26 10:00:16,513 [INFO] Saved to /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025146_153537.nc
+2025-05-26 11:00:13,120 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-26 11:00:14,003 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025146_153537.nc
+2025-05-26 12:00:13,417 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-26 12:00:14,316 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025146_153537.nc
+2025-05-26 13:00:15,473 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-26 13:00:16,394 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025146_153537.nc
+2025-05-26 14:00:16,303 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-26 14:00:17,262 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025146_153537.nc
+2025-05-26 15:00:19,514 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-26 15:00:20,452 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025146_153537.nc
+2025-05-26 16:00:13,607 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-26 16:00:16,821 [INFO] Saved to /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025146_214928.nc
+2025-05-26 17:00:43,387 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-26 17:00:44,275 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025146_214928.nc
+2025-05-26 18:00:15,494 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-26 18:00:16,470 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025146_214928.nc
+2025-05-26 19:00:16,084 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-26 19:00:17,070 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025146_214928.nc
+2025-05-26 20:00:15,546 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-26 20:00:16,455 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025146_214928.nc
+2025-05-26 21:00:17,029 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-26 21:00:17,937 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025146_214928.nc
+2025-05-26 22:00:16,902 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-26 22:00:20,216 [INFO] Saved to /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025147_033303.nc
+2025-05-26 23:00:32,507 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-26 23:00:35,764 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025147_33303.nc
+2025-05-27 00:00:35,773 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-27 00:00:38,618 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025147_33303.nc
+2025-05-27 01:00:24,371 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-27 01:00:26,503 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025147_33303.nc
+2025-05-27 02:00:25,977 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-27 02:00:28,400 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025147_33303.nc
+2025-05-27 03:00:24,951 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-27 03:00:27,232 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025147_33303.nc
+2025-05-27 04:00:39,100 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-27 04:00:42,889 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025147_33303.nc
+2025-05-27 05:00:13,441 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-27 05:00:14,350 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025147_33303.nc
+2025-05-27 06:00:12,880 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-27 06:00:13,797 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025147_33303.nc
+2025-05-27 07:00:13,502 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-27 07:00:16,727 [INFO] Saved to /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025147_115455.nc
+2025-05-27 08:00:13,139 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-27 08:00:14,027 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025147_115455.nc
+2025-05-27 09:00:13,403 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-27 09:00:14,284 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025147_115455.nc
+2025-05-27 10:00:15,171 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-27 10:00:18,533 [INFO] Saved to /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025147_154138.nc
+2025-05-27 11:00:14,428 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-27 11:00:15,434 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025147_154138.nc
+2025-05-27 12:00:16,061 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-27 12:00:17,110 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025147_154138.nc
+2025-05-27 13:00:14,753 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-27 13:00:15,643 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025147_154138.nc
+2025-05-27 14:00:15,138 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-27 14:00:16,128 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025147_154138.nc
+2025-05-27 15:00:14,205 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-27 15:00:15,162 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025147_154138.nc
+2025-05-27 16:00:15,044 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-27 16:00:18,302 [INFO] Saved to /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025147_214706.nc
+2025-05-27 17:00:29,757 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-27 17:00:30,699 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025147_214706.nc
+2025-05-27 18:00:15,829 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-27 18:00:16,785 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025147_214706.nc
+2025-05-27 19:00:22,132 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-27 19:00:23,159 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025147_214706.nc
+2025-05-27 20:00:14,451 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-27 20:00:15,408 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025147_214706.nc
+2025-05-27 21:00:14,703 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-27 21:00:15,660 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025147_214706.nc
+2025-05-27 22:00:15,944 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-27 22:00:19,322 [INFO] Saved to /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025148_033728.nc
+2025-05-27 23:00:42,776 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-27 23:00:47,100 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025148_33728.nc
+2025-05-28 00:00:39,948 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-28 00:00:43,680 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025148_33728.nc
+2025-05-28 01:00:30,438 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-28 01:00:33,563 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025148_33728.nc
+2025-05-28 02:00:31,841 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-28 02:00:34,999 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025148_33728.nc
+2025-05-28 03:00:30,657 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-28 03:00:34,015 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025148_33728.nc
+2025-05-28 04:00:36,076 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-28 04:00:38,770 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025148_33728.nc
+2025-05-28 05:00:13,693 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-28 05:00:14,626 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025148_33728.nc
+2025-05-28 06:00:13,412 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-28 06:00:14,314 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025148_33728.nc
+2025-05-28 07:00:13,330 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-28 07:00:16,555 [INFO] Saved to /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025148_115520.nc
+2025-05-28 08:00:13,582 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-28 08:00:14,485 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025148_115520.nc
+2025-05-28 09:00:15,415 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-28 09:00:16,380 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025148_115520.nc
+2025-05-28 10:00:16,401 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-28 10:00:19,569 [INFO] Saved to /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025148_154739.nc
+2025-05-28 11:00:14,917 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-28 11:00:15,828 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025148_154739.nc
+2025-05-28 12:00:14,068 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-28 12:00:14,995 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025148_154739.nc
+2025-05-28 13:00:17,182 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-28 13:00:18,214 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025148_154739.nc
+2025-05-28 14:00:15,419 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-28 14:00:16,463 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025148_154739.nc
+2025-05-28 15:00:31,871 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-28 15:00:33,606 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025148_154739.nc
+2025-05-28 16:00:30,608 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-28 16:00:32,082 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025148_154739.nc
+2025-05-28 17:00:33,666 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-28 17:00:41,849 [INFO] Saved to /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025148_215340.nc
+2025-05-28 18:00:14,128 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-28 18:00:15,065 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025148_215340.nc
+2025-05-28 19:00:23,519 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-28 19:00:24,484 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025148_215340.nc
+2025-05-28 20:00:15,132 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-28 20:00:16,072 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025148_215340.nc
+2025-05-28 21:00:15,320 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-28 21:00:16,285 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025148_215340.nc
+2025-05-28 22:00:16,157 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-28 22:00:19,464 [INFO] Saved to /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025149_034244.nc
+2025-05-28 23:00:32,203 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-28 23:00:35,580 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025149_34244.nc
+2025-05-29 00:00:30,931 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-29 00:00:33,899 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025149_34244.nc
+2025-05-29 01:00:23,179 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-29 01:00:25,139 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025149_34244.nc
+2025-05-29 02:00:27,135 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-29 02:00:29,652 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025149_34244.nc
+2025-05-29 03:00:37,030 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-29 03:00:40,777 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025149_34244.nc
+2025-05-29 04:00:13,400 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-29 04:00:14,363 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025149_34244.nc
+2025-05-29 05:00:14,607 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-29 05:00:15,562 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025149_34244.nc
+2025-05-29 06:00:13,134 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-29 06:00:16,337 [INFO] Saved to /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025149_114254.nc
+2025-05-29 07:00:19,470 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-29 07:00:20,386 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025149_114254.nc
+2025-05-29 08:00:16,350 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-29 08:00:17,235 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025149_114254.nc
+2025-05-29 09:00:16,866 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-29 09:00:17,812 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025149_114254.nc
+2025-05-29 10:00:15,566 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-29 10:00:16,794 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025149_114254.nc
+2025-05-29 11:00:15,207 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-29 11:00:18,305 [INFO] Saved to /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025149_160307.nc
+2025-05-29 12:00:15,112 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-29 12:00:16,031 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025149_160307.nc
+2025-05-29 13:00:16,045 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-29 13:00:16,998 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025149_160307.nc
+2025-05-29 14:00:16,077 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-29 14:00:17,047 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025149_160307.nc
+2025-05-29 15:00:38,584 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-29 15:00:40,109 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025149_160307.nc
+2025-05-29 16:00:21,148 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-29 16:00:22,108 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025149_160307.nc
+2025-05-29 17:00:30,506 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-29 17:00:33,666 [INFO] Saved to /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025149_221224.nc
+2025-05-29 18:00:15,086 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-29 18:00:16,057 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025149_221224.nc
+2025-05-29 19:00:14,990 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-29 19:00:16,009 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025149_221224.nc
+2025-05-29 20:00:15,283 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-29 20:00:16,314 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025149_221224.nc
+2025-05-29 21:00:14,816 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-29 21:00:15,794 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025149_221224.nc
+2025-05-29 22:00:17,059 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-29 22:00:18,330 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025149_221224.nc
+2025-05-29 23:00:30,599 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-29 23:00:39,596 [INFO] Saved to /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025150_040200.nc
+2025-05-30 00:00:14,173 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-30 00:00:15,426 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025150_40200.nc
+2025-05-30 01:00:26,999 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-30 01:00:29,396 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025150_40200.nc
+2025-05-30 02:00:25,463 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-30 02:00:27,959 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025150_40200.nc
+2025-05-30 03:00:22,020 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-30 03:00:23,799 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025150_40200.nc
+2025-05-30 04:00:21,904 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-30 04:00:23,769 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025150_40200.nc
+2025-05-30 05:00:14,358 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-30 05:00:15,320 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025150_40200.nc
+2025-05-30 06:00:13,265 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-30 06:00:14,307 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025150_40200.nc
+2025-05-30 07:00:14,261 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-30 07:00:17,427 [INFO] Saved to /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025150_115517.nc
+2025-05-30 08:00:14,557 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-30 08:00:15,493 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025150_115517.nc
+2025-05-30 09:00:13,623 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-30 09:00:14,505 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025150_115517.nc
+2025-05-30 10:00:17,428 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-30 10:00:18,325 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025150_115517.nc
+2025-05-30 11:00:17,574 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-30 11:00:20,985 [INFO] Saved to /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025150_161650.nc
+2025-05-30 12:00:17,120 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-30 12:00:18,107 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025150_161650.nc
+2025-05-30 13:00:15,619 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-30 13:00:16,563 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025150_161650.nc
+2025-05-30 14:00:16,968 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-30 14:00:18,011 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025150_161650.nc
+2025-05-30 15:00:15,826 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-30 15:00:16,773 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025150_161650.nc
+2025-05-30 16:00:15,076 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-30 16:00:16,043 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025150_161650.nc
+2025-05-30 17:00:28,589 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-30 17:00:31,950 [INFO] Saved to /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025150_222451.nc
+2025-05-30 18:00:43,248 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-30 18:00:49,010 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025150_222451.nc
+2025-05-30 19:00:15,816 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-30 19:00:16,781 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025150_222451.nc
+2025-05-30 20:00:15,239 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-30 20:00:16,165 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025150_222451.nc
+2025-05-30 21:00:15,530 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-30 21:00:16,482 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025150_222451.nc
+2025-05-30 22:00:25,163 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-30 22:00:26,089 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025150_222451.nc
+2025-05-30 23:00:29,160 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-30 23:00:37,231 [INFO] Saved to /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025151_040729.nc
+2025-05-31 00:00:48,828 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-31 00:00:51,535 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025151_40729.nc
+2025-05-31 01:00:24,108 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-31 01:00:26,370 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025151_40729.nc
+2025-05-31 02:00:26,243 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-31 02:00:28,615 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025151_40729.nc
+2025-05-31 03:00:21,049 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-31 03:00:22,819 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025151_40729.nc
+2025-05-31 04:00:26,711 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-31 04:00:28,737 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025151_40729.nc
+2025-05-31 05:00:56,394 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-31 05:00:57,351 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025151_40729.nc
+2025-05-31 06:00:12,523 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-31 06:00:13,347 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025151_40729.nc
+2025-05-31 07:00:13,171 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-31 07:00:16,319 [INFO] Saved to /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025151_120705.nc
+2025-05-31 08:00:17,505 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-31 08:00:18,338 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025151_120705.nc
+2025-05-31 09:00:13,262 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-31 09:00:14,048 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025151_120705.nc
+2025-05-31 10:00:45,855 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-31 10:00:46,669 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025151_120705.nc
+2025-05-31 11:00:17,310 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-31 11:00:20,491 [INFO] Saved to /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025151_163215.nc
+2025-05-31 12:00:14,500 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-31 12:00:15,410 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025151_163215.nc
+2025-05-31 13:00:14,500 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-31 13:00:15,441 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025151_163215.nc
+2025-05-31 14:00:17,309 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-31 14:00:18,311 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025151_163215.nc
+2025-05-31 15:00:13,733 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-31 15:00:14,669 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025151_163215.nc
+2025-05-31 16:00:15,285 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-31 16:00:16,255 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025151_163215.nc
+2025-05-31 17:00:41,097 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-31 17:00:42,206 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025151_163215.nc
+2025-05-31 18:00:14,422 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-31 18:00:17,484 [INFO] Saved to /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025151_224919.nc
+2025-05-31 19:00:27,653 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-31 19:00:28,516 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025151_224919.nc
+2025-05-31 20:00:15,244 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-31 20:00:16,115 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025151_224919.nc
+2025-05-31 21:00:15,844 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-31 21:00:16,845 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025151_224919.nc
+2025-05-31 22:00:15,205 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-31 22:00:16,170 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025151_224919.nc
+2025-05-31 23:00:27,866 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-05-31 23:00:34,997 [INFO] Saved to /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025152_043319.nc
+2025-06-01 00:00:38,034 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-01 00:00:41,923 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025152_43319.nc
+2025-06-01 01:00:23,443 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-01 01:00:25,649 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025152_43319.nc
+2025-06-01 02:00:22,777 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-01 02:00:25,072 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025152_43319.nc
+2025-06-01 03:00:42,477 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-01 03:00:44,839 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025152_43319.nc
+2025-06-01 04:01:04,303 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-01 04:01:07,641 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025152_43319.nc
+2025-06-01 05:00:13,346 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-01 05:00:14,274 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025152_43319.nc
+2025-06-01 06:00:12,388 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-01 06:00:13,196 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025152_43319.nc
+2025-06-01 07:00:13,515 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-01 07:00:14,403 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025152_43319.nc
+2025-06-01 08:00:13,089 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-01 08:00:16,201 [INFO] Saved to /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025152_125418.nc
+2025-06-01 09:00:13,965 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-01 09:00:14,867 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025152_125418.nc
+2025-06-01 10:00:20,644 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-01 10:00:21,612 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025152_125418.nc
+2025-06-01 11:00:14,054 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-01 11:00:14,975 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025152_125418.nc
+2025-06-01 12:00:13,993 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-01 12:00:17,046 [INFO] Saved to /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025152_170343.nc
+2025-06-01 13:00:14,756 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-01 13:00:15,635 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025152_170343.nc
+2025-06-01 14:00:13,887 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-01 14:00:14,851 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025152_170343.nc
+2025-06-01 15:00:13,160 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-01 15:00:13,933 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025152_170343.nc
+2025-06-01 16:00:12,051 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-01 16:00:12,870 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025152_170343.nc
+2025-06-01 17:00:46,744 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-01 17:00:47,625 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025152_170343.nc
+2025-06-01 18:00:13,447 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-01 18:00:16,502 [INFO] Saved to /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025152_232056.nc
+2025-06-01 19:00:15,231 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-01 19:00:16,103 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025152_232056.nc
+2025-06-01 20:00:12,221 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-01 20:00:13,007 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025152_232056.nc
+2025-06-01 21:00:12,509 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-01 21:00:13,296 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025152_232056.nc
+2025-06-01 22:00:14,715 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-01 22:00:15,673 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025152_232056.nc
+2025-06-01 23:00:21,770 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-01 23:00:23,524 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025152_232056.nc
+2025-06-02 00:00:37,694 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-02 00:00:44,009 [INFO] Saved to /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025153_044947.nc
+2025-06-02 01:00:17,487 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-02 01:00:19,054 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025153_44947.nc
+2025-06-02 02:00:18,578 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-02 02:00:20,203 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025153_44947.nc
+2025-06-02 03:00:17,807 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-02 03:00:19,498 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025153_44947.nc
+2025-06-02 04:00:17,821 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-02 04:00:19,341 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025153_44947.nc
+2025-06-02 05:00:15,296 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-02 05:00:16,488 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025153_44947.nc
+2025-06-02 06:00:12,099 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-02 06:00:12,879 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025153_44947.nc
+2025-06-02 07:00:15,492 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-02 07:00:16,459 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025153_44947.nc
+2025-06-02 08:00:16,316 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-02 08:00:19,232 [INFO] Saved to /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025153_132818.nc
+2025-06-02 09:00:12,191 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-02 09:00:12,989 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025153_132818.nc
+2025-06-02 10:00:17,893 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-02 10:00:18,698 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025153_132818.nc
+2025-06-02 11:00:16,063 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-02 11:00:16,892 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025153_132818.nc
+2025-06-02 12:00:14,250 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-02 12:00:17,377 [INFO] Saved to /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025153_172322.nc
+2025-06-02 13:00:14,984 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-02 13:00:15,880 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025153_172322.nc
+2025-06-02 14:00:21,285 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-02 14:00:22,248 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025153_172322.nc
+2025-06-02 15:00:15,793 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-02 15:00:16,620 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025153_172322.nc
+2025-06-02 16:00:13,243 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-02 16:00:14,009 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025153_172322.nc
+2025-06-02 17:00:40,401 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-02 17:00:41,312 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025153_172322.nc
+2025-06-02 18:00:13,794 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-02 18:00:16,834 [INFO] Saved to /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025153_234117.nc
+2025-06-02 19:00:13,624 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-02 19:00:14,507 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025153_234117.nc
+2025-06-02 20:00:12,148 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-02 20:00:12,949 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025153_234117.nc
+2025-06-02 21:00:13,246 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-02 21:00:14,031 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025153_234117.nc
+2025-06-02 22:00:32,131 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-02 22:00:33,044 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025153_234117.nc
+2025-06-02 23:00:12,736 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-02 23:00:13,638 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025153_234117.nc
+2025-06-03 00:00:12,658 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-03 00:00:15,640 [INFO] Saved to /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025154_050218.nc
+2025-06-03 01:00:11,308 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-03 01:00:12,052 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025154_50218.nc
+2025-06-03 02:00:12,683 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-03 02:00:13,624 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025154_50218.nc
+2025-06-03 03:00:15,603 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-03 03:00:16,761 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025154_50218.nc
+2025-06-03 04:00:14,759 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-03 04:00:15,704 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025154_50218.nc
+2025-06-03 05:00:15,970 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-03 05:00:17,152 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025154_50218.nc
+2025-06-03 06:00:14,885 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-03 06:00:15,898 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025154_50218.nc
+2025-06-03 07:00:16,794 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-03 07:00:18,118 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025154_50218.nc
+2025-06-03 08:00:17,972 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-03 08:00:19,200 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025154_50218.nc
+2025-06-03 09:00:17,321 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-03 09:00:21,050 [INFO] Saved to /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025154_134640.nc
+2025-06-03 10:00:23,245 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-03 10:00:24,274 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025154_134640.nc
+2025-06-03 11:00:17,978 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-03 11:00:19,171 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025154_134640.nc
+2025-06-03 12:00:17,540 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-03 12:00:21,435 [INFO] Saved to /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025154_174433.nc
+2025-06-03 13:00:18,244 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-03 13:00:19,489 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025154_174433.nc
+2025-06-03 14:00:28,825 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-03 14:00:29,793 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025154_174433.nc
+2025-06-03 15:00:12,645 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-03 15:00:13,449 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025154_174433.nc
+2025-06-03 16:00:15,506 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-03 16:00:16,432 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025154_174433.nc
+2025-06-03 17:00:28,858 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-03 17:00:29,761 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025154_174433.nc
+2025-06-03 18:00:15,161 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-03 18:00:16,049 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025154_174433.nc
+2025-06-03 19:00:16,167 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-03 19:00:19,268 [INFO] Saved to /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025154_235429.nc
+2025-06-03 20:00:14,635 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-03 20:00:15,475 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025154_235429.nc
+2025-06-03 21:00:14,522 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-03 21:00:15,347 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025154_235429.nc
+2025-06-03 22:00:15,457 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-03 22:00:16,505 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025154_235429.nc
+2025-06-03 23:00:13,739 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-03 23:00:14,682 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025154_235429.nc
+2025-06-04 00:00:12,002 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-04 00:00:15,061 [INFO] Saved to /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025155_052945.nc
+2025-06-04 01:00:12,140 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-04 01:00:12,921 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025155_52945.nc
+2025-06-04 02:00:13,200 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-04 02:00:14,188 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025155_52945.nc
+2025-06-04 03:00:49,798 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-04 03:00:51,105 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025155_52945.nc
+2025-06-04 04:00:18,370 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-04 04:00:19,471 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025155_52945.nc
+2025-06-04 05:00:18,173 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-04 05:00:19,548 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025155_52945.nc
+2025-06-04 06:00:15,314 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-04 06:00:16,329 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025155_52945.nc
+2025-06-04 07:00:19,078 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-04 07:00:20,720 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025155_52945.nc
+2025-06-04 08:00:19,284 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-04 08:00:20,576 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025155_52945.nc
+2025-06-04 09:00:15,359 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-04 09:00:18,488 [INFO] Saved to /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025155_140108.nc
+2025-06-04 10:00:41,586 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-04 10:00:42,483 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025155_140108.nc
+2025-06-04 11:00:15,091 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-04 11:00:15,957 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025155_140108.nc
+2025-06-04 12:00:14,517 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-04 12:00:15,327 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025155_140108.nc
+2025-06-04 13:00:14,915 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-04 13:00:18,097 [INFO] Saved to /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025155_175430.nc
+2025-06-04 14:00:14,914 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-04 14:00:15,759 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025155_175430.nc
+2025-06-04 15:00:14,456 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-04 15:00:15,379 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025155_175430.nc
+2025-06-04 16:00:13,923 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-04 16:00:14,884 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025155_175430.nc
+2025-06-04 17:00:30,391 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-04 17:00:31,282 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025155_175430.nc
+2025-06-04 18:00:15,529 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-04 18:00:16,475 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025155_175430.nc
+2025-06-04 19:00:18,881 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-04 19:00:22,071 [INFO] Saved to /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025156_000547.nc
+2025-06-04 20:00:13,456 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-04 20:00:14,263 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025156_547.nc
+2025-06-04 21:00:15,044 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-04 21:00:15,855 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025156_547.nc
+2025-06-04 22:00:18,061 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-04 22:00:19,037 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025156_547.nc
+2025-06-04 23:00:12,727 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-04 23:00:13,651 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025156_547.nc
+2025-06-05 00:00:13,477 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-05 00:00:16,558 [INFO] Saved to /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025156_051733.nc
+2025-06-05 01:00:15,849 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-05 01:00:16,613 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025156_51733.nc
+2025-06-05 02:00:14,566 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-05 02:00:15,528 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025156_51733.nc
+2025-06-05 03:00:28,202 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-05 03:00:29,423 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025156_51733.nc
+2025-06-05 04:00:16,655 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-05 04:00:17,923 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025156_51733.nc
+2025-06-05 05:00:20,221 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-05 05:00:21,767 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025156_51733.nc
+2025-06-05 06:00:25,436 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-05 06:00:26,659 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025156_51733.nc
+2025-06-05 07:00:24,850 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-05 07:00:26,131 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025156_51733.nc
+2025-06-05 08:00:28,687 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-05 08:00:33,047 [INFO] Saved to /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025156_134424.nc
+2025-06-05 09:00:29,867 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-05 09:00:30,860 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025156_134424.nc
+2025-06-05 10:00:17,601 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-05 10:00:18,540 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025156_134424.nc
+2025-06-05 11:00:15,196 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-05 11:00:16,120 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025156_134424.nc
+2025-06-05 12:00:17,699 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-05 12:00:20,812 [INFO] Saved to /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025156_174042.nc
+2025-06-05 13:00:19,587 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-05 13:00:20,685 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025156_174042.nc
+2025-06-05 14:00:16,275 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-05 14:00:17,216 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025156_174042.nc
+2025-06-05 15:00:34,673 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-05 15:00:35,571 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025156_174042.nc
+2025-06-05 16:00:15,105 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-05 16:00:15,999 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025156_174042.nc
+2025-06-05 17:00:54,144 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-05 17:00:55,341 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025156_174042.nc
+2025-06-05 18:00:16,834 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-05 18:00:17,739 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025156_174042.nc
+2025-06-05 19:00:15,116 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-05 19:00:18,246 [INFO] Saved to /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025156_235153.nc
+2025-06-05 20:00:20,249 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-05 20:00:21,266 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025156_235153.nc
+2025-06-05 21:00:17,790 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-05 21:00:18,706 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025156_235153.nc
+2025-06-05 22:00:39,996 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-05 22:00:40,916 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025156_235153.nc
+2025-06-05 23:00:11,788 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-05 23:00:12,721 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025156_235153.nc
+2025-06-06 00:00:12,600 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-06 00:00:15,517 [INFO] Saved to /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025157_051401.nc
+2025-06-06 01:00:12,953 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-06 01:00:13,866 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025157_51401.nc
+2025-06-06 02:00:24,958 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-06 02:00:27,265 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025157_51401.nc
+2025-06-06 03:00:29,228 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-06 03:00:30,664 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025157_51401.nc
+2025-06-06 04:00:55,450 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-06 04:00:56,872 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025157_51401.nc
+2025-06-06 05:00:25,426 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-06 05:00:27,497 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025157_51401.nc
+2025-06-06 06:00:21,848 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-06 06:00:23,415 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025157_51401.nc
+2025-06-06 07:00:15,810 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-06 07:00:16,757 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025157_51401.nc
+2025-06-06 08:00:15,776 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-06 08:00:16,611 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025157_51401.nc
+2025-06-06 09:00:15,391 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-06 09:00:18,479 [INFO] Saved to /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025157_140005.nc
+2025-06-06 10:00:56,718 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/
+2025-06-06 10:00:57,489 [INFO] Already have file saved in /usr/sci/cedmav/data/firesmoke/hourly_downloads/data/ as dispersion_2025157_140005.nc

@@ -1,19 +1,17 @@
 # imports for data handling and utility functions
 from data_handling import *
 from util import *
-from datetime import datetime, timedelta, timezone
+from datetime import timedelta
 import pandas as pd
 
 # imports for visualization
 from bokeh.layouts import layout
 import xyzservices.providers as xyz
-from bokeh.layouts import column, row
 from bokeh.plotting import figure, curdoc
-from bokeh.models import LinearColorMapper
+from bokeh.models import LogColorMapper
 from bokeh.models import (
     DatePicker,
     Slider,
-    DateSlider,
     ColumnDataSource,
     Button,
     CustomJS,
@@ -29,11 +27,13 @@ latslons = get_latslons()
 default_lats = latslons[:, 0]
 default_lons = latslons[:, 1]
 default_pm25_vals = get_pm25(default_date, default_hour, default_res)
+# get shape of pm25 data, to reshape x and y in columndatasource
+rows, cols = np.shape(default_pm25_vals)
 source = ColumnDataSource(
     data=dict(
-        x=default_lats,
-        y=default_lons,
-        color=default_pm25_vals,
+        image=[default_pm25_vals],
+        x=[np.reshape(default_lats, (rows, cols))],
+        y=[np.reshape(default_lons, (rows, cols))],
     )
 )
 
@@ -41,26 +41,33 @@ source = ColumnDataSource(
 # create a plot centering in north america
 min_coords = latlon_to_mercator(32, -160)
 max_coords = latlon_to_mercator(71, -51)
+
 p = figure(
     x_range=(min_coords[0], max_coords[0]),
     y_range=(min_coords[1], max_coords[1]),
     x_axis_type="mercator",
     y_axis_type="mercator",
 )
+
 p.add_tile(xyz.OpenStreetMap.Mapnik)
-print(f"({source.data['x'][0]}, {source.data['y'][0]}): {source.data['color'][0]}")
-exp_cmap = LinearColorMapper(
-    palette="Viridis256", low=min(source.data["color"]), high=max(source.data["color"])
+
+cmap = LogColorMapper(
+    # using 'Oranges' from: https://observablehq.com/@d3/color-schemes
+    palette=["#fff5eb00","#fdd8b3","#fdc28c","#fda762","#fb8d3d","#f2701d","#e25609","#c44103","#9f3303","#7f2704"],
+    low=0.0001,
+    high=np.nanmax(source.data["image"][0].flatten())
 )
-p.circle(
+
+p.image(
+    "image",
     source=source,
-    x="x",
-    y="y",
-    fill_color={"field": "color", "transform": exp_cmap},
-    line_width=0,
-    radius=10000,
+    x=min_coords[0],
+    y=min_coords[1],
+    dw=max_coords[0] - min_coords[0],
+    dh=max_coords[1] - min_coords[1],
+    color_mapper=cmap,
+    alpha=1
 )
-# p.scatter(x="x", y="y", source=source, color="color")
 
 ##### Widgets #####
 ### datepicker widget ###
@@ -82,17 +89,12 @@ def update_date(attr, old_date, new_date):
     new_data["y"] = source.data["y"]
 
     # new date and new pm2.5 values
-    new_data["color"] = get_pm25(new_date, hour_slider.value, res_slider.value)
+    new_data["image"] = [get_pm25(new_date, hour_slider.value, res_slider.value)]
     source.data = new_data
-    # print(source.data)
-    print(f"np.shape(source.data['x']) = {np.shape(source.data['x'])}")
-    print(f"np.shape(source.data['y']) = {np.shape(source.data['y'])}")
-    print(f"np.shape(source.data['color']) = {np.shape(source.data['color'])}")
 
 
 # when date selected changes, call update_date
 date_picker.on_change("value", update_date)
-
 
 ### hour widget ###
 # refs:
@@ -137,8 +139,8 @@ def update_hour(attr, old_hour, new_hour):
     new_data["y"] = source.data["y"]
 
     # new date and new pm2.5 values
-    new_data["hour"] = [new_hour]
-    new_data["color"] = [get_pm25(date_picker.value, new_hour, res_slider.value)]
+    # new_data["hour"] = [new_hour]
+    new_data["image"] = [get_pm25(date_picker.value, new_hour, res_slider.value)]
     source.data = new_data
 
 
@@ -155,7 +157,6 @@ hour_slider.js_on_change(
 hour_slider.on_change("value", update_hour)
 
 callback_id = None
-
 
 def animate():
     global callback_id
@@ -176,7 +177,6 @@ res_slider = Slider(start=-19, end=0, value=default_res, step=1, title="Resoluti
 
 # callback function to update selected resolution
 def update_res(attr, old_res, new_res):
-    print("Selected resolution:", new_res)
     # update data
     new_data = dict()
 
@@ -185,7 +185,7 @@ def update_res(attr, old_res, new_res):
     new_data["y"] = source.data["y"]
 
     # new res and new pm2.5 values
-    new_data["color"] = get_pm25(date_picker.value, hour_slider.value, new_res)
+    new_data["image"] = [get_pm25(date_picker.value, hour_slider.value, new_res)]
     source.data = new_data
 
 

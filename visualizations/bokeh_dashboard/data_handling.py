@@ -24,7 +24,7 @@ os.environ["VISUS_CACHE"] = "./visus_cache_can_be_erased"
 os.environ["CURL_CA_BUNDLE"] = ""
 
 # whether to download tiny netcdf or not
-download = False
+download = True
 
 local_netcdf = "firesmoke_metadata.nc"
 
@@ -108,6 +108,7 @@ def get_pm25(date, hour, res):
     # get slice, then flatten it
     # TODO: need to handle when a date that is unavailable is given, e.g. 2021-03-03
     data_array_at_time = ds["PM25"].loc[t, :, :, res].data[:, :, 0]
-
-    # TODO: is this flattened right?
-    return data_array_at_time.flatten()
+    
+    print(f"np.max(data_array_at_time) = {np.max(data_array_at_time)}")
+    # do not flatten bc we're visualizing with bokeh's figure.image
+    return data_array_at_time

@@ -74,7 +74,6 @@ for tflag in tflag_values:
 # set coordinates to each timestep with these pandas timestamps
 ds.coords["time"] = ("time", timestamps)
 
-
 ##### Functions for bokeh to access data #####
 def get_latslons():
     """
@@ -90,7 +89,6 @@ def get_latslons():
         mercator_latlons[i][1] = tup[1]
 
     return mercator_latlons
-
 
 def get_pm25(date, hour, res):
     """

@@ -1,26 +1,31 @@
-# imports for data handling and utility functions
+##### Import Dependencies #####
 from data_handling import *
 from util import *
 from datetime import timedelta
 import pandas as pd
-
-# imports for visualization
-from bokeh.layouts import layout
+from pathlib import Path
+from bokeh.layouts import layout, row, column, Spacer
 import xyzservices.providers as xyz
 from bokeh.plotting import figure, curdoc
-from bokeh.models import LogColorMapper
 from bokeh.models import (
     DatePicker,
     Slider,
-    ColumnDataSource,
-    Button,
     Toggle,
+    RadioButtonGroup,
+    ColumnDataSource,
+    LogColorMapper,
+    Div,
     CustomJS,
+    ResetTool,
+    UndoTool,
+    ZoomInTool,
+    ZoomOutTool,
+    BoxZoomTool,
+    PanTool
 )
 
 ##### Init ColumnDataSource #####
-# Create a ColumnDataSource for the data
-# for now, we use all latitudes and longitudes
+# Create a ColumnDataSource for the firesmoke data
 default_res = 0
 default_date = "2021-03-04"
 default_hour = 0
@@ -28,7 +33,7 @@ latslons = get_latslons()
 default_lats = latslons[:, 0]
 default_lons = latslons[:, 1]
 default_pm25_vals = get_pm25(default_date, default_hour, default_res)
-# get shape of pm25 data, to reshape x and y in ColumnDataSource
+
 rows, cols = np.shape(default_pm25_vals)
 source = ColumnDataSource(
     data=dict(
@@ -37,22 +42,26 @@ source = ColumnDataSource(
 )
 
 ##### Init bokeh figure #####
-# create a plot centering in north america
+# get coordinates centering on North America
 min_coords = latlon_to_mercator(32, -160)
 max_coords = latlon_to_mercator(71, -51)
 
-# create figure using lat/lon of dataset
+# specify bokeh tools for user to use
+# match_aspect is True to prevent stretching of map when zooming
+tools = [BoxZoomTool(match_aspect=True), ResetTool(), UndoTool(), 
+         ZoomInTool(), ZoomOutTool(), PanTool()]
+
 p = figure(
+    tools=tools,
     x_range=(min_coords[0], max_coords[0]),
     y_range=(min_coords[1], max_coords[1]),
     x_axis_type="mercator",
     y_axis_type="mercator",
+    sizing_mode="scale_both"
 )
-
-# add map tiles
 p.add_tile(xyz.OpenStreetMap.Mapnik)
 
-# create log color map
+# create log color map to colormap PM2.5 data
 cmap = LogColorMapper(
     # using 'Oranges' from: https://observablehq.com/@d3/color-schemes
     palette=["#fff5eb00","#fdd8b3","#fdc28c","#fda762","#fb8d3d","#f2701d","#e25609","#c44103","#9f3303","#7f2704"],
@@ -60,7 +69,7 @@ cmap = LogColorMapper(
     high=np.nanmax(source.data["image"][0].flatten())
 )
 
-# initialize image raster visualization on figure
+# draw PM2.5 data on figure
 p.image(
     "image",
     source=source,
@@ -69,22 +78,21 @@ p.image(
     dw=max_coords[0] - min_coords[0],
     dh=max_coords[1] - min_coords[1],
     color_mapper=cmap,
-    alpha=.8 # so the map tile is visible underneath
+    alpha=.8 # so that the map tile is visible underneath
 )
 
-##### Widgets #####
-### datepicker widget ###
+##### Create and Init Buttons/Inputs #####
 date_picker = DatePicker(
     title="Select date",
     value=default_date,
     min_date="2021-03-04",  # earliest available forecast
     max_date="2024-06-27",  # last time we downloaded forecast
 )
-### hour widget ###
+
+# hour slider allows user to select hour 0-23 for currently selected date
 # refs:
 #   https://github.com/bokeh/bokeh/blob/branch-3.8/examples/server/app/gapminder/main.py
 #   https://discourse.bokeh.org/t/a-simple-way-to-custom-a-slider-as-a-dateslider/10005
-# hour slider shows hours for currently selected date
 curr_date = date_picker.value
 year = int(curr_date[0:4])
 month = int(curr_date[5:7])
@@ -103,57 +111,87 @@ hour_slider = Slider(
     title=f"{t[0]}",
     show_value=False,
 )
-### resolution widget ###
+
+# IDX resolution slider
 res_slider = Slider(start=-19, end=0, value=default_res, step=1, title="Resolution")
 
-# callback function to update selected data on new date
-def update_data(attrname, old, new):
-    # create new dict to update source in 1 step
-    new_data = dict()
+# select animation playback speed
+callback_id = None # to enable or disable periodic callback to animation
+ms_delay = 1000 # initialize animation playback to be 1x
+dropdown_speeds = [2000, 1000, 500, 333]
+dropdown_labels = ["0.5x", "1x", "2x", "3x"]
+speed_radio_buttons = RadioButtonGroup(labels=dropdown_labels, active=1)
 
-    # new date and new pm2.5 values
-    new_data["image"] = [get_pm25(date_picker.value, hour_slider.value, res_slider.value)]
+# toggle playing or pausing animation of hourly smoke data
+toggle = Toggle(label="►/❚❚", button_type="default", width=60)
+
+##### Callback Functions #####
+# Update source on new date, hour, or resolution selection by user
+def update_data(attr, old, new):
+    # print(f"update_data: attr = {attr}, old = {old}, new = {new}")
+    new_data = {"image" : [get_pm25(date_picker.value, hour_slider.value, res_slider.value)]}
     source.data = new_data
 
+## set or remove periodic callback based on play/pause toggle button
+def animate(attr, old, new):
+    # print(f"animate: attr = {attr}, old = {old}, new = {new}")
+    global callback_id
+    global ms_delay
+    if toggle.active == True:
+        # immediately start playing, removes annoying delay of waiting for callback upon toggling play
+        animate_update()
+        callback_id = curdoc().add_periodic_callback(animate_update, ms_delay)
+    else:
+        curdoc().remove_periodic_callback(callback_id)
+
 def animate_update():
-    # get next hour
     hour = hour_slider.value + 1
     if hour > 23:
         hour = 0
+    # update plot with data of newly gotten hour
+    update_data(None, None, None)
     hour_slider.value = hour
 
+def change_playback(attr, old, new):
+    print(f"change_playback: attr = {attr}, old = {old}, new = {new}\nplayback label is now {dropdown_labels[new]}")
+    global ms_delay
+    ms_delay = dropdown_speeds[speed_radio_buttons.active]
+    print(f'curr ms_delay = {ms_delay}')
+    
+    # call animate if toggle is set to play
+    if toggle.active == True:
+        animate(None, None, None)
+
+##### Event Handling #####
+## Upon any of these events, the corresponding callback is run
+
+# Update hour slider UI
 hour_slider.js_on_change(
     "value",
     CustomJS(
         args=dict(sl=hour_slider, t=t, d=curr_date),
-        code="""
-    console.log('hour_slider: value=' + this.value, this.toString())
-    sl.title = t[this.value];
-""",
+        code="""sl.title = t[this.value];""",
     ),
 )
 
-callback_id = None
+# dropdown.js_on_event("button_click", CustomJS(code="console.log('dropdown: click ' + this.toString())"))
+# dropdown.on_event("menu_item_click", change_playback)
+speed_radio_buttons.on_change("active", change_playback)
 
-def animate():
-    global callback_id
-    if toggle.active == True:
-        callback_id = curdoc().add_periodic_callback(animate_update, 600)
-    else:
-        curdoc().remove_periodic_callback(callback_id)
+toggle.on_change('active', animate)
 
+# only update sliders user is done sliding the slider around
+# ref: https://stackoverflow.com/questions/38375961/throttling-in-bokeh-application
+hour_slider.on_change('value_throttled', update_data)
+res_slider.on_change('value_throttled', update_data)
 
-# button = Button(label="► Play", width=60)
-# button.on_event("button_click", animate)
-toggle = Toggle(label="►/❚❚", button_type="default", width=60)
-toggle.on_event('button_click', animate)
+date_picker.on_change('value', update_data)
 
-# when date selected changes, call update_date
-for w in [date_picker, hour_slider, res_slider]:
-    w.on_change('value', update_data)
+##### UI Layout #####
+# description to display at top of page
+desc = Div(text=(Path(__file__).parent / "description.html").read_text("utf8"), sizing_mode="stretch_width")
 
-# set up the layout and add to the current document
-# sizing_mode="scale_width"
-layout = layout([[date_picker, res_slider], [hour_slider, toggle], [p]])
+inputs = column([date_picker, res_slider, hour_slider, speed_radio_buttons, toggle], width=320, height=800)
+layout = layout(desc, row(inputs, column(p, width=800, height=700)), sizing_mode="scale_width")
 curdoc().add_root(layout)
 curdoc().title = "UBC FireSmoke Data Curation Dashboard"

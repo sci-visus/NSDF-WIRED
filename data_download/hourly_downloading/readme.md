@@ -23,7 +23,7 @@ The script that launches as a cron job hourly.
 Log output from each time the download_daily.py script runs, reporting if downloads were successful or not.
 
 ### Cron Job
-Run by user `arleth` on `atlantis.sci.utah.edu` with:
+Run by user `arleth` on `canada1` with:
 ```
-0 * * * * echo "cron ran at $(date -u)" >> /home/collab/arleth/work/NSDF-WIRED/data_download/hourly_downloading/cron_heartbeat.log && /home/collab/arleth/work/NSDF-WIRED/data_download/hourly_downloading/download.sh
+0 * * * * echo "cron ran at $(date -u)" >> /home/arleth/NSDF-WIRED/data_download/hourly_downloading/cron_heartbeat.log && /home/arleth/NSDF-WIRED/data_download/hourly_downloading/download.sh
 ```

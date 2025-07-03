@@ -107,6 +107,5 @@ def get_pm25(date, hour, res):
     # TODO: need to handle when a date that is unavailable is given, e.g. 2021-03-03
     data_array_at_time = ds["PM25"].loc[t, :, :, res].data[:, :, 0]
     
-    print(f"np.max(data_array_at_time) = {np.max(data_array_at_time)}")
     # do not flatten bc we're visualizing with bokeh's figure.image
     return data_array_at_time

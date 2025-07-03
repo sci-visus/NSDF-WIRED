@@ -15,7 +15,7 @@ logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s [%(levelname)s] %(message)s',
     handlers=[
-        logging.FileHandler("/home/collab/arleth/work/NSDF-WIRED/data_download/hourly_downloading/firesmoke_hourly_download.log"),
+        logging.FileHandler("/home/arleth/NSDF-WIRED/data_download/hourly_downloading/firesmoke_hourly_download.log"), ## TODO: Make more portable
         logging.StreamHandler()
     ]
 )
@@ -25,8 +25,9 @@ logging.basicConfig(
 url = "https://firesmoke.ca/forecasts/current/dispersion.nc"
 
 # Directories for verifying and storing downloads
-tmp_dir = "/usr/sci/cedmav/data/firesmoke/hourly_downloads/tmp/"
-final_dir = "/usr/sci/cedmav/data/firesmoke/hourly_downloads/data/"
+## TODO: Make more portable
+tmp_dir = "/opt/wired-data/firesmoke/hourly_downloads/tmp"
+final_dir = "/opt/wired-data/firesmoke/hourly_downloads/data"
 
 ## Gets latest file from final_dir
 def get_latest_file():

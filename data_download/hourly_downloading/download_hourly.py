@@ -15,7 +15,7 @@ logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s [%(levelname)s] %(message)s',
     handlers=[
-        logging.FileHandler("/home/arleth/NSDF-WIRED/data_download/hourly_downloading/firesmoke_hourly_download.log"), ## TODO: Make more portable
+        logging.FileHandler("/home/arleth/NSDF-WIRED/data_download/hourly_downloading/firesmoke_hourly_download.log"),
         logging.StreamHandler()
     ]
 )

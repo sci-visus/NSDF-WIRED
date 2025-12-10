@@ -8150,3 +8150,338 @@
 2025-12-03 20:00:10,971 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025337_150515.nc
 2025-12-03 21:00:42,018 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
 2025-12-03 21:00:42,277 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025337_150515.nc
+2025-12-03 22:00:28,565 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-03 22:00:29,217 [INFO] Saved to /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025337_205732.nc
+2025-12-03 23:00:40,770 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-03 23:00:41,044 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025337_205732.nc
+2025-12-04 00:00:42,099 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-04 00:00:42,355 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025337_205732.nc
+2025-12-04 01:00:40,885 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-04 01:00:41,144 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025337_205732.nc
+2025-12-04 02:00:37,972 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-04 02:00:38,234 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025337_205732.nc
+2025-12-04 03:00:25,778 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-04 03:00:26,314 [INFO] Saved to /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025338_025259.nc
+2025-12-04 04:00:28,787 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-04 04:00:29,051 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025338_25259.nc
+2025-12-04 05:00:30,205 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-04 05:00:30,464 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025338_25259.nc
+2025-12-04 06:00:34,003 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-04 06:00:34,267 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025338_25259.nc
+2025-12-04 07:00:26,384 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-04 07:00:26,645 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025338_25259.nc
+2025-12-04 08:00:25,473 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-04 08:00:25,781 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025338_25259.nc
+2025-12-04 09:00:30,991 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-04 09:00:31,245 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025338_25259.nc
+2025-12-04 10:00:11,780 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-04 10:00:12,026 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025338_25259.nc
+2025-12-04 11:00:28,864 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-04 11:00:29,133 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025338_25259.nc
+2025-12-04 12:00:21,303 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-04 12:00:21,840 [INFO] Saved to /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025338_111512.nc
+2025-12-04 13:00:19,884 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-04 13:00:20,167 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025338_111512.nc
+2025-12-04 14:00:34,714 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-04 14:00:34,980 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025338_111512.nc
+2025-12-04 15:00:25,720 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-04 15:00:26,250 [INFO] Saved to /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025338_144815.nc
+2025-12-04 16:00:29,524 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-04 16:00:29,784 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025338_144815.nc
+2025-12-04 17:00:23,712 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-04 17:00:23,977 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025338_144815.nc
+2025-12-04 18:00:40,538 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-04 18:00:40,803 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025338_144815.nc
+2025-12-04 19:00:36,753 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-04 19:00:37,014 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025338_144815.nc
+2025-12-04 20:00:41,473 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-04 20:00:41,732 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025338_144815.nc
+2025-12-04 21:00:29,779 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-04 21:00:30,353 [INFO] Saved to /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025338_204659.nc
+2025-12-04 22:00:37,287 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-04 22:00:37,586 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025338_204659.nc
+2025-12-04 23:00:56,649 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-04 23:00:56,908 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025338_204659.nc
+2025-12-05 00:00:37,763 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-05 00:00:37,984 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025338_204659.nc
+2025-12-05 01:00:49,500 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-05 01:00:49,815 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025338_204659.nc
+2025-12-05 02:00:30,912 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-05 02:00:31,201 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025338_204659.nc
+2025-12-05 11:23:03,915 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-05 11:23:04,658 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-05 11:23:05,458 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-05 11:23:06,853 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-05 11:23:07,039 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-05 11:23:07,164 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-05 11:23:07,904 [INFO] Saved to /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025339_024546.nc
+2025-12-05 11:23:10,759 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-05 11:23:10,805 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025339_24546.nc
+2025-12-05 11:23:14,846 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-05 11:23:14,891 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025339_24546.nc
+2025-12-05 11:23:24,617 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-05 11:23:24,662 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025339_24546.nc
+2025-12-05 12:01:00,336 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-05 12:01:10,225 [INFO] Saved to /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025339_111947.nc
+2025-12-05 13:00:51,317 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-05 13:00:54,721 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025339_111947.nc
+2025-12-05 14:00:41,939 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-05 14:00:42,394 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025339_111947.nc
+2025-12-05 15:00:37,814 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-05 15:00:39,930 [INFO] Saved to /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025339_144421.nc
+2025-12-05 16:00:26,579 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-05 16:00:26,837 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025339_144421.nc
+2025-12-05 17:00:29,749 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-05 17:00:30,032 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025339_144421.nc
+2025-12-05 18:00:28,544 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-05 18:00:28,938 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025339_144421.nc
+2025-12-05 19:00:43,911 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-05 19:00:44,236 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025339_144421.nc
+2025-12-05 20:00:47,160 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-05 20:00:47,469 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025339_144421.nc
+2025-12-05 21:01:04,464 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-05 21:01:05,515 [INFO] Saved to /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025339_204354.nc
+2025-12-05 22:01:20,211 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-05 22:01:21,956 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025339_204354.nc
+2025-12-05 23:01:13,522 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-05 23:01:15,568 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025339_204354.nc
+2025-12-06 00:00:55,991 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-06 00:00:57,475 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025339_204354.nc
+2025-12-06 01:00:47,725 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-06 01:00:48,053 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025339_204354.nc
+2025-12-06 02:00:48,494 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-06 02:00:48,775 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025339_204354.nc
+2025-12-06 03:00:41,108 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-06 03:00:43,359 [INFO] Saved to /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025340_024352.nc
+2025-12-06 04:00:42,252 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-06 04:00:42,561 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025340_24352.nc
+2025-12-06 05:00:50,330 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-06 05:00:50,597 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025340_24352.nc
+2025-12-06 06:00:41,927 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-06 06:00:42,190 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025340_24352.nc
+2025-12-06 07:00:36,756 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-06 07:00:37,041 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025340_24352.nc
+2025-12-06 08:00:36,661 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-06 08:00:36,921 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025340_24352.nc
+2025-12-06 09:00:54,748 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-06 09:00:56,481 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025340_24352.nc
+2025-12-06 10:01:32,217 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-06 10:01:32,529 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025340_24352.nc
+2025-12-06 11:00:47,070 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-06 11:00:47,377 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025340_24352.nc
+2025-12-06 12:00:38,212 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-06 12:00:40,057 [INFO] Saved to /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025340_112106.nc
+2025-12-06 13:00:44,467 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-06 13:00:44,732 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025340_112106.nc
+2025-12-06 14:00:47,078 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-06 14:00:47,340 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025340_112106.nc
+2025-12-06 15:00:29,773 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-06 15:00:30,318 [INFO] Saved to /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025340_144259.nc
+2025-12-06 16:00:39,271 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-06 16:00:39,549 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025340_144259.nc
+2025-12-06 17:00:49,469 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-06 17:00:49,741 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025340_144259.nc
+2025-12-06 18:00:56,509 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-06 18:00:56,769 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025340_144259.nc
+2025-12-06 19:00:28,884 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-06 19:00:29,156 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025340_144259.nc
+2025-12-06 20:00:25,056 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-06 20:00:25,336 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025340_144259.nc
+2025-12-06 21:00:50,104 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-06 21:00:50,663 [INFO] Saved to /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025340_204245.nc
+2025-12-06 22:00:29,901 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-06 22:00:30,166 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025340_204245.nc
+2025-12-06 23:01:06,326 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-06 23:01:06,602 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025340_204245.nc
+2025-12-07 00:00:29,998 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-07 00:00:30,268 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025340_204245.nc
+2025-12-07 01:00:43,089 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-07 01:00:43,357 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025340_204245.nc
+2025-12-07 02:00:49,607 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-07 02:00:49,878 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025340_204245.nc
+2025-12-07 03:00:47,255 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-07 03:00:47,838 [INFO] Saved to /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025341_024234.nc
+2025-12-07 04:01:01,153 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-07 04:01:01,429 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025341_24234.nc
+2025-12-07 05:00:33,125 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-07 05:00:33,386 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025341_24234.nc
+2025-12-07 06:00:21,779 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-07 06:00:22,101 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025341_24234.nc
+2025-12-07 07:00:41,966 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-07 07:00:42,229 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025341_24234.nc
+2025-12-07 08:00:52,081 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-07 08:00:52,334 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025341_24234.nc
+2025-12-07 09:01:01,650 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-07 09:01:01,926 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025341_24234.nc
+2025-12-07 10:00:57,806 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-07 10:00:58,076 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025341_24234.nc
+2025-12-07 11:00:45,285 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-07 11:00:45,589 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025341_24234.nc
+2025-12-07 12:00:47,876 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-07 12:00:48,416 [INFO] Saved to /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025341_112629.nc
+2025-12-07 13:00:25,541 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-07 13:00:25,849 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025341_112629.nc
+2025-12-07 14:00:21,746 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-07 14:00:22,051 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025341_112629.nc
+2025-12-07 15:00:51,288 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-07 15:00:51,856 [INFO] Saved to /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025341_144448.nc
+2025-12-07 16:00:39,707 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-07 16:00:39,973 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025341_144448.nc
+2025-12-07 17:00:53,359 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-07 17:00:53,630 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025341_144448.nc
+2025-12-07 18:00:22,954 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-07 18:00:23,214 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025341_144448.nc
+2025-12-07 19:00:29,718 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-07 19:00:29,990 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025341_144448.nc
+2025-12-07 20:00:31,342 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-07 20:00:31,614 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025341_144448.nc
+2025-12-07 21:00:40,320 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-07 21:00:40,854 [INFO] Saved to /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025341_204559.nc
+2025-12-07 22:00:52,099 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-07 22:00:52,375 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025341_204559.nc
+2025-12-07 23:00:56,843 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-07 23:00:57,110 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025341_204559.nc
+2025-12-08 00:00:40,973 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-08 00:00:41,240 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025341_204559.nc
+2025-12-08 01:00:45,798 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-08 01:00:46,069 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025341_204559.nc
+2025-12-08 02:00:42,283 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-08 02:00:42,579 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025341_204559.nc
+2025-12-08 03:01:04,215 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-08 03:01:04,761 [INFO] Saved to /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025342_024647.nc
+2025-12-08 04:00:29,231 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-08 04:00:29,511 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025342_24647.nc
+2025-12-08 05:00:56,054 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-08 05:00:56,342 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025342_24647.nc
+2025-12-08 06:00:39,957 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-08 06:00:40,228 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025342_24647.nc
+2025-12-08 07:00:39,599 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-08 07:00:39,865 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025342_24647.nc
+2025-12-08 08:00:50,436 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-08 08:00:50,742 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025342_24647.nc
+2025-12-08 09:00:49,988 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-08 09:00:50,254 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025342_24647.nc
+2025-12-08 10:00:43,220 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-08 10:00:43,499 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025342_24647.nc
+2025-12-08 11:00:48,645 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-08 11:00:48,915 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025342_24647.nc
+2025-12-08 12:00:50,523 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-08 12:00:51,057 [INFO] Saved to /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025342_110030.nc
+2025-12-08 13:00:59,775 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-08 13:01:00,074 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025342_110030.nc
+2025-12-08 14:00:23,653 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-08 14:00:23,920 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025342_110030.nc
+2025-12-08 15:00:29,149 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-08 15:00:29,686 [INFO] Saved to /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025342_145300.nc
+2025-12-08 16:01:03,301 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-08 16:01:03,605 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025342_145300.nc
+2025-12-08 17:00:15,557 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-08 17:00:15,836 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025342_145300.nc
+2025-12-08 18:01:05,493 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-08 18:01:05,713 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025342_145300.nc
+2025-12-08 19:00:47,088 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-08 19:00:47,353 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025342_145300.nc
+2025-12-08 20:00:32,596 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-08 20:00:32,913 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025342_145300.nc
+2025-12-08 21:00:52,301 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-08 21:00:52,576 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025342_145300.nc
+2025-12-08 22:00:43,064 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-08 22:00:43,598 [INFO] Saved to /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025342_205545.nc
+2025-12-08 23:01:00,278 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-08 23:01:00,541 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025342_205545.nc
+2025-12-09 00:00:49,914 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-09 00:00:50,173 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025342_205545.nc
+2025-12-09 01:00:46,914 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-09 01:00:47,137 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025342_205545.nc
+2025-12-09 02:00:25,315 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-09 02:00:25,556 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025342_205545.nc
+2025-12-09 03:00:56,799 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-09 03:00:57,055 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025342_205545.nc
+2025-12-09 04:00:47,379 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-09 04:00:47,906 [INFO] Saved to /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025343_030059.nc
+2025-12-09 05:00:30,227 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-09 05:00:30,448 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025343_30059.nc
+2025-12-09 06:00:53,441 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-09 06:00:53,719 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025343_30059.nc
+2025-12-09 07:00:55,262 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-09 07:00:55,522 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025343_30059.nc
+2025-12-09 08:00:36,145 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-09 08:00:36,429 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025343_30059.nc
+2025-12-09 09:00:22,947 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-09 09:00:23,231 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025343_30059.nc
+2025-12-09 10:00:19,823 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-09 10:00:20,089 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025343_30059.nc
+2025-12-09 11:00:52,203 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-09 11:00:52,482 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025343_30059.nc
+2025-12-09 12:00:37,292 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-09 12:00:37,844 [INFO] Saved to /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025343_110116.nc
+2025-12-09 13:00:33,603 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-09 13:00:33,854 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025343_110116.nc
+2025-12-09 14:00:15,081 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-09 14:00:15,335 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025343_110116.nc
+2025-12-09 15:00:57,105 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-09 15:00:57,364 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025343_110116.nc
+2025-12-09 16:01:13,344 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-09 16:01:13,864 [INFO] Saved to /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025343_150409.nc
+2025-12-09 17:00:10,307 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-09 17:00:10,529 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025343_150409.nc
+2025-12-09 18:00:22,351 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-09 18:00:22,612 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025343_150409.nc
+2025-12-09 19:00:53,124 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-09 19:00:53,375 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025343_150409.nc
+2025-12-09 20:00:36,624 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-09 20:00:36,882 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025343_150409.nc
+2025-12-09 21:00:52,067 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-09 21:00:52,327 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025343_150409.nc
+2025-12-09 22:00:45,526 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-09 22:00:46,043 [INFO] Saved to /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025343_210459.nc
+2025-12-09 23:00:30,034 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-09 23:00:30,285 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025343_210459.nc
+2025-12-10 00:00:29,810 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-10 00:00:30,065 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025343_210459.nc
+2025-12-10 01:00:54,211 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-10 01:00:54,469 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025343_210459.nc
+2025-12-10 02:00:52,924 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-10 02:00:53,169 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025343_210459.nc
+2025-12-10 03:00:41,581 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-10 03:00:41,836 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025343_210459.nc
+2025-12-10 04:00:49,651 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-10 04:00:50,169 [INFO] Saved to /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025344_030900.nc
+2025-12-10 05:00:39,221 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-10 05:00:39,465 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025344_30900.nc
+2025-12-10 06:00:38,495 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-10 06:00:38,765 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025344_30900.nc
+2025-12-10 07:00:34,402 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-10 07:00:34,642 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025344_30900.nc
+2025-12-10 08:00:35,813 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-10 08:00:36,041 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025344_30900.nc
+2025-12-10 09:00:14,781 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-10 09:00:15,040 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025344_30900.nc
+2025-12-10 10:00:34,235 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-10 10:00:34,486 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025344_30900.nc
+2025-12-10 11:00:39,888 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-10 11:00:40,436 [INFO] Saved to /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025344_104701.nc
+2025-12-10 12:00:35,524 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-10 12:00:35,789 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025344_104701.nc
+2025-12-10 13:00:56,331 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-10 13:00:56,628 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025344_104701.nc
+2025-12-10 14:00:38,318 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-10 14:00:38,580 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025344_104701.nc
+2025-12-10 15:00:35,757 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-10 15:00:36,006 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025344_104701.nc
+2025-12-10 16:00:24,111 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-10 16:00:24,714 [INFO] Saved to /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025344_150310.nc
+2025-12-10 17:00:43,183 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-10 17:00:43,390 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025344_150310.nc
+2025-12-10 18:00:42,477 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-10 18:00:42,772 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025344_150310.nc
+2025-12-10 19:00:44,615 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-10 19:00:44,905 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025344_150310.nc
+2025-12-10 20:00:29,997 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-10 20:00:30,252 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025344_150310.nc
+2025-12-10 21:01:01,114 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-10 21:01:01,378 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025344_150310.nc
+2025-12-10 22:00:55,160 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-10 22:00:55,690 [INFO] Saved to /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025344_210256.nc
+2025-12-10 23:01:01,397 [INFO] Success: https://firesmoke.ca/forecasts/current/dispersion.nc -> /opt/wired-data/firesmoke/hourly_downloads/tmp
+2025-12-10 23:01:01,675 [INFO] Already have file saved in /opt/wired-data/firesmoke/hourly_downloads/data as dispersion_2025344_210256.nc

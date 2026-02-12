@@ -11,8 +11,13 @@ def latlon_to_mercator(lat, lon):
     """
     Return a tuple of the given lat/lon coordinates in mercator projection
     ref: https://pyproj4.github.io/pyproj/stable/gotchas.html#gotchas
-    :param int32 lat: latitude
-    :param int32 lon: longitude
+    
+    Args:
+        lat (float): Latitude in degrees.
+        lon (float): Longitude in degrees.
+
+    Returns:
+        tuple[float, float]: (x, y) coordinates in mercator projection.
     """
     # get coordinate reference system for EPSG:4326 (used for GPS lat/lon)
     # and mercator (the CRS supported by bokeh)
@@ -32,7 +37,9 @@ def latlon_to_mercator_iter(latlon_tuples):
     """
     Return an iterator/generator of tuples of the given lat/lon coordinates in mercator projection
     ref: https://pyproj4.github.io/pyproj/stable/gotchas.html#gotchas
-    :param list latlon_tuples: a list of tuples, each tuple holding a lat/lon coordinate
+
+    Args:
+        latlon_tuples (list): a list of tuples, each tuple holding a lat/lon coordinate
     """
     # get coordinate reference system for EPSG:4326 (used for GPS lat/lon)
     # and mercator (the CRS supported by bokeh)
